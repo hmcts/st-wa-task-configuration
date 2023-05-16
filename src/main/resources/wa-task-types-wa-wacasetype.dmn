@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1kep5qz" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.9.0" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.0.0">
+  <decision id="wa-task-types-wa-wacasetype" name="Task Types DMN">
+    <decisionTable id="DecisionTable_17knzal" hitPolicy="COLLECT">
+      <input id="Input_1">
+        <inputExpression id="InputExpression_1" typeRef="string">
+          <text></text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" name="taskTypeId" typeRef="string" biodi:width="281" />
+      <output id="OutputClause_0aeuwfu" name="taskTypeName" typeRef="string" biodi:width="323" />
+      <rule id="DecisionRule_1av7qbf">
+        <inputEntry id="UnaryTests_08pox2u">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1wu6viw">
+          <text>"processApplication"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ix1xyx">
+          <text>"Process Application"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ne8kdd">
+        <inputEntry id="UnaryTests_1r6a8g7">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_167ecfk">
+          <text>"reviewAppealSkeletonArgument"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1w1vijp">
+          <text>"Review Appeal Skeleton Argument"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0zm5i8n">
+        <inputEntry id="UnaryTests_09gg3g1">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0yrndga">
+          <text>"decideOnTimeExtension"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0axiwp6">
+          <text>"Decide On Time Extension"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1iqmn6k">
+        <inputEntry id="UnaryTests_15vml72">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0idoz5f">
+          <text>"followUpOverdueCaseBuilding"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1vchpaj">
+          <text>"Follow-up overdue case building"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0q6yf4y">
+        <inputEntry id="UnaryTests_0k70an7">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1oiex0n">
+          <text>"attendCma"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0s50vib">
+          <text>"Attend Cma"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_158id43">
+        <inputEntry id="UnaryTests_15gqq5g">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0puzsgh">
+          <text>"reviewRespondentResponse"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1hfrj65">
+          <text>"Review Respondent Response"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0s33u8f">
+        <inputEntry id="UnaryTests_0qpva85">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_08w01pl">
+          <text>"followUpOverdueRespondentEvidence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_048fc9a">
+          <text>"Follow-up overdue respondent evidence"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0xbos4c">
+        <inputEntry id="UnaryTests_0b0sejo">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0awn6yl">
+          <text>"FOLLOWUPOVERDUERESPONDENTEVIDENCE"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0v06mnn">
+          <text>"Follow-up overdue respondent evidence"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="DMNDiagram_0j0r28f">
+      <dmndi:DMNShape id="DMNShape_0524hsr" dmnElementRef="wa-task-types-wa-wacasetype">
+        <dc:Bounds height="80" width="180" x="150" y="80" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
