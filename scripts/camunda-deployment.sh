@@ -9,10 +9,11 @@
 SERVICE_TOKEN="$(sh ./scripts/idam-service-token.sh "wa_camunda_pipeline_upload")"
 PRODUCT="et"
 TENANT_ID="employment"
+CAMUNDA_URL="http://localhost:8999/engine-rest"
 
 for file in ./scripts/local/*.bpmn ./src/main/resources/*.dmn; do
   if [ -f "$file" ]; then
-    curl --silent --show-error ${CAMUNDA_URL}/deployment/create \
+    curl --silent --show-error $CAMUNDA_URL/deployment/create \
       -H 'Content-Type: multipart/form-data' \
       -H "ServiceAuthorization: ${SERVICE_TOKEN}" \
       -F "deployment-source=$PRODUCT" \
