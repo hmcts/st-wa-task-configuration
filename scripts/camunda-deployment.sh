@@ -7,8 +7,8 @@
 ## deploys bpmn/dmn to camunda.
 
 SERVICE_TOKEN="$(sh ./scripts/idam-service-token.sh "wa_camunda_pipeline_upload")"
-PRODUCT="et"
-TENANT_ID="employment"
+PRODUCT="sptribs"
+TENANT_ID="st_cic"
 CAMUNDA_URL="http://localhost:8999/engine-rest"
 
 for file in ./scripts/local/*.bpmn ./src/main/resources/*.dmn; do
