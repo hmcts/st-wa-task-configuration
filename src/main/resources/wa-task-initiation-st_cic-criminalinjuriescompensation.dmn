@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.11.0">
-  <decision id="wa-task-initiation-sptribs" name="Task initiation DMN">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.12.0">
+  <decision id="wa-task-initiation-st_cic-criminalinjuriescompensation" name="Task initiation DMN">
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT">
       <input id="Input_1" label="Event Id" camunda:inputVariable="eventId">
         <inputExpression id="InputExpression_1" typeRef="string">
@@ -17,6 +17,8 @@
       <output id="OutputClause_165p3r3" label="Delay Duration" name="delayDuration" typeRef="integer" />
       <output id="OutputClause_0i6c6c2" label="Working Days Allowed" name="workingDaysAllowed" typeRef="integer" />
       <output id="OutputClause_10rno4c" label="Process Categories Identifiers" name="processCategories" typeRef="string" biodi:width="300" />
+      <output id="OutputClause_1wziqr5" name="Work Type" typeRef="string" />
+      <output id="OutputClause_09b12hk" name="Role Category" typeRef="string" />
       <rule id="DecisionRule_1fenvxm">
         <inputEntry id="UnaryTests_09nq8bu">
           <text>"CREATE"</text>
@@ -37,6 +39,12 @@
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1m76a0d">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1rkd7d2">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_19ysz5s">
           <text></text>
         </outputEntry>
       </rule>
@@ -62,6 +70,12 @@
         <outputEntry id="LiteralExpression_1bodtr6">
           <text>"caseProgression"</text>
         </outputEntry>
+        <outputEntry id="LiteralExpression_1okbvaz">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0z9svc6">
+          <text></text>
+        </outputEntry>
       </rule>
       <rule id="DecisionRule_046wm6a">
         <inputEntry id="UnaryTests_02g9rgn">
@@ -84,6 +98,12 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0zy6a6s">
           <text>"timeExtension"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_014sx3w">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_01hofn8">
+          <text></text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_10q7721">
@@ -108,6 +128,12 @@
         <outputEntry id="LiteralExpression_0m9jin9">
           <text>"followUpOverdue"</text>
         </outputEntry>
+        <outputEntry id="LiteralExpression_0r4jutc">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0pyyhxu">
+          <text></text>
+        </outputEntry>
       </rule>
       <rule id="DecisionRule_0odg0q4">
         <inputEntry id="UnaryTests_0x449ig">
@@ -130,6 +156,12 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_1oy20uf">
           <text>"caseProgression"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1e3obsi">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_168l9p6">
+          <text></text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1tpr9e2">
@@ -154,6 +186,12 @@
         <outputEntry id="LiteralExpression_0lum3zd">
           <text>"caseProgression"</text>
         </outputEntry>
+        <outputEntry id="LiteralExpression_08r24xo">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0gn2tzu">
+          <text></text>
+        </outputEntry>
       </rule>
       <rule id="DecisionRule_0i6qihx">
         <inputEntry id="UnaryTests_03alruf">
@@ -176,6 +214,12 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0yoh9gf">
           <text>"followUpOverdue"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0gxnntd">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_13f95rq">
+          <text></text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1babmnh">
@@ -200,6 +244,12 @@
         <outputEntry id="LiteralExpression_1n8b3k8">
           <text>"caseProgression,followUpOverdue"</text>
         </outputEntry>
+        <outputEntry id="LiteralExpression_1vmx0xl">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1b2vt5y">
+          <text></text>
+        </outputEntry>
       </rule>
       <rule id="DecisionRule_1quzq4s">
         <inputEntry id="UnaryTests_0uphw82">
@@ -222,6 +272,12 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0q4yayi">
           <text>"caseProgression,followUpOverdue"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_11unrig">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1dvqetf">
+          <text></text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1jix9p2">
@@ -246,12 +302,47 @@
         <outputEntry id="LiteralExpression_1hhj2vw">
           <text>"caseProgression,followUpOverdue"</text>
         </outputEntry>
+        <outputEntry id="LiteralExpression_0ibwrhh">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0nmwsbs">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0in26ix">
+        <inputEntry id="UnaryTests_1mtpy0d">
+          <text>"create-draft-order"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0pzaled">
+          <text>"CaseManagement"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0yp6gfj">
+          <text>"processCaseWithdrawalDirections"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_11crul1">
+          <text>"ProcessCaseWithdrawalDirections"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0j4vwvw">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0h32jop">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1p20qkn">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0te3ddw">
+          <text>"Routine Work"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_19ua141">
+          <text>"ADMIN"</text>
+        </outputEntry>
       </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram id="DMNDiagram_0b2rkcb">
-      <dmndi:DMNShape id="DMNShape_0wc7glt" dmnElementRef="wa-task-initiation-sptribs">
+      <dmndi:DMNShape id="DMNShape_0wc7glt" dmnElementRef="wa-task-initiation-st_cic-criminalinjuriescompensation">
         <dc:Bounds height="80" width="180" x="150" y="80" />
       </dmndi:DMNShape>
     </dmndi:DMNDiagram>
