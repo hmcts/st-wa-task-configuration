@@ -18,7 +18,7 @@ null</text>
         </inputExpression>
       </input>
       <output id="Output_1" label="Name" name="name" typeRef="string" biodi:width="349" />
-      <output id="OutputClause_021y3bb" label="Value" name="value" typeRef="string" biodi:width="2175" />
+      <output id="OutputClause_021y3bb" label="Value" name="value" typeRef="string" biodi:width="450" />
       <output id="OutputClause_0tefly7" label="Can Reconfigure?" name="canReconfigure" typeRef="boolean" />
       <rule id="DecisionRule_1qfkcqn">
         <inputEntry id="UnaryTests_1fzed1e">
@@ -28,12 +28,63 @@ null</text>
           <text>processCaseWithdrawalDirections</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1vuc06b">
-          <text></text>
+          <text>majorPriority</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0jvji8s">
-          <text></text>
+          <text>5000</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_180437s">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0uude62">
+        <inputEntry id="UnaryTests_0hlew7o">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ge5t9c">
+          <text>processCaseWithdrawalDirections</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1qbzk71">
+          <text>minorPriority</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0hen8ss">
+          <text>500</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ecy2mu">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_12go0dx">
+        <inputEntry id="UnaryTests_1ybcny9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0lhgsdk">
+          <text>processCaseWithdrawalDirections</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1md4v9y">
+          <text>defPriorityDate</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0chvpdf">
+          <text>dueDate</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1hc6ki6">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1uuyxon">
+        <inputEntry id="UnaryTests_0jhl5zg">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0t4gfyx">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_15pmpia">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0o0w6fc">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0z4f0k6">
           <text></text>
         </outputEntry>
       </rule>

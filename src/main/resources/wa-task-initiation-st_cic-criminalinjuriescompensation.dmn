@@ -12,6 +12,16 @@
           <text></text>
         </inputExpression>
       </input>
+      <input id="InputClause_0oaaasz" label="Referal Type" biodi:width="305" camunda:inputVariable="referalType">
+        <inputExpression id="LiteralExpression_0asduwj" typeRef="string">
+          <text>if additonalData!=null and additonalData.Data!=null then additionaData.Data.referToJudgeReferralReason</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0i4fklh">
+        <inputExpression id="LiteralExpression_0o11hwd" typeRef="string">
+          <text></text>
+        </inputExpression>
+      </input>
       <output id="Output_1" label="Task Id" name="taskId" typeRef="string" biodi:width="320" />
       <output id="OutputClause_0p5fhhd" label="Task Name" name="name" typeRef="string" />
       <output id="OutputClause_165p3r3" label="Delay Duration" name="delayDuration" typeRef="integer" />
@@ -25,6 +35,12 @@
         </inputEntry>
         <inputEntry id="UnaryTests_0pzaled">
           <text>"CaseManagement"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1dz8lch">
+          <text>Withdrawal Request</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1eerwoc">
+          <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0yp6gfj">
           <text>"processCaseWithdrawalDirections"</text>
