@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.12.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.11.0">
   <decision id="wa-task-configuration-st_cic-criminalinjuriescompensation" name="Task configuration DMN">
     <decisionTable id="DecisionTable_14cx079" hitPolicy="RULE ORDER">
       <input id="InputClause_1gxyo7f" label="CCD Case Data" camunda:inputVariable="caseData">
@@ -25,16 +25,16 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1o9uf1g">
-          <text>processCaseWithdrawalDirections</text>
+          <text>"processCaseWithdrawalDirections","ProcessRule27Decision"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1vuc06b">
-          <text>majorPriority</text>
+          <text>"majorPriority"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0jvji8s">
           <text>5000</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_180437s">
-          <text></text>
+          <text>true</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0uude62">
@@ -42,16 +42,16 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0ge5t9c">
-          <text>processCaseWithdrawalDirections</text>
+          <text>"processCaseWithdrawalDirections","ProcessRule27Decision"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1qbzk71">
-          <text>minorPriority</text>
+          <text>"minorPriority"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0hen8ss">
           <text>500</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1ecy2mu">
-          <text></text>
+          <text>true</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_12go0dx">
@@ -59,10 +59,10 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0lhgsdk">
-          <text>processCaseWithdrawalDirections</text>
+          <text>"processCaseWithdrawalDirections"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1md4v9y">
-          <text>defPriorityDate</text>
+          <text>"defPriorityDate"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0chvpdf">
           <text>dueDate</text>
@@ -76,15 +76,66 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0t4gfyx">
-          <text></text>
+          <text>"ProcessRule27Decision","processCaseWithdrawalDirections"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_15pmpia">
-          <text></text>
+          <text>"workType"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0o0w6fc">
-          <text></text>
+          <text>"routine_work"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0z4f0k6">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0v7suji">
+        <inputEntry id="UnaryTests_01uali5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_055g5ba">
+          <text>"ProcessRule27Decision","processCaseWithdrawalDirections"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ubz0s5">
+          <text>"roleCategory"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1fkq9e2">
+          <text>"ADMIN"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_03hwx1w">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0r6pquq">
+        <inputEntry id="UnaryTests_0o37be8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1dd4h23">
+          <text>"ProcessRule27Decision"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1n8d760">
+          <text>"dueDateIntervalDays"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1temog9">
+          <text>5</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0n2rn3s">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0es6jg9">
+        <inputEntry id="UnaryTests_08qxwag">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07j2pu0">
+          <text>"processCaseWithdrawalDirections"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1s2u98t">
+          <text>"dueDateIntervalDays"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_168n0h4">
+          <text>10</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1nvij8q">
           <text></text>
         </outputEntry>
       </rule>
