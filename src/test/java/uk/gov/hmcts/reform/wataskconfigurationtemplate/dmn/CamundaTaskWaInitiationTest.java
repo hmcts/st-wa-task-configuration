@@ -29,14 +29,14 @@ import java.util.stream.Stream;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static uk.gov.hmcts.reform.wataskconfigurationtemplate.DmnDecisionTable.WA_TASK_INITIATION_WA_WACASETYPE;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.DmnDecisionTable.WA_TASK_INITIATION_ST_CIC_CRIMINALJURIESCOMPENSATION;
 
 @Slf4j
 class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
 
     @BeforeAll
     public static void initialization() {
-        CURRENT_DMN_DECISION_TABLE = WA_TASK_INITIATION_WA_WACASETYPE;
+        CURRENT_DMN_DECISION_TABLE = WA_TASK_INITIATION_ST_CIC_CRIMINALJURIESCOMPENSATION;
     }
 
     @ParameterizedTest
@@ -133,7 +133,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
             + "T18:00";
         return Stream.of(
             Arguments.of(
-                "sendDirection", "", "protection",
+                "create-draft-order", "", "protection",
                 List.of(
                     Map.of(
                         "taskId", "followUpNonStandardDirection",
@@ -142,205 +142,6 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "delayDuration", 0,
                         "processCategories", "caseProgression",
                         "taskType", "followUpNonStandardDirection"
-                    )
-                )
-            ),
-            Arguments.of(
-                "CREATE", "TODO", "anything",
-                List.of(
-                    Map.of(
-                        "taskId", "processApplication",
-                        "name", "Process Application",
-                        "workingDaysAllowed", 2,
-                        "taskType", "processApplication"
-                    )
-                )
-            ),
-            Arguments.of(
-                "submitCase", "caseUnderReview", "anything",
-                List.of(
-                    Map.of(
-                        "taskId", "reviewAppealSkeletonArgument",
-                        "name", "Review Appeal Skeleton Argument",
-                        "workingDaysAllowed", 2,
-                        "processCategories", "caseProgression",
-                        "taskType", "reviewAppealSkeletonArgument"
-                    )
-                )
-            ),
-            Arguments.of(
-                "submitCase", "caseUnderReview", "",
-                List.of(
-                    Map.of(
-                        "taskId", "reviewAppealSkeletonArgument",
-                        "name", "Review Appeal Skeleton Argument",
-                        "workingDaysAllowed", 2,
-                        "processCategories", "caseProgression",
-                        "taskType", "reviewAppealSkeletonArgument"
-                    )
-                )
-            ),
-            Arguments.of(
-                "submitCase", "caseUnderReview", null,
-                List.of(
-                    Map.of(
-                        "taskId", "reviewAppealSkeletonArgument",
-                        "name", "Review Appeal Skeleton Argument",
-                        "workingDaysAllowed", 2,
-                        "processCategories", "caseProgression",
-                        "taskType", "reviewAppealSkeletonArgument"
-                    )
-                )
-            ),
-            Arguments.of(
-                "submitTimeExtension", "", null,
-                List.of(
-                    Map.of(
-                        "taskId", "decideOnTimeExtension",
-                        "name", "Decide On Time Extension",
-                        "workingDaysAllowed", 2,
-                        "processCategories", "timeExtension",
-                        "taskType", "decideOnTimeExtension"
-                    )
-                )
-            ),
-            Arguments.of(
-                "requestCaseBuilding", "caseBuilding", null,
-                List.of(
-                    Map.of(
-                        "taskId", "followUpOverdueCaseBuilding",
-                        "name", "Follow-up overdue case building",
-                        "workingDaysAllowed", 2,
-                        "processCategories", "followUpOverdue",
-                        "delayDuration", 0,
-                        "taskType", "followUpOverdueCaseBuilding"
-                    )
-                )
-            ),
-            Arguments.of(
-                "listCma", "cmaListed", null,
-                List.of(
-                    Map.of(
-                        "taskId", "attendCma",
-                        "name", "Attend Cma",
-                        "workingDaysAllowed", 2,
-                        "processCategories", "caseProgression",
-                        "taskType", "attendCma"
-                    )
-                )
-            ),
-            Arguments.of(
-                "uploadHomeOfficeAppealResponse", "respondentReview", "",
-                List.of(
-                    Map.of(
-                        "taskId", "reviewRespondentResponse",
-                        "name", "Review Respondent Response",
-                        "workingDaysAllowed", 2,
-                        "processCategories", "caseProgression",
-                        "taskType", "reviewRespondentResponse"
-                    )
-                )
-            ),
-            Arguments.of(
-                "requestRespondentEvidence", "awaitingRespondentEvidence", "",
-                List.of(
-                    Map.of(
-                        "taskId", "followUpOverdueRespondentEvidence",
-                        "name", "Follow-up overdue respondent evidence",
-                        "delayDuration", 0,
-                        "workingDaysAllowed", 2,
-                        "processCategories", "followUpOverdue",
-                        "taskType", "followUpOverdueRespondentEvidence"
-                    )
-                )
-            ),
-            Arguments.of(
-                "dummyEventForMultipleCategories", "DONE", "anything",
-                List.of(
-                    Map.of(
-                        "taskId", "dummyActivity",
-                        "name", "Dummy Activity",
-                        "delayDuration", 0,
-                        "workingDaysAllowed", 2,
-                        "processCategories", "caseProgression,followUpOverdue",
-                        "taskType", "dummyActivity"
-                    )
-                )
-            ),
-            Arguments.of(
-                "submitAppeal", "appealSubmitted", "anything",
-                List.of(
-                    Map.of(
-                        "taskId", "inspectAppeal",
-                        "name", "Inspect Appeal",
-                        "workingDaysAllowed", 2,
-                        "processCategories", "caseProgression",
-                        "taskType", "inspectAppeal"
-                    )
-                )
-            ),
-            Arguments.of(
-                "createMultipleTasks", "appealCreated", "anything",
-                List.of(
-                    Map.of(
-                        "taskId", "firstTask",
-                        "name", "First task",
-                        "processCategories", "caseProgression",
-                        "taskType", "firstTask"
-                    ),
-                    Map.of(
-                        "taskId", "secondTask",
-                        "name", "Second task",
-                        "processCategories", "caseProgression",
-                        "taskType", "secondTask"
-                    )
-                )
-            ),
-            Arguments.of(
-                "submitAppeal", "appealSubmitted", "anything",
-                List.of(
-                    Map.of(
-                        "taskId", "inspectAppeal",
-                        "name", "Inspect Appeal",
-                        "workingDaysAllowed", 2,
-                        "processCategories", "caseProgression",
-                        "taskType", "inspectAppeal"
-                    )
-                )
-            ),
-            Arguments.of(
-                "functionalTestTask2", "", "",
-                List.of(
-                    Map.of(
-                        "taskId", "functionalTestTask2",
-                        "name", "functional Test Task 2",
-                        "workingDaysAllowed", 2,
-                        "processCategories", "caseProgression",
-                        "taskType", "functionalTestTask2"
-                    )
-                )
-            ),
-            Arguments.of(
-                "functionalTestTask1", "", "",
-                List.of(
-                    Map.of(
-                        "taskId", "functionalTestTask1",
-                        "name", "functional Test Task 1",
-                        "workingDaysAllowed", 2,
-                        "processCategories", "caseProgression",
-                        "taskType", "functionalTestTask1"
-                    )
-                )
-            ),
-            Arguments.of(
-                "endToEndTask", "TODO", "",
-                List.of(
-                    Map.of(
-                        "taskId", "endToEndTask",
-                        "name", "End To End Task",
-                        "workingDaysAllowed", 2,
-                        "processCategories", "caseProgression",
-                        "taskType", "endToEndTask"
                     )
                 )
             )

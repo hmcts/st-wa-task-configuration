@@ -19,31 +19,32 @@ import java.util.stream.Stream;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.DmnDecisionTable. WA_TASK_TYPES_ST_CIC_CRIMINALJURIESCOMPENSATION;
 
 class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
 
     @BeforeAll
     public static void initialization() {
-        CURRENT_DMN_DECISION_TABLE = DmnDecisionTable.WA_TASK_TYPES_WA_WACASETYPE;
+        CURRENT_DMN_DECISION_TABLE = WA_TASK_TYPES_ST_CIC_CRIMINALJURIESCOMPENSATION;
     }
 
     static Stream<Arguments> scenarioProvider() {
         List<Map<String, String>> taskTypes = List.of(
             Map.of(
-                "taskTypeId", "processApplication",
-                "taskTypeName", "Process Application"
+                "taskTypeId", "registerNewCase",
+                "taskTypeName", "RegisterNewCase"
             ),
             Map.of(
-                "taskTypeId", "reviewAppealSkeletonArgument",
-                "taskTypeName", "Review Appeal Skeleton Argument"
+                "taskTypeId", "vetNewCaseDocuments",
+                "taskTypeName", "VetNewCaseDocuments"
             ),
             Map.of(
-                "taskTypeId", "decideOnTimeExtension",
-                "taskTypeName", "Decide On Time Extension"
+                "taskTypeId", "referCase",
+                "taskTypeName", "ReferCase"
             ),
             Map.of(
-                "taskTypeId", "followUpOverdueCaseBuilding",
-                "taskTypeName", "Follow-up overdue case building"
+                "taskTypeId", "reviewNewCaseAndProvideDirectionsJudge",
+                "taskTypeName", "ReviewNewCaseAndProvideDirectionsJudge"
             ),
             Map.of(
                 "taskTypeId", "attendCma",
@@ -86,7 +87,7 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(1));
         assertThat(logic.getOutputs().size(), is(2));
-        assertThat(logic.getRules().size(), is(8));
+        assertThat(logic.getRules().size(), is(47));
 
     }
 }

@@ -1,17 +1,14 @@
 package uk.gov.hmcts.reform.wataskconfigurationtemplate;
 
-import lombok.extern.slf4j.Slf4j;
 import org.camunda.bpm.dmn.engine.DmnDecision;
 import org.camunda.bpm.dmn.engine.DmnDecisionTableResult;
 import org.camunda.bpm.dmn.engine.DmnEngine;
 import org.camunda.bpm.dmn.engine.DmnEngineConfiguration;
-import org.camunda.bpm.dmn.engine.impl.DefaultDmnEngineConfiguration;
 import org.junit.jupiter.api.BeforeEach;
 
 import java.io.InputStream;
 import java.util.Map;
 
-@Slf4j
 public abstract class DmnDecisionTableBaseUnitTest {
 
     protected static DmnDecisionTable CURRENT_DMN_DECISION_TABLE;
@@ -20,10 +17,10 @@ public abstract class DmnDecisionTableBaseUnitTest {
 
     @BeforeEach
     void setUp() {
-        DefaultDmnEngineConfiguration defaultDmnEngineConfiguration
-            = (DefaultDmnEngineConfiguration) DmnEngineConfiguration.createDefaultDmnEngineConfiguration();
+        dmnEngine = DmnEngineConfiguration
+            .createDefaultDmnEngineConfiguration()
+            .buildEngine();
 
-        dmnEngine = defaultDmnEngineConfiguration.buildEngine();
         // Parse decision
         ClassLoader contextClassLoader = Thread.currentThread().getContextClassLoader();
         InputStream inputStream = contextClassLoader.getResourceAsStream(CURRENT_DMN_DECISION_TABLE.getFileName());
