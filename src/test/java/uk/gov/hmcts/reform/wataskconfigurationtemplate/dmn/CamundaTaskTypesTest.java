@@ -32,36 +32,193 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
         List<Map<String, String>> taskTypes = List.of(
             Map.of(
                 "taskTypeId", "registerNewCase",
-                "taskTypeName", "RegisterNewCase"
+                "taskTypeName", "Register New Case"
             ),
             Map.of(
                 "taskTypeId", "vetNewCaseDocuments",
-                "taskTypeName", "VetNewCaseDocuments"
+                "taskTypeName", "Vet New Case Documents"
             ),
             Map.of(
                 "taskTypeId", "referCase",
-                "taskTypeName", "ReferCase"
+                "taskTypeName", "Refer Case"
             ),
             Map.of(
                 "taskTypeId", "reviewNewCaseAndProvideDirectionsJudge",
-                "taskTypeName", "ReviewNewCaseAndProvideDirectionsJudge"
+                "taskTypeName", "Review new case and provide directions - Judge"
             ),
             Map.of(
-                "taskTypeId", "attendCma",
-                "taskTypeName", "Attend Cma"
+                "taskTypeId", "reviewNewCaseAndProvideDirectionsLO",
+                "taskTypeName", "Review new case and provide directions - Legal Officer"
             ),
             Map.of(
-                "taskTypeId", "reviewRespondentResponse",
-                "taskTypeName", "Review Respondent Response"
+                "taskTypeId", "processDirectionsReturned",
+                "taskTypeName", "Process directions returned"
             ),
             Map.of(
-                "taskTypeId", "followUpOverdueRespondentEvidence",
-                "taskTypeName", "Follow-up overdue respondent evidence"
+                "taskTypeId", "processFurtherEvidence",
+                "taskTypeName", "Process further evidence"
             ),
             Map.of(
-                "taskTypeId", "FOLLOWUPOVERDUERESPONDENTEVIDENCE",
-                "taskTypeName", "Follow-up overdue respondent evidence"
+                "taskTypeId", "reviewTimeExtensionRequestJudge",
+                "taskTypeName", "Review Time extention request - Judge"
+            ),
+            Map.of(
+                "taskTypeId", "reviewTimeExtentionRequestLO",
+                "taskTypeName", "Review Time extention request - Legal Officer"
+            ),
+            Map.of(
+                "taskTypeId", "processTimeExtensionDirectionsReturned",
+                "taskTypeName", "Process time extension directions returned"
+            ),
+            Map.of(
+                "taskTypeId", "followUpNoneComplianceOfDirections",
+                "taskTypeName", "Follow up none compliance of directions (TO DO)"
+            ),
+            Map.of(
+                "taskTypeId", "reviewStrikeOutRequestJudge",
+                "taskTypeName", "Review Strike out request - Judge"
+            ),
+            Map.of(
+                "taskTypeId", "reviewStrikeOutRequestLO",
+                "taskTypeName", "Review Strike out request - Legal Officer"
+            ),
+            Map.of(
+                "taskTypeId", "processStrikeOutDirectionsReturned",
+                "taskTypeName", "Process strike out directions returned"
+            ),
+            Map.of(
+                "taskTypeId", "reviewWithdrawalRequestJudge",
+                "taskTypeName", "Review withdrawal request - Judges"
+            ),
+            Map.of(
+                "taskTypeId", "reviewWithdrawalRequestLO",
+                "taskTypeName", "Review withdrawal request - Legal Officer"
+            ),
+            Map.of(
+                "taskTypeId", "processCaseWithdrawalDirections",
+                "taskTypeName", "Process case withdrawal directions"
+            ),
+            Map.of(
+                "taskTypeId", "reviewRule27RequestJudge",
+                "taskTypeName", "Review Rule 27 request - Judge"
+            ),
+            Map.of(
+                "taskTypeId", "reviewRule27RequestLO",
+                "taskTypeName", "Review Rule 27 request - Legal Officer"
+            ),
+            Map.of(
+                "taskTypeId", "processRule27Decision",
+                "taskTypeName", "Process Rule 27 decision"
+            ),
+            Map.of(
+                "taskTypeId", "reviewStayRequestJudge",
+                "taskTypeName", "Review stay request - Judge"
+            ),
+            Map.of(
+                "taskTypeId", "reviewStayRequestLO",
+                "taskTypeName", "Review stay request - Legal Officer"
+            ),
+            Map.of(
+                "taskTypeId", "processStayDirections",
+                "taskTypeName", "Process stay directions"
+            ),
+            Map.of(
+                "taskTypeId", "reviewListingDirectionsJudge",
+                "taskTypeName", "Review listing directions - Judge"
+            ),
+            Map.of(
+                "taskTypeId", "reviewListingDirectionsLO",
+                "taskTypeName", "Review listing directions - Legal Officer"
+            ),
+            Map.of(
+                "taskTypeId", "processListingDirections",
+                "taskTypeName", "Process listing directions"
+            ),
+            Map.of(
+                "taskTypeId", "stitchCollateHearingBundle",
+                "taskTypeName", "Stitch/collate hearing bundle"
+            ),
+            Map.of(
+                "taskTypeId", "reviewListCaseJudge",
+                "taskTypeName", "Review List Case - Judge"
+            ),
+            Map.of(
+                "taskTypeId", "reviewListCaseLO",
+                "taskTypeName", "Review List Case - Legal Officer"
+            ),
+            Map.of(
+                "taskTypeId", "processDirectionsReListedCase",
+                "taskTypeName", "Process directions re. listed case"
+            ),
+            Map.of(
+                "taskTypeId", "reviewListCaseWithin5DaysJudge",
+                "taskTypeName", "Review list case (within 5 days) - Judge"
+            ),
+            Map.of(
+                "taskTypeId", "reviewListCaseWithin5DaysLO",
+                "taskTypeName", "Review list case (within 5 days) - Legal Officer"
+            ),
+            Map.of(
+                "taskTypeId", "processDirectionsReListedCaseWithin5Days",
+                "taskTypeName", "Process directions re. listed case (within 5 days)"
+            ),
+            Map.of(
+                "taskTypeId", "reviewPostponementRequestJudge",
+                "taskTypeName", "Review Postponement request - Judge"
+            ),
+            Map.of(
+                "taskTypeId", "reviewPostponementRequestLO",
+                "taskTypeName", "Review Postponement request - Legal Officer"
+            ),
+            Map.of(
+                "taskTypeId", "processPostponementDirections",
+                "taskTypeName", "Process postponement directions"
+            ),
+            Map.of(
+                "taskTypeId", "completeHearingOutcome",
+                "taskTypeName", "Complete Hearing Outcome"
+            ),
+            Map.of(
+                "taskTypeId", "issueDecisionNotice",
+                "taskTypeName", "Issue Decision Notice"
+            ),
+            Map.of(
+                "taskTypeId", "reviewCorrectionsRequest",
+                "taskTypeName", "Review Corrections request"
+            ),
+            Map.of(
+                "taskTypeId", "processCorrections",
+                "taskTypeName", "Process corrections"
+            ),
+            Map.of(
+                "taskTypeId", "reviewSetAsideRequest",
+                "taskTypeName", "Review Set Aside requests"
+            ),
+            Map.of(
+                "taskTypeId", "processSetAsideDirections",
+                "taskTypeName", "Process Set Aside directions "
+            ),
+            Map.of(
+                "taskTypeId", "reviewWrittenReasonsRequest",
+                "taskTypeName", "Review Written Reasons request"
+            ),
+            Map.of(
+                "taskTypeId", "processWrittenReasons",
+                "taskTypeName", "Process Written Reasons"
+            ),
+            Map.of(
+                "taskTypeId", "reviewReinstatementRequestJudge",
+                "taskTypeName", "Review Reinstatement request - Judge"
+            ),
+            Map.of(
+                "taskTypeId", "reviewReinstatementRequestLO",
+                "taskTypeName", "Review Reinstatement request - Legal Officer"
+            ),
+            Map.of(
+                "taskTypeId", "processReinstatementDecisionNotice",
+                "taskTypeName", "Process Reinstatement decision notice"
             )
+
         );
         return Stream.of(
             Arguments.of(
