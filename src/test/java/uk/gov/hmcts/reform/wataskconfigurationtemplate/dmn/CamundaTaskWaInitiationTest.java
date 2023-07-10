@@ -43,14 +43,14 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
     @MethodSource("scenarioProvider")
     void given_input_should_return_outcome_dmn(String eventId,
                                                String postEventState,
-                                               String appealType,
+                                               String referalType,
                                                List<Map<String, Object>> expectedDmnOutcome) {
         VariableMap inputVariables = new VariableMapImpl();
         inputVariables.putValue("eventId", eventId);
         inputVariables.putValue("postEventState", postEventState);
-        if (StringUtils.isNotBlank(appealType)) {
+        if (StringUtils.isNotBlank(referalType)) {
             inputVariables.putValue("additionalData", Map.of(
-                "Data", Map.of("appealType", appealType)
+                "Data", Map.of("referalType", referalType)
             ));
         }
 
@@ -133,10 +133,9 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
             + "T18:00";
         return Stream.of(
             Arguments.of(
-                "create-draft-order", "CaseManagement", null,
+                "create-draft-order", "CaseManagement","Withdrawal Request",
                 List.of(
                     Map.of(
-                        "referalType","Withdrawal Request",
                         "taskId", "processCaseWithdrawalDirections",
                         "name", "Process Case Withdrawal Directions",
                         "workingDaysAllowed", 10,
@@ -145,7 +144,6 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "roleCategory","ADMIN"
                     ),
                     Map.of(
-                        "referalType","Rule 27 Request",
                         "taskId", "processRule27Decision",
                         "name", "Process Rule 27 decision",
                         "workingDaysAllowed", 5,
