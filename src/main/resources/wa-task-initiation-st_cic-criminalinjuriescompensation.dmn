@@ -41,7 +41,7 @@
           <text>"CaseManagement"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1dz8lch">
-          <text>Withdrawal Request</text>
+          <text>"Withdrawal Request"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1eerwoc">
           <text></text>
@@ -50,7 +50,7 @@
           <text>"processCaseWithdrawalDirections"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_11crul1">
-          <text>"ProcessCaseWithdrawalDirections"</text>
+          <text>"Process Case Withdrawal Directions"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0j4vwvw">
           <text></text>
@@ -76,7 +76,7 @@
           <text>"CaseManagement"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0qnm89t">
-          <text>Rule 27 Request</text>
+          <text>"Rule 27 Request"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0wqmzfu">
           <text></text>

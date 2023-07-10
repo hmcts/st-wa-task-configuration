@@ -133,15 +133,25 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
             + "T18:00";
         return Stream.of(
             Arguments.of(
-                "create-draft-order", "", "protection",
+                "create-draft-order", "CaseManagement", null,
                 List.of(
                     Map.of(
-                        "taskId", "followUpNonStandardDirection",
-                        "name", "Follow-up non-standard direction",
-                        "workingDaysAllowed", 2,
-                        "delayDuration", 0,
-                        "processCategories", "caseProgression",
-                        "taskType", "followUpNonStandardDirection"
+                        "referalType","Withdrawal Request",
+                        "taskId", "processCaseWithdrawalDirections",
+                        "name", "Process Case Withdrawal Directions",
+                        "workingDaysAllowed", 10,
+                        "processCategories", "processCaseWithdrawalDirections",
+                        "workType", "routine_work",
+                        "roleCategory","ADMIN"
+                    ),
+                    Map.of(
+                        "referalType","Rule 27 Request",
+                        "taskId", "processRule27Decision",
+                        "name", "Process Rule 27 decision",
+                        "workingDaysAllowed", 5,
+                        "processCategories", "processRule27Decision",
+                        "workType", "routine_work",
+                        "roleCategory","ADMIN"
                     )
                 )
             )
@@ -152,7 +162,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(22));
+        assertThat(logic.getRules().size(), is(2));
 
     }
 
