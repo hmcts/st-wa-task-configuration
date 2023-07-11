@@ -26,14 +26,14 @@
       <output id="OutputClause_165p3r3" label="Delay Duration" name="delayDuration" typeRef="integer" />
       <output id="OutputClause_0i6c6c2" label="Working Days Allowed" name="workingDaysAllowed" typeRef="integer" />
       <output id="OutputClause_10rno4c" label="Process Categories Identifiers" name="processCategories" typeRef="string" biodi:width="300" />
-      <output id="OutputClause_1wziqr5" name="Work Type" typeRef="string" />
-      <output id="OutputClause_09b12hk" name="Role Category" typeRef="string" />
+      <output id="OutputClause_1wziqr5" label="Work Type" name="workType" typeRef="string" />
+      <output id="OutputClause_09b12hk" label="Role Category" name="roleCategory" typeRef="string" />
       <rule id="DecisionRule_0in26ix">
         <inputEntry id="UnaryTests_1mtpy0d">
           <text>"create-draft-order"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0pzaled">
-          <text>"CaseManagement"</text>
+          <text>"caseManagement"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1dz8lch">
           <text>"Withdrawal Request"</text>
@@ -65,7 +65,7 @@
           <text>"create-draft-order"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0n012li">
-          <text>"CaseManagement"</text>
+          <text>"caseManagement"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0qnm89t">
           <text>"Rule 27 Request"</text>
@@ -74,7 +74,7 @@
           <text>"processRule27Decision"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0jzg2t0">
-          <text>"Process Rule 27 decision  "</text>
+          <text>"Process Rule 27 decision"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_13y7o0t">
           <text></text>
