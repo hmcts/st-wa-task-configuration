@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 
 public class ConfigurationExpectationBuilder {
     private static List<String> EXPECTED_PROPERTIES = Arrays.asList(
-      "majorPriority","minorPriority","workType", "roleCategory","dueDateIntervalDays"
+        "majorPriority","minorPriority","workType", "roleCategory","dueDateIntervalDays"
     );
     private static DateTimeFormatter dateTimeFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm");
 
