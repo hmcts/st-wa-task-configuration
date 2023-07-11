@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.12.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.11.0">
   <decision id="wa-task-initiation-st_cic-criminalinjuriescompensation" name="Task initiation DMN">
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT">
       <input id="Input_1" label="Event Id" camunda:inputVariable="eventId">
@@ -14,12 +14,11 @@
       </input>
       <input id="InputClause_0oaaasz" label="Referal Type" biodi:width="305" camunda:inputVariable="referalType">
         <inputExpression id="LiteralExpression_0asduwj" typeRef="string">
-          <text>if additonalData!=null and additonalData.Data!=null then additionaData.Data.referToJudgeReferralReason</text>
-        </inputExpression>
-      </input>
-      <input id="InputClause_0i4fklh">
-        <inputExpression id="LiteralExpression_0o11hwd" typeRef="string">
-          <text></text>
+          <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.referToJudgeReferralReason
+            != null) then
+            additionalData.Data.referToJudgeReferralReason
+            else
+            null</text>
         </inputExpression>
       </input>
       <output id="Output_1" label="Task Id" name="taskId" typeRef="string" biodi:width="320" />
@@ -27,40 +26,69 @@
       <output id="OutputClause_165p3r3" label="Delay Duration" name="delayDuration" typeRef="integer" />
       <output id="OutputClause_0i6c6c2" label="Working Days Allowed" name="workingDaysAllowed" typeRef="integer" />
       <output id="OutputClause_10rno4c" label="Process Categories Identifiers" name="processCategories" typeRef="string" biodi:width="300" />
-      <output id="OutputClause_1wziqr5" name="Work Type" typeRef="string" />
-      <output id="OutputClause_09b12hk" name="Role Category" typeRef="string" />
+      <output id="OutputClause_1wziqr5" label="Work Type" name="workType" typeRef="string" />
+      <output id="OutputClause_09b12hk" label="Role Category" name="roleCategory" typeRef="string" />
       <rule id="DecisionRule_0in26ix">
         <inputEntry id="UnaryTests_1mtpy0d">
           <text>"create-draft-order"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0pzaled">
-          <text>"CaseManagement"</text>
+          <text>"caseManagement"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1dz8lch">
-          <text>Withdrawal Request</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1eerwoc">
-          <text></text>
+          <text>"Withdrawal Request"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0yp6gfj">
           <text>"processCaseWithdrawalDirections"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_11crul1">
-          <text>"ProcessCaseWithdrawalDirections"</text>
+          <text>"Process Case Withdrawal Directions"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0j4vwvw">
-          <text>0</text>
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0h32jop">
-          <text></text>
+          <text>10</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1p20qkn">
-          <text></text>
+          <text>"processCaseWithdrawalDirections"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0te3ddw">
-          <text>"Routine Work"</text>
+          <text>"routine_work"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_19ua141">
+          <text>"ADMIN"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_168dkw1">
+        <inputEntry id="UnaryTests_17eiv08">
+          <text>"create-draft-order"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0n012li">
+          <text>"caseManagement"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0qnm89t">
+          <text>"Rule 27 Request"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1lnidik">
+          <text>"processRule27Decision"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0jzg2t0">
+          <text>"Process Rule 27 decision"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_13y7o0t">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0hflb8j">
+          <text>5</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0w2f8mx">
+          <text>"processRule27Decision"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0r4i2j8">
+          <text>"routine_work"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1dvtw76">
           <text>"ADMIN"</text>
         </outputEntry>
       </rule>

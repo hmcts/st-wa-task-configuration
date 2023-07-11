@@ -19,47 +19,24 @@ import java.util.stream.Stream;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.DmnDecisionTable. WA_TASK_TYPES_ST_CIC_CRIMINALJURIESCOMPENSATION;
 
 class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
 
     @BeforeAll
     public static void initialization() {
-        CURRENT_DMN_DECISION_TABLE = DmnDecisionTable.WA_TASK_TYPES_WA_WACASETYPE;
+        CURRENT_DMN_DECISION_TABLE = WA_TASK_TYPES_ST_CIC_CRIMINALJURIESCOMPENSATION;
     }
 
     static Stream<Arguments> scenarioProvider() {
         List<Map<String, String>> taskTypes = List.of(
             Map.of(
-                "taskTypeId", "processApplication",
-                "taskTypeName", "Process Application"
+                "taskTypeId", "processCaseWithdrawalDirections",
+                "taskTypeName", "Process Case Withdrawal Directions"
             ),
             Map.of(
-                "taskTypeId", "reviewAppealSkeletonArgument",
-                "taskTypeName", "Review Appeal Skeleton Argument"
-            ),
-            Map.of(
-                "taskTypeId", "decideOnTimeExtension",
-                "taskTypeName", "Decide On Time Extension"
-            ),
-            Map.of(
-                "taskTypeId", "followUpOverdueCaseBuilding",
-                "taskTypeName", "Follow-up overdue case building"
-            ),
-            Map.of(
-                "taskTypeId", "attendCma",
-                "taskTypeName", "Attend Cma"
-            ),
-            Map.of(
-                "taskTypeId", "reviewRespondentResponse",
-                "taskTypeName", "Review Respondent Response"
-            ),
-            Map.of(
-                "taskTypeId", "followUpOverdueRespondentEvidence",
-                "taskTypeName", "Follow-up overdue respondent evidence"
-            ),
-            Map.of(
-                "taskTypeId", "FOLLOWUPOVERDUERESPONDENTEVIDENCE",
-                "taskTypeName", "Follow-up overdue respondent evidence"
+                "taskTypeId", "processRule27Decision",
+                "taskTypeName", "Process Rule 27 decision"
             )
         );
         return Stream.of(
@@ -86,7 +63,7 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(1));
         assertThat(logic.getOutputs().size(), is(2));
-        assertThat(logic.getRules().size(), is(8));
+        assertThat(logic.getRules().size(), is(2));
 
     }
 }

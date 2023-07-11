@@ -10,268 +10,38 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
-import uk.gov.hmcts.reform.wataskconfigurationtemplate.DmnDecisionTable;
 import uk.gov.hmcts.reform.wataskconfigurationtemplate.DmnDecisionTableBaseUnitTest;
 
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
 
-import static java.util.Arrays.asList;
-import static java.util.Collections.emptyList;
-import static java.util.Collections.emptyMap;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.DmnDecisionTable. WA_TASK_COMPLETION_ST_CIC_CRIMINALJURIESCOMPENSATION;
 
 class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
 
     @BeforeAll
     public static void initialization() {
-        CURRENT_DMN_DECISION_TABLE = DmnDecisionTable.WA_TASK_COMPLETION_WA_WACASETYPE;
+        CURRENT_DMN_DECISION_TABLE =  WA_TASK_COMPLETION_ST_CIC_CRIMINALJURIESCOMPENSATION;
     }
 
     static Stream<Arguments> scenarioProvider() {
 
         return Stream.of(
             Arguments.of(
-                "requestRespondentEvidence",
-                asList(
+                "sendOrder",
+                List.of(
                     Map.of(
-                        "taskType", "reviewTheAppeal",
-                        "completionMode", "Auto"
-                    ),
-                    emptyMap()
-                )
-            ),
-            Arguments.of(
-                "requestCaseBuilding",
-                asList(
-                    Map.of(
-                        "taskType", "reviewRespondentEvidence",
-                        "completionMode", "Auto"
-                    ),
-                    emptyMap()
-                )
-            ),
-            Arguments.of(
-                "requestReasonsForAppeal",
-                asList(
-                    Map.of(
-                        "taskType", "reviewRespondentEvidence",
-                        "completionMode", "Auto"
-                    ),
-                    emptyMap()
-                )
-            ),
-            Arguments.of(
-                "sendDirection",
-                asList(
-                    Map.of(
-                        "taskType", "reviewRespondentEvidence",
-                        "completionMode", "Auto"
-                    ),
-                    emptyMap()
-                )
-            ),
-            Arguments.of(
-                "requestResponseReview",
-                asList(
-                    Map.of(
-                        "taskType", "reviewReasonsForAppeal",
+                        "taskType", "processCaseWithdrawalDirections",
                         "completionMode", "Auto"
                     ),
                     Map.of(
-                        "taskType", "reviewClarifyingQuestionsAnswers",
-                        "completionMode", "Auto"
-                    ),
-                    Map.of(
-                        "taskType", "reviewRespondentResponse",
+                        "taskType", "processRule27Decision",
                         "completionMode", "Auto"
                     )
                 )
-            ),
-            Arguments.of(
-                "requestRespondentReview",
-                asList(
-                    Map.of(
-                        "taskType", "reviewAppealSkeletonArgument",
-                        "completionMode", "Auto"
-                    ),
-                    emptyMap()
-                )
-            ),
-            Arguments.of(
-                "requestCaseEdit",
-                asList(
-                    Map.of(
-                        "taskType", "reviewAppealSkeletonArgument",
-                        "completionMode", "Auto"
-                    ),
-                    emptyMap()
-                )
-            ),
-            Arguments.of(
-                "sendDirectionWithQuestions",
-                asList(
-                    Map.of(
-                        "taskType", "reviewReasonsForAppeal",
-                        "completionMode", "Auto"
-                    ),
-                    Map.of(
-                        "taskType", "reviewClarifyingQuestionsAnswers",
-                        "completionMode", "Auto"
-                    ),
-                    emptyMap()
-                )
-            ),
-            Arguments.of(
-                "requestCmaRequirements",
-                asList(
-                    Map.of(
-                        "taskType", "reviewReasonsForAppeal",
-                        "completionMode", "Auto"
-                    ),
-                    Map.of(
-                        "taskType", "reviewClarifyingQuestionsAnswers",
-                        "completionMode", "Auto"
-                    ),
-                    emptyMap()
-                )
-            ),
-            Arguments.of(
-                "markEvidenceAsReviewed",
-                asList(
-                    Map.of(
-                        "taskType", "reviewAdditionalEvidence",
-                        "completionMode", "Auto"
-                    ),
-                    Map.of(
-                        "taskType", "reviewAdditionalHomeOfficeEvidence",
-                        "completionMode", "Auto"
-                    )
-                )
-            ),
-            Arguments.of(
-                "uploadAdditionalEvidenceHomeOffice",
-                asList(
-                    Map.of(
-                        "taskType", "reviewAdditionalHomeOfficeEvidence",
-                        "completionMode", "Auto"
-                    )
-                )
-            ),
-            Arguments.of(
-                "reviewCmaRequirements",
-                asList(
-                    Map.of(
-                        "taskType", "reviewCmaRequirements",
-                        "completionMode", "Auto"
-                    ),
-                    emptyMap()
-                )
-            ),
-            Arguments.of(
-                "updateDetailsAfterCma",
-                asList(
-                    Map.of(
-                        "taskType", "attendCma",
-                        "completionMode", "Auto"
-                    ),
-                    emptyMap()
-                )
-            ),
-            Arguments.of(
-                "requestResponseAmend",
-                asList(
-                    Map.of(
-                        "taskType", "reviewRespondentResponse",
-                        "completionMode", "Auto"
-                    ),
-                    emptyMap()
-                )
-            ),
-            Arguments.of(
-                "reviewHearingRequirements",
-                asList(
-                    Map.of(
-                        "taskType", "reviewHearingRequirements",
-                        "completionMode", "Auto"
-                    ),
-                    emptyMap()
-                )
-            ),
-            Arguments.of(
-                "createCaseSummary",
-                asList(
-                    Map.of(
-                        "taskType", "createCaseSummary",
-                        "completionMode", "Auto"
-                    ),
-                    emptyMap()
-                )
-            ),
-            Arguments.of(
-                "generateHearingBundle",
-                asList(
-                    Map.of(
-                        "taskType", "createHearingBundle",
-                        "completionMode", "Auto"
-                    ),
-                    emptyMap()
-                )
-            ),
-            Arguments.of(
-                "decisionAndReasonsStarted",
-                asList(
-                    Map.of(
-                        "taskType", "startDecisionsAndReasonsDocument",
-                        "completionMode", "Auto"
-                    ),
-                    emptyMap()
-                )
-            ),
-            Arguments.of(
-                "recordAllocatedJudge",
-                asList(
-                    Map.of(
-                        "taskType", "allocateFtpaToJudge",
-                        "completionMode", "Auto"
-                    ),
-                    emptyMap()
-                )
-            ),
-            Arguments.of(
-                "changeDirectionDueDate",
-                asList(
-                    Map.of(
-                        "taskType", "decideOnTimeExtension",
-                        "completionMode", "Auto"
-                    ),
-                    emptyMap()
-                )
-            ),
-            Arguments.of(
-                "decideAnApplication",
-                asList(
-                    Map.of(
-                        "taskType", "processApplication",
-                        "completionMode", "Auto"
-                    ),
-                    emptyMap()
-                )
-            ),
-            Arguments.of(
-                "specificAccessRequest",
-                asList(
-                    Map.of(
-                        "taskType", "reviewSpecificAccessRequestLegalOps",
-                        "completionMode", "Auto"
-                    )
-                )
-            ),
-            Arguments.of(
-                "unknownEvent",
-                emptyList()
             )
         );
     }
@@ -292,7 +62,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
 
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(20));
+        assertThat(logic.getRules().size(), is(2));
 
     }
 
