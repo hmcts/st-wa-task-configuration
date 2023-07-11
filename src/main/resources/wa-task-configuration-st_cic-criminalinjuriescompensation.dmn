@@ -54,23 +54,6 @@ null</text>
           <text>true</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_12go0dx">
-        <inputEntry id="UnaryTests_1ybcny9">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0lhgsdk">
-          <text>"processCaseWithdrawalDirections"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1md4v9y">
-          <text>"defPriorityDate"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0chvpdf">
-          <text>dueDate</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1hc6ki6">
-          <text>true</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_1uuyxon">
         <inputEntry id="UnaryTests_0jhl5zg">
           <text></text>
