@@ -37,7 +37,7 @@
           <text>"Regional-Centre-Admin"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0dkpkpd">
-          <text>"Read, Own, Claim, Unclaim,Manage, UnclaimAssign"</text>
+          <text>"Read,Own,Claim,Unclaim,Manage,UnclaimAssign"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1i76hru">
           <text>"ADMIN"</text>
@@ -66,7 +66,7 @@
           <text>"Regional-Centre-Team-Leader"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0atan6s">
-          <text>"Read, Own, Claim, Unclaim, Manage, UnclaimAssign,Assign, Unassign,Cancel"</text>
+          <text>"Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_170qe3v">
           <text>"ADMIN"</text>
