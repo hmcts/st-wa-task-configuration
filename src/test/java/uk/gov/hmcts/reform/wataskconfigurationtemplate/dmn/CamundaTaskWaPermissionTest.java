@@ -62,8 +62,9 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
             )
         );
     }
-    @ParameterizedTest(name = "task type: {0} case data: {1}")
-    @MethodSource("scenarioProvider")
+
+    @ParameterizedTest (name = "task type: {0} case data: {1}")
+    @MethodSource ("scenarioProvider")
     void given_null_or_empty_inputs_when_evaluate_dmn_it_returns_expected_rules(String taskType,
                                                                                 String caseData,
                                                                                 List<Map<String, String>> expectation) {
