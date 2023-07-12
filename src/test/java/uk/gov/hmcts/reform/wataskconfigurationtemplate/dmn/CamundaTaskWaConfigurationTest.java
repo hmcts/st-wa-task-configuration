@@ -43,6 +43,9 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue("workType", "routine_work", true)
                     .expectedValue("roleCategory", "ADMIN", true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "10", true)
+                    .expectedValue("description", "[Orders: Send order](/cases/case-details"
+                        + "/${[CASE_REFERENCE]}/trigger/caseworker-send-order/"
+                        + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType",true)
                     .build()
             ),
             Arguments.of(
@@ -54,6 +57,11 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue("workType", "routine_work", true)
                     .expectedValue("roleCategory", "ADMIN", true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "5", true)
+                    .expectedValue("description",
+                                   "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                                       + "/caseworker-send-order/"
+                                       + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType",
+                                    true)
                     .build()
             )
         );
@@ -82,7 +90,7 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(6));
+        assertThat(logic.getRules().size(), is(7));
     }
 
     private void resultsMatch(List<Map<String, Object>> results, List<Map<String, Object>> expectation) {
