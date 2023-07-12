@@ -25,7 +25,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1o9uf1g">
-          <text>"processCaseWithdrawalDirections","processRule27Decision"</text>
+          <text>"processCaseWithdrawalDirections","processRule27Decision","processListingDirections"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1vuc06b">
           <text>"majorPriority"</text>
@@ -42,7 +42,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0ge5t9c">
-          <text>"processCaseWithdrawalDirections","processRule27Decision"</text>
+          <text>"processCaseWithdrawalDirections","processRule27Decision","processListingDirections"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1qbzk71">
           <text>"minorPriority"</text>
@@ -59,7 +59,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0t4gfyx">
-          <text>"processRule27Decision","processCaseWithdrawalDirections"</text>
+          <text>"processRule27Decision","processCaseWithdrawalDirections","processListingDirections"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_15pmpia">
           <text>"workType"</text>
@@ -76,7 +76,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_055g5ba">
-          <text>"processRule27Decision","processCaseWithdrawalDirections"</text>
+          <text>"processRule27Decision","processCaseWithdrawalDirections","processListingDirections"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1ubz0s5">
           <text>"roleCategory"</text>
@@ -119,6 +119,23 @@ null</text>
           <text>10</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1nvij8q">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1rwvbmf">
+        <inputEntry id="UnaryTests_0efjmpa">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06mro4h">
+          <text>"processListingDirections"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_095aviq">
+          <text>"dueDateIntervalDays"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_16t0fv8">
+          <text>1</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0uzeei4">
           <text>true</text>
         </outputEntry>
       </rule>
