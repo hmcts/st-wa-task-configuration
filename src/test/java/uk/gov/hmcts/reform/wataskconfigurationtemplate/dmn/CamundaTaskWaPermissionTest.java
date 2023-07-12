@@ -42,6 +42,11 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "processRule27Decision",
                 "someCaseData",
                 defaultAdminPermissions()
+            ),
+            Arguments.of(
+                "processListingDirections",
+                "someCaseData",
+                defaultAdminPermissions()
             )
         );
     }
