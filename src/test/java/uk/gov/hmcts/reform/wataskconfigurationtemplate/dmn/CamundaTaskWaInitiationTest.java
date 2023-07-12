@@ -31,8 +31,8 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
         return Stream.of(
             Arguments.of(
                 "create-draft-order",
-                "caseManagement",
-                Map.of("Data", Map.of("referToJudgeReferralReason", "Withdrawal Request")),
+                "CaseManagement",
+                Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Withdrawal request")),
                 List.of(
                     Map.of(
                         "taskId", "processCaseWithdrawalDirections",
@@ -46,8 +46,8 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "create-draft-order",
-                "caseManagement",
-                Map.of("Data", Map.of("referToJudgeReferralReason", "Rule 27 Request")),
+                "CaseManagement",
+                Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Rule 27 request")),
                 List.of(
                     Map.of(
                         "taskId", "processRule27Decision",
@@ -62,7 +62,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "create-draft-order",
                 "caseManagement",
-                Map.of("Data", Map.of("referToJudgeReferralReason", "Listing Directions")),
+                Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Listing directions")),
                 List.of(
                     Map.of(
                         "taskId", "processListingDirections",
