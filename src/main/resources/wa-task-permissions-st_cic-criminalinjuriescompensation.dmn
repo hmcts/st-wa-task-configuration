@@ -25,7 +25,7 @@
       <output id="OutputClause_04cbxc1" label="Auto Assignable" name="autoAssignable" typeRef="boolean" biodi:width="150" />
       <rule id="DecisionRule_1qs3glb">
         <inputEntry id="UnaryTests_0l9ifw6">
-          <text>"processCaseWithdrawalDirections","processRule27Decision"</text>
+          <text>"processCaseWithdrawalDirections","processRule27Decision","processListingDirections"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_175p0w3">
           <text></text>
@@ -54,7 +54,7 @@
       </rule>
       <rule id="DecisionRule_1wt3p0o">
         <inputEntry id="UnaryTests_0dx0tat">
-          <text>"processCaseWithdrawalDirections","processRule27Decision"</text>
+          <text>"processCaseWithdrawalDirections","processRule27Decision","processListingDirections"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0wy7as6">
           <text></text>

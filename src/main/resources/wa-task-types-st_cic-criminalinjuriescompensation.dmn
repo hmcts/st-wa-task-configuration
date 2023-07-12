@@ -31,6 +31,17 @@
           <text>"Process Rule 27 decision"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_058e0ch">
+        <inputEntry id="UnaryTests_13r5qvi">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1i8vy9w">
+          <text>"processListingDirections"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ibp43l">
+          <text>"Process listing directions"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

@@ -63,6 +63,17 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                                        + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType",
                                     true)
                     .build()
+            ),
+            Arguments.of(
+                "processListingDirections",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue(MINOR_PRIORITY, "500", true)
+                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+                    .expectedValue("workType", "routine_work", true)
+                    .expectedValue("roleCategory", "ADMIN", true)
+                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", true)
+                    .build()
             )
         );
     }
