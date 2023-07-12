@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.11.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.12.0">
   <decision id="wa-task-configuration-st_cic-criminalinjuriescompensation" name="Task configuration DMN">
     <decisionTable id="DecisionTable_14cx079" hitPolicy="RULE ORDER">
       <input id="InputClause_1gxyo7f" label="CCD Case Data" camunda:inputVariable="caseData">
@@ -25,7 +25,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1o9uf1g">
-          <text>"processCaseWithdrawalDirections","processRule27Decision"</text>
+          <text>"processCaseWithdrawalDirections","processRule27Decision","processListingDirections"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1vuc06b">
           <text>"majorPriority"</text>
@@ -42,7 +42,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0ge5t9c">
-          <text>"processCaseWithdrawalDirections","processRule27Decision"</text>
+          <text>"processCaseWithdrawalDirections","processRule27Decision","processListingDirections"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1qbzk71">
           <text>"minorPriority"</text>
@@ -59,7 +59,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0t4gfyx">
-          <text>"processRule27Decision","processCaseWithdrawalDirections"</text>
+          <text>"processRule27Decision","processCaseWithdrawalDirections","processListingDirections"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_15pmpia">
           <text>"workType"</text>
@@ -76,7 +76,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_055g5ba">
-          <text>"processRule27Decision","processCaseWithdrawalDirections"</text>
+          <text>"processRule27Decision","processCaseWithdrawalDirections","processListingDirections"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1ubz0s5">
           <text>"roleCategory"</text>
@@ -122,12 +122,29 @@ null</text>
           <text>true</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1bixwes">
+        <inputEntry id="UnaryTests_1rkcqr9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_043qnbi">
+          <text>"processListingDirections"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1g03p5z">
+          <text>"dueDateIntervalDays"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_08rhckn">
+          <text>1</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1xikm0r">
+          <text>true</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_163bftv">
         <inputEntry id="UnaryTests_0jad3xs">
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1cuepcw">
-          <text>"processCaseWithdrawalDirections","processRule27Decision"</text>
+          <text>"processCaseWithdrawalDirections","processRule27Decision","processListingDirections"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0em2bsa">
           <text>"description"</text>
@@ -136,23 +153,6 @@ null</text>
           <text>"[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger/caseworker-send-order/caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_07pv3yt">
-          <text>true</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1rwvbmf">
-        <inputEntry id="UnaryTests_0efjmpa">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_06mro4h">
-          <text>"processListingDirections"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_095aviq">
-          <text>"dueDateIntervalDays"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_16t0fv8">
-          <text>1</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0uzeei4">
           <text>true</text>
         </outputEntry>
       </rule>

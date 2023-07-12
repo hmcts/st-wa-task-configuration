@@ -100,7 +100,7 @@
           <text>"caseManagement"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1x1xh5g">
-          <text>"Listing Directions"</text>
+          <text>"Listing directions"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1asoilt">
           <text>"processListingDirections"</text>
