@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.12.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.11.0">
   <decision id="wa-task-initiation-st_cic-criminalinjuriescompensation" name="Task initiation DMN">
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT">
       <input id="Input_1" label="Event Id" camunda:inputVariable="eventId">
@@ -97,7 +97,7 @@
           <text>"create-draft-order"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_16ay1gv">
-          <text>"caseManagement"</text>
+          <text>"CaseManagement"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1x1xh5g">
           <text>"Listing directions"</text>
@@ -121,6 +121,38 @@
           <text>"routine_work"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1h3nomv">
+          <text>"ADMIN"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_16em82u">
+        <inputEntry id="UnaryTests_04bu42v">
+          <text>"createBundle"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0wgqr2z">
+          <text>"AwaitingHearing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1mzvugt">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1g19enp">
+          <text>"stitchCollateHearingBundle"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_13dg32p">
+          <text>"Stitch/collate hearing bundle"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1guejkt">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ec5za0">
+          <text>1</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0qy76oq">
+          <text>"stitchCollateHearingBundle"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1iqrg9o">
+          <text>"hearing_work"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1h8eexl">
           <text>"ADMIN"</text>
         </outputEntry>
       </rule>
