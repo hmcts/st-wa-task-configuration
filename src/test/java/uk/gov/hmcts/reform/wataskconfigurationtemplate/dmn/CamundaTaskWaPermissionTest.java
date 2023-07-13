@@ -49,19 +49,32 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
                 defaultAdminPermissions()
             ),
            Arguments.of(
-                "processSetAsideDirections",
-                "someCaseData",
-                defaultAdminPermissions()
-            ),
-            Arguments.of(
-
                 "processDirectionsReListedCase",
                 "someCaseData",
                 defaultAdminPermissions()
             ),
             Arguments.of(
                 "processDirectionsReListedCaseWithin5Days",
-
+                "someCaseData",
+                defaultAdminPermissions()
+            ),
+            Arguments.of(
+                "processSetAsideDirections",
+                "someCaseData",
+                defaultAdminPermissions()
+            ),
+            Arguments.of(
+                "processCorrections",
+                "someCaseData",
+                defaultAdminPermissions()
+            ),
+            Arguments.of(
+                "processDirectionsReturned",
+                "someCaseData",
+                defaultAdminPermissions()
+            ),
+            Arguments.of(
+                "processPostponementDirections",
                 "someCaseData",
                 defaultAdminPermissions()
             )
