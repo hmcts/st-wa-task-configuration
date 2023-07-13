@@ -75,6 +75,17 @@
           <text>"Process Set Aside directions"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1kex1c3">
+        <inputEntry id="UnaryTests_01pfudd">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0l1nfl0">
+          <text>"processCorrections"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1vmxr1d">
+          <text>"Process postponement directions"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

@@ -220,6 +220,38 @@
           <text>"ADMIN"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1f0itmp">
+        <inputEntry id="UnaryTests_1wzhpxu">
+          <text>"create-draft-order"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ha0chn">
+          <text>"CaseClosed"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1x7z05s">
+          <text>"Corrections"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1e1mo4d">
+          <text>"processCorrections"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0nhuvfo">
+          <text>"Process postponement directions"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0wokuuh">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_06ca55w">
+          <text>3</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_01iuler">
+          <text>"processCorrections"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ea3zwf">
+          <text>"decision_making_work"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0j866o6">
+          <text>"ADMIN"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
