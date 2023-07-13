@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.11.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.12.0">
   <decision id="wa-task-initiation-st_cic-criminalinjuriescompensation" name="Task initiation DMN">
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT">
       <input id="Input_1" label="Event Id" camunda:inputVariable="eventId">
@@ -313,6 +313,38 @@
           <text>"decision_making_work"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1ee8isf">
+          <text>"ADMIN"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0v2h1eb">
+        <inputEntry id="UnaryTests_1ywwbgy">
+          <text>"create-draft-order"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0tensix">
+          <text>"CaseManagement"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1w9ns8k">
+          <text>"Time extension request"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0hhu9vy">
+          <text>"processTimeExtensionDirectionsReturned"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0hsahci">
+          <text>"Process time extension directions returned"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0qeyc6z">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_05j8w47">
+          <text>1</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_189lec7">
+          <text>"processTimeExtensionDirectionsReturned"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0bfpdrc">
+          <text>"decision_making_work"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_12ctys0">
           <text>"ADMIN"</text>
         </outputEntry>
       </rule>
