@@ -42,6 +42,7 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+
       <rule id="DecisionRule_1s4arv5">
         <inputEntry id="UnaryTests_1lh2v44">
           <text>"sendOrder"</text>
@@ -50,6 +51,27 @@
           <text>"processSetAsideDirections"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1m7sdsi">
+
+      <rule id="DecisionRule_0vw5fia">
+        <inputEntry id="UnaryTests_0ckg8ai">
+          <text>"sendOrder"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_06ucxu5">
+          <text>"processDirectionsReListedCase"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ymor4t">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0cl3qf8">
+        <inputEntry id="UnaryTests_1c7t6l2">
+          <text>"sendOrder"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0l0d667">
+          <text>"processDirectionsReListedCaseWithin5Days"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1xgnisw">
+
           <text>"Auto"</text>
         </outputEntry>
       </rule>

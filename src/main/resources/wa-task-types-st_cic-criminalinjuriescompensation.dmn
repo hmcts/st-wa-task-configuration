@@ -42,6 +42,7 @@
           <text>"Process listing directions"</text>
         </outputEntry>
       </rule>
+
       <rule id="DecisionRule_0vdzvio">
         <inputEntry id="UnaryTests_142w1z9">
           <text></text>
@@ -51,6 +52,28 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_19hbw0w">
           <text>"Process Set Aside directions"</text>
+
+      <rule id="DecisionRule_0s8x9ui">
+        <inputEntry id="UnaryTests_1k3d7na">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1o9i2fb">
+          <text>"processDirectionsReListedCase"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1w1yxl8">
+          <text>"Process directions re. listed case"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1wbpz3c">
+        <inputEntry id="UnaryTests_1o2evz5">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_172iuee">
+          <text>"processDirectionsReListedCaseWithin5Days"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1gviy53">
+          <text>"Process directions re. listed case (within 5 days)"</text>
+
         </outputEntry>
       </rule>
     </decisionTable>
