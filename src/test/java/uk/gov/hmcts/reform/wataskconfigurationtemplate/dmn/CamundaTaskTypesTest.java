@@ -42,8 +42,8 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
                 "taskTypeName", "Process listing directions"
             ),
             Map.of(
-                "taskTypeId", "stitchCollateHearingBundle",
-                "taskTypeName", "Stitch/collate hearing bundle"
+                "taskTypeId", "processDirectionsReListedCase",
+                "taskTypeName", "Process directions re. listed case"
             )
         );
         return Stream.of(

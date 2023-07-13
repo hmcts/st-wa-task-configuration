@@ -42,15 +42,15 @@
           <text>"Process listing directions"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_0y18st3">
-        <inputEntry id="UnaryTests_17biyj0">
+      <rule id="DecisionRule_0s8x9ui">
+        <inputEntry id="UnaryTests_1k3d7na">
           <text></text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_0vhkzcz">
-          <text>"stitchCollateHearingBundle"</text>
+        <outputEntry id="LiteralExpression_1o9i2fb">
+          <text>"processDirectionsReListedCase"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_1i6u3nf">
-          <text>"Stitch/collate hearing bundle"</text>
+        <outputEntry id="LiteralExpression_1w1yxl8">
+          <text>"Process directions re. listed case"</text>
         </outputEntry>
       </rule>
     </decisionTable>

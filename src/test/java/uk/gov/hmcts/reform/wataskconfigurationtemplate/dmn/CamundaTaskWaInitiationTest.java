@@ -61,7 +61,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "create-draft-order",
-                "caseManagement",
+                "CaseManagement",
                 Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Listing directions")),
                 List.of(
                     Map.of(
@@ -77,13 +77,13 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "create-draft-order",
                 "AwaitingHearing",
-               null,
+                Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Listed case")),
                 List.of(
                     Map.of(
-                        "taskId", "processListingDirections",
-                        "name", "Process listing directions",
+                        "taskId", "processDirectionsReListedCase",
+                        "name", "Process directions re. listed case",
                         "workingDaysAllowed", 1,
-                        "processCategories", "processListingDirections",
+                        "processCategories", "processDirectionsReListedCase",
                         "workType", "routine_work",
                         "roleCategory","ADMIN"
                     )

@@ -124,35 +124,35 @@
           <text>"ADMIN"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_16em82u">
-        <inputEntry id="UnaryTests_04bu42v">
-          <text>"createBundle"</text>
+      <rule id="DecisionRule_1rinmce">
+        <inputEntry id="UnaryTests_04qbxxh">
+          <text>"create-draft-order"</text>
         </inputEntry>
-        <inputEntry id="UnaryTests_0wgqr2z">
+        <inputEntry id="UnaryTests_1u6wdw1">
           <text>"AwaitingHearing"</text>
         </inputEntry>
-        <inputEntry id="UnaryTests_1mzvugt">
-          <text></text>
+        <inputEntry id="UnaryTests_10l345j">
+          <text>"Listed case"</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_1g19enp">
-          <text>"stitchCollateHearingBundle"</text>
+        <outputEntry id="LiteralExpression_0b4aoaz">
+          <text>"processDirectionsReListedCase"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_13dg32p">
-          <text>"Stitch/collate hearing bundle"</text>
+        <outputEntry id="LiteralExpression_0m7ltxx">
+          <text>"Process directions re. listed case"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_1guejkt">
+        <outputEntry id="LiteralExpression_0oe9vbi">
           <text></text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_0ec5za0">
+        <outputEntry id="LiteralExpression_0lhyr1i">
           <text>1</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_0qy76oq">
-          <text>"stitchCollateHearingBundle"</text>
+        <outputEntry id="LiteralExpression_0oxny7o">
+          <text>"processDirectionsReListedCase"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_1iqrg9o">
-          <text>"hearing_work"</text>
+        <outputEntry id="LiteralExpression_01s3zl8">
+          <text>"routine_work"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_1h8eexl">
+        <outputEntry id="LiteralExpression_1gua9uc">
           <text>"ADMIN"</text>
         </outputEntry>
       </rule>

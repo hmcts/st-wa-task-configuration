@@ -42,14 +42,14 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1hzyqy5">
-        <inputEntry id="UnaryTests_0t49zg8">
-          <text>"issueBundle"</text>
+      <rule id="DecisionRule_0vw5fia">
+        <inputEntry id="UnaryTests_0ckg8ai">
+          <text>"sendOrder"</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_1t7e8ns">
-          <text>"stitchCollateHearingBundle"</text>
+        <outputEntry id="LiteralExpression_06ucxu5">
+          <text>"processDirectionsReListedCase"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_0nonqyf">
+        <outputEntry id="LiteralExpression_0ymor4t">
           <text>"Auto"</text>
         </outputEntry>
       </rule>

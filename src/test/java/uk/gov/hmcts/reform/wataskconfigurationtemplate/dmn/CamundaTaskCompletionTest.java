@@ -44,14 +44,9 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskType", "processListingDirections",
                         "completionMode", "Auto"
-                    )
-                )
-            ),
-            Arguments.of(
-                "issueBundle",
-                List.of(
+                    ),
                     Map.of(
-                        "taskType", "stitchCollateHearingBundle",
+                        "taskType", "processDirectionsReListedCase",
                         "completionMode", "Auto"
                     )
                 )
