@@ -124,6 +124,37 @@
           <text>"ADMIN"</text>
         </outputEntry>
       </rule>
+
+      <rule id="DecisionRule_0q2b9hd">
+        <inputEntry id="UnaryTests_1xl6q22">
+          <text>"create-draft-order"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1h4t3bx">
+          <text>"CaseManagement"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0fqwp06">
+          <text>"Set aside request"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1uunh6u">
+          <text>"processSetAsideDirections"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1uj10lo">
+          <text>"Process Set Aside directions"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_04rpzn5">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0idmqza">
+          <text>1</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_13ufigg">
+          <text>"processSetAsideDirections"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1gcrw5x">
+          <text>"decision_making_work"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0uhaxfz">
+
       <rule id="DecisionRule_1rinmce">
         <inputEntry id="UnaryTests_04qbxxh">
           <text>"create-draft-order"</text>
@@ -185,6 +216,7 @@
           <text>"priority"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_12xu8a0">
+
           <text>"ADMIN"</text>
         </outputEntry>
       </rule>

@@ -36,10 +36,12 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
         return Stream.of(
             Arguments.of(
                 "processCaseWithdrawalDirections",
-                CaseDataBuilder.defaultCase().build(),
+                CaseDataBuilder.defaultCase()
+                    .isUrgent()
+                    .build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
                     .expectedValue(MINOR_PRIORITY, "500", true)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+                    .expectedValue(MAJOR_PRIORITY, "2000", true)
                     .expectedValue("workType", "routine_work", true)
                     .expectedValue("roleCategory", "ADMIN", true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "10", true)
@@ -80,12 +82,42 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                                     true)
                     .build()
             ),
-            Arguments.of(
-                "processDirectionsReListedCase",
+          Arguments.of(
+
+                "processSetAsideDirections",
+
+              
+
                 CaseDataBuilder.defaultCase().build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
                     .expectedValue(MINOR_PRIORITY, "500", true)
                     .expectedValue(MAJOR_PRIORITY, "5000", true)
+
+                    .expectedValue("workType", "decision_making_work", true)
+
+                  
+                    .expectedValue("roleCategory", "ADMIN", true)
+                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", true)
+                    .expectedValue("description",
+                                   "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                                       + "/caseworker-send-order/"
+                                       + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType",
+                                   true)
+                    .build()
+            ),
+            Arguments.of(
+
+             
+
+                "processDirectionsReListedCase",
+
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue(MINOR_PRIORITY, "500", true)
+                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+
+ 
+
                     .expectedValue("workType", "routine_work", true)
                     .expectedValue("roleCategory", "ADMIN", true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", true)
@@ -103,6 +135,7 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue(MINOR_PRIORITY, "500", true)
                     .expectedValue(MAJOR_PRIORITY, "5000", true)
                     .expectedValue("workType", "priority", true)
+
                     .expectedValue("roleCategory", "ADMIN", true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", true)
                     .expectedValue("description",
@@ -138,7 +171,9 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(9));
+
+        assertThat(logic.getRules().size(), is(10));
+
     }
 
     private void resultsMatch(List<Map<String, Object>> results, List<Map<String, Object>> expectation) {
