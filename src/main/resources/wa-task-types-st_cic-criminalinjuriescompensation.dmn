@@ -53,6 +53,17 @@
           <text>"Process directions re. listed case"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1wbpz3c">
+        <inputEntry id="UnaryTests_1o2evz5">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_172iuee">
+          <text>"processDirectionsReListedCaseWithin5Days"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1gviy53">
+          <text>"Process directions re. listed case (within 5 days)"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
