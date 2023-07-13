@@ -52,6 +52,12 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "stitchCollateHearingBundle",
                 "someCaseData",
                 defaultAdminPermissions()
+            ),
+
+            Arguments.of(
+                "processDirectionsReListedCase",
+                "someCaseData",
+                defaultAdminPermissions()
             )
         );
     }

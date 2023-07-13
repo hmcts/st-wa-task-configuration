@@ -156,6 +156,38 @@
           <text>"ADMIN"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1rinmce">
+        <inputEntry id="UnaryTests_04qbxxh">
+          <text>"create-draft-order"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1u6wdw1">
+          <text>"AwaitingHearing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10l345j">
+          <text>"Listed case"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0b4aoaz">
+          <text>"processDirectionsReListedCase"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0m7ltxx">
+          <text>"Process directions re. listed case"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0oe9vbi">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0lhyr1i">
+          <text>1</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0oxny7o">
+          <text>"processDirectionsReListedCase"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_01s3zl8">
+          <text>"routine_work"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1gua9uc">
+          <text>"ADMIN"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

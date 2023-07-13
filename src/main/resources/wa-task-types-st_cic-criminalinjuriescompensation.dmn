@@ -53,6 +53,17 @@
           <text>"Stitch/collate hearing bundle"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0s8x9ui">
+        <inputEntry id="UnaryTests_1k3d7na">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1o9i2fb">
+          <text>"processDirectionsReListedCase"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1w1yxl8">
+          <text>"Process directions re. listed case"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
