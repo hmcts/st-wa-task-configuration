@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.11.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.12.0">
   <decision id="wa-task-configuration-st_cic-criminalinjuriescompensation" name="Task configuration DMN">
     <decisionTable id="DecisionTable_14cx079" hitPolicy="RULE ORDER">
       <input id="InputClause_1gxyo7f" label="CCD Case Data" camunda:inputVariable="caseData">
@@ -11,10 +11,10 @@
         <inputExpression id="LiteralExpression_1ngi22k" typeRef="string">
           <text>if(taskAttributes != null and taskAttributes.taskType != null) then
             taskAttributes.taskType
-else if(taskType != null) then
-           taskType
-else
-null</text>
+            else if(taskType != null) then
+            taskType
+            else
+            null</text>
         </inputExpression>
       </input>
       <output id="Output_1" label="Name" name="name" typeRef="string" biodi:width="349" />
@@ -25,9 +25,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1o9uf1g">
-          
-          <text>"processCaseWithdrawalDirections","processRule27Decision","processListingDirections", "processSetAsideDirections","processDirectionsReListedCase","processDirectionsReListedCaseWithin5Days"</text>
-
+          <text>"processCaseWithdrawalDirections","processRule27Decision","processListingDirections","processDirectionsReListedCase","processDirectionsReListedCaseWithin5Days","processSetAsideDirections"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1vuc06b">
           <text>"majorPriority"</text>
@@ -46,9 +44,7 @@ else 5000</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0ge5t9c">
-
-          <text>"processCaseWithdrawalDirections","processRule27Decision","processListingDirections","processSetAsideDirections","processDirectionsReListedCase","processDirectionsReListedCaseWithin5Days"</text>
-
+          <text>"processCaseWithdrawalDirections","processRule27Decision","processListingDirections","processDirectionsReListedCase","processDirectionsReListedCaseWithin5Days","processSetAsideDirections"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1qbzk71">
           <text>"minorPriority"</text>
@@ -77,22 +73,6 @@ else 5000</text>
           <text>true</text>
         </outputEntry>
       </rule>
-
-      <rule id="DecisionRule_1mv6ia3">
-        <inputEntry id="UnaryTests_19k0u7u">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0zxex4w">
-          <text>"processSetAsideDirections"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_08djz4g">
-          <text>"workType"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_04ycdxx">
-          <text>"decision_making_work"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1mjnfww">
-
       <rule id="DecisionRule_023d6jc">
         <inputEntry id="UnaryTests_1xys8gh">
           <text></text>
@@ -107,7 +87,23 @@ else 5000</text>
           <text>"priority"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0q1gzgk">
-
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_00fssfn">
+        <inputEntry id="UnaryTests_1xw5yja">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0v6pdjr">
+          <text>"processSetAsideDirections"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1p8y8wb">
+          <text>"workType"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0jb068t">
+          <text>"decision_making_work"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_05mitav">
           <text>true</text>
         </outputEntry>
       </rule>
@@ -116,11 +112,7 @@ else 5000</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_055g5ba">
-
-          <text>"processRule27Decision","processCaseWithdrawalDirections","processListingDirections",</text>
-
-          <text>"processRule27Decision","processCaseWithdrawalDirections","processListingDirections","processSetAsideDirections","processDirectionsReListedCase","processDirectionsReListedCaseWithin5Days"</text>
-
+          <text>"processRule27Decision","processCaseWithdrawalDirections","processListingDirections","processDirectionsReListedCase","processDirectionsReListedCaseWithin5Days","processSetAsideDirections"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1ubz0s5">
           <text>"roleCategory"</text>
@@ -183,20 +175,20 @@ else 5000</text>
           <text>true</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_0qhb5zk">
-        <inputEntry id="UnaryTests_1kjvty9">
+      <rule id="DecisionRule_0q4vzt9">
+        <inputEntry id="UnaryTests_0fp5vh8">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_1gqxro5">
+        <inputEntry id="UnaryTests_1r8x2hh">
           <text>"processSetAsideDirections"</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_1geulaf">
+        <outputEntry id="LiteralExpression_0sonhf1">
           <text>"dueDateIntervalDays"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_139pawg">
+        <outputEntry id="LiteralExpression_0kq0auv">
           <text>1</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_1h2e7pr">
+        <outputEntry id="LiteralExpression_1x1epc3">
           <text>true</text>
         </outputEntry>
       </rule>
@@ -205,9 +197,7 @@ else 5000</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1cuepcw">
-
-          <text>"processCaseWithdrawalDirections","processRule27Decision","processListingDirections","processSetAsideDirections","processDirectionsReListedCase","processDirectionsReListedCaseWithin5Days"</text>
-
+          <text>"processCaseWithdrawalDirections","processRule27Decision","processListingDirections","processDirectionsReListedCase","processDirectionsReListedCaseWithin5Days","processSetAsideDirections"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0em2bsa">
           <text>"description"</text>

@@ -42,17 +42,6 @@
           <text>"Process listing directions"</text>
         </outputEntry>
       </rule>
-
-      <rule id="DecisionRule_0vdzvio">
-        <inputEntry id="UnaryTests_142w1z9">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1keux7w">
-          <text>"processSetAsideDirections"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_19hbw0w">
-          <text>"Process Set Aside directions"</text>
-
       <rule id="DecisionRule_0s8x9ui">
         <inputEntry id="UnaryTests_1k3d7na">
           <text></text>
@@ -73,7 +62,17 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_1gviy53">
           <text>"Process directions re. listed case (within 5 days)"</text>
-
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_12irqga">
+        <inputEntry id="UnaryTests_1f6p49m">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0e3ocxo">
+          <text>"processSetAsideDirections"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0e577zz">
+          <text>"Process Set Aside directions"</text>
         </outputEntry>
       </rule>
     </decisionTable>
