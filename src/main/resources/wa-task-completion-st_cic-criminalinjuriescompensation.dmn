@@ -86,6 +86,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0ix4ld0">
+        <inputEntry id="UnaryTests_1vf9vbo">
+          <text>"sendOrder"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0g4coes">
+          <text>"processDirectionsReturned"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1y2koxy">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

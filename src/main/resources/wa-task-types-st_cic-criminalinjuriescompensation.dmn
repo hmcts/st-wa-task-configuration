@@ -86,6 +86,17 @@
           <text>"Process postponement directions"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0nrzci3">
+        <inputEntry id="UnaryTests_0k0r8p9">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1bddu0m">
+          <text>"processDirectionsReturned"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1gebmme">
+          <text>"Process directions returned"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
