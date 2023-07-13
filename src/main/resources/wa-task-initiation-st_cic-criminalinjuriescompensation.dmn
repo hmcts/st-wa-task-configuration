@@ -156,35 +156,67 @@
           <text>"ADMIN"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_0pkbvpr">
-        <inputEntry id="UnaryTests_1l0yf36">
+      <rule id="DecisionRule_02qppu2">
+        <inputEntry id="UnaryTests_1beujdz">
           <text>"create-draft-order"</text>
         </inputEntry>
-        <inputEntry id="UnaryTests_0hamf4g">
+        <inputEntry id="UnaryTests_0g9y1gy">
           <text>"AwaitingHearing"</text>
         </inputEntry>
-        <inputEntry id="UnaryTests_1kuedec">
+        <inputEntry id="UnaryTests_1gqhbsy">
           <text>"Listed case (within 5 days)"</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_11kczf6">
+        <outputEntry id="LiteralExpression_04wtmov">
           <text>"processDirectionsReListedCaseWithin5Days"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_1rwo0v9">
+        <outputEntry id="LiteralExpression_0q8qbdw">
           <text>"Process directions re. listed case (within 5 days)"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_0nm2zzq">
+        <outputEntry id="LiteralExpression_1rcfsu0">
           <text></text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_14l5qy6">
+        <outputEntry id="LiteralExpression_0cyhcim">
           <text>1</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_0ayn3l0">
+        <outputEntry id="LiteralExpression_11yjbzj">
           <text>"processDirectionsReListedCaseWithin5Days"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_1de7vau">
+        <outputEntry id="LiteralExpression_193sfnb">
           <text>"priority"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_12xu8a0">
+        <outputEntry id="LiteralExpression_13oo9ku">
+          <text>"ADMIN"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0k5av7e">
+        <inputEntry id="UnaryTests_02c2386">
+          <text>"create-draft-order"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1n9dt5k">
+          <text>"AwaitingHearing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_16quyd3">
+          <text>"Postponement request"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0bmqb1b">
+          <text>"processPostponementDirections"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1q9j8mc">
+          <text>"Process postponement directions"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0hnn5wv">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1jm0pk4">
+          <text>1</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1tu0uja">
+          <text>"processPostponementDirections"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0g3ooa9">
+          <text>"decision_making_work"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1un7r8m">
           <text>"ADMIN"</text>
         </outputEntry>
       </rule>

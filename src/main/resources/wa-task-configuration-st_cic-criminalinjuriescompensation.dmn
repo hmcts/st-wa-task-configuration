@@ -25,7 +25,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1o9uf1g">
-          <text>"processCaseWithdrawalDirections","processRule27Decision","processListingDirections","processDirectionsReListedCase","processDirectionsReListedCaseWithin5Days"</text>
+          <text>"processCaseWithdrawalDirections","processRule27Decision","processListingDirections","processDirectionsReListedCase","processDirectionsReListedCaseWithin5Days","processPostponementDirections"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1vuc06b">
           <text>"majorPriority"</text>
@@ -42,7 +42,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0ge5t9c">
-          <text>"processCaseWithdrawalDirections","processRule27Decision","processListingDirections","processDirectionsReListedCase","processDirectionsReListedCaseWithin5Days"</text>
+          <text>"processCaseWithdrawalDirections","processRule27Decision","processListingDirections","processDirectionsReListedCase","processDirectionsReListedCaseWithin5Days","processPostponementDirections"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1qbzk71">
           <text>"minorPriority"</text>
@@ -88,12 +88,29 @@ null</text>
           <text>true</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_04s3jgk">
+        <inputEntry id="UnaryTests_1vtz9gj">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0uk69wx">
+          <text>"processPostponementDirections"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0sr97qr">
+          <text>"workType"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1cnz6wn">
+          <text>"decision_making_work"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1b1l7p8">
+          <text>true</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0v7suji">
         <inputEntry id="UnaryTests_01uali5">
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_055g5ba">
-          <text>"processRule27Decision","processCaseWithdrawalDirections","processListingDirections","processDirectionsReListedCase","processDirectionsReListedCaseWithin5Days"</text>
+          <text>"processRule27Decision","processCaseWithdrawalDirections","processListingDirections","processDirectionsReListedCase","processDirectionsReListedCaseWithin5Days","processPostponementDirections"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1ubz0s5">
           <text>"roleCategory"</text>
@@ -144,7 +161,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_043qnbi">
-          <text>"processListingDirections","processDirectionsReListedCase","processDirectionsReListedCaseWithin5Days"</text>
+          <text>"processListingDirections","processDirectionsReListedCase","processDirectionsReListedCaseWithin5Days","processPostponementDirections"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1g03p5z">
           <text>"dueDateIntervalDays"</text>
@@ -161,7 +178,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1cuepcw">
-          <text>"processCaseWithdrawalDirections","processRule27Decision","processListingDirections","processDirectionsReListedCase","processDirectionsReListedCaseWithin5Days"</text>
+          <text>"processCaseWithdrawalDirections","processRule27Decision","processListingDirections","processDirectionsReListedCase","processDirectionsReListedCaseWithin5Days","processPostponementDirections"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0em2bsa">
           <text>"description"</text>
