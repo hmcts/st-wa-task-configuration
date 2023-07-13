@@ -252,6 +252,38 @@
           <text>"ADMIN"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1lsbsad">
+        <inputEntry id="UnaryTests_16fuzde">
+          <text>"create-draft-order"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_18z64ke">
+          <text>"CaseManagement"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xseb2q">
+          <text>"New case"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0dztmv8">
+          <text>"processDirectionsReturned"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1pxz6b9">
+          <text>"Process directions returned"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_05tikx9">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_044a0ly">
+          <text>10</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1u5mu0w">
+          <text>"processDirectionsReturned"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1mipzq8">
+          <text>"decision_making_work"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1vrnzha">
+          <text>"ADMIN"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
