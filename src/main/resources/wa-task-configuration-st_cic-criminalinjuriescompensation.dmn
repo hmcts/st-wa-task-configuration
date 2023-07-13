@@ -25,7 +25,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1o9uf1g">
-          <text>"processCaseWithdrawalDirections","processRule27Decision","processListingDirections","stitchCollateHearingBundle","processDirectionsReListedCase"</text>
+          <text>"processCaseWithdrawalDirections","processRule27Decision","processListingDirections","processDirectionsReListedCase"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1vuc06b">
           <text>"majorPriority"</text>
@@ -42,7 +42,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0ge5t9c">
-          <text>"processCaseWithdrawalDirections","processRule27Decision","processListingDirections","stitchCollateHearingBundle","processDirectionsReListedCase"</text>
+          <text>"processCaseWithdrawalDirections","processRule27Decision","processListingDirections","processDirectionsReListedCase"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1qbzk71">
           <text>"minorPriority"</text>
@@ -71,29 +71,12 @@ null</text>
           <text>true</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_0dvihhs">
-        <inputEntry id="UnaryTests_1ycumab">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1m1kfqf">
-          <text>"stitchCollateHearingBundle"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1uvoqrp">
-          <text>"workType"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0lrsirv">
-          <text>"hearing_work"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1ncfkm7">
-          <text></text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_0v7suji">
         <inputEntry id="UnaryTests_01uali5">
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_055g5ba">
-          <text>"processRule27Decision","processCaseWithdrawalDirections","processListingDirections","stitchCollateHearingBundle","processDirectionsReListedCase"</text>
+          <text>"processRule27Decision","processCaseWithdrawalDirections","processListingDirections","processDirectionsReListedCase"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1ubz0s5">
           <text>"roleCategory"</text>
@@ -144,7 +127,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_043qnbi">
-          <text>"processListingDirections","stitchCollateHearingBundle","processDirectionsReListedCase"</text>
+          <text>"processListingDirections","processDirectionsReListedCase"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1g03p5z">
           <text>"dueDateIntervalDays"</text>

@@ -42,17 +42,6 @@
           <text>"Process listing directions"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_0y18st3">
-        <inputEntry id="UnaryTests_17biyj0">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0vhkzcz">
-          <text>"stitchCollateHearingBundle"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1i6u3nf">
-          <text>"Stitch/collate hearing bundle"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_0s8x9ui">
         <inputEntry id="UnaryTests_1k3d7na">
           <text></text>
