@@ -18,6 +18,7 @@ import java.util.stream.Stream;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static uk.gov.hmcts.reform.wataskconfigurationtemplate.DmnDecisionTable.WA_TASK_CANCELLATION_ST_CIC_CRIMINALJURIESCOMPENSATION;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CancellationScenarioBuilder.event;
 
 class CamundaTaskWaCancellationTest extends DmnDecisionTableBaseUnitTest {
     @BeforeAll
@@ -42,17 +43,9 @@ class CamundaTaskWaCancellationTest extends DmnDecisionTableBaseUnitTest {
     }
 
     public static Stream<Arguments> scenarioProvider() {
-        List<Map<String, String>> outcome = List.of(
-            Map.of(
-                "action", "cancel"
-            )
-        );
         return Stream.of(
-            Arguments.of(
-                "any from state", "closeCase", "any state",
-                outcome
-            )
-        );
+            event("closeCase").cancelAll().build(),
+            event("processReinstatementDecisionNotice").reconfigureAll().build());
     }
 
     @Test
@@ -61,6 +54,7 @@ class CamundaTaskWaCancellationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(3));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(1));
+        assertThat(logic.getRules().size(), is(2));
     }
+
 }
