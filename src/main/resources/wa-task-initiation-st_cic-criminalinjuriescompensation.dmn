@@ -348,6 +348,38 @@
           <text>"ADMIN"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_09wh707">
+        <inputEntry id="UnaryTests_00laabc">
+          <text>"create-draft-order"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1obx80o">
+          <text>"CaseClosed"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0vuzyod">
+          <text>"Reinstatement request"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0uo6u2d">
+          <text>"processReinstatementDecisionNotice"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1kf4gxm">
+          <text>"Process Reinstatement decision notice"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1plfunt">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1n56skc">
+          <text>5</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_180prw7">
+          <text>"processReinstatementDecisionNotice"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0f5k0qp">
+          <text>"decision_making_work"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_04mmkxn">
+          <text>"ADMIN"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

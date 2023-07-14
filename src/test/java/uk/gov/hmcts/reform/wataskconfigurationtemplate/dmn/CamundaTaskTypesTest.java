@@ -68,6 +68,10 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
             Map.of(
                 "taskTypeId", "processTimeExtensionDirectionsReturned",
                 "taskTypeName", "Process time extension directions returned"
+            ),
+            Map.of(
+                "taskTypeId", "processReinstatementDecisionNotice",
+                "taskTypeName", "Process Reinstatement decision notice"
             )
         );
         return Stream.of(
@@ -94,7 +98,7 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(1));
         assertThat(logic.getOutputs().size(), is(2));
-        assertThat(logic.getRules().size(), is(10));
+        assertThat(logic.getRules().size(), is(11));
 
 
     }
