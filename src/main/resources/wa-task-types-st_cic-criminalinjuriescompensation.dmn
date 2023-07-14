@@ -119,6 +119,17 @@
           <text>"Process time extension directions returned"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1u26wne">
+        <inputEntry id="UnaryTests_1wnygpl">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1p61b1s">
+          <text>"processReinstatementDecisionNotice"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1inww4t">
+          <text>"Process Reinstatement decision notice"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
