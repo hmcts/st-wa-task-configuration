@@ -26,7 +26,7 @@ class CamundaTaskWaCancellationTest extends DmnDecisionTableBaseUnitTest {
         CURRENT_DMN_DECISION_TABLE = WA_TASK_CANCELLATION_ST_CIC_CRIMINALJURIESCOMPENSATION;
     }
 
-    @ParameterizedTest
+    @ParameterizedTest(name = "from state: {0}, event id: {1}, state: {2}")
     @MethodSource("scenarioProvider")
     void given_multiple_event_ids_should_evaluate_dmn(String fromState,
                                                       String eventId,
@@ -45,7 +45,15 @@ class CamundaTaskWaCancellationTest extends DmnDecisionTableBaseUnitTest {
     public static Stream<Arguments> scenarioProvider() {
         return Stream.of(
             event("closeCase").cancelAll().build(),
-            event("processReinstatementDecisionNotice").reconfigureAll().build());
+            event("addHearing")
+                .reconfigure("processReinstatementDecisionNotice")
+                .reconfigure("processOtherDirectionsReturned")
+                .build(),
+            event("caseUpdated")
+                .reconfigure("processReinstatementDecisionNotice")
+                .reconfigure("processOtherDirectionsReturned")
+                .build()
+        );
     }
 
     @Test
@@ -54,7 +62,7 @@ class CamundaTaskWaCancellationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(3));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(2));
+        assertThat(logic.getRules().size(), is(3));
     }
 
 }

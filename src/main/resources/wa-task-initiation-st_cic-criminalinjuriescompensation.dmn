@@ -380,6 +380,38 @@
           <text>"ADMIN"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0gy2sy0">
+        <inputEntry id="UnaryTests_1pv68ms">
+          <text>"create-draft-order"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1427asl">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1uthhmz">
+          <text>"Other"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0mho2tf">
+          <text>"processOtherDirectionsReturned"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0g8a4hz">
+          <text>"Process other directions reurned"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ixh4zx">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1tr0uje">
+          <text>10</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0gnw1h1">
+          <text>"processOtherDirectionsReturned"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_040tjnz">
+          <text>"decision_making_work"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_16iie7w">
+          <text>"ADMIN"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
