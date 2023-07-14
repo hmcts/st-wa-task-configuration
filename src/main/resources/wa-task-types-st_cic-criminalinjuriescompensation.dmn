@@ -130,6 +130,17 @@
           <text>"Process Reinstatement decision notice"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1re9lf7">
+        <inputEntry id="UnaryTests_0ywuznd">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_123ub1h">
+          <text>"processOtherDirectionsReturned"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0pavip6">
+          <text>"Process other directions reurned"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

@@ -49,7 +49,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0umc3dq">
-          <text>"processReinstatementDecisionNotice"</text>
+          <text>"addHearing","caseUpdated"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1gp5vfp">
           <text></text>
@@ -64,7 +64,30 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_17u5i9r">
+          <text>"processReinstatementDecisionNotice"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_13xo5pc">
+        <inputEntry id="UnaryTests_078jpy7">
           <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_16lfjoh">
+          <text>"addHearing","caseUpdated"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1lqfref">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_16hq0ua">
+          <text>"Reconfigure"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_16ycbzv">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0x51usj">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0sklzjq">
+          <text>"processOtherDirectionsReturned"</text>
         </outputEntry>
       </rule>
     </decisionTable>
