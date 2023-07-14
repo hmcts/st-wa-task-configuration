@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.12.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.11.0">
   <decision id="wa-task-initiation-st_cic-criminalinjuriescompensation" name="Task initiation DMN">
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT">
       <input id="Input_1" label="Event Id" camunda:inputVariable="eventId">
@@ -409,6 +409,38 @@
           <text>"decision_making_work"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_16iie7w">
+          <text>"ADMIN"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0nor512">
+        <inputEntry id="UnaryTests_0xwut34">
+          <text>"create-draft-order"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1177jws">
+          <text>"CaseClosed"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0kaicm2">
+          <text>"Written reasons request"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_10zz17x">
+          <text>"processWrittenReasons"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1tg48rd">
+          <text>"Process Written Reasons"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1nrz9fi">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0a4ui59">
+          <text>3</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0xo1mko">
+          <text>"processWrittenReasons"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0lb62pd">
+          <text>"decision_making_work"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0296w5l">
           <text>"ADMIN"</text>
         </outputEntry>
       </rule>

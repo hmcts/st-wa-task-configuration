@@ -209,6 +209,21 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "roleCategory","ADMIN"
                     )
                 )
+            ),
+            Arguments.of(
+                "create-draft-order",
+                "CaseClosed",
+                Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Written reasons request")),
+                List.of(
+                    Map.of(
+                        "taskId", "processWrittenReasons",
+                        "name", "Process Written Reasons",
+                        "workingDaysAllowed", 3,
+                        "processCategories", "processWrittenReasons",
+                        "workType", "decision_making_work",
+                        "roleCategory","ADMIN"
+                    )
+                )
             )
         );
     }
@@ -236,7 +251,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
 
-        assertThat(logic.getRules().size(), is(12));
+        assertThat(logic.getRules().size(), is(13));
 
 
     }
