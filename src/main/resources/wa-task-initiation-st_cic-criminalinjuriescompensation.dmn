@@ -476,38 +476,6 @@
           <text>"ADMIN"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1syawm4">
-        <inputEntry id="UnaryTests_126hfxa">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_09r424w">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_130jvqa">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1nlae0w">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0y4ivtz">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0me2l27">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0x7cuhv">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0f8bk2a">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1eo2fv9">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_05cdwuc">
-          <text></text>
-        </outputEntry>
-      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
