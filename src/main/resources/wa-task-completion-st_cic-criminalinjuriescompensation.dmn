@@ -152,6 +152,28 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_189b79w">
+        <inputEntry id="UnaryTests_10nveuf">
+          <text>"sendOrder"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1rhy3ps">
+          <text>"processStrikeOutDirectionsReturned"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0qq9h2g">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ydjk8m">
+        <inputEntry id="UnaryTests_1elmkgn">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1j1dd5z">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0hnj3cj">
+          <text></text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
