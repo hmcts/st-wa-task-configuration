@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.11.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.13.0">
   <decision id="wa-task-initiation-st_cic-criminalinjuriescompensation" name="Task initiation DMN">
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT">
       <input id="Input_1" label="Event Id" camunda:inputVariable="eventId">
@@ -473,6 +473,38 @@
           <text>"routine_work"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1o7y96x">
+          <text>"ADMIN"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0wwmrnh">
+        <inputEntry id="UnaryTests_1wbp0xd">
+          <text>"create-draft-order"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hr4yrm">
+          <text>"CaseManagement"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1wbi73v">
+          <text>"Stay Request"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_134nizd">
+          <text>"processStayDirections"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1m3gumt">
+          <text>"Process stay directions"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0qe3eu9">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0tqw53t">
+          <text>10</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_070kxxn">
+          <text>"processStayDirections"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0wb4bsf">
+          <text>"routine_work"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1btln9m">
           <text>"ADMIN"</text>
         </outputEntry>
       </rule>
