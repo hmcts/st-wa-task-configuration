@@ -102,6 +102,11 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "processStrikeOutDirectionsReturned",
                 "someCaseData",
                 defaultAdminPermissions()
+            ),
+            Arguments.of(
+                "processStayDirections",
+                "someCaseData",
+                defaultAdminPermissions()
             )
         );
     }
