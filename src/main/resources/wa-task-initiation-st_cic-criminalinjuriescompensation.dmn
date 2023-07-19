@@ -22,7 +22,7 @@
         </inputExpression>
       </input>
       <output id="Output_1" label="Task Id" name="taskId" typeRef="string" biodi:width="320" />
-      <output id="OutputClause_0p5fhhd" label="Task Name" name="name" typeRef="string" />
+      <output id="OutputClause_0p5fhhd" label="Task Name" name="name" typeRef="string" biodi:width="362" />
       <output id="OutputClause_165p3r3" label="Delay Duration" name="delayDuration" typeRef="integer" />
       <output id="OutputClause_0i6c6c2" label="Working Days Allowed" name="workingDaysAllowed" typeRef="integer" />
       <output id="OutputClause_10rno4c" label="Process Categories Identifiers" name="processCategories" typeRef="string" biodi:width="300" />
@@ -441,6 +441,38 @@
           <text>"decision_making_work"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0296w5l">
+          <text>"ADMIN"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0w5l4af">
+        <inputEntry id="UnaryTests_0vddwpy">
+          <text>"create-draft-order"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vszp6g">
+          <text>"CaseManagement"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0gdf1cp">
+          <text>"Strike out Request"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0u21lsf">
+          <text>"processStrikeOutDirectionsReturned"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0a2ouwv">
+          <text>"Process strike out directions returned"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1c0f664">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1tl0p9d">
+          <text>10</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_04jodc9">
+          <text>"processStrikeOutDirectionsReturned"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0vjmeyw">
+          <text>"routine_work"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1o7y96x">
           <text>"ADMIN"</text>
         </outputEntry>
       </rule>

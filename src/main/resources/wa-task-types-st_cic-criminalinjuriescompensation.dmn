@@ -152,6 +152,17 @@
           <text>"Process Written Reasons"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0erlpji">
+        <inputEntry id="UnaryTests_0oomfkb">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1qps7dp">
+          <text>"processStrikeOutDirectionsReturned"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0rcmv42">
+          <text>"Process strike out directions returned"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
