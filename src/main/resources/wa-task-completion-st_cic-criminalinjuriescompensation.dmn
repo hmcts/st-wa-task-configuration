@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="wa-completion-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.13.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="wa-completion-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.11.0">
   <decision id="wa-task-completion-st_cic-criminalinjuriescompensation" name="Task completion DMN">
     <decisionTable id="DecisionTable_01re27m" hitPolicy="COLLECT">
       <input id="eventId" label="Event ID" biodi:width="614">
@@ -11,7 +11,7 @@
       <output id="OutputClause_1mldd9e" label="Completion Mode" name="completionMode" typeRef="string" />
       <rule id="DecisionRule_0tn82oz">
         <inputEntry id="UnaryTests_152sy88">
-          <text>"sendOrder"</text>
+          <text>"caseworker-send-order"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1buwwcz">
           <text>"processCaseWithdrawalDirections"</text>
@@ -22,7 +22,7 @@
       </rule>
       <rule id="DecisionRule_03yedz5">
         <inputEntry id="UnaryTests_1ltp2em">
-          <text>"sendOrder"</text>
+          <text>"caseworker-send-order"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0d6r5v5">
           <text>"processRule27Decision"</text>
@@ -33,7 +33,7 @@
       </rule>
       <rule id="DecisionRule_1g7g5cc">
         <inputEntry id="UnaryTests_1wk222b">
-          <text>"sendOrder"</text>
+          <text>"caseworker-send-order"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0lign9b">
           <text>"processListingDirections"</text>
@@ -44,7 +44,7 @@
       </rule>
       <rule id="DecisionRule_0vw5fia">
         <inputEntry id="UnaryTests_0ckg8ai">
-          <text>"sendOrder"</text>
+          <text>"caseworker-send-order"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_06ucxu5">
           <text>"processDirectionsReListedCase"</text>
@@ -55,7 +55,7 @@
       </rule>
       <rule id="DecisionRule_0cl3qf8">
         <inputEntry id="UnaryTests_1c7t6l2">
-          <text>"sendOrder"</text>
+          <text>"caseworker-send-order"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0l0d667">
           <text>"processDirectionsReListedCaseWithin5Days"</text>
@@ -66,7 +66,7 @@
       </rule>
       <rule id="DecisionRule_0973p85">
         <inputEntry id="UnaryTests_0z3mgav">
-          <text>"sendOrder"</text>
+          <text>"caseworker-send-order"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0abffh7">
           <text>"processSetAsideDirections"</text>
@@ -77,7 +77,7 @@
       </rule>
       <rule id="DecisionRule_05p7x18">
         <inputEntry id="UnaryTests_030y68d">
-          <text>"sendOrder"</text>
+          <text>"caseworker-send-order"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0slkk2l">
           <text>"processCorrections"</text>
@@ -88,7 +88,7 @@
       </rule>
       <rule id="DecisionRule_0ix4ld0">
         <inputEntry id="UnaryTests_1vf9vbo">
-          <text>"sendOrder"</text>
+          <text>"caseworker-send-order"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0g4coes">
           <text>"processDirectionsReturned"</text>
@@ -99,7 +99,7 @@
       </rule>
       <rule id="DecisionRule_13bgzxc">
         <inputEntry id="UnaryTests_06ppnma">
-          <text>"sendOrder"</text>
+          <text>"caseworker-send-order"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_08qozl0">
           <text>"processPostponementDirections"</text>
@@ -110,7 +110,7 @@
       </rule>
       <rule id="DecisionRule_0jr6r4h">
         <inputEntry id="UnaryTests_0bpk9b3">
-          <text>"sendOrder"</text>
+          <text>"caseworker-send-order"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0qyc3r3">
           <text>"processTimeExtensionDirectionsReturned"</text>
@@ -121,7 +121,7 @@
       </rule>
       <rule id="DecisionRule_0dk27nr">
         <inputEntry id="UnaryTests_0rlttr3">
-          <text>"sendOrder"</text>
+          <text>"caseworker-send-order"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_04y5glv">
           <text>"processReinstatementDecisionNotice"</text>
@@ -132,7 +132,7 @@
       </rule>
       <rule id="DecisionRule_16g2reg">
         <inputEntry id="UnaryTests_1yg8hc1">
-          <text>"sendOrder"</text>
+          <text>"caseworker-send-order"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0gnwb0g">
           <text>"processOtherDirectionsReturned"</text>
@@ -143,7 +143,7 @@
       </rule>
       <rule id="DecisionRule_19oaxkn">
         <inputEntry id="UnaryTests_19csgr0">
-          <text>"sendOrder"</text>
+          <text>"caseworker-send-order"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_13xbfo4">
           <text>"processWrittenReasons"</text>
@@ -154,7 +154,7 @@
       </rule>
       <rule id="DecisionRule_189b79w">
         <inputEntry id="UnaryTests_10nveuf">
-          <text>"sendOrder"</text>
+          <text>"caseworker-send-order"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1rhy3ps">
           <text>"processStrikeOutDirectionsReturned"</text>
@@ -165,7 +165,7 @@
       </rule>
       <rule id="DecisionRule_1vb5cjj">
         <inputEntry id="UnaryTests_0h969px">
-          <text>"sendOrder"</text>
+          <text>"caseworker-send-order"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_12nx2kp">
           <text>"processStayDirections"</text>
