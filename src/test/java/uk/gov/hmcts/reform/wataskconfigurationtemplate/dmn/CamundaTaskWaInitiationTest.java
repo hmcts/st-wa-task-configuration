@@ -202,7 +202,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                 List.of(
                     Map.of(
                         "taskId", "processOtherDirectionsReturned",
-                        "name", "Process other directions reurned",
+                        "name", "Process other directions returned",
                         "workingDaysAllowed", 10,
                         "processCategories", "processOtherDirectionsReturned",
                         "workType", "decision_making_work",
