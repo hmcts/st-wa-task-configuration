@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.13.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.11.0">
   <decision id="wa-task-initiation-st_cic-criminalinjuriescompensation" name="Task initiation DMN">
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT">
       <input id="Input_1" label="Event Id" camunda:inputVariable="eventId">
@@ -505,6 +505,38 @@
           <text>"routine_work"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1btln9m">
+          <text>"ADMIN"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_11lksl9">
+        <inputEntry id="UnaryTests_123bmlf">
+          <text>"caseworker-record-listing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05q09b0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xmebu2">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ccni8f">
+          <text>"completeHearingOutcome"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0wx32f0">
+          <text>"Complete Hearing Outcome"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1kp7ik5">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1a5cg3s">
+          <text>5</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0rbrk0p">
+          <text>"completeHearingOutcome"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1e6mzne">
+          <text>"hearing_work"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1xzj2zw">
           <text>"ADMIN"</text>
         </outputEntry>
       </rule>
