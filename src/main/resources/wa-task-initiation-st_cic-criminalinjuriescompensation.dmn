@@ -508,6 +508,38 @@
           <text>"ADMIN"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_16achsh">
+        <inputEntry id="UnaryTests_1l0e0bp">
+          <text>"create-hearing-summary"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ok3nm3">
+          <text>"AwaitingHearing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1rqnyzf">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0xeuiim">
+          <text>"issueDecisionNotice"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1up3qa4">
+          <text>"Issue Decision Notice"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0l69wwz">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1noinni">
+          <text>1</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_04q866u">
+          <text>"issueDecisionNotice"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1a9hp96">
+          <text>"hearing_work"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0eu03om">
+          <text>"ADMIN"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
