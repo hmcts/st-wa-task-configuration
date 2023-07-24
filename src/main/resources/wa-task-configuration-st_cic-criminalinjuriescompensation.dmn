@@ -25,7 +25,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1o9uf1g">
-          <text>"processCaseWithdrawalDirections","processRule27Decision","processListingDirections","processDirectionsReListedCase","processDirectionsReListedCaseWithin5Days","processSetAsideDirections","processCorrections","processDirectionsReturned","processPostponementDirections","processTimeExtensionDirectionsReturned","processReinstatementDecisionNotice","processOtherDirectionsReturned","processWrittenReasons","processStrikeOutDirectionsReturned","processStayDirections"</text>
+          <text>"processCaseWithdrawalDirections","processRule27Decision","processListingDirections","processDirectionsReListedCase","processDirectionsReListedCaseWithin5Days","processSetAsideDirections","processCorrections","processDirectionsReturned","processPostponementDirections","processTimeExtensionDirectionsReturned","processReinstatementDecisionNotice","processOtherDirectionsReturned","processWrittenReasons","processStrikeOutDirectionsReturned","processStayDirections","issueDecisionNotice"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1vuc06b">
           <text>"majorPriority"</text>
@@ -44,7 +44,7 @@ else 5000</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0ge5t9c">
-          <text>"processCaseWithdrawalDirections","processRule27Decision","processListingDirections","processDirectionsReListedCase","processDirectionsReListedCaseWithin5Days","processSetAsideDirections","processCorrections","processDirectionsReturned","processPostponementDirections","processTimeExtensionDirectionsReturned","processReinstatementDecisionNotice","processOtherDirectionsReturned","processWrittenReasons","processStrikeOutDirectionsReturned","processStayDirections"</text>
+          <text>"processCaseWithdrawalDirections","processRule27Decision","processListingDirections","processDirectionsReListedCase","processDirectionsReListedCaseWithin5Days","processSetAsideDirections","processCorrections","processDirectionsReturned","processPostponementDirections","processTimeExtensionDirectionsReturned","processReinstatementDecisionNotice","processOtherDirectionsReturned","processWrittenReasons","processStrikeOutDirectionsReturned","processStayDirections","issueDecisionNotice"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1qbzk71">
           <text>"minorPriority"</text>
@@ -107,12 +107,29 @@ else 5000</text>
           <text>true</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1c49m1s">
+        <inputEntry id="UnaryTests_06247nu">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1cycnc0">
+          <text>"issueDecisionNotice"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0haeofx">
+          <text>"workType"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_13hp5ji">
+          <text>"hearing_work"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0qqknei">
+          <text>true</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0v7suji">
         <inputEntry id="UnaryTests_01uali5">
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_055g5ba">
-          <text>"processRule27Decision","processCaseWithdrawalDirections","processListingDirections","processDirectionsReListedCase","processDirectionsReListedCaseWithin5Days","processSetAsideDirections","processCorrections","processDirectionsReturned","processPostponementDirections","processTimeExtensionDirectionsReturned","processReinstatementDecisionNotice","processOtherDirectionsReturned","processWrittenReasons","processStrikeOutDirectionsReturned","processStayDirections"</text>
+          <text>"processRule27Decision","processCaseWithdrawalDirections","processListingDirections","processDirectionsReListedCase","processDirectionsReListedCaseWithin5Days","processSetAsideDirections","processCorrections","processDirectionsReturned","processPostponementDirections","processTimeExtensionDirectionsReturned","processReinstatementDecisionNotice","processOtherDirectionsReturned","processWrittenReasons","processStrikeOutDirectionsReturned","processStayDirections","issueDecisionNotice"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1ubz0s5">
           <text>"roleCategory"</text>
@@ -129,7 +146,7 @@ else 5000</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_043qnbi">
-          <text>"processListingDirections","processDirectionsReListedCase","processDirectionsReListedCaseWithin5Days","processSetAsideDirections","processPostponementDirections","processTimeExtensionDirectionsReturned"</text>
+          <text>"processListingDirections","processDirectionsReListedCase","processDirectionsReListedCaseWithin5Days","processSetAsideDirections","processPostponementDirections","processTimeExtensionDirectionsReturned","issueDecisionNotice"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1g03p5z">
           <text>"dueDateIntervalDays"</text>
@@ -206,6 +223,23 @@ else 5000</text>
           <text>"[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger/caseworker-send-order/caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_07pv3yt">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1fbubru">
+        <inputEntry id="UnaryTests_0mub3at">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ffvejm">
+          <text>"issueDecisionNotice"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0b8f0gh">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0mulsbp">
+          <text>"[Decision: Issue a decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/caseworker-issue-decision/caseworker-issue-decisionSelectIssueNoticeOption&lt;br/&gt;" + "[Decision: Issue final decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/caseworker-issue-final-decision/caseworker-issue-final-decisionselectIssueNoticeOption"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0smzs7n">
           <text>true</text>
         </outputEntry>
       </rule>
