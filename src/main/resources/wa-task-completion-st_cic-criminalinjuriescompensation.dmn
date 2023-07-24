@@ -176,23 +176,12 @@
       </rule>
       <rule id="DecisionRule_1volnhb">
         <inputEntry id="UnaryTests_0vb9ofl">
-          <text>"caseworker-issue-final-decision"</text>
+          <text>"caseworker-issue-final-decision","caseworker-issue-decision"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0uljnd6">
           <text>"issueDecisionNotice"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1fyx2oq">
-          <text>"Auto"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_06gooxw">
-        <inputEntry id="UnaryTests_1jg4bn7">
-          <text>"caseworker-issue-decision"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0lib6zv">
-          <text>"issueDecisionNotice"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1e7inf2">
           <text>"Auto"</text>
         </outputEntry>
       </rule>
