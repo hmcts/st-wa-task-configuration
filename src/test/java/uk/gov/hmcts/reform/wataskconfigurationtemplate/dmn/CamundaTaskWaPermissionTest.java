@@ -112,6 +112,11 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "issueDecisionNotice",
                 "someCaseData",
                 defaultAdminPermissions()
+            ),
+            Arguments.of(
+                "completeHearingOutcome",
+                "someCaseData",
+                defaultAdminPermissions()
             )
         );
     }

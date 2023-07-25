@@ -540,6 +540,38 @@
           <text>"ADMIN"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_056amwa">
+        <inputEntry id="UnaryTests_0cj02rw">
+          <text>"caseworker-record-listing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1nz6lye">
+          <text>"AwaitingHearing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1sh7a9w">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0f06p80">
+          <text>"completeHearingOutcome"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ckerve">
+          <text>"Complete Hearing Outcome"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1o7zepy">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_04mvdux">
+          <text>5</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1mhabqr">
+          <text>"completeHearingOutcome"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1n7bbuz">
+          <text>"hearing_work"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_10vjh09">
+          <text>"ADMIN"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
