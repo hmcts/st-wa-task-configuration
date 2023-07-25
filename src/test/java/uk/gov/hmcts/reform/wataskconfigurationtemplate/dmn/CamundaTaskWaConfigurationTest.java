@@ -308,6 +308,23 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                                        + "/create-hearing-summary/create-hearing-summarycreateHearingSummary",
                                    true)
                     .build()
+            ),
+            Arguments.of(
+                "referCase",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue(MINOR_PRIORITY, "500", true)
+                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+                    .expectedValue("workType", "routine_work", true)
+                    .expectedValue("roleCategory", "ADMIN", true)
+                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
+                    .expectedValue("description",
+                                   "[Refer case to judge](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                                       + "/refer-to-judge/refer-to-judgereferToJudgeReason<br/>"
+                                       +"[Refer case to legal officer](/cases/case-details/${[CASE_REFERENCE]}"
+                                       + "/trigger/refer-to-legal-officer/refer-to-legal-officerreferToLegalOfficer",
+                                   true)
+                    .build()
             )
         );
     }
@@ -336,7 +353,7 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
 
-        assertThat(logic.getRules().size(), is(14));
+        assertThat(logic.getRules().size(), is(16));
 
     }
 

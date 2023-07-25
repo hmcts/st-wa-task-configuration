@@ -121,6 +121,24 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                         "completionMode", "Auto"
                     )
                 )
+            ),
+            Arguments.of(
+                "refer-to-judge",
+                List.of(
+                    Map.of(
+                        "taskType", "referCase",
+                        "completionMode", "Auto"
+                    )
+                )
+            ),
+            Arguments.of(
+                "refer-to-legal-officer",
+                List.of(
+                    Map.of(
+                        "taskType", "referCase",
+                        "completionMode", "Auto"
+                    )
+                )
             )
         );
     }
@@ -141,7 +159,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
 
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(17));
+        assertThat(logic.getRules().size(), is(18));
 
 
     }
