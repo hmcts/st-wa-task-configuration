@@ -572,6 +572,38 @@
           <text>"ADMIN"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_113ulrj">
+        <inputEntry id="UnaryTests_0uitr7c">
+          <text>"caseworker-case-built"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_03kg7dn">
+          <text>"Submitted"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_14aj6vh">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0xoseyk">
+          <text>"referCase"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_07ebo1n">
+          <text>"Refer Case"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1eeiveh">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_08qc6dq">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0lxn6vt">
+          <text>"referCase"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0gb982o">
+          <text>"routine_work"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0a0rqp1">
+          <text>"ADMIN"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
