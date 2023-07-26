@@ -142,6 +142,22 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
             )
         );
     }
+    private static List<Map<String, Object>> defaultLegalOperationsPermissions() {
+        return List.of(
+            Map.of(
+                "name", "Senior-Legal-Caseworker",
+                "value", "Read,Own,Claim,Manage,Assign,Unassign,Complete,Cancel",
+                "roleCategory", "LEGAL_OPERATIONS",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "Tribunal-Caseworker",
+                "value", "Read,Own,Claim,Manage,Assign,Unassign,Complete,Cancel",
+                "roleCategory", "LEGAL_OPERATIONS",
+                "autoAssignable", false
+            )
+        );
+    }
 
     @ParameterizedTest (name = "task type: {0} case data: {1}")
     @MethodSource ("scenarioProvider")
@@ -180,7 +196,7 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
         assertThat(logic.getOutputs().size(), is(7));
         assertThatOutputContainInOrder(outputColumnIds, logic.getOutputs());
         //Rules
-        assertThat(logic.getRules().size(), is(2));
+        assertThat(logic.getRules().size(), is(4));
 
     }
 

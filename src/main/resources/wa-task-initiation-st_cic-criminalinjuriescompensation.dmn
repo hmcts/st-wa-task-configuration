@@ -604,6 +604,38 @@
           <text>"ADMIN"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0n2x7xg">
+        <inputEntry id="UnaryTests_02ukxpf">
+          <text>"refer-to-legal-officer"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1955tbo">
+          <text>"CaseManagement"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08h588e">
+          <text>"New Case"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_05capjo">
+          <text>"reviewNewCaseAndProvideDirectionsLO"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_05mduai">
+          <text>"Review new case and provide directions - Legal Officer"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1wco210">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0mulx2s">
+          <text>5</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1onhgd1">
+          <text>"reviewNewCaseAndProvideDirectionsLO"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1qstmwu">
+          <text>"decision_making_work"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1lxgue7">
+          <text>"LEGAL_OPERATIONS"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
