@@ -207,6 +207,17 @@
           <text>"Refer Case"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1firnvw">
+        <inputEntry id="UnaryTests_0kw0ojm">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_032xyzr">
+          <text>"reviewNewCaseAndProvideDirectionsLO"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0vaq44i">
+          <text>"Review new case and provide directions - Legal Officer"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
