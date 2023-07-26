@@ -636,6 +636,38 @@
           <text>"LEGAL_OPERATIONS"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0xu1mq7">
+        <inputEntry id="UnaryTests_0jtuk9k">
+          <text>"refer-to-legal-officer"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ezowpe">
+          <text>"CaseManagement"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hg9yz9">
+          <text>"Time Extension request"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0x0nzba">
+          <text>"reviewTimeExtensionRequestLO"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_07raps6">
+          <text>"Review Time extension request - Legal Officer"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_07f0rsn">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1h9vghz">
+          <text>1</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0hjqsvw">
+          <text>"reviewTimeExtensionRequestLO"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1owec2z">
+          <text>"decision_making_work"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1pb5sg1">
+          <text>"LEGAL_OPERATIONS"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
