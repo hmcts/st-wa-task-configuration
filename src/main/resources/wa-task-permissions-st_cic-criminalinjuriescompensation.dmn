@@ -34,7 +34,7 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1rp0nlz">
-          <text>"Regional-Centre-Admin"</text>
+          <text>"regional-centre-admin"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0dkpkpd">
           <text>"Read,Own,Claim,Unclaim,Manage,UnclaimAssign"</text>
@@ -63,7 +63,7 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_190a5or">
-          <text>"Regional-Centre-Team-Leader"</text>
+          <text>"regional-centre-team-leader"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0atan6s">
           <text>"Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel"</text>
@@ -92,7 +92,7 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1jo5qnj">
-          <text>"Senior-Legal-Caseworker"</text>
+          <text>"senior-legal-caseworker"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0a3x052">
           <text>"Read,Own,Claim,Manage,Assign,Unassign,Complete,Cancel"</text>
@@ -121,7 +121,7 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1di0b1j">
-          <text>"Tribunal-Caseworker"</text>
+          <text>"tribunal-caseworker"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_05ghrtj">
           <text>"Read,Own,Claim,Manage,Assign,Unassign,Complete,Cancel"</text>
