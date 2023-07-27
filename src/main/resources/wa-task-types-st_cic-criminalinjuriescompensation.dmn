@@ -229,6 +229,17 @@
           <text>"Review Time extension request - Legal Officer"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0bqa0vy">
+        <inputEntry id="UnaryTests_1qbgcsh">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0mo7l7r">
+          <text>"reviewStrikeOutRequestLO"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0r4t0d7">
+          <text>"Review Strike out request - Legal Officer"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
