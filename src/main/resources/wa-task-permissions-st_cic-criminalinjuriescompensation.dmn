@@ -83,7 +83,7 @@
       </rule>
       <rule id="DecisionRule_0i4p218">
         <inputEntry id="UnaryTests_1or4uu6">
-          <text>"reviewNewCaseAndProvideDirectionsLO","reviewTimeExtensionRequestLO"</text>
+          <text>"reviewNewCaseAndProvideDirectionsLO","reviewTimeExtensionRequestLO","reviewStrikeOutRequestLO"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1fryqbq">
           <text></text>
@@ -112,7 +112,7 @@
       </rule>
       <rule id="DecisionRule_09z41h1">
         <inputEntry id="UnaryTests_17z8qfe">
-          <text>"reviewNewCaseAndProvideDirectionsLO","reviewTimeExtensionRequestLO"</text>
+          <text>"reviewNewCaseAndProvideDirectionsLO","reviewTimeExtensionRequestLO","reviewStrikeOutRequestLO"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1jr85bn">
           <text></text>

@@ -132,6 +132,11 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "reviewTimeExtensionRequestLO",
                 "someCaseData",
                 defaultLegalOperationsPermissions()
+            ),
+            Arguments.of(
+                "reviewStrikeOutRequestLO",
+                "someCaseData",
+                defaultLegalOperationsPermissions()
             )
         );
     }

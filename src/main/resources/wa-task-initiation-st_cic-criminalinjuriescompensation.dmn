@@ -668,6 +668,38 @@
           <text>"LEGAL_OPERATIONS"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0njvpuz">
+        <inputEntry id="UnaryTests_1vcphcp">
+          <text>"refer-to-legal-officer"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0mg3wv8">
+          <text>"CaseManagement"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0qg16a7">
+          <text>"Strike out Request"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ulliz7">
+          <text>"reviewStrikeOutRequestLO"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1k6q9x9">
+          <text>"Review Strike out request - Legal Officer"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_12gwj1f">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_052njzl">
+          <text>5</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1owxhjl">
+          <text>"reviewStrikeOutRequestLO"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_14927ph">
+          <text>"decision_making_work"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_18hs6xa">
+          <text>"LEGAL_OPERATIONS"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
