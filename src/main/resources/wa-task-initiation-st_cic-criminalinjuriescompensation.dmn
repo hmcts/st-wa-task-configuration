@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.13.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.11.0">
   <decision id="wa-task-initiation-st_cic-criminalinjuriescompensation" name="Task initiation DMN">
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT">
       <input id="Input_1" label="Event Id" camunda:inputVariable="eventId">
@@ -761,6 +761,70 @@
           <text>"decision_making_work"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_183ov8j">
+          <text>"LEGAL_OPERATIONS"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_05hhwn0">
+        <inputEntry id="UnaryTests_0ocwwzw">
+          <text>"refer-to-legal-officer"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08tj3s7">
+          <text>"CaseManagement"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0knzls2">
+          <text>"Withdrawal request"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_04681tv">
+          <text>"reviewWithdrawalRequestLO"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_02ppj8n">
+          <text>"Review withdrawal request - Legal Officer"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1xeqgzt">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1j9o49y">
+          <text>5</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_17xzu31">
+          <text>"reviewWithdrawalRequestLO"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0wy9j0q">
+          <text>"decision_making_work"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0z69tji">
+          <text>"LEGAL_OPERATIONS"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0t1ufu3">
+        <inputEntry id="UnaryTests_071mpnf">
+          <text>"refer-to-legal-officer"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1wltsiq">
+          <text>"CaseManagement"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ggy9bt">
+          <text>"Rule 27 request"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1l2spt3">
+          <text>"reviewRule27RequestLO"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_17gbus7">
+          <text>"Review Rule 27 request - Legal Officer"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1i8j0m8">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_04d2qsg">
+          <text>5</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_00tnfqn">
+          <text>"reviewRule27RequestLO"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0zs4u1c">
+          <text>"decision_making_work"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0q9r1h6">
           <text>"LEGAL_OPERATIONS"</text>
         </outputEntry>
       </rule>
