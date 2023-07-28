@@ -700,6 +700,38 @@
           <text>"LEGAL_OPERATIONS"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_01wr0zn">
+        <inputEntry id="UnaryTests_1x7m8jl">
+          <text>"refer-to-legal-officer"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0cdyq5s">
+          <text>"CaseManagement"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xk4vaj">
+          <text>"Stay Request"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1xlvh14">
+          <text>"reviewStayRequestLO"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_153hu85">
+          <text>"Review stay request - Legal Officer"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_12l2fle">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_10p0wle">
+          <text>5</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1lyiyte">
+          <text>"reviewStayRequestLO"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1qkm5lq">
+          <text>"decision_making_work"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1lq9ob4">
+          <text>"LEGAL_OPERATIONS"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
