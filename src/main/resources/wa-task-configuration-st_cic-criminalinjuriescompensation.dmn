@@ -25,7 +25,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1o9uf1g">
-          <text>"processCaseWithdrawalDirections","processRule27Decision","processListingDirections","processDirectionsReListedCase","processDirectionsReListedCaseWithin5Days","processSetAsideDirections","processCorrections","processDirectionsReturned","processPostponementDirections","processTimeExtensionDirectionsReturned","processReinstatementDecisionNotice","processOtherDirectionsReturned","processWrittenReasons","processStrikeOutDirectionsReturned","processStayDirections","issueDecisionNotice","completeHearingOutcome","referCase","reviewNewCaseAndProvideDirectionsLO","reviewTimeExtensionRequestLO","reviewStrikeOutRequestLO","reviewStayRequestLO"</text>
+          <text>"processCaseWithdrawalDirections","processRule27Decision","processListingDirections","processDirectionsReListedCase","processDirectionsReListedCaseWithin5Days","processSetAsideDirections","processCorrections","processDirectionsReturned","processPostponementDirections","processTimeExtensionDirectionsReturned","processReinstatementDecisionNotice","processOtherDirectionsReturned","processWrittenReasons","processStrikeOutDirectionsReturned","processStayDirections","issueDecisionNotice","completeHearingOutcome","referCase","reviewNewCaseAndProvideDirectionsLO","reviewTimeExtensionRequestLO","reviewStrikeOutRequestLO","reviewStayRequestLO","reviewListingDirectionsLO"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1vuc06b">
           <text>"majorPriority"</text>
@@ -44,7 +44,7 @@ else 5000</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0ge5t9c">
-          <text>"processCaseWithdrawalDirections","processRule27Decision","processListingDirections","processDirectionsReListedCase","processDirectionsReListedCaseWithin5Days","processSetAsideDirections","processCorrections","processDirectionsReturned","processPostponementDirections","processTimeExtensionDirectionsReturned","processReinstatementDecisionNotice","processOtherDirectionsReturned","processWrittenReasons","processStrikeOutDirectionsReturned","processStayDirections","issueDecisionNotice","completeHearingOutcome","referCase","reviewNewCaseAndProvideDirectionsLO","reviewTimeExtensionRequestLO","reviewStrikeOutRequestLO","reviewStayRequestLO"</text>
+          <text>"processCaseWithdrawalDirections","processRule27Decision","processListingDirections","processDirectionsReListedCase","processDirectionsReListedCaseWithin5Days","processSetAsideDirections","processCorrections","processDirectionsReturned","processPostponementDirections","processTimeExtensionDirectionsReturned","processReinstatementDecisionNotice","processOtherDirectionsReturned","processWrittenReasons","processStrikeOutDirectionsReturned","processStayDirections","issueDecisionNotice","completeHearingOutcome","referCase","reviewNewCaseAndProvideDirectionsLO","reviewTimeExtensionRequestLO","reviewStrikeOutRequestLO","reviewStayRequestLO","reviewListingDirectionsLO"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1qbzk71">
           <text>"minorPriority"</text>
@@ -95,7 +95,7 @@ else 5000</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0v6pdjr">
-          <text>"processSetAsideDirections","processCorrections","processDirectionsReturned","processPostponementDirections","processTimeExtensionDirectionsReturned","processReinstatementDecisionNotice","processOtherDirectionsReturned","processWrittenReasons","reviewNewCaseAndProvideDirectionsLO","reviewTimeExtensionRequestLO","reviewStrikeOutRequestLO","reviewStayRequestLO"</text>
+          <text>"processSetAsideDirections","processCorrections","processDirectionsReturned","processPostponementDirections","processTimeExtensionDirectionsReturned","processReinstatementDecisionNotice","processOtherDirectionsReturned","processWrittenReasons","reviewNewCaseAndProvideDirectionsLO","reviewTimeExtensionRequestLO","reviewStrikeOutRequestLO","reviewStayRequestLO","reviewListingDirectionsLO"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1p8y8wb">
           <text>"workType"</text>
@@ -146,7 +146,7 @@ else 5000</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1b670t9">
-          <text>"reviewNewCaseAndProvideDirectionsLO","reviewTimeExtensionRequestLO","reviewStrikeOutRequestLO","reviewStayRequestLO"</text>
+          <text>"reviewNewCaseAndProvideDirectionsLO","reviewTimeExtensionRequestLO","reviewStrikeOutRequestLO","reviewStayRequestLO","reviewListingDirectionsLO"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0u0hv91">
           <text>"roleCategory"</text>
@@ -163,7 +163,7 @@ else 5000</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_043qnbi">
-          <text>"processListingDirections","processDirectionsReListedCase","processDirectionsReListedCaseWithin5Days","processSetAsideDirections","processPostponementDirections","processTimeExtensionDirectionsReturned","issueDecisionNotice","reviewTimeExtensionRequestLO"</text>
+          <text>"processListingDirections","processDirectionsReListedCase","processDirectionsReListedCaseWithin5Days","processSetAsideDirections","processPostponementDirections","processTimeExtensionDirectionsReturned","issueDecisionNotice","reviewTimeExtensionRequestLO","reviewListingDirectionsLO"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1g03p5z">
           <text>"dueDateIntervalDays"</text>
@@ -316,7 +316,7 @@ else 5000</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1kieu3i">
-          <text>"reviewNewCaseAndProvideDirectionsLO","reviewTimeExtensionRequestLO","reviewStrikeOutRequestLO","reviewStayRequestLO"</text>
+          <text>"reviewNewCaseAndProvideDirectionsLO","reviewTimeExtensionRequestLO","reviewStrikeOutRequestLO","reviewStayRequestLO","reviewListingDirectionsLO"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1u9r7ki">
           <text>"description"</text>

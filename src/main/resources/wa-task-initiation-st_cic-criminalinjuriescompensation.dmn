@@ -732,6 +732,38 @@
           <text>"LEGAL_OPERATIONS"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1nld8fd">
+        <inputEntry id="UnaryTests_1t9uxs7">
+          <text>"refer-to-legal-officer"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08pin54">
+          <text>"CaseManagement"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0g1xg73">
+          <text>"Listing Directions"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_07cu8xl">
+          <text>"reviewListingDirectionsLO"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0pzdvbt">
+          <text>"Review listing directions - Legal Officer"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0i4dfy3">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1wj5lmm">
+          <text>1</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1k5qrwe">
+          <text>"reviewListingDirectionsLO"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_13gvmq9">
+          <text>"decision_making_work"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_183ov8j">
+          <text>"LEGAL_OPERATIONS"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

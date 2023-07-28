@@ -251,6 +251,17 @@
           <text>"Review stay request - Legal Officer"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1mwb11x">
+        <inputEntry id="UnaryTests_0v29bmz">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1c57xm2">
+          <text>"reviewListingDirectionsLO"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_06izo5o">
+          <text>"Review listing directions - Legal Officer"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
