@@ -112,6 +112,10 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
             Map.of(
                 "taskTypeId", "reviewStrikeOutRequestLO",
                 "taskTypeName", "Review Strike out request - Legal Officer"
+            ),
+            Map.of(
+                "taskTypeId", "reviewStayRequestLO",
+                "taskTypeName", "Review stay request - Legal Officer"
             )
         );
         return Stream.of(
@@ -138,7 +142,7 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(1));
         assertThat(logic.getOutputs().size(), is(2));
-        assertThat(logic.getRules().size(), is(21));
+        assertThat(logic.getRules().size(), is(22));
 
 
     }

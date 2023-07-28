@@ -240,6 +240,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1xgkcsd">
+        <inputEntry id="UnaryTests_0t5qnmd">
+          <text>"create-draft-order"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1wa8n6r">
+          <text>"reviewStayRequestLO"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_18scphp">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
