@@ -157,6 +157,11 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "reviewRule27RequestLO",
                 "someCaseData",
                 defaultLegalOperationsPermissions()
+            ),
+            Arguments.of(
+                "reviewListCaseLO",
+                "someCaseData",
+                defaultLegalOperationsPermissions()
             )
         );
     }
@@ -239,7 +244,6 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
         IntStream.range(0, inputs.size())
             .forEach(i -> assertThat(inputs.get(i).getInputVariable(), is(inputColumnIds.get(i))));
     }
-
     private void assertThatOutputContainInOrder(List<String> outputColumnIds, List<DmnDecisionTableOutputImpl> output) {
         IntStream.range(0, output.size())
             .forEach(i -> assertThat(output.get(i).getOutputName(), is(outputColumnIds.get(i))));
