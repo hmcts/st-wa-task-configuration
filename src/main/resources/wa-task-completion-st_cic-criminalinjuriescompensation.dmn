@@ -207,6 +207,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0e39jsv">
+        <inputEntry id="UnaryTests_0o8v1oy">
+          <text>"caseworker-edit-cica-case-details","caseworker-case-built"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0zz0xi9">
+          <text>"vetNewCaseDocuments"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ihf9fg">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1tue2l3">
         <inputEntry id="UnaryTests_1d8tblg">
           <text>"create-draft-order"</text>

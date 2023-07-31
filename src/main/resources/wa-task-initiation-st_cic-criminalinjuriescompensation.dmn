@@ -604,6 +604,38 @@
           <text>"ADMIN"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0nybhhm">
+        <inputEntry id="UnaryTests_1fq8mii">
+          <text>"citizen-cic-submit-dss-application"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0m6q89k">
+          <text>"Submitted"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1cjbq6p">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1dj5b34">
+          <text>"vetNewCaseDocuments"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1f1w78f">
+          <text>"Vet New Case Documents"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1c7nl6j">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1jeq18h">
+          <text>5</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1iihfwm">
+          <text>"vetNewCaseDocuments"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_07dognu">
+          <text>"applications"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_15o28hp">
+          <text>"ADMIN"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0n2x7xg">
         <inputEntry id="UnaryTests_02ukxpf">
           <text>"refer-to-legal-officer"</text>

@@ -25,7 +25,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1o9uf1g">
-          <text>"processCaseWithdrawalDirections","processRule27Decision","processListingDirections","processDirectionsReListedCase","processDirectionsReListedCaseWithin5Days","processSetAsideDirections","processCorrections","processDirectionsReturned","processPostponementDirections","processTimeExtensionDirectionsReturned","processReinstatementDecisionNotice","processOtherDirectionsReturned","processWrittenReasons","processStrikeOutDirectionsReturned","processStayDirections","issueDecisionNotice","completeHearingOutcome","referCase","reviewNewCaseAndProvideDirectionsLO","reviewTimeExtensionRequestLO","reviewStrikeOutRequestLO","reviewStayRequestLO","reviewListingDirectionsLO","reviewWithdrawalRequestLO","reviewRule27RequestLO","reviewListCaseLO"</text>
+          <text>"processCaseWithdrawalDirections","processRule27Decision","processListingDirections","processDirectionsReListedCase","processDirectionsReListedCaseWithin5Days","processSetAsideDirections","processCorrections","processDirectionsReturned","processPostponementDirections","processTimeExtensionDirectionsReturned","processReinstatementDecisionNotice","processOtherDirectionsReturned","processWrittenReasons","processStrikeOutDirectionsReturned","processStayDirections","issueDecisionNotice","completeHearingOutcome","referCase","reviewNewCaseAndProvideDirectionsLO","reviewTimeExtensionRequestLO","reviewStrikeOutRequestLO","reviewStayRequestLO","reviewListingDirectionsLO","reviewWithdrawalRequestLO","reviewRule27RequestLO","reviewListCaseLO","vetNewCaseDocuments"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1vuc06b">
           <text>"majorPriority"</text>
@@ -44,7 +44,7 @@ else 5000</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0ge5t9c">
-          <text>"processCaseWithdrawalDirections","processRule27Decision","processListingDirections","processDirectionsReListedCase","processDirectionsReListedCaseWithin5Days","processSetAsideDirections","processCorrections","processDirectionsReturned","processPostponementDirections","processTimeExtensionDirectionsReturned","processReinstatementDecisionNotice","processOtherDirectionsReturned","processWrittenReasons","processStrikeOutDirectionsReturned","processStayDirections","issueDecisionNotice","completeHearingOutcome","referCase","reviewNewCaseAndProvideDirectionsLO","reviewTimeExtensionRequestLO","reviewStrikeOutRequestLO","reviewStayRequestLO","reviewListingDirectionsLO","reviewWithdrawalRequestLO","reviewRule27RequestLO","reviewListCaseLO"</text>
+          <text>"processCaseWithdrawalDirections","processRule27Decision","processListingDirections","processDirectionsReListedCase","processDirectionsReListedCaseWithin5Days","processSetAsideDirections","processCorrections","processDirectionsReturned","processPostponementDirections","processTimeExtensionDirectionsReturned","processReinstatementDecisionNotice","processOtherDirectionsReturned","processWrittenReasons","processStrikeOutDirectionsReturned","processStayDirections","issueDecisionNotice","completeHearingOutcome","referCase","reviewNewCaseAndProvideDirectionsLO","reviewTimeExtensionRequestLO","reviewStrikeOutRequestLO","reviewStayRequestLO","reviewListingDirectionsLO","reviewWithdrawalRequestLO","reviewRule27RequestLO","reviewListCaseLO","vetNewCaseDocuments"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1qbzk71">
           <text>"minorPriority"</text>
@@ -124,12 +124,29 @@ else 5000</text>
           <text>true</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1ebp5ca">
+        <inputEntry id="UnaryTests_0k25j2x">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_03jgyv1">
+          <text>"vetNewCaseDocuments"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1knzprs">
+          <text>"workType"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0xfyvm8">
+          <text>"applications"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_06fihsc">
+          <text>true</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0v7suji">
         <inputEntry id="UnaryTests_01uali5">
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_055g5ba">
-          <text>"processRule27Decision","processCaseWithdrawalDirections","processListingDirections","processDirectionsReListedCase","processDirectionsReListedCaseWithin5Days","processSetAsideDirections","processCorrections","processDirectionsReturned","processPostponementDirections","processTimeExtensionDirectionsReturned","processReinstatementDecisionNotice","processOtherDirectionsReturned","processWrittenReasons","processStrikeOutDirectionsReturned","processStayDirections","issueDecisionNotice","completeHearingOutcome","referCase"</text>
+          <text>"processRule27Decision","processCaseWithdrawalDirections","processListingDirections","processDirectionsReListedCase","processDirectionsReListedCaseWithin5Days","processSetAsideDirections","processCorrections","processDirectionsReturned","processPostponementDirections","processTimeExtensionDirectionsReturned","processReinstatementDecisionNotice","processOtherDirectionsReturned","processWrittenReasons","processStrikeOutDirectionsReturned","processStayDirections","issueDecisionNotice","completeHearingOutcome","referCase","vetNewCaseDocuments"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1ubz0s5">
           <text>"roleCategory"</text>
@@ -214,7 +231,7 @@ else 5000</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1dd4h23">
-          <text>"processRule27Decision","processReinstatementDecisionNotice","completeHearingOutcome","reviewNewCaseAndProvideDirectionsLO","reviewStrikeOutRequestLO","reviewStayRequestLO","reviewWithdrawalRequestLO","reviewRule27RequestLO"</text>
+          <text>"processRule27Decision","processReinstatementDecisionNotice","completeHearingOutcome","reviewNewCaseAndProvideDirectionsLO","reviewStrikeOutRequestLO","reviewStayRequestLO","reviewWithdrawalRequestLO","reviewRule27RequestLO","vetNewCaseDocuments"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1n8d760">
           <text>"dueDateIntervalDays"</text>
@@ -308,6 +325,23 @@ else 5000</text>
           <text>"[Refer case to judge](/cases/case-details/${[CASE_REFERENCE]}/trigger/refer-to-judge/refer-to-judgereferToJudgeReason&lt;br/&gt;" +"[Refer case to legal officer](/cases/case-details/${[CASE_REFERENCE]}/trigger/refer-to-legal-officer/refer-to-legal-officerreferToLegalOfficer"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1777gea">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0kcx6ed">
+        <inputEntry id="UnaryTests_1smjk9i">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xpgnb1">
+          <text>"vetNewCaseDocuments"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0hmuiug">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0mcxu2i">
+          <text>"[Edit case details](/cases/case-details/${[CASE_REFERENCE]}/trigger/edit-case/edit-casecaseCategorisationDetails&lt;br/&gt;" +"[Case: Build case](/cases/case-details/${[CASE_REFERENCE]}/trigger/caseworker-case-built/caseworker-case-builtcaseBuilt"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_14akn1n">
           <text>true</text>
         </outputEntry>
       </rule>
