@@ -327,6 +327,23 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .build()
             ),
             Arguments.of(
+                "vetNewCaseDocuments",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue(MINOR_PRIORITY, "500", true)
+                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+                    .expectedValue("workType", "applications", true)
+                    .expectedValue("roleCategory", "ADMIN", true)
+                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "5", true)
+                    .expectedValue("description",
+                                   "[Edit case details](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                                       + "/edit-case/edit-casecaseCategorisationDetails<br/>"
+                                       +"[Case: Build case](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                                       + "/caseworker-case-built/caseworker-case-builtcaseBuilt",
+                                   true)
+                    .build()
+            ),
+            Arguments.of(
                 "reviewNewCaseAndProvideDirectionsLO",
                 CaseDataBuilder.defaultCase().build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
@@ -470,7 +487,7 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
 
-        assertThat(logic.getRules().size(), is(18));
+        assertThat(logic.getRules().size(), is(20));
 
     }
     private void resultsMatch(List<Map<String, Object>> results, List<Map<String, Object>> expectation) {

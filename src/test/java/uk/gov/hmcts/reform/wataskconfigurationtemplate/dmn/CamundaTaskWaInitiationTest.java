@@ -296,6 +296,21 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "citizen-cic-submit-dss-application",
+                "Submitted",
+                null,
+                List.of(
+                    Map.of(
+                        "taskId", "vetNewCaseDocuments",
+                        "name", "Vet New Case Documents",
+                        "workingDaysAllowed", 5,
+                        "processCategories", "vetNewCaseDocuments",
+                        "workType", "applications",
+                        "roleCategory","ADMIN"
+                    )
+                )
+            ),
+            Arguments.of(
                 "refer-to-legal-officer",
                 "CaseManagement",
                 Map.of("Data", Map.of("cicCaseReferralTypeForWA", "New Case")),
@@ -434,6 +449,6 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(26));
+        assertThat(logic.getRules().size(), is(27));
     }
 }
