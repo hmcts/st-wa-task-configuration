@@ -430,15 +430,28 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                                        + "/create-draft-order/create-draft-ordercreateDraftOrder",
                                    true)
                     .build()
+            ),
+            Arguments.of(
+                "reviewListCaseLO",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue(MINOR_PRIORITY, "500", true)
+                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+                    .expectedValue("workType", "decision_making_work", true)
+                    .expectedValue("roleCategory", "LEGAL_OPERATIONS", true)
+                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", true)
+                    .expectedValue("description",
+                                   "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                                       + "/create-draft-order/create-draft-ordercreateDraftOrder",
+                                   true)
+                    .build()
             )
         );
     }
-
     @BeforeAll
     public static void initialization() {
         CURRENT_DMN_DECISION_TABLE = WA_TASK_CONFIGURATION_ST_CIC_CRIMINALJURIESCOMPENSATION;
     }
-
     @ParameterizedTest(name = "task type: {0} case data: {1}")
     @MethodSource("scenarioProvider")
     void should_return_correct_configuration_values_for_scenario(
@@ -452,7 +465,6 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
         resultsMatch(dmnDecisionTableResult.getResultList(), expectation);
     }
-
     @Test
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
@@ -461,7 +473,6 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
         assertThat(logic.getRules().size(), is(18));
 
     }
-
     private void resultsMatch(List<Map<String, Object>> results, List<Map<String, Object>> expectation) {
         assertThat(results.size(), is(expectation.size()));
         for (int index = 0; index < expectation.size(); index++) {
@@ -479,7 +490,6 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
             }
         }
     }
-
     private boolean validNow(LocalDateTime actual, LocalDateTime expected) {
         LocalDateTime now = LocalDateTime.now();
         return actual != null

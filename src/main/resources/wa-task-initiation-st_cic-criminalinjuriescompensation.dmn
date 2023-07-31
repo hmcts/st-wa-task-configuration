@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.11.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.13.0">
   <decision id="wa-task-initiation-st_cic-criminalinjuriescompensation" name="Task initiation DMN">
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT">
       <input id="Input_1" label="Event Id" camunda:inputVariable="eventId">
@@ -825,6 +825,38 @@
           <text>"decision_making_work"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0q9r1h6">
+          <text>"LEGAL_OPERATIONS"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ujjhtk">
+        <inputEntry id="UnaryTests_0d3hr41">
+          <text>"refer-to-legal-officer"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ykrgvd">
+          <text>"AwaitingHearing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1y53nc9">
+          <text>"Listed case"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1gls01k">
+          <text>"reviewListCaseLO"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_16mnnop">
+          <text>"Review List Case - Legal Officer"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0wozmfc">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_02sqmj0">
+          <text>1</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1e76e4v">
+          <text>"reviewListCaseLO"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_13k2qw6">
+          <text>"decision_making_work"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_11q33q5">
           <text>"LEGAL_OPERATIONS"</text>
         </outputEntry>
       </rule>
