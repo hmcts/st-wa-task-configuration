@@ -361,6 +361,17 @@
           <text>"Review list case (within 5 days) - Judge"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1r916vk">
+        <inputEntry id="UnaryTests_0at08bb">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0orwgz6">
+          <text>"reviewPostponementRequestJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0dbeoo2">
+          <text>"Review Postponement request - Judge"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
