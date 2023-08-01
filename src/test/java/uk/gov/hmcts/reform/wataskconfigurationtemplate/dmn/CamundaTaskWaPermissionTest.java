@@ -192,6 +192,11 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "reviewListCaseWithin5DaysJudge",
                 "someCaseData",
                 defaultJudicialPermissions()
+            ),
+            Arguments.of(
+                "reviewPostponementRequestJudge",
+                "someCaseData",
+                defaultJudicialWithOutFeePaidJudgePermissions()
             )
         );
     }
@@ -245,6 +250,22 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
             Map.of(
                 "name", "fee-paid-judge",
                 "value", "Read,Execute,Own,Claim,Manage,Complete",
+                "roleCategory", "JUDICIAL",
+                "autoAssignable", false
+            )
+        );
+    }
+    private static List<Map<String, Object>> defaultJudicialWithOutFeePaidJudgePermissions() {
+        return List.of(
+            Map.of(
+                "name", "senior-judge",
+                "value", "Read,Execute,Own,Claim,Manage,Assign,Unassign,Complete,Cancel",
+                "roleCategory", "JUDICIAL",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "judge",
+                "value", "Read,Execute,Own,Claim,Manage,Assign,Unassign,Complete,Cancel",
                 "roleCategory", "JUDICIAL",
                 "autoAssignable", false
             )

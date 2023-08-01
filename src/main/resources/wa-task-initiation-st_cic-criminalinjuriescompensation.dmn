@@ -1052,6 +1052,38 @@
           <text>"JUDICIAL"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_18dtp04">
+        <inputEntry id="UnaryTests_1muuk3p">
+          <text>"refer-to-judge"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hqroqc">
+          <text>"AwaitingHearing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1twtsbq">
+          <text>"Postponement request"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_10sqrph">
+          <text>"reviewPostponementRequestJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0my29sz">
+          <text>"Review Postponement request - Judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_14g86iu">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_13jty6n">
+          <text>1</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0viwc5t">
+          <text>"reviewPostponementRequestJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0x9w6wp">
+          <text>"decision_making_work"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0vjvmx6">
+          <text>"JUDICIAL"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
