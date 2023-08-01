@@ -306,6 +306,17 @@
           <text>"Review List Case - Legal Officer"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0fjf92a">
+        <inputEntry id="UnaryTests_1nwxere">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_10smgtr">
+          <text>"reviewOtherRequestLO"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0nl2v45">
+          <text>"Review Reinstatement request - Legal Officer"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0b4gdx0">
         <inputEntry id="UnaryTests_0xmxzb6">
           <text></text>
@@ -336,17 +347,6 @@
           <text>"reviewReinstatementRequestLO"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0hvxupu">
-          <text>"Review Reinstatement request - Legal Officer"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0fjf92a">
-        <inputEntry id="UnaryTests_1nwxere">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_10smgtr">
-          <text>"reviewOtherRequestLO"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0nl2v45">
           <text>"Review Reinstatement request - Legal Officer"</text>
         </outputEntry>
       </rule>

@@ -985,6 +985,9 @@
           <text>"decision_making_work"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1u0bwwt">
+          <text>"LEGAL_OPERATIONS"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_16ejur6">
         <inputEntry id="UnaryTests_1o923e9">
           <text>"refer-to-legal-officer"</text>
