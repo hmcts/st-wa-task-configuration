@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.13.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.11.0">
   <decision id="wa-task-initiation-st_cic-criminalinjuriescompensation" name="Task initiation DMN">
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT">
       <input id="Input_1" label="Event Id" camunda:inputVariable="eventId">
@@ -889,6 +889,102 @@
           <text>"decision_making_work"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_11q33q5">
+          <text>"LEGAL_OPERATIONS"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1sxsyxi">
+        <inputEntry id="UnaryTests_0d0h4t3">
+          <text>"refer-to-legal-officer"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08vttt9">
+          <text>"AwaitingHearing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fxx0gi">
+          <text>"Listed case (within 5 days)"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0zccgsj">
+          <text>"reviewListCaseWithin5DaysLO"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0lqsxwc">
+          <text>"Review list case (within 5 days) - Legal Officer"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ztjuce">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0hq6lxu">
+          <text>1</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_111d4ny">
+          <text>"reviewListCaseWithin5DaysLO"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0nyy0tn">
+          <text>"decision_making_work"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1j1hrhx">
+          <text>"LEGAL_OPERATIONS"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1cpxga5">
+        <inputEntry id="UnaryTests_1jtbitk">
+          <text>"refer-to-legal-officer"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_03j92xn">
+          <text>"AwaitingHearing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0duzhjh">
+          <text>"Postponement request"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_02pzbyc">
+          <text>"reviewPostponementRequestLO"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0at563g">
+          <text>"Review Postponement request - Legal Officer"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0cyui1j">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0gw6g6i">
+          <text>1</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_11hyw3d">
+          <text>"reviewPostponementRequestLO"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_07z9ffl">
+          <text>"decision_making_work"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0jzw2py">
+          <text>"LEGAL_OPERATIONS"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0hwbg7r">
+        <inputEntry id="UnaryTests_1lcldfv">
+          <text>"refer-to-legal-officer"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0wkggvk">
+          <text>"AwaitingHearing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0shy2pc">
+          <text>"Reinstatement"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_17yl79u">
+          <text>"reviewReinstatementRequestLO"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0n35jks">
+          <text>"Review Reinstatement request - Legal Officer"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0eu5fch">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1171olh">
+          <text>5</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1125er1">
+          <text>"reviewReinstatementRequestLO"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1e03pau">
+          <text>"decision_making_work"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1u0bwwt">
           <text>"LEGAL_OPERATIONS"</text>
         </outputEntry>
       </rule>

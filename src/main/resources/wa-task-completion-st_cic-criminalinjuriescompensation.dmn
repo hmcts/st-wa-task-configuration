@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="wa-completion-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.13.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="wa-completion-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.11.0">
   <decision id="wa-task-completion-st_cic-criminalinjuriescompensation" name="Task completion DMN">
     <decisionTable id="DecisionTable_01re27m" hitPolicy="COLLECT">
       <input id="eventId" label="Event ID" biodi:width="614">
@@ -303,6 +303,39 @@
           <text>"reviewListCaseLO"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1wu9ywt">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_07ir3qi">
+        <inputEntry id="UnaryTests_18fcl7i">
+          <text>"create-draft-order"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_14x6ymg">
+          <text>"reviewListCaseWithin5DaysLO"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_09oeh1s">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1a6c6ar">
+        <inputEntry id="UnaryTests_1gb0t2k">
+          <text>"create-draft-order"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0n3c6sx">
+          <text>"reviewPostponementRequestLO"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ts2t4s">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1wewn6c">
+        <inputEntry id="UnaryTests_0k11k2j">
+          <text>"create-draft-order"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_00mgv69">
+          <text>"reviewReinstatementRequestLO"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0gr503e">
           <text>"Auto"</text>
         </outputEntry>
       </rule>
