@@ -187,6 +187,11 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "reviewReinstatementRequestLO",
                 "someCaseData",
                 defaultLegalOperationsPermissions()
+            ),
+            Arguments.of(
+                "reviewListCaseWithin5DaysJudge",
+                "someCaseData",
+                defaultJudicialPermissions()
             )
         );
     }
@@ -219,6 +224,28 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "name", "tribunal-caseworker",
                 "value", "Read,Own,Claim,Manage,Assign,Unassign,Complete,Cancel",
                 "roleCategory", "LEGAL_OPERATIONS",
+                "autoAssignable", false
+            )
+        );
+    }
+    private static List<Map<String, Object>> defaultJudicialPermissions() {
+        return List.of(
+            Map.of(
+                "name", "senior-judge",
+                "value", "Read,Execute,Own,Claim,Manage,Assign,Unassign,Complete,Cancel",
+                "roleCategory", "JUDICIAL",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "judge",
+                "value", "Read,Execute,Own,Claim,Manage,Assign,Unassign,Complete,Cancel",
+                "roleCategory", "JUDICIAL",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "fee-paid-judge",
+                "value", "Read,Execute,Own,Claim,Manage,Complete",
+                "roleCategory", "JUDICIAL",
                 "autoAssignable", false
             )
         );
@@ -261,7 +288,7 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
         assertThat(logic.getOutputs().size(), is(7));
         assertThatOutputContainInOrder(outputColumnIds, logic.getOutputs());
         //Rules
-        assertThat(logic.getRules().size(), is(4));
+        assertThat(logic.getRules().size(), is(7));
 
     }
 

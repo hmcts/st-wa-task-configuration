@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-permissions-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.11.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-permissions-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.13.0">
   <decision id="wa-task-permissions-st_cic-criminalinjuriescompensation" name="Task Permissions DMN">
     <decisionTable id="DecisionTable_1pr5oic" hitPolicy="RULE ORDER">
       <input id="InputClause_12crj6e" label="Task Type" biodi:width="299" camunda:inputVariable="taskType">
@@ -136,6 +136,93 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_02en4n3">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_07mzohl">
+        <inputEntry id="UnaryTests_0hkdf0b">
+          <text>"reviewListCaseWithin5DaysJudge"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0naxply">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1sin4od">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0udtim5">
+          <text>"senior-judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_00cyx80">
+          <text>"Read,Execute,Own,Claim,Manage,Assign,Unassign,Complete,Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1tvnj6z">
+          <text>"JUDICIAL"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1trp6x5">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ctiodz">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0miltr7">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0zcdzb0">
+        <inputEntry id="UnaryTests_1a0g9r5">
+          <text>"reviewListCaseWithin5DaysJudge"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1h4fuhb">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1u9w7pu">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0e9mx0m">
+          <text>"judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_14kod5p">
+          <text>"Read,Execute,Own,Claim,Manage,Assign,Unassign,Complete,Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0wrlezi">
+          <text>"JUDICIAL"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1julg8g">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_02arlli">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_01dxi4i">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_01853p8">
+        <inputEntry id="UnaryTests_11tqb99">
+          <text>"reviewListCaseWithin5DaysJudge"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0j0ateo">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0pt2dih">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_15v3r38">
+          <text>"fee-paid-judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_16kvayb">
+          <text>"Read,Execute,Own,Claim,Manage,Complete"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0d8yibp">
+          <text>"JUDICIAL"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ut8qjs">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0scpxr9">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_09f298g">
           <text>false</text>
         </outputEntry>
       </rule>

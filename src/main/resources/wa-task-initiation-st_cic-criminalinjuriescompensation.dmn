@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.11.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.13.0">
   <decision id="wa-task-initiation-st_cic-criminalinjuriescompensation" name="Task initiation DMN">
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT">
       <input id="Input_1" label="Event Id" camunda:inputVariable="eventId">
@@ -1018,6 +1018,38 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_1j8zatv">
           <text>"LEGAL_OPERATIONS"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1m6bwp1">
+        <inputEntry id="UnaryTests_1glachh">
+          <text>"refer-to-judge"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1a3eweg">
+          <text>"AwaitingHearing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0l40ray">
+          <text>"Listed case (within 5 days)"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1jgm899">
+          <text>"reviewListCaseWithin5DaysJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1suzbm1">
+          <text>"Review list case (within 5 days) - Judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0hjmepk">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1jj4a8x">
+          <text>1</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ern9ea">
+          <text>"reviewListCaseWithin5DaysJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1v6bjck">
+          <text>"decision_making_work"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0v0nwhe">
+          <text>"JUDICIAL"</text>
         </outputEntry>
       </rule>
     </decisionTable>
