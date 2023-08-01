@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1kep5qz" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.13.0" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.0.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1kep5qz" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.11.0" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.0.0">
   <decision id="wa-task-types-st_cic-criminalinjuriescompensation" name="Task Types DMN">
     <decisionTable id="DecisionTable_17knzal" hitPolicy="COLLECT">
       <input id="Input_1">
@@ -8,7 +8,7 @@
         </inputExpression>
       </input>
       <output id="Output_1" name="taskTypeId" typeRef="string" biodi:width="359" />
-      <output id="OutputClause_0aeuwfu" name="taskTypeName" typeRef="string" biodi:width="323" />
+      <output id="OutputClause_0aeuwfu" name="taskTypeName" typeRef="string" biodi:width="489" />
       <rule id="DecisionRule_1s0e55i">
         <inputEntry id="UnaryTests_159d5fs">
           <text></text>
@@ -295,14 +295,14 @@
           <text>"Review Rule 27 request - Legal Officer"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_0b4gdx0">
-        <inputEntry id="UnaryTests_0xmxzb6">
+      <rule id="DecisionRule_0sq973a">
+        <inputEntry id="UnaryTests_13p3d4o">
           <text></text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_0fkegik">
+        <outputEntry id="LiteralExpression_0qkohke">
           <text>"reviewListCaseLO"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_0e7rzhf">
+        <outputEntry id="LiteralExpression_0l76b8k">
           <text>"Review List Case - Legal Officer"</text>
         </outputEntry>
       </rule>
@@ -314,6 +314,39 @@
           <text>"reviewOtherRequestLO"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0nl2v45">
+          <text>"Review Reinstatement request - Legal Officer"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0b4gdx0">
+        <inputEntry id="UnaryTests_0xmxzb6">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0fkegik">
+          <text>"reviewListCaseWithin5DaysLO"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0e7rzhf">
+          <text>"Review list case (within 5 days) - Legal Officer"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_15epzli">
+        <inputEntry id="UnaryTests_0oupgsl">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1vqmg61">
+          <text>"reviewPostponementRequestLO"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_06c9a4i">
+          <text>"Review Postponement request - Legal Officer"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0gilz14">
+        <inputEntry id="UnaryTests_1xcph8z">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0o84erv">
+          <text>"reviewReinstatementRequestLO"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0hvxupu">
           <text>"Review Reinstatement request - Legal Officer"</text>
         </outputEntry>
       </rule>

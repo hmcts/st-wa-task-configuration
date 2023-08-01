@@ -432,7 +432,52 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "refer-to-legal-officer",
-                null,
+                "AwaitingHearing",
+                Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Listed case (within 5 days)")),
+                List.of(
+                    Map.of(
+                        "taskId", "reviewListCaseWithin5DaysLO",
+                        "name", "Review list case (within 5 days) - Legal Officer",
+                        "workingDaysAllowed", 1,
+                        "processCategories", "reviewListCaseWithin5DaysLO",
+                        "workType", "decision_making_work",
+                        "roleCategory","LEGAL_OPERATIONS"
+                    )
+                )
+            ),
+            Arguments.of(
+                "refer-to-legal-officer",
+                "AwaitingHearing",
+                Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Postponement request")),
+                List.of(
+                    Map.of(
+                        "taskId", "reviewPostponementRequestLO",
+                        "name", "Review Postponement request - Legal Officer",
+                        "workingDaysAllowed", 1,
+                        "processCategories", "reviewPostponementRequestLO",
+                        "workType", "decision_making_work",
+                        "roleCategory","LEGAL_OPERATIONS"
+                    )
+                )
+            ),
+            Arguments.of(
+                "refer-to-legal-officer",
+                "AwaitingHearing",
+                Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Reinstatement")),
+                List.of(
+                    Map.of(
+                        "name", "Review Reinstatement request - Legal Officer",
+                        "workType", "decision_making_work",
+                        "taskId", "reviewReinstatementRequestLO",
+                        "workingDaysAllowed", 5,
+                        "processCategories", "reviewReinstatementRequestLO",
+                                              "roleCategory","LEGAL_OPERATIONS"
+                    )
+                )
+            ),
+            Arguments.of(
+                "refer-to-legal-officer",
+                "AwaitingHearing",           
                 Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Other")),
                 List.of(
                     Map.of(
@@ -464,6 +509,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(28));
+        assertThat(logic.getRules().size(), is(31));
+
     }
 }
