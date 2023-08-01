@@ -985,6 +985,35 @@
           <text>"decision_making_work"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1u0bwwt">
+      <rule id="DecisionRule_16ejur6">
+        <inputEntry id="UnaryTests_1o923e9">
+          <text>"refer-to-legal-officer"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0vvwup2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10zgrdy">
+          <text>"Other"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ttcern">
+          <text>"reviewOtherRequestLO"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ekk6i4">
+          <text>"Review Reinstatement request - Legal Officer"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1hcy87y">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1os0pt7">
+          <text>5</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1k91mc1">
+          <text>"reviewOtherRequestLO"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0f8wyyl">
+          <text>"decision_making_work"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1j8zatv">
           <text>"LEGAL_OPERATIONS"</text>
         </outputEntry>
       </rule>
