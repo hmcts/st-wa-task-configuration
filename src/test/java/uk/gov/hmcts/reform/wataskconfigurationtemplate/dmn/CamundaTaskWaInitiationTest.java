@@ -519,6 +519,21 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "roleCategory","JUDICIAL"
                     )
                 )
+            ),
+            Arguments.of(
+                "refer-to-judge",
+                "CaseClosed",
+                Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Corrections")),
+                List.of(
+                    Map.of(
+                        "taskId", "reviewCorrectionsRequest",
+                        "name", "Review Corrections request",
+                        "workingDaysAllowed", 1,
+                        "processCategories", "reviewCorrectionsRequest",
+                        "workType", "decision_making_work",
+                        "roleCategory","JUDICIAL"
+                    )
+                )
             )
         );
     }
@@ -539,7 +554,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(33));
+        assertThat(logic.getRules().size(), is(34));
 
     }
 }

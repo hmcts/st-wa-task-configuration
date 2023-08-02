@@ -372,6 +372,17 @@
           <text>"Review Postponement request - Judge"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0s8v4s4">
+        <inputEntry id="UnaryTests_1atkojn">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_13ecqvq">
+          <text>"reviewCorrectionsRequest"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1i5sbz7">
+          <text>"Review Corrections request"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

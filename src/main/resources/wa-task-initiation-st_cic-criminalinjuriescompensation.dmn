@@ -1084,6 +1084,38 @@
           <text>"JUDICIAL"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0aon92j">
+        <inputEntry id="UnaryTests_0f0akoz">
+          <text>"refer-to-judge"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zyqe9a">
+          <text>"CaseClosed"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ol2plm">
+          <text>"Corrections"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1kxvbko">
+          <text>"reviewCorrectionsRequest"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_02ute8j">
+          <text>"Review Corrections request"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ki8mhk">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1a83obu">
+          <text>1</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0mbsr14">
+          <text>"reviewCorrectionsRequest"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0r1i2jd">
+          <text>"decision_making_work"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_01dgw1k">
+          <text>"JUDICIAL"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
