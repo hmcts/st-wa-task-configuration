@@ -592,7 +592,7 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
 
-        assertThat(logic.getRules().size(), is(21));
+        assertThat(logic.getRules().size(), is(28));
 
     }
     private void resultsMatch(List<Map<String, Object>> results, List<Map<String, Object>> expectation) {
