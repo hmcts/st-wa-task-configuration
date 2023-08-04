@@ -11,9 +11,6 @@ import java.util.stream.Collectors;
 public class ConfigurationExpectationBuilder {
 
     private static final String DEFAULT_CALENDAR = "https://www.gov.uk/bank-holidays/england-and-wales.json";
-    private static final String EXTRA_TEST_CALENDAR = "https://raw.githubusercontent.com/hmcts/"
-        + "civil-wa-task-configuration/master/src/main/resources/privilege-calendar.json";
-
     private static List<String> EXPECTED_PROPERTIES = Arrays.asList(
         "dueDateOrigin","dueDateNonWorkingCalendar","majorPriority","minorPriority","workType", "roleCategory",
         "dueDateIntervalDays", "description"
