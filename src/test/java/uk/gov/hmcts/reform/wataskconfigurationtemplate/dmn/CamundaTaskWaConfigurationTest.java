@@ -26,11 +26,9 @@ import static uk.gov.hmcts.reform.wataskconfigurationtemplate.DmnDecisionTable.W
 
 class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
-
     public static final String MINOR_PRIORITY = "minorPriority";
     public static final String MAJOR_PRIORITY = "majorPriority";
     public static final String DUE_DATE_INTERVAL_DAYS = "dueDateIntervalDays";
-
 
     static Stream<Arguments> scenarioProvider() {
         return Stream.of(
@@ -592,7 +590,7 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
 
-        assertThat(logic.getRules().size(), is(28));
+        assertThat(logic.getRules().size(), is(23));
 
     }
     private void resultsMatch(List<Map<String, Object>> results, List<Map<String, Object>> expectation) {
