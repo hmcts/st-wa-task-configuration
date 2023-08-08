@@ -1148,6 +1148,38 @@
           <text>"JUDICIAL"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_18spxz6">
+        <inputEntry id="UnaryTests_0su1f55">
+          <text>"refer-to-judge"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0sp6knh">
+          <text>"CaseClosed"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1kx1ee6">
+          <text>"Reinstatement"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1iwe19l">
+          <text>"reviewReinstatementRequestJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1cw9ijz">
+          <text>"Review Reinstatement request - Judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1xyl4es">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0fntpq3">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_184qh7h">
+          <text>"reviewReinstatementRequestJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0usjztc">
+          <text>"decision_making_work"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_12tp1yg">
+          <text>"JUDICIAL"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
