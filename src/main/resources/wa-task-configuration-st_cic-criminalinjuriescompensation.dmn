@@ -25,7 +25,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1o9uf1g">
-          <text>"processCaseWithdrawalDirections","processRule27Decision","processListingDirections","processDirectionsReListedCase","processDirectionsReListedCaseWithin5Days","processSetAsideDirections","processCorrections","processDirectionsReturned","processPostponementDirections","processTimeExtensionDirectionsReturned","processReinstatementDecisionNotice","processOtherDirectionsReturned","processWrittenReasons","processStrikeOutDirectionsReturned","processStayDirections","issueDecisionNotice","completeHearingOutcome","referCase","reviewNewCaseAndProvideDirectionsLO","reviewTimeExtensionRequestLO","reviewStrikeOutRequestLO","reviewStayRequestLO","reviewListingDirectionsLO","reviewWithdrawalRequestLO","reviewRule27RequestLO","reviewListCaseLO","vetNewCaseDocuments","reviewOtherRequestLO","reviewListCaseWithin5DaysLO","reviewPostponementRequestLO","reviewReinstatementRequestLO","reviewListCaseWithin5DaysJudge","reviewPostponementRequestJudge","reviewCorrectionsRequest"</text>
+          <text>"processCaseWithdrawalDirections","processRule27Decision","processListingDirections","processDirectionsReListedCase","processDirectionsReListedCaseWithin5Days","processSetAsideDirections","processCorrections","processDirectionsReturned","processPostponementDirections","processTimeExtensionDirectionsReturned","processReinstatementDecisionNotice","processOtherDirectionsReturned","processWrittenReasons","processStrikeOutDirectionsReturned","processStayDirections","issueDecisionNotice","completeHearingOutcome","referCase","reviewNewCaseAndProvideDirectionsLO","reviewTimeExtensionRequestLO","reviewStrikeOutRequestLO","reviewStayRequestLO","reviewListingDirectionsLO","reviewWithdrawalRequestLO","reviewRule27RequestLO","reviewListCaseLO","vetNewCaseDocuments","reviewOtherRequestLO","reviewListCaseWithin5DaysLO","reviewPostponementRequestLO","reviewReinstatementRequestLO","reviewListCaseWithin5DaysJudge","reviewPostponementRequestJudge","reviewCorrectionsRequest","reviewWrittenReasonsRequest"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1vuc06b">
           <text>"majorPriority"</text>
@@ -44,7 +44,7 @@ else 5000</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0ge5t9c">
-          <text>"processCaseWithdrawalDirections","processRule27Decision","processListingDirections","processDirectionsReListedCase","processDirectionsReListedCaseWithin5Days","processSetAsideDirections","processCorrections","processDirectionsReturned","processPostponementDirections","processTimeExtensionDirectionsReturned","processReinstatementDecisionNotice","processOtherDirectionsReturned","processWrittenReasons","processStrikeOutDirectionsReturned","processStayDirections","issueDecisionNotice","completeHearingOutcome","referCase","reviewNewCaseAndProvideDirectionsLO","reviewTimeExtensionRequestLO","reviewStrikeOutRequestLO","reviewStayRequestLO","reviewListingDirectionsLO","reviewWithdrawalRequestLO","reviewRule27RequestLO","reviewListCaseLO","vetNewCaseDocuments","reviewOtherRequestLO","reviewListCaseWithin5DaysLO","reviewPostponementRequestLO","reviewReinstatementRequestLO","reviewListCaseWithin5DaysJudge","reviewPostponementRequestJudge","reviewCorrectionsRequest"</text>
+          <text>"processCaseWithdrawalDirections","processRule27Decision","processListingDirections","processDirectionsReListedCase","processDirectionsReListedCaseWithin5Days","processSetAsideDirections","processCorrections","processDirectionsReturned","processPostponementDirections","processTimeExtensionDirectionsReturned","processReinstatementDecisionNotice","processOtherDirectionsReturned","processWrittenReasons","processStrikeOutDirectionsReturned","processStayDirections","issueDecisionNotice","completeHearingOutcome","referCase","reviewNewCaseAndProvideDirectionsLO","reviewTimeExtensionRequestLO","reviewStrikeOutRequestLO","reviewStayRequestLO","reviewListingDirectionsLO","reviewWithdrawalRequestLO","reviewRule27RequestLO","reviewListCaseLO","vetNewCaseDocuments","reviewOtherRequestLO","reviewListCaseWithin5DaysLO","reviewPostponementRequestLO","reviewReinstatementRequestLO","reviewListCaseWithin5DaysJudge","reviewPostponementRequestJudge","reviewCorrectionsRequest","reviewWrittenReasonsRequest"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1qbzk71">
           <text>"minorPriority"</text>
@@ -95,7 +95,7 @@ else 5000</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0v6pdjr">
-          <text>"processSetAsideDirections","processCorrections","processDirectionsReturned","processPostponementDirections","processTimeExtensionDirectionsReturned","processReinstatementDecisionNotice","processOtherDirectionsReturned","processWrittenReasons","reviewNewCaseAndProvideDirectionsLO","reviewTimeExtensionRequestLO","reviewStrikeOutRequestLO","reviewStayRequestLO","reviewListingDirectionsLO","reviewWithdrawalRequestLO","reviewRule27RequestLO","reviewListCaseLO","reviewOtherRequestLO","reviewListCaseWithin5DaysLO","reviewPostponementRequestLO","reviewReinstatementRequestLO","reviewListCaseWithin5DaysJudge","reviewPostponementRequestJudge","reviewCorrectionsRequest"</text>
+          <text>"processSetAsideDirections","processCorrections","processDirectionsReturned","processPostponementDirections","processTimeExtensionDirectionsReturned","processReinstatementDecisionNotice","processOtherDirectionsReturned","processWrittenReasons","reviewNewCaseAndProvideDirectionsLO","reviewTimeExtensionRequestLO","reviewStrikeOutRequestLO","reviewStayRequestLO","reviewListingDirectionsLO","reviewWithdrawalRequestLO","reviewRule27RequestLO","reviewListCaseLO","reviewOtherRequestLO","reviewListCaseWithin5DaysLO","reviewPostponementRequestLO","reviewReinstatementRequestLO","reviewListCaseWithin5DaysJudge","reviewPostponementRequestJudge","reviewCorrectionsRequest","reviewWrittenReasonsRequest"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1p8y8wb">
           <text>"workType"</text>
@@ -180,7 +180,7 @@ else 5000</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1cg0won">
-          <text>"reviewListCaseWithin5DaysJudge","reviewPostponementRequestJudge","reviewCorrectionsRequest"</text>
+          <text>"reviewListCaseWithin5DaysJudge","reviewPostponementRequestJudge","reviewCorrectionsRequest","reviewWrittenReasonsRequest"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0n22qdj">
           <text>"roleCategory"</text>
@@ -277,6 +277,23 @@ else 5000</text>
           <text>true</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1wtj76z">
+        <inputEntry id="UnaryTests_14307ue">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vup070">
+          <text>"reviewWrittenReasonsRequest"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0edzbf0">
+          <text>"dueDateIntervalDays"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_18pwogm">
+          <text>28</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1gnpmut">
+          <text>true</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_163bftv">
         <inputEntry id="UnaryTests_0jad3xs">
           <text></text>
@@ -367,7 +384,7 @@ else 5000</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1kieu3i">
-          <text>"reviewNewCaseAndProvideDirectionsLO","reviewTimeExtensionRequestLO","reviewStrikeOutRequestLO","reviewStayRequestLO","reviewListingDirectionsLO","reviewWithdrawalRequestLO","reviewRule27RequestLO","reviewListCaseLO","reviewOtherRequestLO","reviewListCaseWithin5DaysLO","reviewPostponementRequestLO","reviewReinstatementRequestLO","reviewListCaseWithin5DaysJudge","reviewPostponementRequestJudge","reviewCorrectionsRequest"</text>
+          <text>"reviewNewCaseAndProvideDirectionsLO","reviewTimeExtensionRequestLO","reviewStrikeOutRequestLO","reviewStayRequestLO","reviewListingDirectionsLO","reviewWithdrawalRequestLO","reviewRule27RequestLO","reviewListCaseLO","reviewOtherRequestLO","reviewListCaseWithin5DaysLO","reviewPostponementRequestLO","reviewReinstatementRequestLO","reviewListCaseWithin5DaysJudge","reviewPostponementRequestJudge","reviewCorrectionsRequest","reviewWrittenReasonsRequest"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1u9r7ki">
           <text>"description"</text>

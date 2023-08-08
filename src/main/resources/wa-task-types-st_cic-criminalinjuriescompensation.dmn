@@ -383,6 +383,17 @@
           <text>"Review Corrections request"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1ilb1r0">
+        <inputEntry id="UnaryTests_12z1oma">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0vek6q9">
+          <text>"reviewWrittenReasonsRequest"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_00ik7ca">
+          <text>"Review Written Reasons request"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

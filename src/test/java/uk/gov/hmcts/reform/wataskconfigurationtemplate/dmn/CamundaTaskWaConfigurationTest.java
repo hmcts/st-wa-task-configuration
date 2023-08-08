@@ -567,6 +567,21 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                                        + "/create-draft-order/create-draft-ordercreateDraftOrder",
                                    true)
                     .build()
+            ),
+            Arguments.of(
+                "reviewWrittenReasonsRequest",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue(MINOR_PRIORITY, "500", true)
+                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+                    .expectedValue("workType", "decision_making_work", true)
+                    .expectedValue("roleCategory", "JUDICIAL", true)
+                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "28", true)
+                    .expectedValue("description",
+                                   "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                                       + "/create-draft-order/create-draft-ordercreateDraftOrder",
+                                   true)
+                    .build()
             )
         );
     }
@@ -592,7 +607,7 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
 
-        assertThat(logic.getRules().size(), is(21));
+        assertThat(logic.getRules().size(), is(22));
 
     }
     private void resultsMatch(List<Map<String, Object>> results, List<Map<String, Object>> expectation) {
