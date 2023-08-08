@@ -394,6 +394,17 @@
           <text>"Review Written Reasons request"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1osj0wi">
+        <inputEntry id="UnaryTests_1sq9joi">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1iy8pj2">
+          <text>"reviewReinstatementRequestJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1c6abml">
+          <text>"Review Reinstatement request - Judge"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
