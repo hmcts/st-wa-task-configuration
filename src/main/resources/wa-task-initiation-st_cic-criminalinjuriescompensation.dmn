@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.13.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.12.1">
   <decision id="wa-task-initiation-st_cic-criminalinjuriescompensation" name="Task initiation DMN">
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT">
       <input id="Input_1" label="Event Id" camunda:inputVariable="eventId">
@@ -1177,6 +1177,38 @@
           <text>"decision_making_work"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_12tp1yg">
+          <text>"JUDICIAL"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_13kslpo">
+        <inputEntry id="UnaryTests_1wnowx9">
+          <text>"refer-to-judge"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_007dt6a">
+          <text>"CaseClosed"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09maldo">
+          <text>"Set aside request"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1xb5l0n">
+          <text>"reviewSetAsideRequest"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0mbb9jd">
+          <text>"Review Set Aside request"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1b6i62m">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_00db884">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1yvzyq4">
+          <text>"reviewSetAsideRequest"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0frod7s">
+          <text>"decision_making_work"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0gnmq59">
           <text>"JUDICIAL"</text>
         </outputEntry>
       </rule>
