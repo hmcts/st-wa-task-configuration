@@ -313,7 +313,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "refer-to-legal-officer",
                 "CaseManagement",
-                Map.of("Data", Map.of("cicCaseReferralTypeForWA", "New case")),
+                Map.of("Data", Map.of("cicCaseReferralTypeForWA", "New Case")),
                 List.of(
                     Map.of(
                         "taskId", "reviewNewCaseAndProvideDirectionsLO",
@@ -328,7 +328,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "refer-to-legal-officer",
                 "CaseManagement",
-                Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Time extension request")),
+                Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Time Extension request")),
                 List.of(
                     Map.of(
                         "taskId", "reviewTimeExtensionRequestLO",
@@ -343,7 +343,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "refer-to-legal-officer",
                 "CaseManagement",
-                Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Strike out request")),
+                Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Strike out Request")),
                 List.of(
                     Map.of(
                         "taskId", "reviewStrikeOutRequestLO",
@@ -358,7 +358,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "refer-to-legal-officer",
                 "CaseManagement",
-                Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Stay request")),
+                Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Stay Request")),
                 List.of(
                     Map.of(
                         "taskId", "reviewStayRequestLO",
@@ -373,7 +373,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "refer-to-legal-officer",
                 "CaseManagement",
-                Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Listing directions")),
+                Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Listing Directions")),
                 List.of(
                     Map.of(
                         "taskId", "reviewListingDirectionsLO",
@@ -579,36 +579,6 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "roleCategory","JUDICIAL"
                     )
                 )
-            ),
-            Arguments.of(
-                "refer-to-judge",
-                "CaseManagement",
-                Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Stay request")),
-                List.of(
-                    Map.of(
-                        "taskId", "reviewStayRequestJudge",
-                        "name", "Review stay request - Judge",
-                        "workingDaysAllowed", 2,
-                        "processCategories", "reviewStayRequestJudge",
-                        "workType", "decision_making_work",
-                        "roleCategory","JUDICIAL"
-                    )
-                )
-            ),
-            Arguments.of(
-                "refer-to-judge",
-                "CaseManagement",
-                Map.of("Data", Map.of("cicCaseReferralTypeForWA", "New case")),
-                List.of(
-                    Map.of(
-                        "taskId", "reviewNewCaseAndProvideDirectionsJudge",
-                        "name", "Review new case and provide directions - Judge",
-                        "workingDaysAllowed", 2,
-                        "processCategories", "reviewNewCaseAndProvideDirectionsJudge",
-                        "workType", "decision_making_work",
-                        "roleCategory","JUDICIAL"
-                    )
-                )
             )
         );
     }
@@ -629,7 +599,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(39));
+        assertThat(logic.getRules().size(), is(37));
 
     }
 }
