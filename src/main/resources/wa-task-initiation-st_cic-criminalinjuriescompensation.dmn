@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.13.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.12.0">
   <decision id="wa-task-initiation-st_cic-criminalinjuriescompensation" name="Task initiation DMN">
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT">
       <input id="Input_1" label="Event Id" camunda:inputVariable="eventId">
@@ -452,7 +452,7 @@
           <text>"CaseManagement"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0gdf1cp">
-          <text>"Strike out Request"</text>
+          <text>"Strike out request"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0u21lsf">
           <text>"processStrikeOutDirectionsReturned"</text>
@@ -484,7 +484,7 @@
           <text>"CaseManagement"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1wbi73v">
-          <text>"Stay Request"</text>
+          <text>"Stay request"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_134nizd">
           <text>"processStayDirections"</text>
@@ -644,7 +644,7 @@
           <text>"CaseManagement"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_08h588e">
-          <text>"New Case"</text>
+          <text>"New case"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_05capjo">
           <text>"reviewNewCaseAndProvideDirectionsLO"</text>
@@ -676,7 +676,7 @@
           <text>"CaseManagement"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0hg9yz9">
-          <text>"Time Extension request"</text>
+          <text>"Time extension request"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0x0nzba">
           <text>"reviewTimeExtensionRequestLO"</text>
@@ -708,7 +708,7 @@
           <text>"CaseManagement"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0qg16a7">
-          <text>"Strike out Request"</text>
+          <text>"Strike out request"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ulliz7">
           <text>"reviewStrikeOutRequestLO"</text>
@@ -740,7 +740,7 @@
           <text>"CaseManagement"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1xk4vaj">
-          <text>"Stay Request"</text>
+          <text>"Stay request"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1xlvh14">
           <text>"reviewStayRequestLO"</text>
@@ -772,7 +772,7 @@
           <text>"CaseManagement"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0g1xg73">
-          <text>"Listing Directions"</text>
+          <text>"Listing directions"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_07cu8xl">
           <text>"reviewListingDirectionsLO"</text>
@@ -1212,6 +1212,38 @@
           <text>"JUDICIAL"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0n9kmjb">
+        <inputEntry id="UnaryTests_0p6ar3t">
+          <text>"refer-to-judge"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ys1myi">
+          <text>"CaseManagement"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0jlchl0">
+          <text>"Stay request"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1w0bcbf">
+          <text>"reviewStayRequestJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_18mk3sv">
+          <text>"Review stay request - Judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1r56j2k">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1nojn2y">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_039m2er">
+          <text>"reviewStayRequestJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0fnz3iu">
+          <text>"decision_making_work"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0yqbxbx">
+          <text>"JUDICIAL"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1sj6gcp">
         <inputEntry id="UnaryTests_0w2rv1i">
           <text>"refer-to-judge"</text>
@@ -1220,7 +1252,7 @@
           <text>"CaseManagement"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1sw7z7x">
-          <text>"New Case"</text>
+          <text>"New case"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ujkc57">
           <text>"reviewNewCaseAndProvideDirectionsJudge"</text>
