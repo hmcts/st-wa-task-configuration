@@ -1340,6 +1340,38 @@
           <text>"JUDICIAL"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_13gbmss">
+        <inputEntry id="UnaryTests_0dpddha">
+          <text>"refer-to-judge"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0jb2u2f">
+          <text>"CaseManagement"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_086wqcs">
+          <text>"Rule 27 request"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1jbbmwy">
+          <text>"reviewRule27RequestJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0am2ms6">
+          <text>"Review Rule 27 request - Judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1tw9hpl">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_08fuavq">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0wp4jxf">
+          <text>"reviewRule27RequestJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1f6lsc3">
+          <text>"decision_making_work"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1jb4vt9">
+          <text>"JUDICIAL"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

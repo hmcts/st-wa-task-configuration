@@ -244,6 +244,10 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskType", "reviewWithdrawalRequestJudge",
                         "completionMode", "Auto"
+                    ),
+                    Map.of(
+                        "taskType", "reviewRule27RequestJudge",
+                        "completionMode", "Auto"
                     )
                 )
             )
@@ -264,6 +268,6 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
 
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(41));
+        assertThat(logic.getRules().size(), is(42));
     }
 }
