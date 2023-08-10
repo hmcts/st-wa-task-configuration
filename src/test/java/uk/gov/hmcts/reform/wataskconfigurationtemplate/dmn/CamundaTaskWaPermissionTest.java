@@ -232,6 +232,11 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "reviewOtherRequestJudge",
                 "someCaseData",
                 defaultJudicialPermissions()
+            ),
+            Arguments.of(
+                "reviewWithdrawalRequestJudge",
+                "someCaseData",
+                defaultJudicialPermissions()
             )
         );
     }
