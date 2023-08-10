@@ -460,6 +460,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0lt4hhb">
+        <inputEntry id="UnaryTests_0p7a9f9">
+          <text>"create-draft-order"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1nf0q1z">
+          <text>"reviewRule27RequestJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_18zc1w7">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
