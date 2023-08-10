@@ -1308,6 +1308,38 @@
           <text>"JUDICIAL"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0exzi78">
+        <inputEntry id="UnaryTests_0bgwlth">
+          <text>"refer-to-judge"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0a8zrm0">
+          <text>"CaseManagement"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05boufg">
+          <text>"Withdrawal request"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_11z9es0">
+          <text>"reviewWithdrawalRequestJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1xu0uhz">
+          <text>"Review withdrawal request - Judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0fb47hf">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1cm0fob">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_10ckjbd">
+          <text>"reviewWithdrawalRequestJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1vtfbg1">
+          <text>"decision_making_work"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1bje62c">
+          <text>"JUDICIAL"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
