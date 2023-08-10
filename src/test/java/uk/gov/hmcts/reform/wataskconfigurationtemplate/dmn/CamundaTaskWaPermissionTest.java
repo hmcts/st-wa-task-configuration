@@ -236,12 +236,14 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "name", "regional-centre-admin",
                 "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign",
                 "roleCategory", "ADMIN",
+                "assignmentPriority", 1,
                 "autoAssignable", false
             ),
             Map.of(
                 "name", "regional-centre-team-leader",
                 "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel",
                 "roleCategory", "ADMIN",
+                "assignmentPriority", 2,
                 "autoAssignable", false
             )
         );
@@ -252,12 +254,14 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "name", "senior-legal-caseworker",
                 "value", "Read,Own,Claim,Manage,Assign,Unassign,Complete,Cancel",
                 "roleCategory", "LEGAL_OPERATIONS",
+                "assignmentPriority", 1,
                 "autoAssignable", false
             ),
             Map.of(
                 "name", "tribunal-caseworker",
                 "value", "Read,Own,Claim,Manage,Assign,Unassign,Complete,Cancel",
                 "roleCategory", "LEGAL_OPERATIONS",
+                "assignmentPriority", 2,
                 "autoAssignable", false
             )
         );
@@ -268,18 +272,21 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "name", "senior-judge",
                 "value", "Read,Execute,Own,Claim,Manage,Assign,Unassign,Complete,Cancel",
                 "roleCategory", "JUDICIAL",
+                "assignmentPriority", 1,
                 "autoAssignable", false
             ),
             Map.of(
                 "name", "judge",
                 "value", "Read,Execute,Own,Claim,Manage,Assign,Unassign,Complete,Cancel",
                 "roleCategory", "JUDICIAL",
+                "assignmentPriority", 2,
                 "autoAssignable", false
             ),
             Map.of(
                 "name", "fee-paid-judge",
                 "value", "Read,Execute,Own,Claim,Manage,Complete",
                 "roleCategory", "JUDICIAL",
+                "assignmentPriority", 3,
                 "autoAssignable", false
             )
         );
@@ -290,12 +297,14 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "name", "senior-judge",
                 "value", "Read,Execute,Own,Claim,Manage,Assign,Unassign,Complete,Cancel",
                 "roleCategory", "JUDICIAL",
+                "assignmentPriority", 1,
                 "autoAssignable", false
             ),
             Map.of(
                 "name", "judge",
                 "value", "Read,Execute,Own,Claim,Manage,Assign,Unassign,Complete,Cancel",
                 "roleCategory", "JUDICIAL",
+                "assignmentPriority", 2,
                 "autoAssignable", false
             )
         );

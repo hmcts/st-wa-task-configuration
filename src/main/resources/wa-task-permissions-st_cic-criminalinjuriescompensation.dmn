@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-permissions-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.12.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-permissions-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.13.0">
   <decision id="wa-task-permissions-st_cic-criminalinjuriescompensation" name="Task Permissions DMN">
     <decisionTable id="DecisionTable_1pr5oic" hitPolicy="RULE ORDER">
       <input id="InputClause_12crj6e" label="Task Type" biodi:width="299" camunda:inputVariable="taskType">
@@ -46,7 +46,7 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0shnp5n">
-          <text></text>
+          <text>1</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1xf4md3">
           <text>false</text>
@@ -75,7 +75,7 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1rj3jrc">
-          <text></text>
+          <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0nsp920">
           <text>false</text>
@@ -104,7 +104,7 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1r0w01m">
-          <text></text>
+          <text>1</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0odiq5j">
           <text>false</text>
@@ -133,7 +133,7 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_13j2oem">
-          <text></text>
+          <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_02en4n3">
           <text>false</text>
@@ -162,7 +162,7 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1ctiodz">
-          <text></text>
+          <text>1</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0miltr7">
           <text>false</text>
@@ -191,7 +191,7 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_02arlli">
-          <text></text>
+          <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_01dxi4i">
           <text>false</text>
@@ -220,7 +220,7 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0scpxr9">
-          <text></text>
+          <text>3</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_09f298g">
           <text>false</text>
