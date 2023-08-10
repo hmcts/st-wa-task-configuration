@@ -223,7 +223,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "create-draft-order",
                 "CaseManagement",
-                Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Strike out Request")),
+                Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Strike out request")),
                 List.of(
                     Map.of(
                         "taskId", "processStrikeOutDirectionsReturned",
@@ -238,7 +238,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "create-draft-order",
                 "CaseManagement",
-                Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Stay Request")),
+                Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Stay request")),
                 List.of(
                     Map.of(
                         "taskId", "processStayDirections",
@@ -313,7 +313,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "refer-to-legal-officer",
                 "CaseManagement",
-                Map.of("Data", Map.of("cicCaseReferralTypeForWA", "New Case")),
+                Map.of("Data", Map.of("cicCaseReferralTypeForWA", "New case")),
                 List.of(
                     Map.of(
                         "taskId", "reviewNewCaseAndProvideDirectionsLO",
@@ -328,7 +328,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "refer-to-legal-officer",
                 "CaseManagement",
-                Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Time Extension request")),
+                Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Time extension request")),
                 List.of(
                     Map.of(
                         "taskId", "reviewTimeExtensionRequestLO",
@@ -343,7 +343,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "refer-to-legal-officer",
                 "CaseManagement",
-                Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Strike out Request")),
+                Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Strike out request")),
                 List.of(
                     Map.of(
                         "taskId", "reviewStrikeOutRequestLO",
@@ -358,7 +358,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "refer-to-legal-officer",
                 "CaseManagement",
-                Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Stay Request")),
+                Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Stay request")),
                 List.of(
                     Map.of(
                         "taskId", "reviewStayRequestLO",
@@ -373,7 +373,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "refer-to-legal-officer",
                 "CaseManagement",
-                Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Listing Directions")),
+                Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Listing directions")),
                 List.of(
                     Map.of(
                         "taskId", "reviewListingDirectionsLO",
@@ -583,7 +583,22 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "refer-to-judge",
                 "CaseManagement",
-                Map.of("Data", Map.of("cicCaseReferralTypeForWA", "New Case")),
+                Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Stay request")),
+                List.of(
+                    Map.of(
+                        "taskId", "reviewStayRequestJudge",
+                        "name", "Review stay request - Judge",
+                        "workingDaysAllowed", 2,
+                        "processCategories", "reviewStayRequestJudge",
+                        "workType", "decision_making_work",
+                        "roleCategory","JUDICIAL"
+                    )
+                )
+            ),
+            Arguments.of(
+                "refer-to-judge",
+                "CaseManagement",
+                Map.of("Data", Map.of("cicCaseReferralTypeForWA", "New case")),
                 List.of(
                     Map.of(
                         "taskId", "reviewNewCaseAndProvideDirectionsJudge",
@@ -614,7 +629,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(37));
+        assertThat(logic.getRules().size(), is(39));
 
     }
 }
