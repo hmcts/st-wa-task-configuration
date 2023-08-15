@@ -493,6 +493,17 @@
           <text>"Review List Case - Judge"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1a4ejwh">
+        <inputEntry id="UnaryTests_0y7tpwo">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_12sn7xy">
+          <text>"reviewStrikeOutRequestJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0zhgplk">
+          <text>"Review Strike out request - Judge"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
