@@ -732,6 +732,21 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                                        + "/create-draft-order/create-draft-ordercreateDraftOrder",
                                    false)
                     .build()
+            ),
+            Arguments.of(
+                "reviewTimeExtensionRequestJudge",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue(MINOR_PRIORITY, "500", false)
+                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+                    .expectedValue("workType", "decision_making_work", false)
+                    .expectedValue("roleCategory", "JUDICIAL", false)
+                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", false)
+                    .expectedValue("description",
+                                   "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                                       + "/create-draft-order/create-draft-ordercreateDraftOrder",
+                                   false)
+                    .build()
             )
         );
     }
