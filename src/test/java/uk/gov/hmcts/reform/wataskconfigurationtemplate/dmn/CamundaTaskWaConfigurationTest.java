@@ -747,6 +747,62 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                                        + "/create-draft-order/create-draft-ordercreateDraftOrder",
                                    false)
                     .build()
+            ),
+            Arguments.of(
+                "reviewSpecificAccessRequestJudicial",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue(MINOR_PRIORITY, "500", false)
+                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+                    .expectedValue("workType", "access_requests", false)
+                    .expectedValue("roleCategory", "JUDICIAL", false)
+                    .expectedValue("description",
+                                   "[Review Access Request](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                                       + "/reviewSpecificAccessRequestJudicial)",
+                                   false)
+                    .build()
+            ),
+            Arguments.of(
+                "reviewSpecificAccessRequestLegalOps",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue(MINOR_PRIORITY, "500", false)
+                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+                    .expectedValue("workType", "access_requests", false)
+                    .expectedValue("roleCategory", "LEGAL_OPERATIONS", false)
+                    .expectedValue("description",
+                                   "[Review Access Request](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                                       + "/reviewSpecificAccessRequestLegalOps)",
+                                   false)
+                    .build()
+            ),
+            Arguments.of(
+                "reviewSpecificAccessRequestAdmin",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue(MINOR_PRIORITY, "500", false)
+                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+                    .expectedValue("workType", "access_requests", false)
+                    .expectedValue("roleCategory", "ADMIN", false)
+                    .expectedValue("description",
+                                   "[Review Access Request](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                                       + "/reviewSpecificAccessRequestAdmin)",
+                                   false)
+                    .build()
+            ),
+            Arguments.of(
+                "reviewSpecificAccessRequestCTSC",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue(MINOR_PRIORITY, "500", false)
+                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+                    .expectedValue("workType", "access_requests", false)
+                    .expectedValue("roleCategory", "CTSC", false)
+                    .expectedValue("description",
+                                   "[Review Access Request](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                                       + "/reviewSpecificAccessRequestCTSC)",
+                                   false)
+                    .build()
             )
         );
     }
@@ -772,7 +828,7 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
 
-        assertThat(logic.getRules().size(), is(22));
+        assertThat(logic.getRules().size(), is(28));
 
     }
     private void resultsMatch(List<Map<String, Object>> results, List<Map<String, Object>> expectation) {
