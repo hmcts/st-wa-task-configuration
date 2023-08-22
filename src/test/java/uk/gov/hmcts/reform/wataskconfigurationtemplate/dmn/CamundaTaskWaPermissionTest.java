@@ -262,6 +262,26 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "reviewTimeExtensionRequestJudge",
                 "someCaseData",
                 defaultJudicialPermissions()
+            ),
+            Arguments.of(
+                "reviewSpecificAccessRequestJudicial",
+                "someCaseData",
+                defaultReviewSpecificAccessRequestJudicialPermissions()
+            ),
+            Arguments.of(
+                "reviewSpecificAccessRequestLegalOps",
+                "someCaseData",
+                defaultReviewSpecificAccessRequestLegalOpsPermissions()
+            ),
+            Arguments.of(
+                "reviewSpecificAccessRequestAdmin",
+                "someCaseData",
+                defaultReviewSpecificAccessRequestAdminPermissions()
+            ),
+            Arguments.of(
+                "reviewSpecificAccessRequestCTSC",
+                "someCaseData",
+                defaultReviewSpecificAccessRequestCTSCPermissions()
             )
         );
     }
@@ -346,6 +366,47 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
         );
     }
 
+    private static List<Map<String, Object>> defaultReviewSpecificAccessRequestJudicialPermissions() {
+        return List.of(
+            Map.of(
+                "name", "leadership-judge",
+                "value", "Read,Own,Claim,Unclaim,Assign",
+                "roleCategory", "JUDICIAL",
+                "autoAssignable", false
+            )
+        );
+    }
+    private static List<Map<String, Object>> defaultReviewSpecificAccessRequestLegalOpsPermissions() {
+        return List.of(
+            Map.of(
+                "name", "senior-legal-caseworker",
+                "value", "Read,Own,Claim,Unclaim,Assign",
+                "roleCategory", "LEGAL_OPERATIONS",
+                "autoAssignable", false
+            )
+        );
+    }
+    private static List<Map<String, Object>> defaultReviewSpecificAccessRequestAdminPermissions() {
+        return List.of(
+            Map.of(
+                "name", "hearing-centre-team-leader",
+                "value", "Read,Own,Claim,Unclaim,Assign",
+                "roleCategory", "ADMIN",
+                "autoAssignable", false
+            )
+        );
+    }
+    private static List<Map<String, Object>> defaultReviewSpecificAccessRequestCTSCPermissions() {
+        return List.of(
+            Map.of(
+                "name", "ctsc-team-leader",
+                "value", "Read,Own,Claim,Unclaim,Assign",
+                "roleCategory", "CTSC",
+                "autoAssignable", false
+            )
+        );
+    }
+
     @ParameterizedTest (name = "task type: {0} case data: {1}")
     @MethodSource ("scenarioProvider")
     void given_null_or_empty_inputs_when_evaluate_dmn_it_returns_expected_rules(String taskType,
@@ -383,7 +444,7 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
         assertThat(logic.getOutputs().size(), is(7));
         assertThatOutputContainInOrder(outputColumnIds, logic.getOutputs());
         //Rules
-        assertThat(logic.getRules().size(), is(7));
+        assertThat(logic.getRules().size(), is(11));
 
     }
 

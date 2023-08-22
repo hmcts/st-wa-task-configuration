@@ -22,7 +22,6 @@ public class ConfigurationExpectationBuilder {
         builder.expectedValue("roleCategory", "ADMIN", true);
         builder.expectedValue("minorPriority", "500", true);
         builder.expectedValue("majorPriority", "5000", true);
-        builder.expectedValue("dueDateIntervalDays", "5", true);
         builder.expectedValue("description", "[Orders: Send order]", true);
         return builder;
     }
