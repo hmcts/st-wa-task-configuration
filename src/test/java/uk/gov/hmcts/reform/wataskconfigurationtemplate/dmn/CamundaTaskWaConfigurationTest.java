@@ -321,7 +321,7 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue("description",
                                    "[Refer case to judge](/cases/case-details/${[CASE_REFERENCE]}/trigger"
                                        + "/refer-to-judge/refer-to-judgereferToJudgeReason<br/>"
-                                       +"[Refer case to legal officer](/cases/case-details/${[CASE_REFERENCE]}"
+                                       + "[Refer case to legal officer](/cases/case-details/${[CASE_REFERENCE]}"
                                        + "/trigger/refer-to-legal-officer/refer-to-legal-officerreferToLegalOfficer",
                                    false)
                     .build()
@@ -338,7 +338,7 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue("description",
                                    "[Edit case details](/cases/case-details/${[CASE_REFERENCE]}/trigger"
                                        + "/edit-case/edit-casecaseCategorisationDetails<br/>"
-                                       +"[Case: Build case](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                                       + "[Case: Build case](/cases/case-details/${[CASE_REFERENCE]}/trigger"
                                        + "/caseworker-case-built/caseworker-case-builtcaseBuilt",
                                    false)
                     .build()
@@ -806,10 +806,12 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
             )
         );
     }
+
     @BeforeAll
     public static void initialization() {
         CURRENT_DMN_DECISION_TABLE = WA_TASK_CONFIGURATION_ST_CIC_CRIMINALJURIESCOMPENSATION;
     }
+
     @ParameterizedTest(name = "task type: {0} case data: {1}")
     @MethodSource("scenarioProvider")
     void should_return_correct_configuration_values_for_scenario(
@@ -823,6 +825,7 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
         resultsMatch(dmnDecisionTableResult.getResultList(), expectation);
     }
+
     @Test
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
@@ -831,6 +834,7 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
         assertThat(logic.getRules().size(), is(28));
 
     }
+
     private void resultsMatch(List<Map<String, Object>> results, List<Map<String, Object>> expectation) {
         assertThat(results.size(), is(expectation.size()));
         for (int index = 0; index < expectation.size(); index++) {
@@ -848,6 +852,7 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
             }
         }
     }
+
     private boolean validNow(LocalDateTime actual, LocalDateTime expected) {
         LocalDateTime now = LocalDateTime.now();
         return actual != null

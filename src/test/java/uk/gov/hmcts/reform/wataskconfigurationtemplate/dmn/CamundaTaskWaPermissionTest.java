@@ -281,7 +281,7 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "reviewSpecificAccessRequestCTSC",
                 "someCaseData",
-                defaultReviewSpecificAccessRequestCTSCPermissions()
+                defaultReviewSpecificAccessRequestCtscPermissions()
             )
         );
     }
@@ -304,6 +304,7 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
             )
         );
     }
+
     private static List<Map<String, Object>> defaultLegalOperationsPermissions() {
         return List.of(
             Map.of(
@@ -322,6 +323,7 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
             )
         );
     }
+
     private static List<Map<String, Object>> defaultJudicialPermissions() {
         return List.of(
             Map.of(
@@ -347,6 +349,7 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
             )
         );
     }
+
     private static List<Map<String, Object>> defaultJudicialWithOutFeePaidJudgePermissions() {
         return List.of(
             Map.of(
@@ -376,6 +379,7 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
             )
         );
     }
+
     private static List<Map<String, Object>> defaultReviewSpecificAccessRequestLegalOpsPermissions() {
         return List.of(
             Map.of(
@@ -386,6 +390,7 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
             )
         );
     }
+
     private static List<Map<String, Object>> defaultReviewSpecificAccessRequestAdminPermissions() {
         return List.of(
             Map.of(
@@ -396,7 +401,8 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
             )
         );
     }
-    private static List<Map<String, Object>> defaultReviewSpecificAccessRequestCTSCPermissions() {
+
+    private static List<Map<String, Object>> defaultReviewSpecificAccessRequestCtscPermissions() {
         return List.of(
             Map.of(
                 "name", "ctsc-team-leader",
@@ -452,6 +458,7 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
         IntStream.range(0, inputs.size())
             .forEach(i -> assertThat(inputs.get(i).getInputVariable(), is(inputColumnIds.get(i))));
     }
+
     private void assertThatOutputContainInOrder(List<String> outputColumnIds, List<DmnDecisionTableOutputImpl> output) {
         IntStream.range(0, output.size())
             .forEach(i -> assertThat(output.get(i).getOutputName(), is(outputColumnIds.get(i))));
