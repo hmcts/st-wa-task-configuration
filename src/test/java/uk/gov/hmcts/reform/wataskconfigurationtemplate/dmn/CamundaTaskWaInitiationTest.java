@@ -281,6 +281,36 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "edit-hearing-summary",
+                "AwaitingHearing",
+                null,
+                List.of(
+                    Map.of(
+                        "taskId", "completeHearingOutcome",
+                        "name", "Complete Hearing Outcome",
+                        "workingDaysAllowed", 5,
+                        "processCategories", "completeHearingOutcome",
+                        "workType", "hearing_work",
+                        "roleCategory","ADMIN"
+                    )
+                )
+            ),
+            Arguments.of(
+                "caseworker-edit-record-listing",
+                "AwaitingHearing",
+                null,
+                List.of(
+                    Map.of(
+                        "taskId", "completeHearingOutcome",
+                        "name", "Complete Hearing Outcome",
+                        "workingDaysAllowed", 5,
+                        "processCategories", "completeHearingOutcome",
+                        "workType", "hearing_work",
+                        "roleCategory","ADMIN"
+                    )
+                )
+            ),
+            Arguments.of(
                 "caseworker-case-built",
                 "Submitted",
                 null,

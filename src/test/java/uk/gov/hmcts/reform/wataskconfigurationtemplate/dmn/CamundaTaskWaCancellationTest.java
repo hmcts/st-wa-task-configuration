@@ -48,6 +48,15 @@ class CamundaTaskWaCancellationTest extends DmnDecisionTableBaseUnitTest {
             event("caseUpdated")
                 .reconfigure("processReinstatementDecisionNotice")
                 .reconfigure("processOtherDirectionsReturned")
+                .build(),
+            event("caseworker-edit-record-listing")
+                .cancel("completeHearingOutcome")
+                .build(),
+            event("caseworker-postpone-hearing")
+                .cancel("completeHearingOutcome")
+                .build(),
+            event("edit-hearing-summary")
+                .cancel("completeHearingOutcome")
                 .build()
         );
     }
@@ -57,6 +66,6 @@ class CamundaTaskWaCancellationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(3));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(3));
+        assertThat(logic.getRules().size(), is(4));
     }
 }
