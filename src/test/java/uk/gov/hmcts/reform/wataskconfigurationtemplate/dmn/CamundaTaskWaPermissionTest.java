@@ -22,13 +22,13 @@ import java.util.stream.Stream;
 import static java.util.Arrays.asList;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static uk.gov.hmcts.reform.wataskconfigurationtemplate.DmnDecisionTable.WA_TASK_PERMISSIONS_ST_CIC_CRIMINALJURIESCOMPENSATION;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.DmnDecisionTable.WA_TASK_PERMISSIONS_ST_CIC_CRIMINALINJURIESCOMPENSATION;
 
 class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
 
     @BeforeAll
     public static void initialization() {
-        CURRENT_DMN_DECISION_TABLE = WA_TASK_PERMISSIONS_ST_CIC_CRIMINALJURIESCOMPENSATION;
+        CURRENT_DMN_DECISION_TABLE = WA_TASK_PERMISSIONS_ST_CIC_CRIMINALINJURIESCOMPENSATION;
     }
 
     static Stream<Arguments> scenarioProvider() {
@@ -48,7 +48,7 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "someCaseData",
                 defaultAdminPermissions()
             ),
-           Arguments.of(
+            Arguments.of(
                 "processDirectionsReListedCase",
                 "someCaseData",
                 defaultAdminPermissions()
@@ -304,6 +304,7 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
             )
         );
     }
+
     private static List<Map<String, Object>> defaultLegalOperationsPermissions() {
         return List.of(
             Map.of(
@@ -322,6 +323,7 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
             )
         );
     }
+
     private static List<Map<String, Object>> defaultJudicialPermissions() {
         return List.of(
             Map.of(
@@ -347,6 +349,7 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
             )
         );
     }
+
     private static List<Map<String, Object>> defaultJudicialWithOutFeePaidJudgePermissions() {
         return List.of(
             Map.of(
@@ -376,6 +379,7 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
             )
         );
     }
+
     private static List<Map<String, Object>> defaultReviewSpecificAccessRequestLegalOpsPermissions() {
         return List.of(
             Map.of(
@@ -386,6 +390,7 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
             )
         );
     }
+
     private static List<Map<String, Object>> defaultReviewSpecificAccessRequestAdminPermissions() {
         return List.of(
             Map.of(
@@ -396,6 +401,7 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
             )
         );
     }
+
     private static List<Map<String, Object>> defaultReviewSpecificAccessRequestCTSCPermissions() {
         return List.of(
             Map.of(
@@ -407,8 +413,8 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
         );
     }
 
-    @ParameterizedTest (name = "task type: {0} case data: {1}")
-    @MethodSource ("scenarioProvider")
+    @ParameterizedTest(name = "task type: {0} case data: {1}")
+    @MethodSource("scenarioProvider")
     void given_null_or_empty_inputs_when_evaluate_dmn_it_returns_expected_rules(String taskType,
                                                                                 String caseData,
                                                                                 List<Map<String, String>> expectation) {
@@ -452,6 +458,7 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
         IntStream.range(0, inputs.size())
             .forEach(i -> assertThat(inputs.get(i).getInputVariable(), is(inputColumnIds.get(i))));
     }
+
     private void assertThatOutputContainInOrder(List<String> outputColumnIds, List<DmnDecisionTableOutputImpl> output) {
         IntStream.range(0, output.size())
             .forEach(i -> assertThat(output.get(i).getOutputName(), is(outputColumnIds.get(i))));

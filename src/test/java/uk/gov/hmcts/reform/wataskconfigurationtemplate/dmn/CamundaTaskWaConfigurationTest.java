@@ -22,7 +22,7 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static uk.gov.hmcts.reform.wataskconfigurationtemplate.DmnDecisionTable.WA_TASK_CONFIGURATION_ST_CIC_CRIMINALJURIESCOMPENSATION;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.DmnDecisionTable.WA_TASK_CONFIGURATION_ST_CIC_CRIMINALINJURIESCOMPENSATION;
 
 class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
@@ -48,7 +48,7 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "10", false)
                     .expectedValue("description", "[Orders: Send order](/cases/case-details"
                         + "/${[CASE_REFERENCE]}/trigger/caseworker-send-order/"
-                        + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType",false)
+                        + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType", false)
                     .build()
             ),
             Arguments.of(
@@ -60,11 +60,13 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue("workType", "routine_work", false)
                     .expectedValue("roleCategory", "ADMIN", false)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "5", false)
-                    .expectedValue("description",
-                                   "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                                       + "/caseworker-send-order/"
-                                       + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType",
-                                   false)
+                    .expectedValue(
+                        "description",
+                        "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                            + "/caseworker-send-order/"
+                            + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType",
+                        false
+                    )
                     .build()
             ),
             Arguments.of(
@@ -76,11 +78,13 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue("workType", "routine_work", false)
                     .expectedValue("roleCategory", "ADMIN", false)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", false)
-                    .expectedValue("description",
-                                    "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                                        + "/caseworker-send-order/"
-                                        + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType",
-                                   false)
+                    .expectedValue(
+                        "description",
+                        "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                            + "/caseworker-send-order/"
+                            + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType",
+                        false
+                    )
                     .build()
             ),
             Arguments.of(
@@ -92,11 +96,13 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue("workType", "routine_work", false)
                     .expectedValue("roleCategory", "ADMIN", false)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", false)
-                    .expectedValue("description",
-                                   "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                                       + "/caseworker-send-order/"
-                                       + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType",
-                                   false)
+                    .expectedValue(
+                        "description",
+                        "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                            + "/caseworker-send-order/"
+                            + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType",
+                        false
+                    )
                     .build()
             ),
             Arguments.of(
@@ -108,11 +114,13 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue("workType", "priority", false)
                     .expectedValue("roleCategory", "ADMIN", false)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", false)
-                    .expectedValue("description",
-                                   "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                                       + "/caseworker-send-order/"
-                                       + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType",
-                                   false)
+                    .expectedValue(
+                        "description",
+                        "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                            + "/caseworker-send-order/"
+                            + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType",
+                        false
+                    )
                     .build()
             ),
             Arguments.of(
@@ -124,11 +132,13 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue("workType", "decision_making_work", false)
                     .expectedValue("roleCategory", "ADMIN", false)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", false)
-                    .expectedValue("description",
-                                   "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                                       + "/caseworker-send-order/"
-                                       + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType",
-                                   false)
+                    .expectedValue(
+                        "description",
+                        "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                            + "/caseworker-send-order/"
+                            + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType",
+                        false
+                    )
                     .build()
             ),
             Arguments.of(
@@ -140,11 +150,13 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue("workType", "decision_making_work", false)
                     .expectedValue("roleCategory", "ADMIN", false)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "3", false)
-                    .expectedValue("description",
-                                   "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                                       + "/caseworker-send-order/"
-                                       + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType",
-                                   false)
+                    .expectedValue(
+                        "description",
+                        "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                            + "/caseworker-send-order/"
+                            + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType",
+                        false
+                    )
                     .build()
             ),
             Arguments.of(
@@ -156,11 +168,13 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue("workType", "decision_making_work", false)
                     .expectedValue("roleCategory", "ADMIN", false)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "10", false)
-                    .expectedValue("description",
-                                   "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                                       + "/caseworker-send-order/"
-                                       + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType",
-                                   false)
+                    .expectedValue(
+                        "description",
+                        "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                            + "/caseworker-send-order/"
+                            + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType",
+                        false
+                    )
                     .build()
             ),
             Arguments.of(
@@ -172,11 +186,13 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue("workType", "decision_making_work", false)
                     .expectedValue("roleCategory", "ADMIN", false)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", false)
-                    .expectedValue("description",
-                                   "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                                       + "/caseworker-send-order/"
-                                       + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType",
-                                   false)
+                    .expectedValue(
+                        "description",
+                        "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                            + "/caseworker-send-order/"
+                            + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType",
+                        false
+                    )
                     .build()
             ),
             Arguments.of(
@@ -188,11 +204,13 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue("workType", "decision_making_work", false)
                     .expectedValue("roleCategory", "ADMIN", false)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", false)
-                    .expectedValue("description",
-                                   "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                                       + "/caseworker-send-order/"
-                                       + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType",
-                                   false)
+                    .expectedValue(
+                        "description",
+                        "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                            + "/caseworker-send-order/"
+                            + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType",
+                        false
+                    )
                     .build()
             ),
             Arguments.of(
@@ -204,11 +222,13 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue("workType", "decision_making_work", false)
                     .expectedValue("roleCategory", "ADMIN", false)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "5", false)
-                    .expectedValue("description",
-                                   "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                                       + "/caseworker-send-order/"
-                                       + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType",
-                                   false)
+                    .expectedValue(
+                        "description",
+                        "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                            + "/caseworker-send-order/"
+                            + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType",
+                        false
+                    )
                     .build()
             ),
             Arguments.of(
@@ -220,11 +240,13 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue("workType", "decision_making_work", false)
                     .expectedValue("roleCategory", "ADMIN", false)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "10", false)
-                    .expectedValue("description",
-                                   "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                                       + "/caseworker-send-order/"
-                                       + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType",
-                                   false)
+                    .expectedValue(
+                        "description",
+                        "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                            + "/caseworker-send-order/"
+                            + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType",
+                        false
+                    )
                     .build()
             ),
             Arguments.of(
@@ -236,11 +258,13 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue("workType", "decision_making_work", false)
                     .expectedValue("roleCategory", "ADMIN", false)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "3", false)
-                    .expectedValue("description",
-                                   "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                                       + "/caseworker-send-order/"
-                                       + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType",
-                                   false)
+                    .expectedValue(
+                        "description",
+                        "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                            + "/caseworker-send-order/"
+                            + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType",
+                        false
+                    )
                     .build()
             ),
             Arguments.of(
@@ -252,11 +276,13 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue("workType", "routine_work", false)
                     .expectedValue("roleCategory", "ADMIN", false)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "10", false)
-                    .expectedValue("description",
-                                   "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                                       + "/caseworker-send-order/"
-                                       + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType",
-                                   false)
+                    .expectedValue(
+                        "description",
+                        "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                            + "/caseworker-send-order/"
+                            + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType",
+                        false
+                    )
                     .build()
             ),
             Arguments.of(
@@ -268,11 +294,13 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue("workType", "routine_work", false)
                     .expectedValue("roleCategory", "ADMIN", false)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "10", false)
-                    .expectedValue("description",
-                                   "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                                       + "/caseworker-send-order/"
-                                       + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType",
-                                   false)
+                    .expectedValue(
+                        "description",
+                        "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                            + "/caseworker-send-order/"
+                            + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType",
+                        false
+                    )
                     .build()
             ),
             Arguments.of(
@@ -284,14 +312,16 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue("workType", "hearing_work", false)
                     .expectedValue("roleCategory", "ADMIN", false)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", false)
-                    .expectedValue("description",
-                                   "[Decision: Issue a decision](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                                       + "/caseworker-issue-decision/"
-                                       + "caseworker-issue-decisionSelectIssueNoticeOption<br/>"
-                                       + "[Decision: Issue final decision](/cases/case-details/${[CASE_REFERENCE]}"
-                                       + "/trigger/caseworker-issue-final-decision/"
-                                       + "caseworker-issue-final-decisionselectIssueNoticeOption",
-                                   false)
+                    .expectedValue(
+                        "description",
+                        "[Decision: Issue a decision](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                            + "/caseworker-issue-decision/"
+                            + "caseworker-issue-decisionSelectIssueNoticeOption<br/>"
+                            + "[Decision: Issue final decision](/cases/case-details/${[CASE_REFERENCE]}"
+                            + "/trigger/caseworker-issue-final-decision/"
+                            + "caseworker-issue-final-decisionselectIssueNoticeOption",
+                        false
+                    )
                     .build()
             ),
             Arguments.of(
@@ -303,10 +333,12 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue("workType", "hearing_work", false)
                     .expectedValue("roleCategory", "ADMIN", false)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "5", false)
-                    .expectedValue("description",
-                                   "[Hearings: Create listing](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                                       + "/create-hearing-summary/create-hearing-summarycreateHearingSummary",
-                                   false)
+                    .expectedValue(
+                        "description",
+                        "[Hearings: Create listing](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                            + "/create-hearing-summary/create-hearing-summarycreateHearingSummary",
+                        false
+                    )
                     .build()
             ),
             Arguments.of(
@@ -318,12 +350,14 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue("workType", "routine_work", false)
                     .expectedValue("roleCategory", "ADMIN", false)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", false)
-                    .expectedValue("description",
-                                   "[Refer case to judge](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                                       + "/refer-to-judge/refer-to-judgereferToJudgeReason<br/>"
-                                       +"[Refer case to legal officer](/cases/case-details/${[CASE_REFERENCE]}"
-                                       + "/trigger/refer-to-legal-officer/refer-to-legal-officerreferToLegalOfficer",
-                                   false)
+                    .expectedValue(
+                        "description",
+                        "[Refer case to judge](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                            + "/refer-to-judge/refer-to-judgereferToJudgeReason<br/>"
+                            + "[Refer case to legal officer](/cases/case-details/${[CASE_REFERENCE]}"
+                            + "/trigger/refer-to-legal-officer/refer-to-legal-officerreferToLegalOfficer",
+                        false
+                    )
                     .build()
             ),
             Arguments.of(
@@ -335,12 +369,14 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue("workType", "applications", false)
                     .expectedValue("roleCategory", "ADMIN", false)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "5", false)
-                    .expectedValue("description",
-                                   "[Edit case details](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                                       + "/edit-case/edit-casecaseCategorisationDetails<br/>"
-                                       +"[Case: Build case](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                                       + "/caseworker-case-built/caseworker-case-builtcaseBuilt",
-                                   false)
+                    .expectedValue(
+                        "description",
+                        "[Edit case details](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                            + "/edit-case/edit-casecaseCategorisationDetails<br/>"
+                            + "[Case: Build case](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                            + "/caseworker-case-built/caseworker-case-builtcaseBuilt",
+                        false
+                    )
                     .build()
             ),
             Arguments.of(
@@ -352,10 +388,12 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue("workType", "decision_making_work", false)
                     .expectedValue("roleCategory", "LEGAL_OPERATIONS", false)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "5", false)
-                    .expectedValue("description",
-                                   "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                                       + "/create-draft-order/create-draft-ordercreateDraftOrder",
-                                   false)
+                    .expectedValue(
+                        "description",
+                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                            + "/create-draft-order/create-draft-ordercreateDraftOrder",
+                        false
+                    )
                     .build()
             ),
             Arguments.of(
@@ -367,10 +405,12 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue("workType", "decision_making_work", false)
                     .expectedValue("roleCategory", "LEGAL_OPERATIONS", false)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", false)
-                    .expectedValue("description",
-                                   "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                                       + "/create-draft-order/create-draft-ordercreateDraftOrder",
-                                   false)
+                    .expectedValue(
+                        "description",
+                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                            + "/create-draft-order/create-draft-ordercreateDraftOrder",
+                        false
+                    )
                     .build()
             ),
             Arguments.of(
@@ -382,10 +422,12 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue("workType", "decision_making_work", false)
                     .expectedValue("roleCategory", "LEGAL_OPERATIONS", false)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "5", false)
-                    .expectedValue("description",
-                                   "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                                       + "/create-draft-order/create-draft-ordercreateDraftOrder",
-                                   false)
+                    .expectedValue(
+                        "description",
+                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                            + "/create-draft-order/create-draft-ordercreateDraftOrder",
+                        false
+                    )
                     .build()
             ),
             Arguments.of(
@@ -397,10 +439,12 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue("workType", "decision_making_work", false)
                     .expectedValue("roleCategory", "LEGAL_OPERATIONS", false)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "5", false)
-                    .expectedValue("description",
-                                   "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                                       + "/create-draft-order/create-draft-ordercreateDraftOrder",
-                                   false)
+                    .expectedValue(
+                        "description",
+                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                            + "/create-draft-order/create-draft-ordercreateDraftOrder",
+                        false
+                    )
                     .build()
             ),
             Arguments.of(
@@ -412,10 +456,12 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue("workType", "decision_making_work", false)
                     .expectedValue("roleCategory", "LEGAL_OPERATIONS", false)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", false)
-                    .expectedValue("description",
-                                   "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                                       + "/create-draft-order/create-draft-ordercreateDraftOrder",
-                                   false)
+                    .expectedValue(
+                        "description",
+                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                            + "/create-draft-order/create-draft-ordercreateDraftOrder",
+                        false
+                    )
                     .build()
             ),
             Arguments.of(
@@ -427,10 +473,12 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue("workType", "decision_making_work", false)
                     .expectedValue("roleCategory", "LEGAL_OPERATIONS", false)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "5", false)
-                    .expectedValue("description",
-                                   "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                                       + "/create-draft-order/create-draft-ordercreateDraftOrder",
-                                   false)
+                    .expectedValue(
+                        "description",
+                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                            + "/create-draft-order/create-draft-ordercreateDraftOrder",
+                        false
+                    )
                     .build()
             ),
             Arguments.of(
@@ -442,10 +490,12 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue("workType", "decision_making_work", false)
                     .expectedValue("roleCategory", "LEGAL_OPERATIONS", false)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "5", false)
-                    .expectedValue("description",
-                                   "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                                       + "/create-draft-order/create-draft-ordercreateDraftOrder",
-                                   false)
+                    .expectedValue(
+                        "description",
+                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                            + "/create-draft-order/create-draft-ordercreateDraftOrder",
+                        false
+                    )
                     .build()
             ),
             Arguments.of(
@@ -457,10 +507,12 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue("workType", "decision_making_work", false)
                     .expectedValue("roleCategory", "LEGAL_OPERATIONS", false)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", false)
-                    .expectedValue("description",
-                                   "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                                       + "/create-draft-order/create-draft-ordercreateDraftOrder",
-                                   false)
+                    .expectedValue(
+                        "description",
+                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                            + "/create-draft-order/create-draft-ordercreateDraftOrder",
+                        false
+                    )
                     .build()
             ),
             Arguments.of(
@@ -472,10 +524,12 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue("workType", "decision_making_work", false)
                     .expectedValue("roleCategory", "LEGAL_OPERATIONS", false)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "5", false)
-                    .expectedValue("description",
-                                   "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                                       + "/create-draft-order/create-draft-ordercreateDraftOrder",
-                                   false)
+                    .expectedValue(
+                        "description",
+                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                            + "/create-draft-order/create-draft-ordercreateDraftOrder",
+                        false
+                    )
                     .build()
             ),
             Arguments.of(
@@ -487,10 +541,12 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue("workType", "decision_making_work", false)
                     .expectedValue("roleCategory", "LEGAL_OPERATIONS", false)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", false)
-                    .expectedValue("description",
-                                   "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                                       + "/create-draft-order/create-draft-ordercreateDraftOrder",
-                                   false)
+                    .expectedValue(
+                        "description",
+                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                            + "/create-draft-order/create-draft-ordercreateDraftOrder",
+                        false
+                    )
                     .build()
             ),
             Arguments.of(
@@ -502,10 +558,12 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue("workType", "decision_making_work", false)
                     .expectedValue("roleCategory", "LEGAL_OPERATIONS", false)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", false)
-                    .expectedValue("description",
-                                   "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                                       + "/create-draft-order/create-draft-ordercreateDraftOrder",
-                                   false)
+                    .expectedValue(
+                        "description",
+                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                            + "/create-draft-order/create-draft-ordercreateDraftOrder",
+                        false
+                    )
                     .build()
             ),
             Arguments.of(
@@ -517,10 +575,12 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue("workType", "decision_making_work", false)
                     .expectedValue("roleCategory", "LEGAL_OPERATIONS", false)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "5", false)
-                    .expectedValue("description",
-                                   "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                                       + "/create-draft-order/create-draft-ordercreateDraftOrder",
-                                   false)
+                    .expectedValue(
+                        "description",
+                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                            + "/create-draft-order/create-draft-ordercreateDraftOrder",
+                        false
+                    )
                     .build()
             ),
             Arguments.of(
@@ -532,10 +592,12 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue("workType", "decision_making_work", false)
                     .expectedValue("roleCategory", "JUDICIAL", false)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", false)
-                    .expectedValue("description",
-                                   "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                                       + "/create-draft-order/create-draft-ordercreateDraftOrder",
-                                   false)
+                    .expectedValue(
+                        "description",
+                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                            + "/create-draft-order/create-draft-ordercreateDraftOrder",
+                        false
+                    )
                     .build()
             ),
             Arguments.of(
@@ -547,10 +609,12 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue("workType", "decision_making_work", false)
                     .expectedValue("roleCategory", "JUDICIAL", false)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", false)
-                    .expectedValue("description",
-                                   "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                                       + "/create-draft-order/create-draft-ordercreateDraftOrder",
-                                   false)
+                    .expectedValue(
+                        "description",
+                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                            + "/create-draft-order/create-draft-ordercreateDraftOrder",
+                        false
+                    )
                     .build()
             ),
             Arguments.of(
@@ -562,10 +626,12 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue("workType", "decision_making_work", false)
                     .expectedValue("roleCategory", "JUDICIAL", false)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", false)
-                    .expectedValue("description",
-                                   "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                                       + "/create-draft-order/create-draft-ordercreateDraftOrder",
-                                   false)
+                    .expectedValue(
+                        "description",
+                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                            + "/create-draft-order/create-draft-ordercreateDraftOrder",
+                        false
+                    )
                     .build()
             ),
             Arguments.of(
@@ -577,10 +643,12 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue("workType", "decision_making_work", false)
                     .expectedValue("roleCategory", "JUDICIAL", false)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "28", false)
-                    .expectedValue("description",
-                                   "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                                       + "/create-draft-order/create-draft-ordercreateDraftOrder",
-                                   false)
+                    .expectedValue(
+                        "description",
+                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                            + "/create-draft-order/create-draft-ordercreateDraftOrder",
+                        false
+                    )
                     .build()
             ),
             Arguments.of(
@@ -592,10 +660,12 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue("workType", "decision_making_work", false)
                     .expectedValue("roleCategory", "JUDICIAL", false)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", false)
-                    .expectedValue("description",
-                                   "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                                       + "/create-draft-order/create-draft-ordercreateDraftOrder",
-                                   false)
+                    .expectedValue(
+                        "description",
+                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                            + "/create-draft-order/create-draft-ordercreateDraftOrder",
+                        false
+                    )
                     .build()
             ),
             Arguments.of(
@@ -607,10 +677,12 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue("workType", "decision_making_work", false)
                     .expectedValue("roleCategory", "JUDICIAL", false)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", false)
-                    .expectedValue("description",
+                    .expectedValue(
+                        "description",
                         "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
                             + "/create-draft-order/create-draft-ordercreateDraftOrder",
-                                   false)
+                        false
+                    )
                     .build()
             ),
             Arguments.of(
@@ -622,10 +694,12 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue("workType", "decision_making_work", false)
                     .expectedValue("roleCategory", "JUDICIAL", false)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", false)
-                    .expectedValue("description",
-                                   "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                                       + "/create-draft-order/create-draft-ordercreateDraftOrder",
-                                   false)
+                    .expectedValue(
+                        "description",
+                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                            + "/create-draft-order/create-draft-ordercreateDraftOrder",
+                        false
+                    )
                     .build()
             ),
             Arguments.of(
@@ -637,10 +711,12 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue("workType", "decision_making_work", false)
                     .expectedValue("roleCategory", "JUDICIAL", false)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", false)
-                    .expectedValue("description",
-                                   "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                                       + "/create-draft-order/create-draft-ordercreateDraftOrder",
-                                   false)
+                    .expectedValue(
+                        "description",
+                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                            + "/create-draft-order/create-draft-ordercreateDraftOrder",
+                        false
+                    )
                     .build()
             ),
             Arguments.of(
@@ -652,10 +728,12 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue("workType", "decision_making_work", false)
                     .expectedValue("roleCategory", "JUDICIAL", false)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", false)
-                    .expectedValue("description",
-                                   "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                                       + "/create-draft-order/create-draft-ordercreateDraftOrder",
-                                   false)
+                    .expectedValue(
+                        "description",
+                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                            + "/create-draft-order/create-draft-ordercreateDraftOrder",
+                        false
+                    )
                     .build()
             ),
             Arguments.of(
@@ -667,10 +745,12 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue("workType", "decision_making_work", false)
                     .expectedValue("roleCategory", "JUDICIAL", false)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", false)
-                    .expectedValue("description",
-                                   "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                                       + "/create-draft-order/create-draft-ordercreateDraftOrder",
-                                   false)
+                    .expectedValue(
+                        "description",
+                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                            + "/create-draft-order/create-draft-ordercreateDraftOrder",
+                        false
+                    )
                     .build()
             ),
             Arguments.of(
@@ -682,10 +762,12 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue("workType", "decision_making_work", false)
                     .expectedValue("roleCategory", "JUDICIAL", false)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", false)
-                    .expectedValue("description",
-                                   "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                                       + "/create-draft-order/create-draft-ordercreateDraftOrder",
-                                   false)
+                    .expectedValue(
+                        "description",
+                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                            + "/create-draft-order/create-draft-ordercreateDraftOrder",
+                        false
+                    )
                     .build()
             ),
             Arguments.of(
@@ -697,10 +779,12 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue("workType", "decision_making_work", false)
                     .expectedValue("roleCategory", "JUDICIAL", false)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", false)
-                    .expectedValue("description",
-                                   "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                                       + "/create-draft-order/create-draft-ordercreateDraftOrder",
-                                   false)
+                    .expectedValue(
+                        "description",
+                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                            + "/create-draft-order/create-draft-ordercreateDraftOrder",
+                        false
+                    )
                     .build()
             ),
             Arguments.of(
@@ -712,10 +796,12 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue("workType", "decision_making_work", false)
                     .expectedValue("roleCategory", "JUDICIAL", false)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", false)
-                    .expectedValue("description",
-                                   "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                                       + "/create-draft-order/create-draft-ordercreateDraftOrder",
-                                   false)
+                    .expectedValue(
+                        "description",
+                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                            + "/create-draft-order/create-draft-ordercreateDraftOrder",
+                        false
+                    )
                     .build()
             ),
             Arguments.of(
@@ -727,10 +813,12 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue("workType", "decision_making_work", false)
                     .expectedValue("roleCategory", "JUDICIAL", false)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", false)
-                    .expectedValue("description",
-                                   "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                                       + "/create-draft-order/create-draft-ordercreateDraftOrder",
-                                   false)
+                    .expectedValue(
+                        "description",
+                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                            + "/create-draft-order/create-draft-ordercreateDraftOrder",
+                        false
+                    )
                     .build()
             ),
             Arguments.of(
@@ -742,10 +830,12 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue("workType", "decision_making_work", false)
                     .expectedValue("roleCategory", "JUDICIAL", false)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", false)
-                    .expectedValue("description",
-                                   "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                                       + "/create-draft-order/create-draft-ordercreateDraftOrder",
-                                   false)
+                    .expectedValue(
+                        "description",
+                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                            + "/create-draft-order/create-draft-ordercreateDraftOrder",
+                        false
+                    )
                     .build()
             ),
             Arguments.of(
@@ -756,10 +846,12 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue(MAJOR_PRIORITY, "5000", true)
                     .expectedValue("workType", "access_requests", false)
                     .expectedValue("roleCategory", "JUDICIAL", false)
-                    .expectedValue("description",
-                                   "[Review Access Request](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                                       + "/reviewSpecificAccessRequestJudicial)",
-                                   false)
+                    .expectedValue(
+                        "description",
+                        "[Review Access Request](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                            + "/reviewSpecificAccessRequestJudicial)",
+                        false
+                    )
                     .build()
             ),
             Arguments.of(
@@ -770,10 +862,12 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue(MAJOR_PRIORITY, "5000", true)
                     .expectedValue("workType", "access_requests", false)
                     .expectedValue("roleCategory", "LEGAL_OPERATIONS", false)
-                    .expectedValue("description",
-                                   "[Review Access Request](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                                       + "/reviewSpecificAccessRequestLegalOps)",
-                                   false)
+                    .expectedValue(
+                        "description",
+                        "[Review Access Request](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                            + "/reviewSpecificAccessRequestLegalOps)",
+                        false
+                    )
                     .build()
             ),
             Arguments.of(
@@ -784,10 +878,12 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue(MAJOR_PRIORITY, "5000", true)
                     .expectedValue("workType", "access_requests", false)
                     .expectedValue("roleCategory", "ADMIN", false)
-                    .expectedValue("description",
-                                   "[Review Access Request](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                                       + "/reviewSpecificAccessRequestAdmin)",
-                                   false)
+                    .expectedValue(
+                        "description",
+                        "[Review Access Request](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                            + "/reviewSpecificAccessRequestAdmin)",
+                        false
+                    )
                     .build()
             ),
             Arguments.of(
@@ -798,18 +894,22 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue(MAJOR_PRIORITY, "5000", true)
                     .expectedValue("workType", "access_requests", false)
                     .expectedValue("roleCategory", "CTSC", false)
-                    .expectedValue("description",
-                                   "[Review Access Request](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                                       + "/reviewSpecificAccessRequestCTSC)",
-                                   false)
+                    .expectedValue(
+                        "description",
+                        "[Review Access Request](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                            + "/reviewSpecificAccessRequestCTSC)",
+                        false
+                    )
                     .build()
             )
         );
     }
+
     @BeforeAll
     public static void initialization() {
-        CURRENT_DMN_DECISION_TABLE = WA_TASK_CONFIGURATION_ST_CIC_CRIMINALJURIESCOMPENSATION;
+        CURRENT_DMN_DECISION_TABLE = WA_TASK_CONFIGURATION_ST_CIC_CRIMINALINJURIESCOMPENSATION;
     }
+
     @ParameterizedTest(name = "task type: {0} case data: {1}")
     @MethodSource("scenarioProvider")
     void should_return_correct_configuration_values_for_scenario(
@@ -823,6 +923,7 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
         resultsMatch(dmnDecisionTableResult.getResultList(), expectation);
     }
+
     @Test
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
@@ -831,6 +932,7 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
         assertThat(logic.getRules().size(), is(28));
 
     }
+
     private void resultsMatch(List<Map<String, Object>> results, List<Map<String, Object>> expectation) {
         assertThat(results.size(), is(expectation.size()));
         for (int index = 0; index < expectation.size(); index++) {
@@ -848,6 +950,7 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
             }
         }
     }
+
     private boolean validNow(LocalDateTime actual, LocalDateTime expected) {
         LocalDateTime now = LocalDateTime.now();
         return actual != null

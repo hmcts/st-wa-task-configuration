@@ -1,4 +1,5 @@
 package uk.gov.hmcts.reform.wataskconfigurationtemplate.dmn;
+
 import org.camunda.bpm.dmn.engine.DmnDecisionTableResult;
 import org.camunda.bpm.dmn.engine.impl.DmnDecisionTableImpl;
 import org.camunda.bpm.engine.variable.VariableMap;
@@ -17,12 +18,14 @@ import java.util.stream.Stream;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static uk.gov.hmcts.reform.wataskconfigurationtemplate.DmnDecisionTable. WA_TASK_TYPES_ST_CIC_CRIMINALJURIESCOMPENSATION;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.DmnDecisionTable.WA_TASK_TYPES_ST_CIC_CRIMINALINJURIESCOMPENSATION;
+
 class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
     @BeforeAll
     public static void initialization() {
-        CURRENT_DMN_DECISION_TABLE = WA_TASK_TYPES_ST_CIC_CRIMINALJURIESCOMPENSATION;
+        CURRENT_DMN_DECISION_TABLE = WA_TASK_TYPES_ST_CIC_CRIMINALINJURIESCOMPENSATION;
     }
+
     static Stream<Arguments> scenarioProvider() {
         List<Map<String, String>> taskTypes = List.of(
             Map.of(
@@ -136,7 +139,7 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
             Map.of(
                 "taskTypeId", "reviewOtherRequestLO",
                 "taskTypeName", "Review Reinstatement request - Legal Officer"
-             ),
+            ),
             Map.of(
                 "taskTypeId", "reviewListCaseWithin5DaysLO",
                 "taskTypeName", "Review list case (within 5 days) - Legal Officer"
@@ -216,6 +219,7 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
             )
         );
     }
+
     @ParameterizedTest(name = "retrieve all task type data")
     @MethodSource("scenarioProvider")
     void should_evaluate_dmn_return_all_task_type_fields(List<Map<String, Object>> expectedTaskTypes) {
@@ -224,6 +228,7 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
         MatcherAssert.assertThat(dmnDecisionTableResult.getResultList(), is(expectedTaskTypes));
     }
+
     @Test
     void check_dmn_changed() {
         //The purpose of this test is to prevent adding new rows without being tested

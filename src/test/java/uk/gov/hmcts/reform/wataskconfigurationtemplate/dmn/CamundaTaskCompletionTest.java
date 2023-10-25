@@ -1,4 +1,5 @@
 package uk.gov.hmcts.reform.wataskconfigurationtemplate.dmn;
+
 import org.camunda.bpm.dmn.engine.DmnDecisionTableResult;
 import org.camunda.bpm.dmn.engine.impl.DmnDecisionTableImpl;
 import org.camunda.bpm.engine.variable.VariableMap;
@@ -17,12 +18,14 @@ import java.util.stream.Stream;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static uk.gov.hmcts.reform.wataskconfigurationtemplate.DmnDecisionTable. WA_TASK_COMPLETION_ST_CIC_CRIMINALJURIESCOMPENSATION;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.DmnDecisionTable.WA_TASK_COMPLETION_ST_CIC_CRIMINALINJURIESCOMPENSATION;
+
 class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
     @BeforeAll
     public static void initialization() {
-        CURRENT_DMN_DECISION_TABLE =  WA_TASK_COMPLETION_ST_CIC_CRIMINALJURIESCOMPENSATION;
+        CURRENT_DMN_DECISION_TABLE = WA_TASK_COMPLETION_ST_CIC_CRIMINALINJURIESCOMPENSATION;
     }
+
     static Stream<Arguments> scenarioProvider() {
 
         return Stream.of(
@@ -95,8 +98,8 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                 "caseworker-issue-final-decision",
                 List.of(
                     Map.of(
-                         "taskType", "issueDecisionNotice",
-                         "completionMode", "Auto"
+                        "taskType", "issueDecisionNotice",
+                        "completionMode", "Auto"
                     )
                 )
             ),
@@ -269,6 +272,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
             )
         );
     }
+
     @ParameterizedTest(name = "event id: {0}")
     @MethodSource("scenarioProvider")
     void given_event_ids_should_evaluate_dmn(String eventId, List<Map<String, String>> expectation) {
@@ -279,6 +283,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
         MatcherAssert.assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
     }
+
     @Test
     void if_this_test_fails_needs_updating_with_your_changes() {
 
