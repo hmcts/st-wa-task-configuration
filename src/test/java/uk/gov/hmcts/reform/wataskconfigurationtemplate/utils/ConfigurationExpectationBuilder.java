@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 
 public class ConfigurationExpectationBuilder {
     private static List<String> EXPECTED_PROPERTIES = Arrays.asList(
-        "majorPriority","minorPriority","workType", "roleCategory","dueDateIntervalDays","description"
+        "caseName","majorPriority","minorPriority","workType", "roleCategory","dueDateIntervalDays","description"
     );
     private static DateTimeFormatter dateTimeFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm");
 
@@ -18,6 +18,7 @@ public class ConfigurationExpectationBuilder {
 
     public static ConfigurationExpectationBuilder defaultExpectations() {
         ConfigurationExpectationBuilder builder = new ConfigurationExpectationBuilder();
+        builder.expectedValue("caseName", "Joe Blogs", false);
         builder.expectedValue("workType", "routine_work", true);
         builder.expectedValue("roleCategory", "ADMIN", true);
         builder.expectedValue("minorPriority", "500", true);

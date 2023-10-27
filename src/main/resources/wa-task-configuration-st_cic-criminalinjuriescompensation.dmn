@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.13.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.14.0">
   <decision id="wa-task-configuration-st_cic-criminalinjuriescompensation" name="Task configuration DMN">
     <decisionTable id="DecisionTable_14cx079" hitPolicy="RULE ORDER">
       <input id="InputClause_1gxyo7f" label="CCD Case Data" camunda:inputVariable="caseData">
@@ -18,8 +18,25 @@
         </inputExpression>
       </input>
       <output id="Output_1" label="Name" name="name" typeRef="string" biodi:width="349" />
-      <output id="OutputClause_021y3bb" label="Value" name="value" typeRef="string" biodi:width="450" />
-      <output id="OutputClause_0tefly7" label="Can Reconfigure?" name="canReconfigure" typeRef="boolean" />
+      <output id="OutputClause_021y3bb" label="Value" name="value" typeRef="string" biodi:width="932" />
+      <output id="OutputClause_0tefly7" label="Can Reconfigure?" name="canReconfigure" typeRef="boolean" biodi:width="551" />
+      <rule id="DecisionRule_15d26q3">
+        <inputEntry id="UnaryTests_0ttdvnk">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17qnsjg">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1cjtwsm">
+          <text>"caseName"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0qxk186">
+          <text>caseData.caseNameHmctsInternal</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0yq1las">
+          <text>false</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1qfkcqn">
         <inputEntry id="UnaryTests_1fzed1e">
           <text></text>
@@ -339,7 +356,7 @@ else 5000</text>
           <text>"description"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1nzw62x">
-          <text>"[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger/caseworker-send-order/caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType"</text>
+          <text>"[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger/caseworker-send-order/caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType)"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_07pv3yt">
           <text>false</text>
@@ -356,7 +373,7 @@ else 5000</text>
           <text>"description"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0mulsbp">
-          <text>"[Decision: Issue a decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/caseworker-issue-decision/caseworker-issue-decisionSelectIssueNoticeOption&lt;br/&gt;" + "[Decision: Issue final decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/caseworker-issue-final-decision/caseworker-issue-final-decisionselectIssueNoticeOption"</text>
+          <text>"[Decision: Issue a decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/caseworker-issue-decision/caseworker-issue-decisionSelectIssueNoticeOption&lt;br/&gt;" + "[Decision: Issue final decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/caseworker-issue-final-decision/caseworker-issue-final-decisionselectIssueNoticeOption)"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0smzs7n">
           <text>false</text>
@@ -373,7 +390,7 @@ else 5000</text>
           <text>"description"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0n1yxlg">
-          <text>"[Hearings: Create listing](/cases/case-details/${[CASE_REFERENCE]}/trigger/create-hearing-summary/create-hearing-summarycreateHearingSummary"</text>
+          <text>"[Hearings: Create listing](/cases/case-details/${[CASE_REFERENCE]}/trigger/create-hearing-summary/create-hearing-summarycreateHearingSummary)"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1cvv017">
           <text>false</text>
@@ -390,7 +407,7 @@ else 5000</text>
           <text>"description"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1dfdlvv">
-          <text>"[Refer case to judge](/cases/case-details/${[CASE_REFERENCE]}/trigger/refer-to-judge/refer-to-judgereferToJudgeReason&lt;br/&gt;" +"[Refer case to legal officer](/cases/case-details/${[CASE_REFERENCE]}/trigger/refer-to-legal-officer/refer-to-legal-officerreferToLegalOfficer"</text>
+          <text>"[Refer case to judge](/cases/case-details/${[CASE_REFERENCE]}/trigger/refer-to-judge/refer-to-judgereferToJudgeReason)&lt;br/&gt;" +"[Refer case to legal officer](/cases/case-details/${[CASE_REFERENCE]}/trigger/refer-to-legal-officer/refer-to-legal-officerreferToLegalOfficer)"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1777gea">
           <text>false</text>
@@ -407,7 +424,7 @@ else 5000</text>
           <text>"description"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0mcxu2i">
-          <text>"[Edit case details](/cases/case-details/${[CASE_REFERENCE]}/trigger/edit-case/edit-casecaseCategorisationDetails&lt;br/&gt;" +"[Case: Build case](/cases/case-details/${[CASE_REFERENCE]}/trigger/caseworker-case-built/caseworker-case-builtcaseBuilt"</text>
+          <text>"[Edit case details](/cases/case-details/${[CASE_REFERENCE]}/trigger/edit-case/edit-casecaseCategorisationDetails)&lt;br/&gt;" +"[Case: Build case](/cases/case-details/${[CASE_REFERENCE]}/trigger/caseworker-case-built/caseworker-case-builtcaseBuilt)"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_14akn1n">
           <text>false</text>
@@ -424,7 +441,7 @@ else 5000</text>
           <text>"description"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0r3qzf3">
-          <text>"[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger/create-draft-order/create-draft-ordercreateDraftOrder"</text>
+          <text>"[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger/create-draft-order/create-draft-ordercreateDraftOrder)"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0yjve17">
           <text>false</text>
