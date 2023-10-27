@@ -14,6 +14,7 @@ public class CaseDataBuilder {
     public static CaseDataBuilder defaultCase() {
         HashMap<String,Object> caseData = new HashMap<>();
         caseData.put("caseNamePublic", "Joe Blogs");
+        caseData.put("caseNameHmctsInternal", "Joe Blogs");
         caseData.put("isUrgent", "No");
         return new CaseDataBuilder(caseData);
     }
