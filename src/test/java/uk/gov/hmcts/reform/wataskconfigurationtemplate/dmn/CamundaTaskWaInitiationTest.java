@@ -1,4 +1,5 @@
 package uk.gov.hmcts.reform.wataskconfigurationtemplate.dmn;
+
 import org.camunda.bpm.dmn.engine.DmnDecisionTableResult;
 import org.camunda.bpm.dmn.engine.impl.DmnDecisionTableImpl;
 import org.camunda.bpm.engine.variable.VariableMap;
@@ -16,12 +17,14 @@ import java.util.stream.Stream;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static uk.gov.hmcts.reform.wataskconfigurationtemplate.DmnDecisionTable.WA_TASK_INITIATION_ST_CIC_CRIMINALJURIESCOMPENSATION;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.DmnDecisionTable.WA_TASK_INITIATION_ST_CIC_CRIMINALINJURIESCOMPENSATION;
+
 class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
     @BeforeAll
     public static void initialization() {
-        CURRENT_DMN_DECISION_TABLE = WA_TASK_INITIATION_ST_CIC_CRIMINALJURIESCOMPENSATION;
+        CURRENT_DMN_DECISION_TABLE = WA_TASK_INITIATION_ST_CIC_CRIMINALINJURIESCOMPENSATION;
     }
+
     static Stream<Arguments> scenarioProvider() {
         return Stream.of(
             Arguments.of(
@@ -35,7 +38,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "workingDaysAllowed", 10,
                         "processCategories", "processCaseWithdrawalDirections",
                         "workType", "routine_work",
-                        "roleCategory","ADMIN"
+                        "roleCategory", "ADMIN"
                     )
                 )
             ),
@@ -50,7 +53,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "workingDaysAllowed", 5,
                         "processCategories", "processRule27Decision",
                         "workType", "routine_work",
-                        "roleCategory","ADMIN"
+                        "roleCategory", "ADMIN"
                     )
                 )
             ),
@@ -65,13 +68,13 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "workingDaysAllowed", 1,
                         "processCategories", "processListingDirections",
                         "workType", "routine_work",
-                        "roleCategory","ADMIN"
+                        "roleCategory", "ADMIN"
                     )
                 )
             ),
             Arguments.of(
                 "create-draft-order",
-               "AwaitingHearing",
+                "AwaitingHearing",
                 Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Listed case")),
                 List.of(
                     Map.of(
@@ -80,7 +83,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "workingDaysAllowed", 1,
                         "processCategories", "processDirectionsReListedCase",
                         "workType", "routine_work",
-                        "roleCategory","ADMIN"
+                        "roleCategory", "ADMIN"
                     )
                 )
             ),
@@ -96,7 +99,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "processCategories", "processDirectionsReListedCaseWithin5Days",
                         "workType", "priority",
 
-                        "roleCategory","ADMIN"
+                        "roleCategory", "ADMIN"
                     )
                 )
             ),
@@ -111,7 +114,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "workingDaysAllowed", 1,
                         "processCategories", "processSetAsideDirections",
                         "workType", "decision_making_work",
-                        "roleCategory","ADMIN"
+                        "roleCategory", "ADMIN"
                     )
                 )
             ),
@@ -126,7 +129,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "workingDaysAllowed", 3,
                         "processCategories", "processCorrections",
                         "workType", "decision_making_work",
-                        "roleCategory","ADMIN"
+                        "roleCategory", "ADMIN"
                     )
                 )
             ),
@@ -141,7 +144,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "workingDaysAllowed", 10,
                         "processCategories", "processDirectionsReturned",
                         "workType", "decision_making_work",
-                        "roleCategory","ADMIN"
+                        "roleCategory", "ADMIN"
                     )
                 )
             ),
@@ -156,7 +159,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "workingDaysAllowed", 1,
                         "processCategories", "processPostponementDirections",
                         "workType", "decision_making_work",
-                        "roleCategory","ADMIN"
+                        "roleCategory", "ADMIN"
                     )
                 )
             ),
@@ -171,7 +174,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "workingDaysAllowed", 1,
                         "processCategories", "processTimeExtensionDirectionsReturned",
                         "workType", "decision_making_work",
-                        "roleCategory","ADMIN"
+                        "roleCategory", "ADMIN"
                     )
                 )
             ),
@@ -186,7 +189,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "workingDaysAllowed", 5,
                         "processCategories", "processReinstatementDecisionNotice",
                         "workType", "decision_making_work",
-                        "roleCategory","ADMIN"
+                        "roleCategory", "ADMIN"
                     )
                 )
             ),
@@ -201,7 +204,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "workingDaysAllowed", 10,
                         "processCategories", "processOtherDirectionsReturned",
                         "workType", "decision_making_work",
-                        "roleCategory","ADMIN"
+                        "roleCategory", "ADMIN"
                     )
                 )
             ),
@@ -216,7 +219,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "workingDaysAllowed", 3,
                         "processCategories", "processWrittenReasons",
                         "workType", "decision_making_work",
-                        "roleCategory","ADMIN"
+                        "roleCategory", "ADMIN"
                     )
                 )
             ),
@@ -231,7 +234,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "workingDaysAllowed", 10,
                         "processCategories", "processStrikeOutDirectionsReturned",
                         "workType", "routine_work",
-                        "roleCategory","ADMIN"
+                        "roleCategory", "ADMIN"
                     )
                 )
             ),
@@ -246,7 +249,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "workingDaysAllowed", 10,
                         "processCategories", "processStayDirections",
                         "workType", "routine_work",
-                        "roleCategory","ADMIN"
+                        "roleCategory", "ADMIN"
                     )
                 )
             ),
@@ -261,7 +264,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "workingDaysAllowed", 1,
                         "processCategories", "issueDecisionNotice",
                         "workType", "hearing_work",
-                        "roleCategory","ADMIN"
+                        "roleCategory", "ADMIN"
                     )
                 )
             ),
@@ -276,7 +279,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "workingDaysAllowed", 5,
                         "processCategories", "completeHearingOutcome",
                         "workType", "hearing_work",
-                        "roleCategory","ADMIN"
+                        "roleCategory", "ADMIN"
                     )
                 )
             ),
@@ -321,7 +324,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "workingDaysAllowed", 2,
                         "processCategories", "referCase",
                         "workType", "routine_work",
-                        "roleCategory","ADMIN"
+                        "roleCategory", "ADMIN"
                     )
                 )
             ),
@@ -336,7 +339,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "workingDaysAllowed", 5,
                         "processCategories", "vetNewCaseDocuments",
                         "workType", "applications",
-                        "roleCategory","ADMIN"
+                        "roleCategory", "ADMIN"
                     )
                 )
             ),
@@ -351,7 +354,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "workingDaysAllowed", 5,
                         "processCategories", "reviewNewCaseAndProvideDirectionsLO",
                         "workType", "decision_making_work",
-                        "roleCategory","LEGAL_OPERATIONS"
+                        "roleCategory", "LEGAL_OPERATIONS"
                     )
                 )
             ),
@@ -366,7 +369,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "workingDaysAllowed", 1,
                         "processCategories", "reviewTimeExtensionRequestLO",
                         "workType", "decision_making_work",
-                        "roleCategory","LEGAL_OPERATIONS"
+                        "roleCategory", "LEGAL_OPERATIONS"
                     )
                 )
             ),
@@ -381,7 +384,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "workingDaysAllowed", 5,
                         "processCategories", "reviewStrikeOutRequestLO",
                         "workType", "decision_making_work",
-                        "roleCategory","LEGAL_OPERATIONS"
+                        "roleCategory", "LEGAL_OPERATIONS"
                     )
                 )
             ),
@@ -396,7 +399,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "workingDaysAllowed", 5,
                         "processCategories", "reviewStayRequestLO",
                         "workType", "decision_making_work",
-                        "roleCategory","LEGAL_OPERATIONS"
+                        "roleCategory", "LEGAL_OPERATIONS"
                     )
                 )
             ),
@@ -411,7 +414,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "workingDaysAllowed", 1,
                         "processCategories", "reviewListingDirectionsLO",
                         "workType", "decision_making_work",
-                        "roleCategory","LEGAL_OPERATIONS"
+                        "roleCategory", "LEGAL_OPERATIONS"
                     )
                 )
             ),
@@ -426,7 +429,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "workingDaysAllowed", 5,
                         "processCategories", "reviewWithdrawalRequestLO",
                         "workType", "decision_making_work",
-                        "roleCategory","LEGAL_OPERATIONS"
+                        "roleCategory", "LEGAL_OPERATIONS"
                     )
                 )
             ),
@@ -441,7 +444,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "workingDaysAllowed", 5,
                         "processCategories", "reviewRule27RequestLO",
                         "workType", "decision_making_work",
-                        "roleCategory","LEGAL_OPERATIONS"
+                        "roleCategory", "LEGAL_OPERATIONS"
                     )
                 )
             ),
@@ -456,7 +459,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "workingDaysAllowed", 1,
                         "processCategories", "reviewListCaseLO",
                         "workType", "decision_making_work",
-                        "roleCategory","LEGAL_OPERATIONS"
+                        "roleCategory", "LEGAL_OPERATIONS"
                     )
                 )
             ),
@@ -471,7 +474,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "workingDaysAllowed", 1,
                         "processCategories", "reviewListCaseWithin5DaysLO",
                         "workType", "decision_making_work",
-                        "roleCategory","LEGAL_OPERATIONS"
+                        "roleCategory", "LEGAL_OPERATIONS"
                     )
                 )
             ),
@@ -486,7 +489,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "workingDaysAllowed", 1,
                         "processCategories", "reviewPostponementRequestLO",
                         "workType", "decision_making_work",
-                        "roleCategory","LEGAL_OPERATIONS"
+                        "roleCategory", "LEGAL_OPERATIONS"
                     )
                 )
             ),
@@ -501,7 +504,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "reviewReinstatementRequestLO",
                         "workingDaysAllowed", 5,
                         "processCategories", "reviewReinstatementRequestLO",
-                                              "roleCategory","LEGAL_OPERATIONS"
+                        "roleCategory", "LEGAL_OPERATIONS"
                     )
                 )
             ),
@@ -516,7 +519,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "workingDaysAllowed", 5,
                         "processCategories", "reviewOtherRequestLO",
                         "workType", "decision_making_work",
-                        "roleCategory","LEGAL_OPERATIONS"
+                        "roleCategory", "LEGAL_OPERATIONS"
                     )
                 )
             ),
@@ -531,7 +534,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "workingDaysAllowed", 1,
                         "processCategories", "reviewListCaseWithin5DaysJudge",
                         "workType", "decision_making_work",
-                        "roleCategory","JUDICIAL"
+                        "roleCategory", "JUDICIAL"
                     )
                 )
             ),
@@ -546,7 +549,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "workingDaysAllowed", 1,
                         "processCategories", "reviewPostponementRequestJudge",
                         "workType", "decision_making_work",
-                        "roleCategory","JUDICIAL"
+                        "roleCategory", "JUDICIAL"
                     )
                 )
             ),
@@ -561,7 +564,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "workingDaysAllowed", 1,
                         "processCategories", "reviewCorrectionsRequest",
                         "workType", "decision_making_work",
-                        "roleCategory","JUDICIAL"
+                        "roleCategory", "JUDICIAL"
                     )
                 )
             ),
@@ -576,7 +579,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "workingDaysAllowed", 28,
                         "processCategories", "reviewWrittenReasonsRequest",
                         "workType", "decision_making_work",
-                        "roleCategory","JUDICIAL"
+                        "roleCategory", "JUDICIAL"
                     )
                 )
             ),
@@ -591,7 +594,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "workingDaysAllowed", 2,
                         "processCategories", "reviewReinstatementRequestJudge",
                         "workType", "decision_making_work",
-                        "roleCategory","JUDICIAL"
+                        "roleCategory", "JUDICIAL"
                     )
                 )
             ),
@@ -606,7 +609,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "workingDaysAllowed", 2,
                         "processCategories", "reviewSetAsideRequest",
                         "workType", "decision_making_work",
-                        "roleCategory","JUDICIAL"
+                        "roleCategory", "JUDICIAL"
                     )
                 )
             ),
@@ -621,7 +624,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "workingDaysAllowed", 2,
                         "processCategories", "reviewStayRequestJudge",
                         "workType", "decision_making_work",
-                        "roleCategory","JUDICIAL"
+                        "roleCategory", "JUDICIAL"
                     )
                 )
             ),
@@ -636,7 +639,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "workingDaysAllowed", 2,
                         "processCategories", "reviewNewCaseAndProvideDirectionsJudge",
                         "workType", "decision_making_work",
-                        "roleCategory","JUDICIAL"
+                        "roleCategory", "JUDICIAL"
                     )
                 )
             ),
@@ -651,7 +654,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "workingDaysAllowed", 2,
                         "processCategories", "reviewOtherRequestJudge",
                         "workType", "decision_making_work",
-                        "roleCategory","JUDICIAL"
+                        "roleCategory", "JUDICIAL"
                     )
                 )
             ),
@@ -666,7 +669,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "workingDaysAllowed", 2,
                         "processCategories", "reviewWithdrawalRequestJudge",
                         "workType", "decision_making_work",
-                        "roleCategory","JUDICIAL"
+                        "roleCategory", "JUDICIAL"
                     )
                 )
             ),
@@ -681,7 +684,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "workingDaysAllowed", 2,
                         "processCategories", "reviewRule27RequestJudge",
                         "workType", "decision_making_work",
-                        "roleCategory","JUDICIAL"
+                        "roleCategory", "JUDICIAL"
                     )
                 )
             ),
@@ -696,7 +699,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "workingDaysAllowed", 1,
                         "processCategories", "reviewListingDirectionsJudge",
                         "workType", "decision_making_work",
-                        "roleCategory","JUDICIAL"
+                        "roleCategory", "JUDICIAL"
                     )
                 )
             ),
@@ -711,7 +714,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "workingDaysAllowed", 1,
                         "processCategories", "reviewListCaseJudge",
                         "workType", "decision_making_work",
-                        "roleCategory","JUDICIAL"
+                        "roleCategory", "JUDICIAL"
                     )
                 )
             ),
@@ -726,7 +729,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "workingDaysAllowed", 2,
                         "processCategories", "reviewStrikeOutRequestJudge",
                         "workType", "decision_making_work",
-                        "roleCategory","JUDICIAL"
+                        "roleCategory", "JUDICIAL"
                     )
                 )
             ),
@@ -741,12 +744,13 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "workingDaysAllowed", 2,
                         "processCategories", "reviewTimeExtensionRequestJudge",
                         "workType", "decision_making_work",
-                        "roleCategory","JUDICIAL"
+                        "roleCategory", "JUDICIAL"
                     )
                 )
             )
         );
     }
+
     @ParameterizedTest(name = "event id: {0} post event state: {1} appeal type: {2}")
     @MethodSource("scenarioProvider")
     void given_multiple_event_ids_should_evaluate_dmn(String eventId,
@@ -760,6 +764,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
         assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
     }
+
     @Test
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
