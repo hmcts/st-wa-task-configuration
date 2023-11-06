@@ -44,7 +44,7 @@ class CamundaTaskWaCancellationTest extends DmnDecisionTableBaseUnitTest {
 
     public static Stream<Arguments> scenarioProvider() {
         return Stream.of(
-            event("caseworker-close-the-case").cancelAll().build(),
+            event("closeCase").cancelAll().build(),
             event("addHearing")
                 .reconfigure("processReinstatementDecisionNotice")
                 .reconfigure("processOtherDirectionsReturned")
