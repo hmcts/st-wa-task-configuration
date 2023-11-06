@@ -285,7 +285,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "caseworker-case-built",
-                "Submitted",
+                "CaseManagement",
                 null,
                 List.of(
                     Map.of(
@@ -300,7 +300,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "citizen-cic-submit-dss-application",
-                "Submitted",
+                "DSS-Submitted",
                 null,
                 List.of(
                     Map.of(

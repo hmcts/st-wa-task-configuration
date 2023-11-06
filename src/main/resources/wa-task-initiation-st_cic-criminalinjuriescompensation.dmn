@@ -577,7 +577,7 @@
           <text>"caseworker-case-built"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_03kg7dn">
-          <text>"Submitted"</text>
+          <text>"CaseManagement"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_14aj6vh">
           <text></text>
@@ -609,7 +609,7 @@
           <text>"citizen-cic-submit-dss-application"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0m6q89k">
-          <text>"Submitted"</text>
+          <text>"DSS-Submitted"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1cjbq6p">
           <text></text>
