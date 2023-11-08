@@ -300,7 +300,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "citizen-cic-submit-dss-application",
-                "DSS_Draft",
+                "DssSubmitted",
                 null,
                 List.of(
                     Map.of(
