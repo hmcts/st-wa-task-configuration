@@ -609,7 +609,7 @@
           <text>"citizen-cic-submit-dss-application"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0m6q89k">
-          <text>"DSS_Draft"</text>
+          <text>"DssSubmitted"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1cjbq6p">
           <text></text>
