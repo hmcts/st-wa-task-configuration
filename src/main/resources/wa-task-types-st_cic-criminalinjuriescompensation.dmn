@@ -515,6 +515,17 @@
           <text>"Review Time extention request - Judge"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1gsra97">
+        <inputEntry id="UnaryTests_0vjf57h">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0z0wtim">
+          <text>"followUpNoneComplianceOfDirections"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_13qvqcq">
+          <text>"Follow up none compliance of directions"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

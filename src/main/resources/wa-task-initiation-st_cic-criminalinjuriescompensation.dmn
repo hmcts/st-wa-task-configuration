@@ -609,7 +609,7 @@
           <text>"citizen-cic-submit-dss-application"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0m6q89k">
-          <text>"DssSubmitted"</text>
+          <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1cjbq6p">
           <text></text>
@@ -1498,6 +1498,38 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0839km4">
           <text>"JUDICIAL"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1yyw9mn">
+        <inputEntry id="UnaryTests_0ao27ga">
+          <text>"caseworker-send-order"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_13c06bj">
+          <text>"CaseManagement"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0k5dfn2">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0acqpql">
+          <text>"followUpNoneComplianceOfDirections"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1a3x57y">
+          <text>"Follow up none compliance of directions"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1mba0we">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0v6bouu">
+          <text>1</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_17y2rot">
+          <text>"followUpNoneComplianceOfDirections"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_087hs36">
+          <text>"routine_work"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ti4kd8">
+          <text>"ADMIN"</text>
         </outputEntry>
       </rule>
     </decisionTable>
