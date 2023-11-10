@@ -282,6 +282,11 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "reviewSpecificAccessRequestCTSC",
                 "someCaseData",
                 defaultReviewSpecificAccessRequestCTSCPermissions()
+            ),
+            Arguments.of(
+                "followUpNoneComplianceOfDirections",
+                "someCaseData",
+                defaultAdminPermissions()
             )
         );
     }
@@ -295,7 +300,7 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
             ),
             Map.of(
                 "name", "regional-centre-admin",
-                "value", "Read,Own,Claim,Unclaim,UnclaimAssign",
+                "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign",
                 "roleCategory", "ADMIN",
                 "assignmentPriority", 1,
                 "autoAssignable", false

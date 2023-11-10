@@ -901,6 +901,23 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                         false
                     )
                     .build()
+            ),
+            Arguments.of(
+                "followUpNoneComplianceOfDirections",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue(MINOR_PRIORITY, "500", false)
+                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+                    .expectedValue("workType", "routine_work", false)
+                    .expectedValue("roleCategory", "ADMIN", false)
+                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", false)
+                    .expectedValue(
+                        "description",
+                        "[Application DSS Update (cic)](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                            + "/caseworker-update-dss-application)",
+                        false
+                    )
+                    .build()
             )
         );
     }
@@ -929,7 +946,7 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
 
-        assertThat(logic.getRules().size(), is(29));
+        assertThat(logic.getRules().size(), is(30));
 
     }
 
