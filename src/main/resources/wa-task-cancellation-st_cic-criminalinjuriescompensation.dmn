@@ -90,6 +90,29 @@
           <text>"processOtherDirectionsReturned"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1p4bdv9">
+        <inputEntry id="UnaryTests_0xfzkkw">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fu9zv6">
+          <text>"caseworker-edit-record-listing","caseworker-postpone-hearing","edit-hearing-summary"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1kdjg48">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0eoaznk">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1y7bw26">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1xdix3o">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_139gmng">
+          <text>"completeHearingOutcome"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

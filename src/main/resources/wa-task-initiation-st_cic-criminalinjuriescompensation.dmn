@@ -542,7 +542,7 @@
       </rule>
       <rule id="DecisionRule_056amwa">
         <inputEntry id="UnaryTests_0cj02rw">
-          <text>"caseworker-record-listing"</text>
+          <text>"caseworker-record-listing","edit-hearing-summary","caseworker-edit-record-listing"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1nz6lye">
           <text>"AwaitingHearing"</text>
