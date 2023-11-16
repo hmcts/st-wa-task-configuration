@@ -10,7 +10,10 @@ import java.util.stream.Collectors;
 
 public class ConfigurationExpectationBuilder {
     private static List<String> EXPECTED_PROPERTIES = Arrays.asList(
-        "caseName","majorPriority","minorPriority","workType", "roleCategory","dueDateIntervalDays","description"
+        "caseName","region","location", "locationName","caseManagementCategory","priorityDate","dueDateOrigin",
+        "dueDateTime","dueDateNonWorkingCalendar","dueDateNonWorkingDaysOfWeek",
+        "dueDateSkipNonWorkingDays","dueDateMustBeWorkingDay","calculatedDates","majorPriority","minorPriority",
+        "workType", "roleCategory","dueDateIntervalDays","description"
     );
     private static DateTimeFormatter dateTimeFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm");
 
@@ -19,13 +22,18 @@ public class ConfigurationExpectationBuilder {
     public static ConfigurationExpectationBuilder defaultExpectations() {
         ConfigurationExpectationBuilder builder = new ConfigurationExpectationBuilder();
         builder.expectedValue("caseName", "Joe Blogs", false);
-        builder.expectedValue("workType", "routine_work", true);
-        builder.expectedValue("roleCategory", "ADMIN", true);
-        builder.expectedValue("minorPriority", "500", true);
-        builder.expectedValue("majorPriority", "5000", true);
-        builder.expectedValue("region", "London", false);
-        builder.expectedValue("location", "East", false);
-        builder.expectedValue("description", "[Orders: Send order]", true);
+        builder.expectedValue("region", "SOUTH", false);
+        builder.expectedValue("location", "London", true);
+        builder.expectedValue("locationName", "London", true);
+        builder.expectedValue("caseManagementCategory", "CIC", true);
+        builder.expectedValue("priorityDate", "dueDate", false);
+        builder.expectedValue("dueDateOrigin", "500", true);
+        builder.expectedValue("dueDateTime", "500", true);
+        builder.expectedValue("dueDateNonWorkingCalendar", "SATURDAY,SUNDAY", false);
+        builder.expectedValue("dueDateNonWorkingDaysOfWeek", "true", false);
+        builder.expectedValue("dueDateSkipNonWorkingDays", "No", false);
+        builder.expectedValue("dueDateMustBeWorkingDay", "500", false);
+        builder.expectedValue("calculatedDates", "nextHearingDate,dueDate,priorityDate", false);
         return builder;
     }
 

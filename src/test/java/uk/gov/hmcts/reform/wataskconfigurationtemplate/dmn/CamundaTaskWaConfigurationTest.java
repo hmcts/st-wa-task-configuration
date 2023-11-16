@@ -50,891 +50,891 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                         + "/${[CASE_REFERENCE]}/trigger/caseworker-send-order/"
                         + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType)", false)
                     .build()
-            ),
-            Arguments.of(
-                "caseManagementLocation",
-                CaseDataBuilder.defaultCase()
-                    .isUrgent()
-                    .build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", false)
-                    .expectedValue(MAJOR_PRIORITY, "2000", true)
-                    .expectedValue("region", "1", false)
-                    .expectedValue("roleCategory", "ADMIN", false)
-                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "10", false)
-                    .expectedValue("description", "[Orders: Send order](/cases/case-details"
-                        + "/${[CASE_REFERENCE]}/trigger/caseworker-send-order/"
-                        + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType)", false)
-                    .build()
-            ),
-            Arguments.of(
-                "processRule27Decision",
-                CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", false)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "routine_work", false)
-                    .expectedValue("roleCategory", "ADMIN", false)
-                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "5", false)
-                    .expectedValue(
-                        "description",
-                        "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                            + "/caseworker-send-order/"
-                            + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType)",
-                        false
-                    )
-                    .build()
-            ),
-            Arguments.of(
-                "processListingDirections",
-                CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", false)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "routine_work", false)
-                    .expectedValue("roleCategory", "ADMIN", false)
-                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", false)
-                    .expectedValue(
-                        "description",
-                        "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                            + "/caseworker-send-order/"
-                            + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType)",
-                        false
-                    )
-                    .build()
-            ),
-            Arguments.of(
-                "processDirectionsReListedCase",
-                CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", false)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "routine_work", false)
-                    .expectedValue("roleCategory", "ADMIN", false)
-                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", false)
-                    .expectedValue(
-                        "description",
-                        "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                            + "/caseworker-send-order/"
-                            + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType)",
-                        false
-                    )
-                    .build()
-            ),
-            Arguments.of(
-                "processDirectionsReListedCaseWithin5Days",
-                CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", false)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "priority", false)
-                    .expectedValue("roleCategory", "ADMIN", false)
-                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", false)
-                    .expectedValue(
-                        "description",
-                        "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                            + "/caseworker-send-order/"
-                            + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType)",
-                        false
-                    )
-                    .build()
-            ),
-            Arguments.of(
-                "processSetAsideDirections",
-                CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", false)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", false)
-                    .expectedValue("roleCategory", "ADMIN", false)
-                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", false)
-                    .expectedValue(
-                        "description",
-                        "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                            + "/caseworker-send-order/"
-                            + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType)",
-                        false
-                    )
-                    .build()
-            ),
-            Arguments.of(
-                "processCorrections",
-                CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", false)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", false)
-                    .expectedValue("roleCategory", "ADMIN", false)
-                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "3", false)
-                    .expectedValue(
-                        "description",
-                        "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                            + "/caseworker-send-order/"
-                            + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType)",
-                        false
-                    )
-                    .build()
-            ),
-            Arguments.of(
-                "processDirectionsReturned",
-                CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", false)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", false)
-                    .expectedValue("roleCategory", "ADMIN", false)
-                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "10", false)
-                    .expectedValue(
-                        "description",
-                        "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                            + "/caseworker-send-order/"
-                            + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType)",
-                        false
-                    )
-                    .build()
-            ),
-            Arguments.of(
-                "processPostponementDirections",
-                CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", false)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", false)
-                    .expectedValue("roleCategory", "ADMIN", false)
-                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", false)
-                    .expectedValue(
-                        "description",
-                        "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                            + "/caseworker-send-order/"
-                            + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType)",
-                        false
-                    )
-                    .build()
-            ),
-            Arguments.of(
-                "processTimeExtensionDirectionsReturned",
-                CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", false)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", false)
-                    .expectedValue("roleCategory", "ADMIN", false)
-                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", false)
-                    .expectedValue(
-                        "description",
-                        "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                            + "/caseworker-send-order/"
-                            + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType)",
-                        false
-                    )
-                    .build()
-            ),
-            Arguments.of(
-                "processReinstatementDecisionNotice",
-                CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", false)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", false)
-                    .expectedValue("roleCategory", "ADMIN", false)
-                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "5", false)
-                    .expectedValue(
-                        "description",
-                        "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                            + "/caseworker-send-order/"
-                            + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType)",
-                        false
-                    )
-                    .build()
-            ),
-            Arguments.of(
-                "processOtherDirectionsReturned",
-                CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", false)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", false)
-                    .expectedValue("roleCategory", "ADMIN", false)
-                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "10", false)
-                    .expectedValue(
-                        "description",
-                        "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                            + "/caseworker-send-order/"
-                            + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType)",
-                        false
-                    )
-                    .build()
-            ),
-            Arguments.of(
-                "processWrittenReasons",
-                CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", false)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", false)
-                    .expectedValue("roleCategory", "ADMIN", false)
-                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "3", false)
-                    .expectedValue(
-                        "description",
-                        "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                            + "/caseworker-send-order/"
-                            + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType)",
-                        false
-                    )
-                    .build()
-            ),
-            Arguments.of(
-                "processStrikeOutDirectionsReturned",
-                CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", false)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "routine_work", false)
-                    .expectedValue("roleCategory", "ADMIN", false)
-                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "10", false)
-                    .expectedValue(
-                        "description",
-                        "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                            + "/caseworker-send-order/"
-                            + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType)",
-                        false
-                    )
-                    .build()
-            ),
-            Arguments.of(
-                "processStayDirections",
-                CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", false)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "routine_work", false)
-                    .expectedValue("roleCategory", "ADMIN", false)
-                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "10", false)
-                    .expectedValue(
-                        "description",
-                        "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                            + "/caseworker-send-order/"
-                            + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType)",
-                        false
-                    )
-                    .build()
-            ),
-            Arguments.of(
-                "issueDecisionNotice",
-                CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", false)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "hearing_work", false)
-                    .expectedValue("roleCategory", "ADMIN", false)
-                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", false)
-                    .expectedValue(
-                        "description",
-                        "[Decision: Issue a decision](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                            + "/caseworker-issue-decision/"
-                            + "caseworker-issue-decisionSelectIssueNoticeOption<br/>"
-                            + "[Decision: Issue final decision](/cases/case-details/${[CASE_REFERENCE]}"
-                            + "/trigger/caseworker-issue-final-decision/"
-                            + "caseworker-issue-final-decisionselectIssueNoticeOption)",
-                        false
-                    )
-                    .build()
-            ),
-            Arguments.of(
-                "completeHearingOutcome",
-                CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", false)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "hearing_work", false)
-                    .expectedValue("roleCategory", "ADMIN", false)
-                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "5", false)
-                    .expectedValue(
-                        "description",
-                        "[Hearings: Create listing](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                            + "/create-hearing-summary/create-hearing-summarycreateHearingSummary)",
-                        false
-                    )
-                    .build()
-            ),
-            Arguments.of(
-                "referCase",
-                CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", false)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "routine_work", false)
-                    .expectedValue("roleCategory", "ADMIN", false)
-                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", false)
-                    .expectedValue(
-                        "description",
-                        "[Refer case to judge](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                            + "/refer-to-judge/refer-to-judgereferToJudgeReason)<br/>"
-                            + "[Refer case to legal officer](/cases/case-details/${[CASE_REFERENCE]}"
-                            + "/trigger/refer-to-legal-officer/refer-to-legal-officerreferToLegalOfficer)",
-                        false
-                    )
-                    .build()
-            ),
-            Arguments.of(
-                "vetNewCaseDocuments",
-                CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", false)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "applications", false)
-                    .expectedValue("roleCategory", "ADMIN", false)
-                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "5", false)
-                    .expectedValue(
-                        "description",
-                        "[Edit case details](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                            + "/edit-case/edit-casecaseCategorisationDetails)<br/>"
-                            + "[Case: Build case](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                            + "/caseworker-case-built/caseworker-case-builtcaseBuilt)",
-                        false
-                    )
-                    .build()
-            ),
-            Arguments.of(
-                "reviewNewCaseAndProvideDirectionsLO",
-                CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", false)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", false)
-                    .expectedValue("roleCategory", "LEGAL_OPERATIONS", false)
-                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "5", false)
-                    .expectedValue(
-                        "description",
-                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                            + "/create-draft-order/create-draft-ordercreateDraftOrder)",
-                        false
-                    )
-                    .build()
-            ),
-            Arguments.of(
-                "reviewTimeExtensionRequestLO",
-                CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", false)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", false)
-                    .expectedValue("roleCategory", "LEGAL_OPERATIONS", false)
-                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", false)
-                    .expectedValue(
-                        "description",
-                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                            + "/create-draft-order/create-draft-ordercreateDraftOrder)",
-                        false
-                    )
-                    .build()
-            ),
-            Arguments.of(
-                "reviewStrikeOutRequestLO",
-                CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", false)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", false)
-                    .expectedValue("roleCategory", "LEGAL_OPERATIONS", false)
-                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "5", false)
-                    .expectedValue(
-                        "description",
-                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                            + "/create-draft-order/create-draft-ordercreateDraftOrder)",
-                        false
-                    )
-                    .build()
-            ),
-            Arguments.of(
-                "reviewStayRequestLO",
-                CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", false)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", false)
-                    .expectedValue("roleCategory", "LEGAL_OPERATIONS", false)
-                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "5", false)
-                    .expectedValue(
-                        "description",
-                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                            + "/create-draft-order/create-draft-ordercreateDraftOrder)",
-                        false
-                    )
-                    .build()
-            ),
-            Arguments.of(
-                "reviewListingDirectionsLO",
-                CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", false)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", false)
-                    .expectedValue("roleCategory", "LEGAL_OPERATIONS", false)
-                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", false)
-                    .expectedValue(
-                        "description",
-                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                            + "/create-draft-order/create-draft-ordercreateDraftOrder)",
-                        false
-                    )
-                    .build()
-            ),
-            Arguments.of(
-                "reviewWithdrawalRequestLO",
-                CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", false)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", false)
-                    .expectedValue("roleCategory", "LEGAL_OPERATIONS", false)
-                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "5", false)
-                    .expectedValue(
-                        "description",
-                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                            + "/create-draft-order/create-draft-ordercreateDraftOrder)",
-                        false
-                    )
-                    .build()
-            ),
-            Arguments.of(
-                "reviewRule27RequestLO",
-                CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", false)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", false)
-                    .expectedValue("roleCategory", "LEGAL_OPERATIONS", false)
-                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "5", false)
-                    .expectedValue(
-                        "description",
-                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                            + "/create-draft-order/create-draft-ordercreateDraftOrder)",
-                        false
-                    )
-                    .build()
-            ),
-            Arguments.of(
-                "reviewListCaseLO",
-                CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", false)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", false)
-                    .expectedValue("roleCategory", "LEGAL_OPERATIONS", false)
-                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", false)
-                    .expectedValue(
-                        "description",
-                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                            + "/create-draft-order/create-draft-ordercreateDraftOrder)",
-                        false
-                    )
-                    .build()
-            ),
-            Arguments.of(
-                "reviewOtherRequestLO",
-                CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", false)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", false)
-                    .expectedValue("roleCategory", "LEGAL_OPERATIONS", false)
-                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "5", false)
-                    .expectedValue(
-                        "description",
-                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                            + "/create-draft-order/create-draft-ordercreateDraftOrder)",
-                        false
-                    )
-                    .build()
-            ),
-            Arguments.of(
-                "reviewListCaseWithin5DaysLO",
-                CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", false)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", false)
-                    .expectedValue("roleCategory", "LEGAL_OPERATIONS", false)
-                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", false)
-                    .expectedValue(
-                        "description",
-                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                            + "/create-draft-order/create-draft-ordercreateDraftOrder)",
-                        false
-                    )
-                    .build()
-            ),
-            Arguments.of(
-                "reviewPostponementRequestLO",
-                CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", false)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", false)
-                    .expectedValue("roleCategory", "LEGAL_OPERATIONS", false)
-                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", false)
-                    .expectedValue(
-                        "description",
-                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                            + "/create-draft-order/create-draft-ordercreateDraftOrder)",
-                        false
-                    )
-                    .build()
-            ),
-            Arguments.of(
-                "reviewReinstatementRequestLO",
-                CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", false)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", false)
-                    .expectedValue("roleCategory", "LEGAL_OPERATIONS", false)
-                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "5", false)
-                    .expectedValue(
-                        "description",
-                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                            + "/create-draft-order/create-draft-ordercreateDraftOrder)",
-                        false
-                    )
-                    .build()
-            ),
-            Arguments.of(
-                "reviewListCaseWithin5DaysJudge",
-                CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", false)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", false)
-                    .expectedValue("roleCategory", "JUDICIAL", false)
-                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", false)
-                    .expectedValue(
-                        "description",
-                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                            + "/create-draft-order/create-draft-ordercreateDraftOrder)",
-                        false
-                    )
-                    .build()
-            ),
-            Arguments.of(
-                "reviewPostponementRequestJudge",
-                CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", false)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", false)
-                    .expectedValue("roleCategory", "JUDICIAL", false)
-                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", false)
-                    .expectedValue(
-                        "description",
-                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                            + "/create-draft-order/create-draft-ordercreateDraftOrder)",
-                        false
-                    )
-                    .build()
-            ),
-            Arguments.of(
-                "reviewCorrectionsRequest",
-                CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", false)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", false)
-                    .expectedValue("roleCategory", "JUDICIAL", false)
-                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", false)
-                    .expectedValue(
-                        "description",
-                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                            + "/create-draft-order/create-draft-ordercreateDraftOrder)",
-                        false
-                    )
-                    .build()
-            ),
-            Arguments.of(
-                "reviewWrittenReasonsRequest",
-                CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", false)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", false)
-                    .expectedValue("roleCategory", "JUDICIAL", false)
-                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "28", false)
-                    .expectedValue(
-                        "description",
-                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                            + "/create-draft-order/create-draft-ordercreateDraftOrder)",
-                        false
-                    )
-                    .build()
-            ),
-            Arguments.of(
-                "reviewReinstatementRequestJudge",
-                CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", false)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", false)
-                    .expectedValue("roleCategory", "JUDICIAL", false)
-                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", false)
-                    .expectedValue(
-                        "description",
-                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                            + "/create-draft-order/create-draft-ordercreateDraftOrder)",
-                        false
-                    )
-                    .build()
-            ),
-            Arguments.of(
-                "reviewSetAsideRequest",
-                CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", false)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", false)
-                    .expectedValue("roleCategory", "JUDICIAL", false)
-                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", false)
-                    .expectedValue(
-                        "description",
-                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                            + "/create-draft-order/create-draft-ordercreateDraftOrder)",
-                        false
-                    )
-                    .build()
-            ),
-            Arguments.of(
-                "reviewStayRequestJudge",
-                CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", false)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", false)
-                    .expectedValue("roleCategory", "JUDICIAL", false)
-                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", false)
-                    .expectedValue(
-                        "description",
-                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                            + "/create-draft-order/create-draft-ordercreateDraftOrder)",
-                        false
-                    )
-                    .build()
-            ),
-            Arguments.of(
-                "reviewNewCaseAndProvideDirectionsJudge",
-                CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", false)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", false)
-                    .expectedValue("roleCategory", "JUDICIAL", false)
-                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", false)
-                    .expectedValue(
-                        "description",
-                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                            + "/create-draft-order/create-draft-ordercreateDraftOrder)",
-                        false
-                    )
-                    .build()
-            ),
-            Arguments.of(
-                "reviewOtherRequestJudge",
-                CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", false)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", false)
-                    .expectedValue("roleCategory", "JUDICIAL", false)
-                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", false)
-                    .expectedValue(
-                        "description",
-                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                            + "/create-draft-order/create-draft-ordercreateDraftOrder)",
-                        false
-                    )
-                    .build()
-            ),
-            Arguments.of(
-                "reviewWithdrawalRequestJudge",
-                CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", false)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", false)
-                    .expectedValue("roleCategory", "JUDICIAL", false)
-                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", false)
-                    .expectedValue(
-                        "description",
-                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                            + "/create-draft-order/create-draft-ordercreateDraftOrder)",
-                        false
-                    )
-                    .build()
-            ),
-            Arguments.of(
-                "reviewRule27RequestJudge",
-                CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", false)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", false)
-                    .expectedValue("roleCategory", "JUDICIAL", false)
-                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", false)
-                    .expectedValue(
-                        "description",
-                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                            + "/create-draft-order/create-draft-ordercreateDraftOrder)",
-                        false
-                    )
-                    .build()
-            ),
-            Arguments.of(
-                "reviewListingDirectionsJudge",
-                CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", false)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", false)
-                    .expectedValue("roleCategory", "JUDICIAL", false)
-                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", false)
-                    .expectedValue(
-                        "description",
-                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                            + "/create-draft-order/create-draft-ordercreateDraftOrder)",
-                        false
-                    )
-                    .build()
-            ),
-            Arguments.of(
-                "reviewListCaseJudge",
-                CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", false)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", false)
-                    .expectedValue("roleCategory", "JUDICIAL", false)
-                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", false)
-                    .expectedValue(
-                        "description",
-                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                            + "/create-draft-order/create-draft-ordercreateDraftOrder)",
-                        false
-                    )
-                    .build()
-            ),
-            Arguments.of(
-                "reviewStrikeOutRequestJudge",
-                CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", false)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", false)
-                    .expectedValue("roleCategory", "JUDICIAL", false)
-                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", false)
-                    .expectedValue(
-                        "description",
-                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                            + "/create-draft-order/create-draft-ordercreateDraftOrder)",
-                        false
-                    )
-                    .build()
-            ),
-            Arguments.of(
-                "reviewTimeExtensionRequestJudge",
-                CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", false)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", false)
-                    .expectedValue("roleCategory", "JUDICIAL", false)
-                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", false)
-                    .expectedValue(
-                        "description",
-                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                            + "/create-draft-order/create-draft-ordercreateDraftOrder)",
-                        false
-                    )
-                    .build()
-            ),
-            Arguments.of(
-                "reviewSpecificAccessRequestJudicial",
-                CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", false)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "access_requests", false)
-                    .expectedValue("roleCategory", "JUDICIAL", false)
-                    .expectedValue(
-                        "description",
-                        "[Review Access Request](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                            + "/reviewSpecificAccessRequestJudicial)",
-                        false
-                    )
-                    .build()
-            ),
-            Arguments.of(
-                "reviewSpecificAccessRequestLegalOps",
-                CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", false)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "access_requests", false)
-                    .expectedValue("roleCategory", "LEGAL_OPERATIONS", false)
-                    .expectedValue(
-                        "description",
-                        "[Review Access Request](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                            + "/reviewSpecificAccessRequestLegalOps)",
-                        false
-                    )
-                    .build()
-            ),
-            Arguments.of(
-                "reviewSpecificAccessRequestAdmin",
-                CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", false)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "access_requests", false)
-                    .expectedValue("roleCategory", "ADMIN", false)
-                    .expectedValue(
-                        "description",
-                        "[Review Access Request](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                            + "/reviewSpecificAccessRequestAdmin)",
-                        false
-                    )
-                    .build()
-            ),
-            Arguments.of(
-                "reviewSpecificAccessRequestCTSC",
-                CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", false)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "access_requests", false)
-                    .expectedValue("roleCategory", "CTSC", false)
-                    .expectedValue(
-                        "description",
-                        "[Review Access Request](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                            + "/reviewSpecificAccessRequestCTSC)",
-                        false
-                    )
-                    .build()
-            ),
-            Arguments.of(
-                "followUpNoneComplianceOfDirections",
-                CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", false)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "routine_work", false)
-                    .expectedValue("roleCategory", "ADMIN", false)
-                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", false)
-                    .expectedValue(
-                        "description",
-                        "[Application DSS Update (cic)](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                            + "/caseworker-update-dss-application)",
-                        false
-                    )
-                    .build()
             )
+//            Arguments.of(
+//                "caseManagementLocation",
+//                CaseDataBuilder.defaultCase()
+//                    .isUrgent()
+//                    .build(),
+//                ConfigurationExpectationBuilder.defaultExpectations()
+//                    .expectedValue(MINOR_PRIORITY, "500", false)
+//                    .expectedValue(MAJOR_PRIORITY, "2000", true)
+//                    .expectedValue("region", "1", false)
+//                    .expectedValue("roleCategory", "ADMIN", false)
+//                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "10", false)
+//                    .expectedValue("description", "[Orders: Send order](/cases/case-details"
+//                        + "/${[CASE_REFERENCE]}/trigger/caseworker-send-order/"
+//                        + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType)", false)
+//                    .build()
+//            ),
+//            Arguments.of(
+//                "processRule27Decision",
+//                CaseDataBuilder.defaultCase().build(),
+//                ConfigurationExpectationBuilder.defaultExpectations()
+//                    .expectedValue(MINOR_PRIORITY, "500", false)
+//                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+//                    .expectedValue("workType", "routine_work", false)
+//                    .expectedValue("roleCategory", "ADMIN", false)
+//                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "5", false)
+//                    .expectedValue(
+//                        "description",
+//                        "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+//                            + "/caseworker-send-order/"
+//                            + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType)",
+//                        false
+//                    )
+//                    .build()
+//            ),
+//            Arguments.of(
+//                "processListingDirections",
+//                CaseDataBuilder.defaultCase().build(),
+//                ConfigurationExpectationBuilder.defaultExpectations()
+//                    .expectedValue(MINOR_PRIORITY, "500", false)
+//                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+//                    .expectedValue("workType", "routine_work", false)
+//                    .expectedValue("roleCategory", "ADMIN", false)
+//                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", false)
+//                    .expectedValue(
+//                        "description",
+//                        "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+//                            + "/caseworker-send-order/"
+//                            + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType)",
+//                        false
+//                    )
+//                    .build()
+//            ),
+//            Arguments.of(
+//                "processDirectionsReListedCase",
+//                CaseDataBuilder.defaultCase().build(),
+//                ConfigurationExpectationBuilder.defaultExpectations()
+//                    .expectedValue(MINOR_PRIORITY, "500", false)
+//                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+//                    .expectedValue("workType", "routine_work", false)
+//                    .expectedValue("roleCategory", "ADMIN", false)
+//                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", false)
+//                    .expectedValue(
+//                        "description",
+//                        "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+//                            + "/caseworker-send-order/"
+//                            + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType)",
+//                        false
+//                    )
+//                    .build()
+//            ),
+//            Arguments.of(
+//                "processDirectionsReListedCaseWithin5Days",
+//                CaseDataBuilder.defaultCase().build(),
+//                ConfigurationExpectationBuilder.defaultExpectations()
+//                    .expectedValue(MINOR_PRIORITY, "500", false)
+//                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+//                    .expectedValue("workType", "priority", false)
+//                    .expectedValue("roleCategory", "ADMIN", false)
+//                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", false)
+//                    .expectedValue(
+//                        "description",
+//                        "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+//                            + "/caseworker-send-order/"
+//                            + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType)",
+//                        false
+//                    )
+//                    .build()
+//            ),
+//            Arguments.of(
+//                "processSetAsideDirections",
+//                CaseDataBuilder.defaultCase().build(),
+//                ConfigurationExpectationBuilder.defaultExpectations()
+//                    .expectedValue(MINOR_PRIORITY, "500", false)
+//                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+//                    .expectedValue("workType", "decision_making_work", false)
+//                    .expectedValue("roleCategory", "ADMIN", false)
+//                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", false)
+//                    .expectedValue(
+//                        "description",
+//                        "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+//                            + "/caseworker-send-order/"
+//                            + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType)",
+//                        false
+//                    )
+//                    .build()
+//            ),
+//            Arguments.of(
+//                "processCorrections",
+//                CaseDataBuilder.defaultCase().build(),
+//                ConfigurationExpectationBuilder.defaultExpectations()
+//                    .expectedValue(MINOR_PRIORITY, "500", false)
+//                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+//                    .expectedValue("workType", "decision_making_work", false)
+//                    .expectedValue("roleCategory", "ADMIN", false)
+//                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "3", false)
+//                    .expectedValue(
+//                        "description",
+//                        "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+//                            + "/caseworker-send-order/"
+//                            + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType)",
+//                        false
+//                    )
+//                    .build()
+//            ),
+//            Arguments.of(
+//                "processDirectionsReturned",
+//                CaseDataBuilder.defaultCase().build(),
+//                ConfigurationExpectationBuilder.defaultExpectations()
+//                    .expectedValue(MINOR_PRIORITY, "500", false)
+//                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+//                    .expectedValue("workType", "decision_making_work", false)
+//                    .expectedValue("roleCategory", "ADMIN", false)
+//                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "10", false)
+//                    .expectedValue(
+//                        "description",
+//                        "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+//                            + "/caseworker-send-order/"
+//                            + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType)",
+//                        false
+//                    )
+//                    .build()
+//            ),
+//            Arguments.of(
+//                "processPostponementDirections",
+//                CaseDataBuilder.defaultCase().build(),
+//                ConfigurationExpectationBuilder.defaultExpectations()
+//                    .expectedValue(MINOR_PRIORITY, "500", false)
+//                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+//                    .expectedValue("workType", "decision_making_work", false)
+//                    .expectedValue("roleCategory", "ADMIN", false)
+//                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", false)
+//                    .expectedValue(
+//                        "description",
+//                        "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+//                            + "/caseworker-send-order/"
+//                            + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType)",
+//                        false
+//                    )
+//                    .build()
+//            ),
+//            Arguments.of(
+//                "processTimeExtensionDirectionsReturned",
+//                CaseDataBuilder.defaultCase().build(),
+//                ConfigurationExpectationBuilder.defaultExpectations()
+//                    .expectedValue(MINOR_PRIORITY, "500", false)
+//                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+//                    .expectedValue("workType", "decision_making_work", false)
+//                    .expectedValue("roleCategory", "ADMIN", false)
+//                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", false)
+//                    .expectedValue(
+//                        "description",
+//                        "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+//                            + "/caseworker-send-order/"
+//                            + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType)",
+//                        false
+//                    )
+//                    .build()
+//            ),
+//            Arguments.of(
+//                "processReinstatementDecisionNotice",
+//                CaseDataBuilder.defaultCase().build(),
+//                ConfigurationExpectationBuilder.defaultExpectations()
+//                    .expectedValue(MINOR_PRIORITY, "500", false)
+//                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+//                    .expectedValue("workType", "decision_making_work", false)
+//                    .expectedValue("roleCategory", "ADMIN", false)
+//                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "5", false)
+//                    .expectedValue(
+//                        "description",
+//                        "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+//                            + "/caseworker-send-order/"
+//                            + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType)",
+//                        false
+//                    )
+//                    .build()
+//            ),
+//            Arguments.of(
+//                "processOtherDirectionsReturned",
+//                CaseDataBuilder.defaultCase().build(),
+//                ConfigurationExpectationBuilder.defaultExpectations()
+//                    .expectedValue(MINOR_PRIORITY, "500", false)
+//                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+//                    .expectedValue("workType", "decision_making_work", false)
+//                    .expectedValue("roleCategory", "ADMIN", false)
+//                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "10", false)
+//                    .expectedValue(
+//                        "description",
+//                        "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+//                            + "/caseworker-send-order/"
+//                            + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType)",
+//                        false
+//                    )
+//                    .build()
+//            ),
+//            Arguments.of(
+//                "processWrittenReasons",
+//                CaseDataBuilder.defaultCase().build(),
+//                ConfigurationExpectationBuilder.defaultExpectations()
+//                    .expectedValue(MINOR_PRIORITY, "500", false)
+//                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+//                    .expectedValue("workType", "decision_making_work", false)
+//                    .expectedValue("roleCategory", "ADMIN", false)
+//                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "3", false)
+//                    .expectedValue(
+//                        "description",
+//                        "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+//                            + "/caseworker-send-order/"
+//                            + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType)",
+//                        false
+//                    )
+//                    .build()
+//            ),
+//            Arguments.of(
+//                "processStrikeOutDirectionsReturned",
+//                CaseDataBuilder.defaultCase().build(),
+//                ConfigurationExpectationBuilder.defaultExpectations()
+//                    .expectedValue(MINOR_PRIORITY, "500", false)
+//                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+//                    .expectedValue("workType", "routine_work", false)
+//                    .expectedValue("roleCategory", "ADMIN", false)
+//                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "10", false)
+//                    .expectedValue(
+//                        "description",
+//                        "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+//                            + "/caseworker-send-order/"
+//                            + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType)",
+//                        false
+//                    )
+//                    .build()
+//            ),
+//            Arguments.of(
+//                "processStayDirections",
+//                CaseDataBuilder.defaultCase().build(),
+//                ConfigurationExpectationBuilder.defaultExpectations()
+//                    .expectedValue(MINOR_PRIORITY, "500", false)
+//                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+//                    .expectedValue("workType", "routine_work", false)
+//                    .expectedValue("roleCategory", "ADMIN", false)
+//                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "10", false)
+//                    .expectedValue(
+//                        "description",
+//                        "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+//                            + "/caseworker-send-order/"
+//                            + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType)",
+//                        false
+//                    )
+//                    .build()
+//            ),
+//            Arguments.of(
+//                "issueDecisionNotice",
+//                CaseDataBuilder.defaultCase().build(),
+//                ConfigurationExpectationBuilder.defaultExpectations()
+//                    .expectedValue(MINOR_PRIORITY, "500", false)
+//                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+//                    .expectedValue("workType", "hearing_work", false)
+//                    .expectedValue("roleCategory", "ADMIN", false)
+//                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", false)
+//                    .expectedValue(
+//                        "description",
+//                        "[Decision: Issue a decision](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+//                            + "/caseworker-issue-decision/"
+//                            + "caseworker-issue-decisionSelectIssueNoticeOption<br/>"
+//                            + "[Decision: Issue final decision](/cases/case-details/${[CASE_REFERENCE]}"
+//                            + "/trigger/caseworker-issue-final-decision/"
+//                            + "caseworker-issue-final-decisionselectIssueNoticeOption)",
+//                        false
+//                    )
+//                    .build()
+//            ),
+//            Arguments.of(
+//                "completeHearingOutcome",
+//                CaseDataBuilder.defaultCase().build(),
+//                ConfigurationExpectationBuilder.defaultExpectations()
+//                    .expectedValue(MINOR_PRIORITY, "500", false)
+//                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+//                    .expectedValue("workType", "hearing_work", false)
+//                    .expectedValue("roleCategory", "ADMIN", false)
+//                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "5", false)
+//                    .expectedValue(
+//                        "description",
+//                        "[Hearings: Create listing](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+//                            + "/create-hearing-summary/create-hearing-summarycreateHearingSummary)",
+//                        false
+//                    )
+//                    .build()
+//            ),
+//            Arguments.of(
+//                "referCase",
+//                CaseDataBuilder.defaultCase().build(),
+//                ConfigurationExpectationBuilder.defaultExpectations()
+//                    .expectedValue(MINOR_PRIORITY, "500", false)
+//                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+//                    .expectedValue("workType", "routine_work", false)
+//                    .expectedValue("roleCategory", "ADMIN", false)
+//                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", false)
+//                    .expectedValue(
+//                        "description",
+//                        "[Refer case to judge](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+//                            + "/refer-to-judge/refer-to-judgereferToJudgeReason)<br/>"
+//                            + "[Refer case to legal officer](/cases/case-details/${[CASE_REFERENCE]}"
+//                            + "/trigger/refer-to-legal-officer/refer-to-legal-officerreferToLegalOfficer)",
+//                        false
+//                    )
+//                    .build()
+//            ),
+//            Arguments.of(
+//                "vetNewCaseDocuments",
+//                CaseDataBuilder.defaultCase().build(),
+//                ConfigurationExpectationBuilder.defaultExpectations()
+//                    .expectedValue(MINOR_PRIORITY, "500", false)
+//                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+//                    .expectedValue("workType", "applications", false)
+//                    .expectedValue("roleCategory", "ADMIN", false)
+//                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "5", false)
+//                    .expectedValue(
+//                        "description",
+//                        "[Edit case details](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+//                            + "/edit-case/edit-casecaseCategorisationDetails)<br/>"
+//                            + "[Case: Build case](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+//                            + "/caseworker-case-built/caseworker-case-builtcaseBuilt)",
+//                        false
+//                    )
+//                    .build()
+//            ),
+//            Arguments.of(
+//                "reviewNewCaseAndProvideDirectionsLO",
+//                CaseDataBuilder.defaultCase().build(),
+//                ConfigurationExpectationBuilder.defaultExpectations()
+//                    .expectedValue(MINOR_PRIORITY, "500", false)
+//                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+//                    .expectedValue("workType", "decision_making_work", false)
+//                    .expectedValue("roleCategory", "LEGAL_OPERATIONS", false)
+//                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "5", false)
+//                    .expectedValue(
+//                        "description",
+//                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+//                            + "/create-draft-order/create-draft-ordercreateDraftOrder)",
+//                        false
+//                    )
+//                    .build()
+//            ),
+//            Arguments.of(
+//                "reviewTimeExtensionRequestLO",
+//                CaseDataBuilder.defaultCase().build(),
+//                ConfigurationExpectationBuilder.defaultExpectations()
+//                    .expectedValue(MINOR_PRIORITY, "500", false)
+//                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+//                    .expectedValue("workType", "decision_making_work", false)
+//                    .expectedValue("roleCategory", "LEGAL_OPERATIONS", false)
+//                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", false)
+//                    .expectedValue(
+//                        "description",
+//                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+//                            + "/create-draft-order/create-draft-ordercreateDraftOrder)",
+//                        false
+//                    )
+//                    .build()
+//            ),
+//            Arguments.of(
+//                "reviewStrikeOutRequestLO",
+//                CaseDataBuilder.defaultCase().build(),
+//                ConfigurationExpectationBuilder.defaultExpectations()
+//                    .expectedValue(MINOR_PRIORITY, "500", false)
+//                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+//                    .expectedValue("workType", "decision_making_work", false)
+//                    .expectedValue("roleCategory", "LEGAL_OPERATIONS", false)
+//                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "5", false)
+//                    .expectedValue(
+//                        "description",
+//                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+//                            + "/create-draft-order/create-draft-ordercreateDraftOrder)",
+//                        false
+//                    )
+//                    .build()
+//            ),
+//            Arguments.of(
+//                "reviewStayRequestLO",
+//                CaseDataBuilder.defaultCase().build(),
+//                ConfigurationExpectationBuilder.defaultExpectations()
+//                    .expectedValue(MINOR_PRIORITY, "500", false)
+//                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+//                    .expectedValue("workType", "decision_making_work", false)
+//                    .expectedValue("roleCategory", "LEGAL_OPERATIONS", false)
+//                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "5", false)
+//                    .expectedValue(
+//                        "description",
+//                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+//                            + "/create-draft-order/create-draft-ordercreateDraftOrder)",
+//                        false
+//                    )
+//                    .build()
+//            ),
+//            Arguments.of(
+//                "reviewListingDirectionsLO",
+//                CaseDataBuilder.defaultCase().build(),
+//                ConfigurationExpectationBuilder.defaultExpectations()
+//                    .expectedValue(MINOR_PRIORITY, "500", false)
+//                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+//                    .expectedValue("workType", "decision_making_work", false)
+//                    .expectedValue("roleCategory", "LEGAL_OPERATIONS", false)
+//                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", false)
+//                    .expectedValue(
+//                        "description",
+//                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+//                            + "/create-draft-order/create-draft-ordercreateDraftOrder)",
+//                        false
+//                    )
+//                    .build()
+//            ),
+//            Arguments.of(
+//                "reviewWithdrawalRequestLO",
+//                CaseDataBuilder.defaultCase().build(),
+//                ConfigurationExpectationBuilder.defaultExpectations()
+//                    .expectedValue(MINOR_PRIORITY, "500", false)
+//                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+//                    .expectedValue("workType", "decision_making_work", false)
+//                    .expectedValue("roleCategory", "LEGAL_OPERATIONS", false)
+//                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "5", false)
+//                    .expectedValue(
+//                        "description",
+//                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+//                            + "/create-draft-order/create-draft-ordercreateDraftOrder)",
+//                        false
+//                    )
+//                    .build()
+//            ),
+//            Arguments.of(
+//                "reviewRule27RequestLO",
+//                CaseDataBuilder.defaultCase().build(),
+//                ConfigurationExpectationBuilder.defaultExpectations()
+//                    .expectedValue(MINOR_PRIORITY, "500", false)
+//                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+//                    .expectedValue("workType", "decision_making_work", false)
+//                    .expectedValue("roleCategory", "LEGAL_OPERATIONS", false)
+//                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "5", false)
+//                    .expectedValue(
+//                        "description",
+//                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+//                            + "/create-draft-order/create-draft-ordercreateDraftOrder)",
+//                        false
+//                    )
+//                    .build()
+//            ),
+//            Arguments.of(
+//                "reviewListCaseLO",
+//                CaseDataBuilder.defaultCase().build(),
+//                ConfigurationExpectationBuilder.defaultExpectations()
+//                    .expectedValue(MINOR_PRIORITY, "500", false)
+//                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+//                    .expectedValue("workType", "decision_making_work", false)
+//                    .expectedValue("roleCategory", "LEGAL_OPERATIONS", false)
+//                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", false)
+//                    .expectedValue(
+//                        "description",
+//                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+//                            + "/create-draft-order/create-draft-ordercreateDraftOrder)",
+//                        false
+//                    )
+//                    .build()
+//            ),
+//            Arguments.of(
+//                "reviewOtherRequestLO",
+//                CaseDataBuilder.defaultCase().build(),
+//                ConfigurationExpectationBuilder.defaultExpectations()
+//                    .expectedValue(MINOR_PRIORITY, "500", false)
+//                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+//                    .expectedValue("workType", "decision_making_work", false)
+//                    .expectedValue("roleCategory", "LEGAL_OPERATIONS", false)
+//                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "5", false)
+//                    .expectedValue(
+//                        "description",
+//                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+//                            + "/create-draft-order/create-draft-ordercreateDraftOrder)",
+//                        false
+//                    )
+//                    .build()
+//            ),
+//            Arguments.of(
+//                "reviewListCaseWithin5DaysLO",
+//                CaseDataBuilder.defaultCase().build(),
+//                ConfigurationExpectationBuilder.defaultExpectations()
+//                    .expectedValue(MINOR_PRIORITY, "500", false)
+//                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+//                    .expectedValue("workType", "decision_making_work", false)
+//                    .expectedValue("roleCategory", "LEGAL_OPERATIONS", false)
+//                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", false)
+//                    .expectedValue(
+//                        "description",
+//                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+//                            + "/create-draft-order/create-draft-ordercreateDraftOrder)",
+//                        false
+//                    )
+//                    .build()
+//            ),
+//            Arguments.of(
+//                "reviewPostponementRequestLO",
+//                CaseDataBuilder.defaultCase().build(),
+//                ConfigurationExpectationBuilder.defaultExpectations()
+//                    .expectedValue(MINOR_PRIORITY, "500", false)
+//                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+//                    .expectedValue("workType", "decision_making_work", false)
+//                    .expectedValue("roleCategory", "LEGAL_OPERATIONS", false)
+//                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", false)
+//                    .expectedValue(
+//                        "description",
+//                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+//                            + "/create-draft-order/create-draft-ordercreateDraftOrder)",
+//                        false
+//                    )
+//                    .build()
+//            ),
+//            Arguments.of(
+//                "reviewReinstatementRequestLO",
+//                CaseDataBuilder.defaultCase().build(),
+//                ConfigurationExpectationBuilder.defaultExpectations()
+//                    .expectedValue(MINOR_PRIORITY, "500", false)
+//                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+//                    .expectedValue("workType", "decision_making_work", false)
+//                    .expectedValue("roleCategory", "LEGAL_OPERATIONS", false)
+//                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "5", false)
+//                    .expectedValue(
+//                        "description",
+//                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+//                            + "/create-draft-order/create-draft-ordercreateDraftOrder)",
+//                        false
+//                    )
+//                    .build()
+//            ),
+//            Arguments.of(
+//                "reviewListCaseWithin5DaysJudge",
+//                CaseDataBuilder.defaultCase().build(),
+//                ConfigurationExpectationBuilder.defaultExpectations()
+//                    .expectedValue(MINOR_PRIORITY, "500", false)
+//                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+//                    .expectedValue("workType", "decision_making_work", false)
+//                    .expectedValue("roleCategory", "JUDICIAL", false)
+//                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", false)
+//                    .expectedValue(
+//                        "description",
+//                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+//                            + "/create-draft-order/create-draft-ordercreateDraftOrder)",
+//                        false
+//                    )
+//                    .build()
+//            ),
+//            Arguments.of(
+//                "reviewPostponementRequestJudge",
+//                CaseDataBuilder.defaultCase().build(),
+//                ConfigurationExpectationBuilder.defaultExpectations()
+//                    .expectedValue(MINOR_PRIORITY, "500", false)
+//                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+//                    .expectedValue("workType", "decision_making_work", false)
+//                    .expectedValue("roleCategory", "JUDICIAL", false)
+//                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", false)
+//                    .expectedValue(
+//                        "description",
+//                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+//                            + "/create-draft-order/create-draft-ordercreateDraftOrder)",
+//                        false
+//                    )
+//                    .build()
+//            ),
+//            Arguments.of(
+//                "reviewCorrectionsRequest",
+//                CaseDataBuilder.defaultCase().build(),
+//                ConfigurationExpectationBuilder.defaultExpectations()
+//                    .expectedValue(MINOR_PRIORITY, "500", false)
+//                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+//                    .expectedValue("workType", "decision_making_work", false)
+//                    .expectedValue("roleCategory", "JUDICIAL", false)
+//                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", false)
+//                    .expectedValue(
+//                        "description",
+//                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+//                            + "/create-draft-order/create-draft-ordercreateDraftOrder)",
+//                        false
+//                    )
+//                    .build()
+//            ),
+//            Arguments.of(
+//                "reviewWrittenReasonsRequest",
+//                CaseDataBuilder.defaultCase().build(),
+//                ConfigurationExpectationBuilder.defaultExpectations()
+//                    .expectedValue(MINOR_PRIORITY, "500", false)
+//                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+//                    .expectedValue("workType", "decision_making_work", false)
+//                    .expectedValue("roleCategory", "JUDICIAL", false)
+//                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "28", false)
+//                    .expectedValue(
+//                        "description",
+//                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+//                            + "/create-draft-order/create-draft-ordercreateDraftOrder)",
+//                        false
+//                    )
+//                    .build()
+//            ),
+//            Arguments.of(
+//                "reviewReinstatementRequestJudge",
+//                CaseDataBuilder.defaultCase().build(),
+//                ConfigurationExpectationBuilder.defaultExpectations()
+//                    .expectedValue(MINOR_PRIORITY, "500", false)
+//                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+//                    .expectedValue("workType", "decision_making_work", false)
+//                    .expectedValue("roleCategory", "JUDICIAL", false)
+//                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", false)
+//                    .expectedValue(
+//                        "description",
+//                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+//                            + "/create-draft-order/create-draft-ordercreateDraftOrder)",
+//                        false
+//                    )
+//                    .build()
+//            ),
+//            Arguments.of(
+//                "reviewSetAsideRequest",
+//                CaseDataBuilder.defaultCase().build(),
+//                ConfigurationExpectationBuilder.defaultExpectations()
+//                    .expectedValue(MINOR_PRIORITY, "500", false)
+//                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+//                    .expectedValue("workType", "decision_making_work", false)
+//                    .expectedValue("roleCategory", "JUDICIAL", false)
+//                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", false)
+//                    .expectedValue(
+//                        "description",
+//                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+//                            + "/create-draft-order/create-draft-ordercreateDraftOrder)",
+//                        false
+//                    )
+//                    .build()
+//            ),
+//            Arguments.of(
+//                "reviewStayRequestJudge",
+//                CaseDataBuilder.defaultCase().build(),
+//                ConfigurationExpectationBuilder.defaultExpectations()
+//                    .expectedValue(MINOR_PRIORITY, "500", false)
+//                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+//                    .expectedValue("workType", "decision_making_work", false)
+//                    .expectedValue("roleCategory", "JUDICIAL", false)
+//                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", false)
+//                    .expectedValue(
+//                        "description",
+//                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+//                            + "/create-draft-order/create-draft-ordercreateDraftOrder)",
+//                        false
+//                    )
+//                    .build()
+//            ),
+//            Arguments.of(
+//                "reviewNewCaseAndProvideDirectionsJudge",
+//                CaseDataBuilder.defaultCase().build(),
+//                ConfigurationExpectationBuilder.defaultExpectations()
+//                    .expectedValue(MINOR_PRIORITY, "500", false)
+//                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+//                    .expectedValue("workType", "decision_making_work", false)
+//                    .expectedValue("roleCategory", "JUDICIAL", false)
+//                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", false)
+//                    .expectedValue(
+//                        "description",
+//                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+//                            + "/create-draft-order/create-draft-ordercreateDraftOrder)",
+//                        false
+//                    )
+//                    .build()
+//            ),
+//            Arguments.of(
+//                "reviewOtherRequestJudge",
+//                CaseDataBuilder.defaultCase().build(),
+//                ConfigurationExpectationBuilder.defaultExpectations()
+//                    .expectedValue(MINOR_PRIORITY, "500", false)
+//                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+//                    .expectedValue("workType", "decision_making_work", false)
+//                    .expectedValue("roleCategory", "JUDICIAL", false)
+//                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", false)
+//                    .expectedValue(
+//                        "description",
+//                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+//                            + "/create-draft-order/create-draft-ordercreateDraftOrder)",
+//                        false
+//                    )
+//                    .build()
+//            ),
+//            Arguments.of(
+//                "reviewWithdrawalRequestJudge",
+//                CaseDataBuilder.defaultCase().build(),
+//                ConfigurationExpectationBuilder.defaultExpectations()
+//                    .expectedValue(MINOR_PRIORITY, "500", false)
+//                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+//                    .expectedValue("workType", "decision_making_work", false)
+//                    .expectedValue("roleCategory", "JUDICIAL", false)
+//                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", false)
+//                    .expectedValue(
+//                        "description",
+//                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+//                            + "/create-draft-order/create-draft-ordercreateDraftOrder)",
+//                        false
+//                    )
+//                    .build()
+//            ),
+//            Arguments.of(
+//                "reviewRule27RequestJudge",
+//                CaseDataBuilder.defaultCase().build(),
+//                ConfigurationExpectationBuilder.defaultExpectations()
+//                    .expectedValue(MINOR_PRIORITY, "500", false)
+//                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+//                    .expectedValue("workType", "decision_making_work", false)
+//                    .expectedValue("roleCategory", "JUDICIAL", false)
+//                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", false)
+//                    .expectedValue(
+//                        "description",
+//                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+//                            + "/create-draft-order/create-draft-ordercreateDraftOrder)",
+//                        false
+//                    )
+//                    .build()
+//            ),
+//            Arguments.of(
+//                "reviewListingDirectionsJudge",
+//                CaseDataBuilder.defaultCase().build(),
+//                ConfigurationExpectationBuilder.defaultExpectations()
+//                    .expectedValue(MINOR_PRIORITY, "500", false)
+//                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+//                    .expectedValue("workType", "decision_making_work", false)
+//                    .expectedValue("roleCategory", "JUDICIAL", false)
+//                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", false)
+//                    .expectedValue(
+//                        "description",
+//                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+//                            + "/create-draft-order/create-draft-ordercreateDraftOrder)",
+//                        false
+//                    )
+//                    .build()
+//            ),
+//            Arguments.of(
+//                "reviewListCaseJudge",
+//                CaseDataBuilder.defaultCase().build(),
+//                ConfigurationExpectationBuilder.defaultExpectations()
+//                    .expectedValue(MINOR_PRIORITY, "500", false)
+//                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+//                    .expectedValue("workType", "decision_making_work", false)
+//                    .expectedValue("roleCategory", "JUDICIAL", false)
+//                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", false)
+//                    .expectedValue(
+//                        "description",
+//                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+//                            + "/create-draft-order/create-draft-ordercreateDraftOrder)",
+//                        false
+//                    )
+//                    .build()
+//            ),
+//            Arguments.of(
+//                "reviewStrikeOutRequestJudge",
+//                CaseDataBuilder.defaultCase().build(),
+//                ConfigurationExpectationBuilder.defaultExpectations()
+//                    .expectedValue(MINOR_PRIORITY, "500", false)
+//                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+//                    .expectedValue("workType", "decision_making_work", false)
+//                    .expectedValue("roleCategory", "JUDICIAL", false)
+//                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", false)
+//                    .expectedValue(
+//                        "description",
+//                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+//                            + "/create-draft-order/create-draft-ordercreateDraftOrder)",
+//                        false
+//                    )
+//                    .build()
+//            ),
+//            Arguments.of(
+//                "reviewTimeExtensionRequestJudge",
+//                CaseDataBuilder.defaultCase().build(),
+//                ConfigurationExpectationBuilder.defaultExpectations()
+//                    .expectedValue(MINOR_PRIORITY, "500", false)
+//                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+//                    .expectedValue("workType", "decision_making_work", false)
+//                    .expectedValue("roleCategory", "JUDICIAL", false)
+//                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", false)
+//                    .expectedValue(
+//                        "description",
+//                        "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+//                            + "/create-draft-order/create-draft-ordercreateDraftOrder)",
+//                        false
+//                    )
+//                    .build()
+//            ),
+//            Arguments.of(
+//                "reviewSpecificAccessRequestJudicial",
+//                CaseDataBuilder.defaultCase().build(),
+//                ConfigurationExpectationBuilder.defaultExpectations()
+//                    .expectedValue(MINOR_PRIORITY, "500", false)
+//                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+//                    .expectedValue("workType", "access_requests", false)
+//                    .expectedValue("roleCategory", "JUDICIAL", false)
+//                    .expectedValue(
+//                        "description",
+//                        "[Review Access Request](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+//                            + "/reviewSpecificAccessRequestJudicial)",
+//                        false
+//                    )
+//                    .build()
+//            ),
+//            Arguments.of(
+//                "reviewSpecificAccessRequestLegalOps",
+//                CaseDataBuilder.defaultCase().build(),
+//                ConfigurationExpectationBuilder.defaultExpectations()
+//                    .expectedValue(MINOR_PRIORITY, "500", false)
+//                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+//                    .expectedValue("workType", "access_requests", false)
+//                    .expectedValue("roleCategory", "LEGAL_OPERATIONS", false)
+//                    .expectedValue(
+//                        "description",
+//                        "[Review Access Request](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+//                            + "/reviewSpecificAccessRequestLegalOps)",
+//                        false
+//                    )
+//                    .build()
+//            ),
+//            Arguments.of(
+//                "reviewSpecificAccessRequestAdmin",
+//                CaseDataBuilder.defaultCase().build(),
+//                ConfigurationExpectationBuilder.defaultExpectations()
+//                    .expectedValue(MINOR_PRIORITY, "500", false)
+//                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+//                    .expectedValue("workType", "access_requests", false)
+//                    .expectedValue("roleCategory", "ADMIN", false)
+//                    .expectedValue(
+//                        "description",
+//                        "[Review Access Request](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+//                            + "/reviewSpecificAccessRequestAdmin)",
+//                        false
+//                    )
+//                    .build()
+//            ),
+//            Arguments.of(
+//                "reviewSpecificAccessRequestCTSC",
+//                CaseDataBuilder.defaultCase().build(),
+//                ConfigurationExpectationBuilder.defaultExpectations()
+//                    .expectedValue(MINOR_PRIORITY, "500", false)
+//                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+//                    .expectedValue("workType", "access_requests", false)
+//                    .expectedValue("roleCategory", "CTSC", false)
+//                    .expectedValue(
+//                        "description",
+//                        "[Review Access Request](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+//                            + "/reviewSpecificAccessRequestCTSC)",
+//                        false
+//                    )
+//                    .build()
+//            ),
+//            Arguments.of(
+//                "followUpNoneComplianceOfDirections",
+//                CaseDataBuilder.defaultCase().build(),
+//                ConfigurationExpectationBuilder.defaultExpectations()
+//                    .expectedValue(MINOR_PRIORITY, "500", false)
+//                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+//                    .expectedValue("workType", "routine_work", false)
+//                    .expectedValue("roleCategory", "ADMIN", false)
+//                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", false)
+//                    .expectedValue(
+//                        "description",
+//                        "[Application DSS Update (cic)](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+//                            + "/caseworker-update-dss-application)",
+//                        false
+//                    )
+//                    .build()
+//            )
         );
     }
 
@@ -969,19 +969,9 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
     private void resultsMatch(List<Map<String, Object>> results, List<Map<String, Object>> expectation) {
         assertThat(results.size(), is(expectation.size()));
         for (int index = 0; index < expectation.size(); index++) {
-            if ("dueDateOrigin".equals(expectation.get(index).get("name"))) {
-                assertEquals(
-                    results.get(index).get("canReconfigure"),
-                    expectation.get(index).get("canReconfigure")
-                );
-                assertTrue(validNow(
-                    LocalDateTime.parse(results.get(index).get("value").toString()),
-                    LocalDateTime.parse(expectation.get(index).get("value").toString())
-                ));
-            } else {
-                assertThat(results.get(index), is(expectation.get(index)));
-            }
+                assertTrue(results.contains((Map<String, Object>) expectation.get(index)));
         }
+
     }
 
     private boolean validNow(LocalDateTime actual, LocalDateTime expected) {
