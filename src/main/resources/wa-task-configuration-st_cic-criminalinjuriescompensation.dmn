@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.13.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.17.0">
   <decision id="wa-task-configuration-st_cic-criminalinjuriescompensation" name="Task configuration DMN">
     <decisionTable id="DecisionTable_14cx079" hitPolicy="RULE ORDER">
       <input id="InputClause_1gxyo7f" label="CCD Case Data" camunda:inputVariable="caseData">
@@ -31,10 +31,82 @@
           <text>"caseName"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0qxk186">
-          <text>caseData.caseNameHmctsInternal</text>
+          <text>if(caseData!=null and caseData.caseNamePublic !=null) then caseData.caseNamePublic else ""</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0yq1las">
-          <text>false</text>
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1mjcc04">
+        <inputEntry id="UnaryTests_18cwczt">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0dkk0gm">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1bhsx9c">
+          <text>"caseManagementCategory"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0lofdxr">
+          <text>if (caseData.caseManagementCategory !=null and caseData.caseManagementCategory.selectedLabel !=null) then caseData.caseManagementCategory.selectedLabel else "Employment"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0sr21w4">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0q4qv9k">
+        <inputEntry id="UnaryTests_0w5bx9l">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1otkpft">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0bk5dx2">
+          <text>"region"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0w92hli">
+          <text>if(caseData!=null and caseData.caseManagementLocation!=null and caseData.caseManagementLocation.region!=null) then caseData.caseManagementLocation.region else "1"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0nud1yw">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1vtk3id">
+        <description>Location Id</description>
+        <inputEntry id="UnaryTests_1rnxkwz">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_001vqzf">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_08jsjbj">
+          <text>"location"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0kcac7o">
+          <text>if (caseData.caseManagementLocation != null and caseData.caseManagementLocation.baseLocation != null) then caseData.caseManagementLocation.baseLocation else "21153"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0qxf2oq">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_165co4p">
+        <description>
+
+Short name</description>
+        <inputEntry id="UnaryTests_1cjvmpi">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0o3zrg4">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1izav92">
+          <text>"locationName"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0bqzxy2">
+          <text>if (caseData.caseManagementLocation != null and caseData.caseManagementLocation.baseLocation != null and caseData.managingOffice != null) then caseData.managingOffice else "London Central"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0pwyuux">
+          <text>true</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1qfkcqn">
