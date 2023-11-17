@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="wa-completion-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.13.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="wa-completion-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.17.0">
   <decision id="wa-task-completion-st_cic-criminalinjuriescompensation" name="Task completion DMN">
     <decisionTable id="DecisionTable_01re27m" hitPolicy="COLLECT">
       <input id="eventId" label="Event ID" biodi:width="614">
@@ -515,17 +515,6 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1ym96w7">
-        <inputEntry id="UnaryTests_0y9ho1n">
-          <text>"create-draft-order","caseworker-send-order","caseworker-issue-final-decision","caseworker-issue-decision","create-hearing-summary","refer-to-judge","refer-to-legal-officer","caseworker-edit-cica-case-details","caseworker-case-built"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1lnxxj4">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0dbbio8">
-          <text></text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_151s4ne">
         <inputEntry id="UnaryTests_1ausbgj">
           <text>"caseworker-update-dss-application"</text>
@@ -535,6 +524,17 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_16wg8ds">
           <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ym96w7">
+        <inputEntry id="UnaryTests_0y9ho1n">
+          <text>"create-draft-order","caseworker-send-order","caseworker-issue-final-decision","caseworker-issue-decision","create-hearing-summary","refer-to-judge","refer-to-legal-officer","caseworker-edit-cica-case-details","caseworker-case-built"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1lnxxj4">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0dbbio8">
+          <text></text>
         </outputEntry>
       </rule>
     </decisionTable>

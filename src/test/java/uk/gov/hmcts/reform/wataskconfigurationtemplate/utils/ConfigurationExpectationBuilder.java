@@ -9,8 +9,9 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public class ConfigurationExpectationBuilder {
+
     private static List<String> EXPECTED_PROPERTIES = Arrays.asList(
-        "caseName","majorPriority","minorPriority","workType", "roleCategory","dueDateIntervalDays","description"
+        "caseName","caseManagementCategory","region","location","locationName","majorPriority","minorPriority","workType", "roleCategory","dueDateIntervalDays", "description"
     );
     private static DateTimeFormatter dateTimeFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm");
 
@@ -18,7 +19,11 @@ public class ConfigurationExpectationBuilder {
 
     public static ConfigurationExpectationBuilder defaultExpectations() {
         ConfigurationExpectationBuilder builder = new ConfigurationExpectationBuilder();
-        builder.expectedValue("caseName", "Joe Blogs", false);
+        builder.expectedValue("caseName", "Joe Blogs", true);
+        builder.expectedValue("caseManagementCategory", "Employment", true);
+        builder.expectedValue("region", "1", true);
+        builder.expectedValue("location", "21153", true);
+        builder.expectedValue("locationName", "London Central", true);
         builder.expectedValue("workType", "routine_work", true);
         builder.expectedValue("roleCategory", "ADMIN", true);
         builder.expectedValue("minorPriority", "500", true);
