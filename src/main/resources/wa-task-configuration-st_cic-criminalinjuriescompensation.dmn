@@ -48,7 +48,7 @@
           <text>"caseManagementCategory"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0lofdxr">
-          <text>if (caseData.caseManagementCategory !=null and caseData.caseManagementCategory.selectedLabel !=null) then caseData.caseManagementCategory.selectedLabel else "Employment"</text>
+          <text>if (caseData.caseManagementCategory !=null and caseData.caseManagementCategory.selectedLabel !=null) then caseData.caseManagementCategory.selectedLabel else "Criminal Injuries Compensation"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0sr21w4">
           <text>true</text>
@@ -83,7 +83,7 @@
           <text>"location"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0kcac7o">
-          <text>if (caseData.caseManagementLocation != null and caseData.caseManagementLocation.baseLocation != null) then caseData.caseManagementLocation.baseLocation else "21153"</text>
+          <text>if (caseData.caseManagementLocation != null and caseData.caseManagementLocation.baseLocation != null) then caseData.caseManagementLocation.baseLocation else "336559"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0qxf2oq">
           <text>true</text>
@@ -103,9 +103,27 @@ Short name</description>
           <text>"locationName"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0bqzxy2">
-          <text>if (caseData.caseManagementLocation != null and caseData.caseManagementLocation.baseLocation != null and caseData.managingOffice != null) then caseData.managingOffice else "London Central"</text>
+          <text>if (caseData.caseManagementLocation != null and caseData.caseManagementLocation.baseLocation != null and caseData.managingOffice != null) then caseData.managingOffice else "Glasgow Tribunals Centre"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0pwyuux">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1l3igra">
+        <description>Hearing date if available minus 10 days</description>
+        <inputEntry id="UnaryTests_0ciwlr7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1p1j4rk">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0a847c3">
+          <text>"priorityDate"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_120guqw">
+          <text>"dueDate"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_19az7w3">
           <text>true</text>
         </outputEntry>
       </rule>
@@ -143,6 +161,108 @@ else 5000</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1ecy2mu">
           <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_03l8jgf">
+        <inputEntry id="UnaryTests_1tv0l7k">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1pq75ub">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1o6kwij">
+          <text>"calculatedDates"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0f1c90w">
+          <text>"dueDate,priorityDate"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0t8o1ij">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0i2vvrp">
+        <inputEntry id="UnaryTests_0tt624u">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12m3raa">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0w8jlgi">
+          <text>"dueDateTime"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1kwo02o">
+          <text>time("16:00")</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1juli9l">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0kxxk0n">
+        <inputEntry id="UnaryTests_05o7w1h">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vvu32e">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1vrth3c">
+          <text>"dueDateNonWorkingCalendar"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1atq5od">
+          <text>"https://www.gov.uk/bank-holidays/england-and-wales.json"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_08asnrh">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ck3v10">
+        <inputEntry id="UnaryTests_19jcyb6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vwwa1a">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ngfjor">
+          <text>"dueDateNonWorkingDaysOfWeek"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0kzbwxi">
+          <text>"SATURDAY,SUNDAY"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_01sv3ae">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0fetia3">
+        <inputEntry id="UnaryTests_13uayz4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0f9733i">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0h5k0gz">
+          <text>"dueDateSkipNonWorkingDays"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1tzphs6">
+          <text>"true"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_18j5aar">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0cwcuzf">
+        <inputEntry id="UnaryTests_0ol3v6g">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0prnked">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0lcz0f2">
+          <text>"dueDateMustBeWorkingDay"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1rnmrum">
+          <text>"Next"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_14fd14u">
+          <text>false</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1uuyxon">
