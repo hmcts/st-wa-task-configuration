@@ -142,7 +142,7 @@ else 5000</text>
           <text>500</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1ecy2mu">
-          <text>false</text>
+          <text>true</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1uuyxon">
@@ -159,7 +159,7 @@ else 5000</text>
           <text>"routine_work"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0z4f0k6">
-          <text>false</text>
+          <text>true</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_023d6jc">
@@ -176,7 +176,7 @@ else 5000</text>
           <text>"priority"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0q1gzgk">
-          <text>false</text>
+          <text>true</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_00fssfn">
@@ -193,7 +193,7 @@ else 5000</text>
           <text>"decision_making_work"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_05mitav">
-          <text>false</text>
+          <text>true</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1c49m1s">
@@ -210,7 +210,7 @@ else 5000</text>
           <text>"hearing_work"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0qqknei">
-          <text>false</text>
+          <text>true</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1ebp5ca">
@@ -227,7 +227,7 @@ else 5000</text>
           <text>"applications"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_06fihsc">
-          <text>false</text>
+          <text>true</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1a0vm4e">
@@ -244,7 +244,7 @@ else 5000</text>
           <text>"access_requests"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1yrdi10">
-          <text>false</text>
+          <text>true</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0v7suji">
@@ -261,7 +261,7 @@ else 5000</text>
           <text>"ADMIN"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_03hwx1w">
-          <text>false</text>
+          <text>true</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1susv53">
@@ -278,7 +278,7 @@ else 5000</text>
           <text>"LEGAL_OPERATIONS"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1x23tk7">
-          <text>false</text>
+          <text>true</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0tkl341">
@@ -295,7 +295,7 @@ else 5000</text>
           <text>"JUDICIAL"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1x7ihcw">
-          <text>false</text>
+          <text>true</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_03ncpse">
@@ -312,7 +312,7 @@ else 5000</text>
           <text>"CTSC"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0nh4l1u">
-          <text>false</text>
+          <text>true</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1bixwes">
@@ -329,7 +329,7 @@ else 5000</text>
           <text>1</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1xikm0r">
-          <text>false</text>
+          <text>true</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_18h62vb">
@@ -346,7 +346,7 @@ else 5000</text>
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_100u2yd">
-          <text>false</text>
+          <text>true</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0q4vzt9">
@@ -363,7 +363,7 @@ else 5000</text>
           <text>3</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1x1epc3">
-          <text>false</text>
+          <text>true</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0r6pquq">
@@ -380,7 +380,7 @@ else 5000</text>
           <text>5</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0n2rn3s">
-          <text>false</text>
+          <text>true</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0es6jg9">
@@ -397,7 +397,7 @@ else 5000</text>
           <text>10</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1nvij8q">
-          <text>false</text>
+          <text>true</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1wtj76z">
@@ -414,7 +414,7 @@ else 5000</text>
           <text>28</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1gnpmut">
-          <text>false</text>
+          <text>true</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_163bftv">
@@ -431,7 +431,7 @@ else 5000</text>
           <text>"[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger/caseworker-send-order/caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType)"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_07pv3yt">
-          <text>false</text>
+          <text>true</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1fbubru">
@@ -448,7 +448,7 @@ else 5000</text>
           <text>"[Decision: Issue a decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/caseworker-issue-decision/caseworker-issue-decisionSelectIssueNoticeOption&lt;br/&gt;" + "[Decision: Issue final decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/caseworker-issue-final-decision/caseworker-issue-final-decisionselectIssueNoticeOption)"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0smzs7n">
-          <text>false</text>
+          <text>true</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_06lzwv2">
@@ -465,7 +465,7 @@ else 5000</text>
           <text>"[Hearings: Create listing](/cases/case-details/${[CASE_REFERENCE]}/trigger/create-hearing-summary/create-hearing-summarycreateHearingSummary)"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1cvv017">
-          <text>false</text>
+          <text>true</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1gx11py">
@@ -482,7 +482,7 @@ else 5000</text>
           <text>"[Refer case to judge](/cases/case-details/${[CASE_REFERENCE]}/trigger/refer-to-judge/refer-to-judgereferToJudgeReason)&lt;br/&gt;" +"[Refer case to legal officer](/cases/case-details/${[CASE_REFERENCE]}/trigger/refer-to-legal-officer/refer-to-legal-officerreferToLegalOfficer)"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1777gea">
-          <text>false</text>
+          <text>true</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0kcx6ed">
@@ -499,7 +499,7 @@ else 5000</text>
           <text>"[Edit case details](/cases/case-details/${[CASE_REFERENCE]}/trigger/edit-case/edit-casecaseCategorisationDetails)&lt;br/&gt;" +"[Case: Build case](/cases/case-details/${[CASE_REFERENCE]}/trigger/caseworker-case-built/caseworker-case-builtcaseBuilt)"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_14akn1n">
-          <text>false</text>
+          <text>true</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0zpw840">
@@ -516,7 +516,7 @@ else 5000</text>
           <text>"[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger/create-draft-order/create-draft-ordercreateDraftOrder)"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0yjve17">
-          <text>false</text>
+          <text>true</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_10xaa3f">
@@ -533,7 +533,7 @@ else 5000</text>
           <text>"[Review Access Request](/cases/case-details/${[CASE_REFERENCE]}/trigger/reviewSpecificAccessRequestJudicial)"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_19vemud">
-          <text>false</text>
+          <text>true</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0vwzq30">
@@ -550,7 +550,7 @@ else 5000</text>
           <text>"[Review Access Request](/cases/case-details/${[CASE_REFERENCE]}/trigger/reviewSpecificAccessRequestLegalOps)"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1lhtqb6">
-          <text>false</text>
+          <text>true</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0lpqwhj">
@@ -567,7 +567,7 @@ else 5000</text>
           <text>"[Review Access Request](/cases/case-details/${[CASE_REFERENCE]}/trigger/reviewSpecificAccessRequestAdmin)"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1xj0l50">
-          <text>false</text>
+          <text>true</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1vnrolb">
@@ -584,7 +584,7 @@ else 5000</text>
           <text>"[Review Access Request](/cases/case-details/${[CASE_REFERENCE]}/trigger/reviewSpecificAccessRequestCTSC)"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1h6zozq">
-          <text>false</text>
+          <text>true</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0c5clfj">
@@ -601,7 +601,7 @@ else 5000</text>
           <text>"[Application DSS Update (cic)](/cases/case-details/${[CASE_REFERENCE]}/trigger/caseworker-update-dss-application)"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0cbvgxl">
-          <text>false</text>
+          <text>true</text>
         </outputEntry>
       </rule>
     </decisionTable>
