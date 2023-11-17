@@ -31,7 +31,7 @@
           <text>"caseName"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0qxk186">
-          <text>if(caseData!=null and caseData.caseNamePublic !=null) then caseData.caseNamePublic else ""</text>
+          <text>caseData.caseNameHmctsInternal</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0yq1las">
           <text>true</text>
