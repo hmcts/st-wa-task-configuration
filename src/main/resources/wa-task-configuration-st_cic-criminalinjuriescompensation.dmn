@@ -109,24 +109,6 @@ Short name</description>
           <text>true</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1l3igra">
-        <description>Hearing date if available minus 10 days</description>
-        <inputEntry id="UnaryTests_0ciwlr7">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1p1j4rk">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0a847c3">
-          <text>"priorityDate"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_120guqw">
-          <text>"dueDate"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_19az7w3">
-          <text>true</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_1qfkcqn">
         <inputEntry id="UnaryTests_1fzed1e">
           <text></text>
