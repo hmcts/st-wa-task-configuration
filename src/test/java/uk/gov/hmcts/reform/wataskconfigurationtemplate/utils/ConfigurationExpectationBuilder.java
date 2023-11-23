@@ -28,7 +28,7 @@ public class ConfigurationExpectationBuilder {
         builder.expectedValue("location", "336559", true);
         builder.expectedValue("locationName", "Glasgow Tribunals Centre", true);
         builder.expectedValue("priorityDate", "dueDate", true);
-        builder.expectedValue("calculatedDates", "dueDate,priorityDate", true);
+        builder.expectedValue("calculatedDates", "nextHearingDate,dueDate,priorityDate", true);
         builder.expectedValue("dueDateTime", "16:00", true);
         builder.expectedValue("dueDateNonWorkingCalendar", "https://www.gov.uk/bank-holidays/" +
             "england-and-wales.json", true);
