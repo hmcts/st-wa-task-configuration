@@ -174,7 +174,7 @@ else 5000</text>
           <text>"calculatedDates"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0f1c90w">
-          <text>"dueDate,priorityDate"</text>
+          <text>"nextHearingDate,dueDate,priorityDate"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0t8o1ij">
           <text>true</text>
