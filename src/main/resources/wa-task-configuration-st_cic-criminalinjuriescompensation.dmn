@@ -145,40 +145,6 @@ else 5000</text>
           <text>true</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_03l8jgf">
-        <inputEntry id="UnaryTests_1tv0l7k">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1pq75ub">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1o6kwij">
-          <text>"calculatedDates"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0f1c90w">
-          <text>"nextHearingDate,dueDate,priorityDate"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0t8o1ij">
-          <text>true</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0i2vvrp">
-        <inputEntry id="UnaryTests_0tt624u">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_12m3raa">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0w8jlgi">
-          <text>"dueDateTime"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1kwo02o">
-          <text>time("16:00")</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1juli9l">
-          <text>true</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_0kxxk0n">
         <inputEntry id="UnaryTests_05o7w1h">
           <text></text>
@@ -210,40 +176,6 @@ else 5000</text>
           <text>"SATURDAY,SUNDAY"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_01sv3ae">
-          <text>false</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0fetia3">
-        <inputEntry id="UnaryTests_13uayz4">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0f9733i">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0h5k0gz">
-          <text>"dueDateSkipNonWorkingDays"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1tzphs6">
-          <text>"true"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_18j5aar">
-          <text>false</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0cwcuzf">
-        <inputEntry id="UnaryTests_0ol3v6g">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0prnked">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0lcz0f2">
-          <text>"dueDateMustBeWorkingDay"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1rnmrum">
-          <text>"Next"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_14fd14u">
           <text>false</text>
         </outputEntry>
       </rule>
