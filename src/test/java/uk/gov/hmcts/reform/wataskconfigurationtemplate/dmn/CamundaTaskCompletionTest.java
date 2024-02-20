@@ -283,7 +283,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                 "caseworker-update-dss-application",
                 List.of(
                     Map.of(
-                        "taskType", "followUpNoneComplianceOfDirections",
+                        "taskType", "followUpNoncomplianceOfDirections",
                         "completionMode", "Auto"
                     )
                 )

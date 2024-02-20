@@ -724,10 +724,10 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                 null,
                 List.of(
                     Map.of(
-                        "taskId", "followUpNoneComplianceOfDirections",
-                        "name", "Follow up none compliance of directions",
+                        "taskId", "followUpNoncomplianceOfDirections",
+                        "name", "Follow up noncompliance of directions",
                         "workingDaysAllowed", 1,
-                        "processCategories", "followUpNoneComplianceOfDirections",
+                        "processCategories", "followUpNoncomplianceOfDirections",
                         "workType", "routine_work",
                         "roleCategory", "ADMIN"
                     )
