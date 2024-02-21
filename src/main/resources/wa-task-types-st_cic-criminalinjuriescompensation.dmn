@@ -520,10 +520,10 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0z0wtim">
-          <text>"followUpNoneComplianceOfDirections"</text>
+          <text>"followUpNoncomplianceOfDirections"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_13qvqcq">
-          <text>"Follow up none compliance of directions"</text>
+          <text>"Follow up noncompliance of directions"</text>
         </outputEntry>
       </rule>
     </decisionTable>

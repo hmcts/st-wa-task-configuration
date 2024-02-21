@@ -213,8 +213,8 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
                 "taskTypeName", "Review Time extention request - Judge"
             ),
             Map.of(
-                "taskTypeId", "followUpNoneComplianceOfDirections",
-                "taskTypeName", "Follow up none compliance of directions"
+                "taskTypeId", "followUpNoncomplianceOfDirections",
+                "taskTypeName", "Follow up noncompliance of directions"
             )
         );
         return Stream.of(

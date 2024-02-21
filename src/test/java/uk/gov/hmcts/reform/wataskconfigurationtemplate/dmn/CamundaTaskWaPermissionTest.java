@@ -284,7 +284,7 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
                 defaultReviewSpecificAccessRequestCTSCPermissions()
             ),
             Arguments.of(
-                "followUpNoneComplianceOfDirections",
+                "followUpNoncomplianceOfDirections",
                 "someCaseData",
                 defaultAdminPermissions()
             )
