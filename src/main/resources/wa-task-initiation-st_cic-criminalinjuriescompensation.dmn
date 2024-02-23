@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.17.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.20.0">
   <decision id="wa-task-initiation-st_cic-criminalinjuriescompensation" name="Task initiation DMN">
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT">
       <input id="Input_1" label="Event Id" camunda:inputVariable="eventId">
@@ -964,7 +964,7 @@
           <text>"AwaitingHearing"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0shy2pc">
-          <text>"Reinstatement"</text>
+          <text>"Reinstatement request"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_17yl79u">
           <text>"reviewReinstatementRequestLO"</text>
@@ -1156,7 +1156,7 @@
           <text>"CaseClosed"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1kx1ee6">
-          <text>"Reinstatement"</text>
+          <text>"Reinstatement request"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1iwe19l">
           <text>"reviewReinstatementRequestJudge"</text>
