@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1kep5qz" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.13.0" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.0.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1kep5qz" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.20.0" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.0.0">
   <decision id="wa-task-types-st_cic-criminalinjuriescompensation" name="Task Types DMN">
     <decisionTable id="DecisionTable_17knzal" hitPolicy="COLLECT">
       <input id="Input_1">
@@ -524,6 +524,39 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_13qvqcq">
           <text>"Follow up noncompliance of directions"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1av9qds">
+        <inputEntry id="UnaryTests_0otopvj">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_00mp2y5">
+          <text>"registerNewCase"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1rwdkyo">
+          <text>"Register New Case"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1wejwy4">
+        <inputEntry id="UnaryTests_1jy6mth">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0m6z7f8">
+          <text>"processFurtherEvidence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1f8xtb7">
+          <text>"Process Further Evidence"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_04206dj">
+        <inputEntry id="UnaryTests_01fa2xh">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_04g14ry">
+          <text>"stitchCollateHearingBundle"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_13c3bm3">
+          <text>"Stitch/collate hearing bundle"</text>
         </outputEntry>
       </rule>
     </decisionTable>
