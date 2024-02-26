@@ -234,7 +234,7 @@
           <text>"processCorrections"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0nhuvfo">
-          <text>"Process postponement directions"</text>
+          <text>"Process corrections"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0wokuuh">
           <text></text>
@@ -964,7 +964,7 @@
           <text>"AwaitingHearing"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0shy2pc">
-          <text>"Reinstatement"</text>
+          <text>"Reinstatement request"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_17yl79u">
           <text>"reviewReinstatementRequestLO"</text>
@@ -1156,7 +1156,7 @@
           <text>"CaseClosed"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1kx1ee6">
-          <text>"Reinstatement"</text>
+          <text>"Reinstatement request"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1iwe19l">
           <text>"reviewReinstatementRequestJudge"</text>
