@@ -122,7 +122,7 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1jo5qnj">
-          <text>"senior-legal-caseworker"</text>
+          <text>"senior-tribunal-caseworker"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0a3x052">
           <text>"Read,Own,Claim,Manage,Assign,Unassign,Complete,Cancel"</text>
@@ -227,35 +227,6 @@
           <text>false</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_01853p8">
-        <inputEntry id="UnaryTests_11tqb99">
-          <text>"reviewListCaseWithin5DaysJudge","reviewCorrectionsRequest","reviewWrittenReasonsRequest","reviewReinstatementRequestJudge","reviewSetAsideRequest","reviewStayRequestJudge","reviewNewCaseAndProvideDirectionsJudge","reviewOtherRequestJudge","reviewWithdrawalRequestJudge","reviewRule27RequestJudge","reviewListingDirectionsJudge","reviewListCaseJudge","reviewStrikeOutRequestJudge","reviewTimeExtensionRequestJudge"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0j0ateo">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0pt2dih">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_15v3r38">
-          <text>"fee-paid-judge"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_16kvayb">
-          <text>"Read,Execute,Own,Claim,Manage,Complete"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0d8yibp">
-          <text>"JUDICIAL"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1ut8qjs">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0scpxr9">
-          <text>3</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_09f298g">
-          <text>false</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_1go5uim">
         <inputEntry id="UnaryTests_17eikq6">
           <text>"reviewSpecificAccessRequestJudicial"</text>
@@ -296,7 +267,7 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1xv8ek4">
-          <text>"senior-legal-caseworker"</text>
+          <text>"senior-tribunal-caseworker"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1d1lxr7">
           <text>"Read,Own,Claim,Unclaim,Assign"</text>
