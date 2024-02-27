@@ -638,6 +638,57 @@ else 5000</text>
           <text>true</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1w1u0qk">
+        <inputEntry id="UnaryTests_06gpfzb">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1dkwkcw">
+          <text>"registerNewCase"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0w7ri5z">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1tfrrr2">
+          <text>"New Case Received"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1nneo2x">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1rgpcp8">
+        <inputEntry id="UnaryTests_0bo5zy7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1tpvzna">
+          <text>"processFurtherEvidence"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1pwkw67">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ywi91x">
+          <text>"New Information Received"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_19p99gs">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0xpuwm0">
+        <inputEntry id="UnaryTests_082u1k7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05tn0k2">
+          <text>"stitchCollateHearingBundle"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0xzbtrr">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0e3rlfp">
+          <text>"Prepare Hearing Bundle"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1td2ttz">
+          <text>true</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

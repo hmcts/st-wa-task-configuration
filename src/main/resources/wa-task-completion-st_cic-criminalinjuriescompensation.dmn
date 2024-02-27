@@ -539,7 +539,7 @@
       </rule>
       <rule id="DecisionRule_00tt6xd">
         <inputEntry id="UnaryTests_197mjmk">
-          <text>"caseworker-create-case"</text>
+          <text>"edit-case"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0zg6qx4">
           <text>"registerNewCase"</text>
@@ -550,7 +550,7 @@
       </rule>
       <rule id="DecisionRule_16k6y3u">
         <inputEntry id="UnaryTests_11urccq">
-          <text>"caseworker-edit-cica-case-details","caseworker-amend-document","edit-case","refer-to-judge","refer-to-legal-officer"</text>
+          <text>"caseworker-amend-document","edit-case","refer-to-judge","refer-to-legal-officer"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1q0rehf">
           <text>"processFurtherEvidence"</text>
@@ -561,7 +561,7 @@
       </rule>
       <rule id="DecisionRule_03sbg2k">
         <inputEntry id="UnaryTests_0qeqimo">
-          <text>"asyncStitchingComplete"</text>
+          <text>"createBundle"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1rtepd6">
           <text>"stitchCollateHearingBundle"</text>
