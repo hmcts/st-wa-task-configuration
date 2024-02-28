@@ -1532,6 +1532,102 @@
           <text>"ADMIN"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0ef5emg">
+        <inputEntry id="UnaryTests_0vfihn3">
+          <text>"citizen-cic-submit-dss-application"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ajeufa">
+          <text>"Draft"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ddb6if">
+          <text>"New case"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_195ab9o">
+          <text>"registerNewCase"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ockpyo">
+          <text>"Register New Case"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ydla13">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ykftje">
+          <text>5</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_11wt8ma">
+          <text>"registerNewCase"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1enbfdl">
+          <text>"applications"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1thzcic">
+          <text>"ADMIN"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1981u5t">
+        <inputEntry id="UnaryTests_1o9zfup">
+          <text>"citizen-cic-update-dss-application","caseworker-document-management"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1cb1pqu">
+          <text>"CaseManagement"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1j500nm">
+          <text>"Evidence request"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0kml5hr">
+          <text>"processFurtherEvidence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0od6xw9">
+          <text>"Process further evidence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0rxtuv3">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ve76f9">
+          <text>10</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1gocjkn">
+          <text>"processFurtherEvidence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_193mds0">
+          <text>"routine_work"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1jb3u7k">
+          <text>"ADMIN"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0z8qogg">
+        <inputEntry id="UnaryTests_1xd3rrh">
+          <text>"createBundle"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09lrk6c">
+          <text>"AwaitingHearing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1t79p99">
+          <text>"Hearing Bundle"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_11kgjga">
+          <text>"stitchCollateHearingBundle"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1wtc42o">
+          <text>"Stitch/collate hearing bundle"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0kwjlk7">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0w9kkt2">
+          <text>1</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_00y9fjv">
+          <text>"stitchCollateHearingBundle"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ivquec">
+          <text>"hearing_work"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_06qtwt1">
+          <text>"ADMIN"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
