@@ -24,7 +24,7 @@
       <output id="OutputClause_1n914lw" label="Assignment Priority" name="assignmentPriority" typeRef="integer" biodi:width="150" />
       <output id="OutputClause_04cbxc1" label="Auto Assignable" name="autoAssignable" typeRef="boolean" biodi:width="150" />
       <rule id="DecisionRule_17sqvb4">
-        <description>supervisor task permissions</description>
+        <description>"Supervisor Task Permissions"</description>
         <inputEntry id="UnaryTests_0kkhvpk">
           <text></text>
         </inputEntry>
@@ -228,8 +228,9 @@
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1go5uim">
+        <description>"Judge Access Request Permissions"</description>
         <inputEntry id="UnaryTests_17eikq6">
-          <text>"reviewSpecificAccessRequestJudicial"</text>
+          <text>"reviewSpecificAccessRequestJudiciary"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0tubte0">
           <text></text>
@@ -241,7 +242,7 @@
           <text>"leadership-judge"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0597ahz">
-          <text>"Read,Own,Claim,Unclaim,Assign"</text>
+          <text>"Read,Own,Claim,Manage,Assign,Unassign,Complete,Cancel"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1ptyx4y">
           <text>"JUDICIAL"</text>
@@ -250,13 +251,14 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1n06xen">
-          <text></text>
+          <text>1</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_147t9wu">
           <text>false</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0vfv7bn">
+        <description>"Access Request for Legal Caseworker"</description>
         <inputEntry id="UnaryTests_1b5odpn">
           <text>"reviewSpecificAccessRequestLegalOps"</text>
         </inputEntry>
@@ -270,7 +272,7 @@
           <text>"senior-tribunal-caseworker"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1d1lxr7">
-          <text>"Read,Own,Claim,Unclaim,Assign"</text>
+          <text>"Read,Own,Claim,Manage,Assign,Unassign,Complete,Cancel"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_09k4pfb">
           <text>"LEGAL_OPERATIONS"</text>
@@ -286,6 +288,7 @@
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1x6fvmc">
+        <description>"Access Request for Hearing Centre Team Leader"</description>
         <inputEntry id="UnaryTests_1q0ms1x">
           <text>"reviewSpecificAccessRequestAdmin"</text>
         </inputEntry>
@@ -299,7 +302,7 @@
           <text>"hearing-centre-team-leader"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0at14fr">
-          <text>"Read,Own,Claim,Unclaim,Assign"</text>
+          <text>"Read,Own,Claim,Manage,Assign,Unassign,Complete,Cancel"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_07paxpa">
           <text>"ADMIN"</text>
@@ -315,6 +318,7 @@
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0bfqnpv">
+        <description>"Access Request for CTSC"</description>
         <inputEntry id="UnaryTests_1oh8q3g">
           <text>"reviewSpecificAccessRequestCTSC"</text>
         </inputEntry>
@@ -328,7 +332,7 @@
           <text>"ctsc-team-leader"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0yt08ia">
-          <text>"Read,Own,Claim,Unclaim,Assign"</text>
+          <text>"Read,Own,Claim,Manage,Assign,Unassign,Complete,Cancel"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1v5s193">
           <text>"CTSC"</text>
