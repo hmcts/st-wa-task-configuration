@@ -839,7 +839,7 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .build()
             ),
             Arguments.of(
-                "reviewSpecificAccessRequestJudicial",
+                "reviewSpecificAccessRequestJudiciary",
                 CaseDataBuilder.defaultCase().build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
                     .expectedValue(MINOR_PRIORITY, "500", true)
@@ -849,7 +849,7 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue(
                         "description",
                         "[Review Access Request](/cases/case-details/${[CASE_REFERENCE]}/trigger"
-                            + "/reviewSpecificAccessRequestJudicial)",
+                            + "/reviewSpecificAccessRequestJudiciary)",
                         true
                     )
                     .build()

@@ -264,9 +264,9 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
                 defaultJudicialPermissions()
             ),
             Arguments.of(
-                "reviewSpecificAccessRequestJudicial",
+                "reviewSpecificAccessRequestJudiciary",
                 "someCaseData",
-                defaultReviewSpecificAccessRequestJudicialPermissions()
+                defaultReviewSpecificAccessRequestJudiciaryPermissions()
             ),
             Arguments.of(
                 "reviewSpecificAccessRequestLegalOps",
@@ -394,7 +394,7 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
         );
     }
 
-    private static List<Map<String, Object>> defaultReviewSpecificAccessRequestJudicialPermissions() {
+    private static List<Map<String, Object>> defaultReviewSpecificAccessRequestJudiciaryPermissions() {
         return List.of(
             Map.of(
                 "name", "task-supervisor",
