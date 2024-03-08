@@ -214,7 +214,7 @@
           <text>"processSetAsideDirections"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1waj6mz">
-          <text>"decision_making_work"</text>
+          <text>"routine_work"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0qp8q4x">
           <text>"ADMIN"</text>
@@ -246,7 +246,7 @@
           <text>"processCorrections"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0ea3zwf">
-          <text>"decision_making_work"</text>
+          <text>"hearing_work"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0j866o6">
           <text>"ADMIN"</text>
@@ -278,7 +278,7 @@
           <text>"processDirectionsReturned"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1mipzq8">
-          <text>"decision_making_work"</text>
+          <text>"routine_work"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1vrnzha">
           <text>"ADMIN"</text>
@@ -310,7 +310,7 @@
           <text>"processPostponementDirections"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1i1at5s">
-          <text>"decision_making_work"</text>
+          <text>"routine_work"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1ee8isf">
           <text>"ADMIN"</text>
@@ -342,7 +342,7 @@
           <text>"processTimeExtensionDirectionsReturned"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0bfpdrc">
-          <text>"decision_making_work"</text>
+          <text>"routine_work"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_12ctys0">
           <text>"ADMIN"</text>
@@ -374,7 +374,7 @@
           <text>"processReinstatementDecisionNotice"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0f5k0qp">
-          <text>"decision_making_work"</text>
+          <text>"routine_work"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_04mmkxn">
           <text>"ADMIN"</text>
@@ -438,7 +438,7 @@
           <text>"processWrittenReasons"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0lb62pd">
-          <text>"decision_making_work"</text>
+          <text>"routine_work"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0296w5l">
           <text>"ADMIN"</text>
