@@ -183,7 +183,7 @@
           <text>"senior-judge"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_00cyx80">
-          <text>"Read,Execute,Own,Claim,Manage,Assign,Unassign,Complete,Cancel"</text>
+          <text>"Read,Execute,Claim,Manage,Assign,Unassign,Complete,Cancel"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1tvnj6z">
           <text>"JUDICIAL"</text>
@@ -212,7 +212,7 @@
           <text>"judge"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_14kod5p">
-          <text>"Read,Execute,Own,Claim,Assign,Unassign,Complete,Cancel"</text>
+          <text>"Read,Own,Claim,Assign,Unassign,Complete,Cancel"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0wrlezi">
           <text>"JUDICIAL"</text>
