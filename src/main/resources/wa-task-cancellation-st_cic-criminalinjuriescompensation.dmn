@@ -22,7 +22,7 @@
       <output id="OutputClause_1kfc3jv" label="Warning Text" name="warningText" typeRef="string" />
       <output id="OutputClause_0dqzted" label="Process Categories Identifiers" name="processCategories" typeRef="string" biodi:width="277" />
       <rule id="DecisionRule_1guzypv">
-        <description>When the "caseworker-close-the-case" event happens starting in any state and ending in any state. Cancel all outstanding processes.</description>
+        <description></description>
         <inputEntry id="UnaryTests_1n3g5ie">
           <text>.*</text>
         </inputEntry>
@@ -46,12 +46,12 @@
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0pnydpd">
-        <description>When the "caseworker-postpone-hearing" event happens in the "AwaitingHearing" state and ending in the "CaseManagement" state. Cancel the tasks labelled as "completeHearingOutcome"</description>
+        <description></description>
         <inputEntry id="UnaryTests_1a0wbnr">
           <text>"AwaitingHearing"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_15o9rn4">
-          <text>"caseworker-postpone-hearing"</text>
+          <text>caseworker-postpone-hearing|caseworker-cancel-hearing</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0scltnp">
           <text>"CaseManagement"</text>
@@ -66,30 +66,6 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1c89qfr">
-          <text>"completeHearingOutcome"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_167nl95">
-        <description>When the "caseworker-cancel-hearing" event happens in the "AwaitingHearing" state and ending in the "CaseManagement" state. Cancel the tasks labelled as "completeHearingOutcome"</description>
-        <inputEntry id="UnaryTests_0lyxst0">
-          <text>"AwaitingHearing"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_13lvq1n">
-          <text>"caseworker-cancel-hearing"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_12t25cf">
-          <text>"CaseManagement"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1wtz7ck">
-          <text>"Cancel"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_01n6rzk">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0xnt1l2">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0kch2ld">
           <text>"completeHearingOutcome"</text>
         </outputEntry>
       </rule>
