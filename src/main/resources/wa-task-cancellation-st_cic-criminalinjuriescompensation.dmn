@@ -54,7 +54,7 @@
           <text>caseworker-postpone-hearing|caseworker-cancel-hearing</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0scltnp">
-          <text>"CaseManagement"</text>
+          <text>.*</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1ev9vey">
           <text>"Cancel"</text>
