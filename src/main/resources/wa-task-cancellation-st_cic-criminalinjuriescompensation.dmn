@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="wa-cancellation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.13.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="wa-cancellation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.20.0">
   <decision id="wa-task-cancellation-st_cic-criminalinjuriescompensation" name="Task cancellation DMN">
     <decisionTable id="DecisionTable_0z3jx1g" hitPolicy="COLLECT">
       <input id="Input_1" label="From State">
@@ -12,7 +12,7 @@
           <text>event</text>
         </inputExpression>
       </input>
-      <input id="InputClause_0bomy63" label="State">
+      <input id="InputClause_0bomy63" label="To State">
         <inputExpression id="LiteralExpression_1g5glfi" typeRef="string">
           <text>state</text>
         </inputExpression>
@@ -22,14 +22,15 @@
       <output id="OutputClause_1kfc3jv" label="Warning Text" name="warningText" typeRef="string" />
       <output id="OutputClause_0dqzted" label="Process Categories Identifiers" name="processCategories" typeRef="string" biodi:width="277" />
       <rule id="DecisionRule_1guzypv">
+        <description></description>
         <inputEntry id="UnaryTests_1n3g5ie">
-          <text></text>
+          <text>.*</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1g1cc7g">
           <text>"caseworker-close-the-case"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1ah5t17">
-          <text></text>
+          <text>.*</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1c4vo81">
           <text>"Cancel"</text>
@@ -44,50 +45,28 @@
           <text></text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_092nb9x">
-        <inputEntry id="UnaryTests_1wtyjw5">
-          <text></text>
+      <rule id="DecisionRule_0pnydpd">
+        <description></description>
+        <inputEntry id="UnaryTests_1a0wbnr">
+          <text>"AwaitingHearing"</text>
         </inputEntry>
-        <inputEntry id="UnaryTests_0umc3dq">
-          <text>"addHearing","caseUpdated"</text>
+        <inputEntry id="UnaryTests_15o9rn4">
+          <text>caseworker-postpone-hearing|caseworker-cancel-hearing</text>
         </inputEntry>
-        <inputEntry id="UnaryTests_1gp5vfp">
-          <text></text>
+        <inputEntry id="UnaryTests_0scltnp">
+          <text>.*</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_0mnoh9u">
-          <text>"Reconfigure"</text>
+        <outputEntry id="LiteralExpression_1ev9vey">
+          <text>"Cancel"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_1pwdc6g">
+        <outputEntry id="LiteralExpression_1bgvzma">
           <text></text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_15a0zkj">
+        <outputEntry id="LiteralExpression_1vzec38">
           <text></text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_17u5i9r">
-          <text>"processReinstatementDecisionNotice"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_13xo5pc">
-        <inputEntry id="UnaryTests_078jpy7">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_16lfjoh">
-          <text>"addHearing","caseUpdated"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1lqfref">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_16hq0ua">
-          <text>"Reconfigure"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_16ycbzv">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0x51usj">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0sklzjq">
-          <text>"processOtherDirectionsReturned"</text>
+        <outputEntry id="LiteralExpression_1c89qfr">
+          <text>"completeHearingOutcome"</text>
         </outputEntry>
       </rule>
     </decisionTable>
