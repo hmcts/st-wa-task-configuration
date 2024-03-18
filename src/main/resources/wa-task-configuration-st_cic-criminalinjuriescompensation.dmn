@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.20.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.21.0">
   <decision id="wa-task-configuration-st_cic-criminalinjuriescompensation" name="Task configuration DMN">
     <decisionTable id="DecisionTable_14cx079" hitPolicy="RULE ORDER">
       <input id="InputClause_1gxyo7f" label="CCD Case Data" camunda:inputVariable="caseData">
@@ -704,6 +704,23 @@ else 5000</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0l7zrs4">
           <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0o4vdup">
+        <inputEntry id="UnaryTests_0mn0gpa">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0jyv65c">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_123pc6f">
+          <text>"dueDateOrigin"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0kefczv">
+          <text>now()</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1c4v3cu">
+          <text>false</text>
         </outputEntry>
       </rule>
     </decisionTable>
