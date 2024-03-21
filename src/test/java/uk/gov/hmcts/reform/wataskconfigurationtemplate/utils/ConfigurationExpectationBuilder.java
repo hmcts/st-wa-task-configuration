@@ -1,47 +1,72 @@
 package uk.gov.hmcts.reform.wataskconfigurationtemplate.utils;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+import java.time.LocalDate;
+import java.time.ZonedDateTime;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.CASE_MANAGEMENT_CATEGORY;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.CASE_NAME;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.DEFAULT_CASE_MANAGEMENT_CATEGORY;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.DEFAULT_LOCATION;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.DEFAULT_LOCATION_NAME;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.DEFAULT_DUE_DATE_NON_WORKING_CALENDAR;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.DEFAULT_DUE_DATE_WORKING_DAYS_OF_WEEK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.DEFAULT_MINOR_PRIORITY;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.DEFAULT_MAJOR_PRIORITY;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.DEFAULT_REGION;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.DUE_DATE_INTERVAL_DAYS;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.DESCRIPTION;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.DUE_DATE_NON_WORKING_CALENDAR;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.DUE_DATE_ORIGIN;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.DUE_DATE_WORKING_DAYS_OF_WEEK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.LOCATION;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.LOCATION_NAME;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.MAJOR_PRIORITY;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.MINOR_PRIORITY;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PRIORITY_DATE_ORIGIN_REF;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REGION;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.ROLE_CATEGORY;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.ROLE_CATEGORY_ADMIN;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.ROUTINE_WORK_TYPE;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.WORK_TYPE;
+
 public class ConfigurationExpectationBuilder {
 
-    private static List<String> EXPECTED_PROPERTIES = Arrays.asList(
-        "caseName","caseManagementCategory","region","location","locationName","priorityDate","majorPriority",
-        "minorPriority","calculatedDates","dueDateOrigin","dueDateTime","dueDateNonWorkingCalendar",
-        "dueDateNonWorkingDaysOfWeek","dueDateSkipNonWorkingDays","dueDateMustBeWorkingDay","workType",
-        "roleCategory", "dueDateIntervalDays", "description"
+    private static final List<String> EXPECTED_PROPERTIES = Arrays.asList(
+        CASE_NAME, CASE_MANAGEMENT_CATEGORY, REGION, LOCATION, LOCATION_NAME, MAJOR_PRIORITY, MINOR_PRIORITY,
+        DUE_DATE_NON_WORKING_CALENDAR, DUE_DATE_WORKING_DAYS_OF_WEEK, WORK_TYPE, ROLE_CATEGORY, DUE_DATE_INTERVAL_DAYS,
+        DESCRIPTION, PRIORITY_DATE_ORIGIN_REF, DUE_DATE_ORIGIN
     );
-    private static DateTimeFormatter dateTimeFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm");
 
-    private Map<String,Map<String,Object>> expectations = new HashMap<>();
+    private final Map<String,Map<String,Object>> expectations = new HashMap<>();
 
     public static ConfigurationExpectationBuilder defaultExpectations() {
         ConfigurationExpectationBuilder builder = new ConfigurationExpectationBuilder();
-        builder.expectedValue("caseName", "Joe Blogs", true);
-        builder.expectedValue("caseManagementCategory", "Criminal Injuries Compensation", true);
-        builder.expectedValue("region", "1", true);
-        builder.expectedValue("location", "336559", true);
-        builder.expectedValue("locationName", "Glasgow Tribunals Centre", true);
-        builder.expectedValue("dueDateNonWorkingCalendar", "https://www.gov.uk/bank-holidays/" +
-            "england-and-wales.json", true);
-        builder.expectedValue("dueDateNonWorkingDaysOfWeek", "SATURDAY,SUNDAY", false);
-        builder.expectedValue("workType", "routine_work", true);
-        builder.expectedValue("roleCategory", "ADMIN", true);
-        builder.expectedValue("minorPriority", "500", true);
-        builder.expectedValue("majorPriority", "5000", true);
-        builder.expectedValue("description", "[Orders: Send order]", true);
+        builder.expectedValue(CASE_NAME, "Joe Blogs", true);
+        builder.expectedValue(CASE_MANAGEMENT_CATEGORY, DEFAULT_CASE_MANAGEMENT_CATEGORY, true);
+        builder.expectedValue(REGION, DEFAULT_REGION, true);
+        builder.expectedValue(LOCATION, DEFAULT_LOCATION, true);
+        builder.expectedValue(LOCATION_NAME, DEFAULT_LOCATION_NAME, true);
+        builder.expectedValue(DUE_DATE_NON_WORKING_CALENDAR, DEFAULT_DUE_DATE_NON_WORKING_CALENDAR, true);
+        builder.expectedValue(DUE_DATE_WORKING_DAYS_OF_WEEK, DEFAULT_DUE_DATE_WORKING_DAYS_OF_WEEK, false);
+        builder.expectedValue(WORK_TYPE, ROUTINE_WORK_TYPE, true);
+        builder.expectedValue(ROLE_CATEGORY, ROLE_CATEGORY_ADMIN, true);
+        builder.expectedValue(MINOR_PRIORITY, DEFAULT_MINOR_PRIORITY, true);
+        builder.expectedValue(MAJOR_PRIORITY, DEFAULT_MAJOR_PRIORITY, true);
+        builder.expectedValue(DESCRIPTION, "[Orders: Send order]", true);
+        builder.expectedValue(PRIORITY_DATE_ORIGIN_REF, LocalDate.now(), true);
+        builder.expectedValue(DUE_DATE_ORIGIN, ZonedDateTime.now(), false);
         return builder;
     }
 
     public List<Map<String,Object>> build() {
         return EXPECTED_PROPERTIES.stream()
-            .filter(p -> expectations.containsKey(p))
-            .map(p -> expectations.get(p))
+            .filter(expectations::containsKey)
+            .map(expectations::get)
             .collect(Collectors.toList());
     }
 
@@ -52,9 +77,5 @@ public class ConfigurationExpectationBuilder {
             "canReconfigure", canReconfigure
         ));
         return this;
-    }
-
-    public static String now() {
-        return LocalDateTime.now().format(dateTimeFormat);
     }
 }

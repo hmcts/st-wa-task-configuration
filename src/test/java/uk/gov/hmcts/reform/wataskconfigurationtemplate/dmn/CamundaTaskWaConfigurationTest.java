@@ -13,7 +13,9 @@ import uk.gov.hmcts.reform.wataskconfigurationtemplate.DmnDecisionTableBaseUnitT
 import uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CaseDataBuilder;
 import uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.ConfigurationExpectationBuilder;
 
-import java.time.LocalDateTime;
+import java.io.IOException;
+import java.time.LocalDate;
+import java.time.ZonedDateTime;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
@@ -23,16 +25,38 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static uk.gov.hmcts.reform.wataskconfigurationtemplate.DmnDecisionTable.WA_TASK_CONFIGURATION_ST_CIC_CRIMINALINJURIESCOMPENSATION;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.APPLICATION_WORK_TYPE;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.ACCESS_WORK_TYPE;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.CASE_NAME;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.CASE_MANAGEMENT_CATEGORY;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.DECISION_WORK_TYPE;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.DEFAULT_MAJOR_PRIORITY;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.DEFAULT_MINOR_PRIORITY;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.DESCRIPTION;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.DUE_DATE_INTERVAL_DAYS;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.DUE_DATE_ORIGIN;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.HEARING_WORK_TYPE;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.LOCATION;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.LOCATION_NAME;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.MAJOR_PRIORITY;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.MINOR_PRIORITY;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PRIORITY_DATE_ORIGIN_REF;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PRIORITY_WORK_TYPE;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REGION;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.ROLE_CATEGORY;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.ROLE_CATEGORY_ADMIN;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.ROLE_CATEGORY_CTSC;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.ROLE_CATEGORY_JUDICIAL;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.ROLE_CATEGORY_LO;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.ROUTINE_WORK_TYPE;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.URGENT_MAJOR_PRIORITY;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.WORK_TYPE;
 
 class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
+    private static final String REQUEST = "classpath:caseData/custom-case-data.json";
 
-    public static final String MINOR_PRIORITY = "minorPriority";
-    public static final String MAJOR_PRIORITY = "majorPriority";
-    public static final String DUE_DATE_INTERVAL_DAYS = "dueDateIntervalDays";
-
-
-    static Stream<Arguments> scenarioProvider() {
+    static Stream<Arguments> scenarioProvider() throws IOException {
         return Stream.of(
 
             Arguments.of(
@@ -41,27 +65,33 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .isUrgent()
                     .build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", true)
-                    .expectedValue(MAJOR_PRIORITY, "2000", true)
-                    .expectedValue("workType", "routine_work", true)
-                    .expectedValue("roleCategory", "ADMIN", true)
+                    .expectedValue(MINOR_PRIORITY, DEFAULT_MINOR_PRIORITY, true)
+                    .expectedValue(MAJOR_PRIORITY, URGENT_MAJOR_PRIORITY, true)
+                    .expectedValue(WORK_TYPE, ROUTINE_WORK_TYPE, true)
+                    .expectedValue(ROLE_CATEGORY, ROLE_CATEGORY_ADMIN, true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "10", true)
-                    .expectedValue("description", "[Orders: Send order](/cases/case-details"
+                    .expectedValue(DESCRIPTION, "[Orders: Send order](/cases/case-details"
                         + "/${[CASE_REFERENCE]}/trigger/caseworker-send-order/"
                         + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType)", true)
+                    .expectedValue(DUE_DATE_ORIGIN, ZonedDateTime.now(), false)
                     .build()
             ),
             Arguments.of(
                 "processRule27Decision",
-                CaseDataBuilder.defaultCase().build(),
+                CaseDataBuilder.customCase(REQUEST).build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", true)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "routine_work", true)
-                    .expectedValue("roleCategory", "ADMIN", true)
+                    .expectedValue(CASE_NAME, "Rio Read", true)
+                    .expectedValue(CASE_MANAGEMENT_CATEGORY, "ST CIC", true)
+                    .expectedValue(REGION, "123", true)
+                    .expectedValue(LOCATION, "123456", true)
+                    .expectedValue(LOCATION_NAME, "GTC", true)
+                    .expectedValue(MINOR_PRIORITY, DEFAULT_MINOR_PRIORITY, true)
+                    .expectedValue(MAJOR_PRIORITY, DEFAULT_MAJOR_PRIORITY, true)
+                    .expectedValue(WORK_TYPE, ROUTINE_WORK_TYPE, true)
+                    .expectedValue(ROLE_CATEGORY, ROLE_CATEGORY_ADMIN, true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "5", true)
                     .expectedValue(
-                        "description",
+                        DESCRIPTION,
                         "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
                             + "/caseworker-send-order/"
                             + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType)",
@@ -73,13 +103,13 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 "processListingDirections",
                 CaseDataBuilder.defaultCase().build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", true)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "routine_work", true)
-                    .expectedValue("roleCategory", "ADMIN", true)
+                    .expectedValue(MINOR_PRIORITY, DEFAULT_MINOR_PRIORITY, true)
+                    .expectedValue(MAJOR_PRIORITY, DEFAULT_MAJOR_PRIORITY, true)
+                    .expectedValue(WORK_TYPE, ROUTINE_WORK_TYPE, true)
+                    .expectedValue(ROLE_CATEGORY, ROLE_CATEGORY_ADMIN, true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", true)
                     .expectedValue(
-                        "description",
+                        DESCRIPTION,
                         "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
                             + "/caseworker-send-order/"
                             + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType)",
@@ -91,13 +121,13 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 "processDirectionsReListedCase",
                 CaseDataBuilder.defaultCase().build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", true)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "routine_work", true)
-                    .expectedValue("roleCategory", "ADMIN", true)
+                    .expectedValue(MINOR_PRIORITY, DEFAULT_MINOR_PRIORITY, true)
+                    .expectedValue(MAJOR_PRIORITY, DEFAULT_MAJOR_PRIORITY, true)
+                    .expectedValue(WORK_TYPE, ROUTINE_WORK_TYPE, true)
+                    .expectedValue(ROLE_CATEGORY, ROLE_CATEGORY_ADMIN, true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", true)
                     .expectedValue(
-                        "description",
+                        DESCRIPTION,
                         "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
                             + "/caseworker-send-order/"
                             + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType)",
@@ -109,13 +139,13 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 "processDirectionsReListedCaseWithin5Days",
                 CaseDataBuilder.defaultCase().build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", true)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "priority", true)
-                    .expectedValue("roleCategory", "ADMIN", true)
+                    .expectedValue(MINOR_PRIORITY, DEFAULT_MINOR_PRIORITY, true)
+                    .expectedValue(MAJOR_PRIORITY, DEFAULT_MAJOR_PRIORITY, true)
+                    .expectedValue(WORK_TYPE, PRIORITY_WORK_TYPE, true)
+                    .expectedValue(ROLE_CATEGORY, ROLE_CATEGORY_ADMIN, true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", true)
                     .expectedValue(
-                        "description",
+                        DESCRIPTION,
                         "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
                             + "/caseworker-send-order/"
                             + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType)",
@@ -125,15 +155,20 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "processSetAsideDirections",
-                CaseDataBuilder.defaultCase().build(),
+                CaseDataBuilder.customCase(REQUEST).build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", true)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", true)
-                    .expectedValue("roleCategory", "ADMIN", true)
+                    .expectedValue(CASE_NAME, "Rio Read", true)
+                    .expectedValue(CASE_MANAGEMENT_CATEGORY, "ST CIC", true)
+                    .expectedValue(REGION, "123", true)
+                    .expectedValue(LOCATION, "123456", true)
+                    .expectedValue(LOCATION_NAME, "GTC", true)
+                    .expectedValue(MINOR_PRIORITY, DEFAULT_MINOR_PRIORITY, true)
+                    .expectedValue(MAJOR_PRIORITY, DEFAULT_MAJOR_PRIORITY, true)
+                    .expectedValue(WORK_TYPE, ROUTINE_WORK_TYPE, true)
+                    .expectedValue(ROLE_CATEGORY, ROLE_CATEGORY_ADMIN, true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", true)
                     .expectedValue(
-                        "description",
+                        DESCRIPTION,
                         "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
                             + "/caseworker-send-order/"
                             + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType)",
@@ -143,15 +178,17 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "processCorrections",
-                CaseDataBuilder.defaultCase().build(),
+                CaseDataBuilder.defaultCase()
+                    .isUrgent()
+                    .build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", true)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", true)
-                    .expectedValue("roleCategory", "ADMIN", true)
+                    .expectedValue(MINOR_PRIORITY, DEFAULT_MINOR_PRIORITY, true)
+                    .expectedValue(MAJOR_PRIORITY, URGENT_MAJOR_PRIORITY, true)
+                    .expectedValue(WORK_TYPE, HEARING_WORK_TYPE, true)
+                    .expectedValue(ROLE_CATEGORY, ROLE_CATEGORY_ADMIN, true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "3", true)
                     .expectedValue(
-                        "description",
+                        DESCRIPTION,
                         "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
                             + "/caseworker-send-order/"
                             + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType)",
@@ -163,13 +200,13 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 "processDirectionsReturned",
                 CaseDataBuilder.defaultCase().build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", true)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", true)
-                    .expectedValue("roleCategory", "ADMIN", true)
+                    .expectedValue(MINOR_PRIORITY, DEFAULT_MINOR_PRIORITY, true)
+                    .expectedValue(MAJOR_PRIORITY, DEFAULT_MAJOR_PRIORITY, true)
+                    .expectedValue(WORK_TYPE, ROUTINE_WORK_TYPE, true)
+                    .expectedValue(ROLE_CATEGORY, ROLE_CATEGORY_ADMIN, true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "10", true)
                     .expectedValue(
-                        "description",
+                        DESCRIPTION,
                         "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
                             + "/caseworker-send-order/"
                             + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType)",
@@ -181,13 +218,13 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 "processPostponementDirections",
                 CaseDataBuilder.defaultCase().build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", true)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", true)
-                    .expectedValue("roleCategory", "ADMIN", true)
+                    .expectedValue(MINOR_PRIORITY, DEFAULT_MINOR_PRIORITY, true)
+                    .expectedValue(MAJOR_PRIORITY, DEFAULT_MAJOR_PRIORITY, true)
+                    .expectedValue(WORK_TYPE, ROUTINE_WORK_TYPE, true)
+                    .expectedValue(ROLE_CATEGORY, ROLE_CATEGORY_ADMIN, true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", true)
                     .expectedValue(
-                        "description",
+                        DESCRIPTION,
                         "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
                             + "/caseworker-send-order/"
                             + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType)",
@@ -199,13 +236,13 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 "processTimeExtensionDirectionsReturned",
                 CaseDataBuilder.defaultCase().build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", true)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", true)
-                    .expectedValue("roleCategory", "ADMIN", true)
+                    .expectedValue(MINOR_PRIORITY, DEFAULT_MINOR_PRIORITY, true)
+                    .expectedValue(MAJOR_PRIORITY, DEFAULT_MAJOR_PRIORITY, true)
+                    .expectedValue(WORK_TYPE, ROUTINE_WORK_TYPE, true)
+                    .expectedValue(ROLE_CATEGORY, ROLE_CATEGORY_ADMIN, true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", true)
                     .expectedValue(
-                        "description",
+                        DESCRIPTION,
                         "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
                             + "/caseworker-send-order/"
                             + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType)",
@@ -215,15 +252,20 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "processReinstatementDecisionNotice",
-                CaseDataBuilder.defaultCase().build(),
+                CaseDataBuilder.customCase(REQUEST).build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", true)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", true)
-                    .expectedValue("roleCategory", "ADMIN", true)
+                    .expectedValue(CASE_NAME, "Rio Read", true)
+                    .expectedValue(CASE_MANAGEMENT_CATEGORY, "ST CIC", true)
+                    .expectedValue(REGION, "123", true)
+                    .expectedValue(LOCATION, "123456", true)
+                    .expectedValue(LOCATION_NAME, "GTC", true)
+                    .expectedValue(MINOR_PRIORITY, DEFAULT_MINOR_PRIORITY, true)
+                    .expectedValue(MAJOR_PRIORITY, DEFAULT_MAJOR_PRIORITY, true)
+                    .expectedValue(WORK_TYPE, ROUTINE_WORK_TYPE, true)
+                    .expectedValue(ROLE_CATEGORY, ROLE_CATEGORY_ADMIN, true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "5", true)
                     .expectedValue(
-                        "description",
+                        DESCRIPTION,
                         "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
                             + "/caseworker-send-order/"
                             + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType)",
@@ -235,13 +277,13 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 "processOtherDirectionsReturned",
                 CaseDataBuilder.defaultCase().build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", true)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", true)
-                    .expectedValue("roleCategory", "ADMIN", true)
+                    .expectedValue(MINOR_PRIORITY, DEFAULT_MINOR_PRIORITY, true)
+                    .expectedValue(MAJOR_PRIORITY, DEFAULT_MAJOR_PRIORITY, true)
+                    .expectedValue(WORK_TYPE, DECISION_WORK_TYPE, true)
+                    .expectedValue(ROLE_CATEGORY, ROLE_CATEGORY_ADMIN, true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "10", true)
                     .expectedValue(
-                        "description",
+                        DESCRIPTION,
                         "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
                             + "/caseworker-send-order/"
                             + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType)",
@@ -251,15 +293,17 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "processWrittenReasons",
-                CaseDataBuilder.defaultCase().build(),
+                CaseDataBuilder.defaultCase()
+                    .isUrgent()
+                    .build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", true)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", true)
-                    .expectedValue("roleCategory", "ADMIN", true)
+                    .expectedValue(MINOR_PRIORITY, DEFAULT_MINOR_PRIORITY, true)
+                    .expectedValue(MAJOR_PRIORITY, URGENT_MAJOR_PRIORITY, true)
+                    .expectedValue(WORK_TYPE, ROUTINE_WORK_TYPE, true)
+                    .expectedValue(ROLE_CATEGORY, ROLE_CATEGORY_ADMIN, true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "3", true)
                     .expectedValue(
-                        "description",
+                        DESCRIPTION,
                         "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
                             + "/caseworker-send-order/"
                             + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType)",
@@ -271,13 +315,13 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 "processStrikeOutDirectionsReturned",
                 CaseDataBuilder.defaultCase().build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", true)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "routine_work", true)
-                    .expectedValue("roleCategory", "ADMIN", true)
+                    .expectedValue(MINOR_PRIORITY, DEFAULT_MINOR_PRIORITY, true)
+                    .expectedValue(MAJOR_PRIORITY, DEFAULT_MAJOR_PRIORITY, true)
+                    .expectedValue(WORK_TYPE, ROUTINE_WORK_TYPE, true)
+                    .expectedValue(ROLE_CATEGORY, ROLE_CATEGORY_ADMIN, true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "10", true)
                     .expectedValue(
-                        "description",
+                        DESCRIPTION,
                         "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
                             + "/caseworker-send-order/"
                             + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType)",
@@ -289,13 +333,13 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 "processStayDirections",
                 CaseDataBuilder.defaultCase().build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", true)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "routine_work", true)
-                    .expectedValue("roleCategory", "ADMIN", true)
+                    .expectedValue(MINOR_PRIORITY, DEFAULT_MINOR_PRIORITY, true)
+                    .expectedValue(MAJOR_PRIORITY, DEFAULT_MAJOR_PRIORITY, true)
+                    .expectedValue(WORK_TYPE, ROUTINE_WORK_TYPE, true)
+                    .expectedValue(ROLE_CATEGORY, ROLE_CATEGORY_ADMIN, true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "10", true)
                     .expectedValue(
-                        "description",
+                        DESCRIPTION,
                         "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
                             + "/caseworker-send-order/"
                             + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType)",
@@ -305,15 +349,20 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "issueDecisionNotice",
-                CaseDataBuilder.defaultCase().build(),
+                CaseDataBuilder.customCase(REQUEST).build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", true)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "hearing_work", true)
-                    .expectedValue("roleCategory", "ADMIN", true)
+                    .expectedValue(CASE_NAME, "Rio Read", true)
+                    .expectedValue(CASE_MANAGEMENT_CATEGORY, "ST CIC", true)
+                    .expectedValue(REGION, "123", true)
+                    .expectedValue(LOCATION, "123456", true)
+                    .expectedValue(LOCATION_NAME, "GTC", true)
+                    .expectedValue(MINOR_PRIORITY, DEFAULT_MINOR_PRIORITY, true)
+                    .expectedValue(MAJOR_PRIORITY, DEFAULT_MAJOR_PRIORITY, true)
+                    .expectedValue(WORK_TYPE, HEARING_WORK_TYPE, true)
+                    .expectedValue(ROLE_CATEGORY, ROLE_CATEGORY_ADMIN, true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", true)
                     .expectedValue(
-                        "description",
+                        DESCRIPTION,
                         "[Decision: Issue a decision](/cases/case-details/${[CASE_REFERENCE]}/trigger"
                             + "/caseworker-issue-decision/"
                             + "caseworker-issue-decisionSelectIssueNoticeOption<br/>"
@@ -328,13 +377,13 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 "completeHearingOutcome",
                 CaseDataBuilder.defaultCase().build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", true)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "hearing_work", true)
-                    .expectedValue("roleCategory", "ADMIN", true)
+                    .expectedValue(MINOR_PRIORITY, DEFAULT_MINOR_PRIORITY, true)
+                    .expectedValue(MAJOR_PRIORITY, DEFAULT_MAJOR_PRIORITY, true)
+                    .expectedValue(WORK_TYPE, HEARING_WORK_TYPE, true)
+                    .expectedValue(ROLE_CATEGORY, ROLE_CATEGORY_ADMIN, true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "5", true)
                     .expectedValue(
-                        "description",
+                        DESCRIPTION,
                         "[Hearings: Create listing](/cases/case-details/${[CASE_REFERENCE]}/trigger"
                             + "/create-hearing-summary/create-hearing-summarycreateHearingSummary)",
                         true
@@ -345,13 +394,13 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 "referCase",
                 CaseDataBuilder.defaultCase().build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", true)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "routine_work", true)
-                    .expectedValue("roleCategory", "ADMIN", true)
+                    .expectedValue(MINOR_PRIORITY, DEFAULT_MINOR_PRIORITY, true)
+                    .expectedValue(MAJOR_PRIORITY, DEFAULT_MAJOR_PRIORITY, true)
+                    .expectedValue(WORK_TYPE, ROUTINE_WORK_TYPE, true)
+                    .expectedValue(ROLE_CATEGORY, ROLE_CATEGORY_ADMIN, true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
                     .expectedValue(
-                        "description",
+                        DESCRIPTION,
                         "[Refer case to judge](/cases/case-details/${[CASE_REFERENCE]}/trigger"
                             + "/refer-to-judge/refer-to-judgereferToJudgeReason)<br/>"
                             + "[Refer case to legal officer](/cases/case-details/${[CASE_REFERENCE]}"
@@ -364,13 +413,13 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 "vetNewCaseDocuments",
                 CaseDataBuilder.defaultCase().build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", true)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "applications", true)
-                    .expectedValue("roleCategory", "ADMIN", true)
+                    .expectedValue(MINOR_PRIORITY, DEFAULT_MINOR_PRIORITY, true)
+                    .expectedValue(MAJOR_PRIORITY, DEFAULT_MAJOR_PRIORITY, true)
+                    .expectedValue(WORK_TYPE, APPLICATION_WORK_TYPE, true)
+                    .expectedValue(ROLE_CATEGORY, ROLE_CATEGORY_ADMIN, true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "5", true)
                     .expectedValue(
-                        "description",
+                        DESCRIPTION,
                         "[Edit case details](/cases/case-details/${[CASE_REFERENCE]}/trigger"
                             + "/edit-case/edit-casecaseCategorisationDetails)<br/>"
                             + "[Case: Build case](/cases/case-details/${[CASE_REFERENCE]}/trigger"
@@ -383,13 +432,13 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 "reviewNewCaseAndProvideDirectionsLO",
                 CaseDataBuilder.defaultCase().build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", true)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", true)
-                    .expectedValue("roleCategory", "LEGAL_OPERATIONS", true)
+                    .expectedValue(MINOR_PRIORITY, DEFAULT_MINOR_PRIORITY, true)
+                    .expectedValue(MAJOR_PRIORITY, DEFAULT_MAJOR_PRIORITY, true)
+                    .expectedValue(WORK_TYPE, DECISION_WORK_TYPE, true)
+                    .expectedValue(ROLE_CATEGORY, ROLE_CATEGORY_LO, true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "5", true)
                     .expectedValue(
-                        "description",
+                        DESCRIPTION,
                         "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
                             + "/create-draft-order/create-draft-ordercreateDraftOrder)",
                         true
@@ -400,13 +449,13 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 "reviewTimeExtensionRequestLO",
                 CaseDataBuilder.defaultCase().build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", true)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", true)
-                    .expectedValue("roleCategory", "LEGAL_OPERATIONS", true)
+                    .expectedValue(MINOR_PRIORITY, DEFAULT_MINOR_PRIORITY, true)
+                    .expectedValue(MAJOR_PRIORITY, DEFAULT_MAJOR_PRIORITY, true)
+                    .expectedValue(WORK_TYPE, DECISION_WORK_TYPE, true)
+                    .expectedValue(ROLE_CATEGORY, ROLE_CATEGORY_LO, true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", true)
                     .expectedValue(
-                        "description",
+                        DESCRIPTION,
                         "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
                             + "/create-draft-order/create-draft-ordercreateDraftOrder)",
                         true
@@ -417,13 +466,13 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 "reviewStrikeOutRequestLO",
                 CaseDataBuilder.defaultCase().build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", true)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", true)
-                    .expectedValue("roleCategory", "LEGAL_OPERATIONS", true)
+                    .expectedValue(MINOR_PRIORITY, DEFAULT_MINOR_PRIORITY, true)
+                    .expectedValue(MAJOR_PRIORITY, DEFAULT_MAJOR_PRIORITY, true)
+                    .expectedValue(WORK_TYPE, DECISION_WORK_TYPE, true)
+                    .expectedValue(ROLE_CATEGORY, ROLE_CATEGORY_LO, true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "5", true)
                     .expectedValue(
-                        "description",
+                        DESCRIPTION,
                         "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
                             + "/create-draft-order/create-draft-ordercreateDraftOrder)",
                         true
@@ -432,15 +481,17 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "reviewStayRequestLO",
-                CaseDataBuilder.defaultCase().build(),
+                CaseDataBuilder.defaultCase()
+                    .isUrgent()
+                    .build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", true)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", true)
-                    .expectedValue("roleCategory", "LEGAL_OPERATIONS", true)
+                    .expectedValue(MINOR_PRIORITY, DEFAULT_MINOR_PRIORITY, true)
+                    .expectedValue(MAJOR_PRIORITY, URGENT_MAJOR_PRIORITY, true)
+                    .expectedValue(WORK_TYPE, DECISION_WORK_TYPE, true)
+                    .expectedValue(ROLE_CATEGORY, ROLE_CATEGORY_LO, true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "5", true)
                     .expectedValue(
-                        "description",
+                        DESCRIPTION,
                         "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
                             + "/create-draft-order/create-draft-ordercreateDraftOrder)",
                         true
@@ -449,15 +500,20 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "reviewListingDirectionsLO",
-                CaseDataBuilder.defaultCase().build(),
+                CaseDataBuilder.customCase(REQUEST).build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", true)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", true)
-                    .expectedValue("roleCategory", "LEGAL_OPERATIONS", true)
+                    .expectedValue(CASE_NAME, "Rio Read", true)
+                    .expectedValue(CASE_MANAGEMENT_CATEGORY, "ST CIC", true)
+                    .expectedValue(REGION, "123", true)
+                    .expectedValue(LOCATION, "123456", true)
+                    .expectedValue(LOCATION_NAME, "GTC", true)
+                    .expectedValue(MINOR_PRIORITY, DEFAULT_MINOR_PRIORITY, true)
+                    .expectedValue(MAJOR_PRIORITY, DEFAULT_MAJOR_PRIORITY, true)
+                    .expectedValue(WORK_TYPE, DECISION_WORK_TYPE, true)
+                    .expectedValue(ROLE_CATEGORY, ROLE_CATEGORY_LO, true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", true)
                     .expectedValue(
-                        "description",
+                        DESCRIPTION,
                         "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
                             + "/create-draft-order/create-draft-ordercreateDraftOrder)",
                         true
@@ -468,13 +524,13 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 "reviewWithdrawalRequestLO",
                 CaseDataBuilder.defaultCase().build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", true)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", true)
-                    .expectedValue("roleCategory", "LEGAL_OPERATIONS", true)
+                    .expectedValue(MINOR_PRIORITY, DEFAULT_MINOR_PRIORITY, true)
+                    .expectedValue(MAJOR_PRIORITY, DEFAULT_MAJOR_PRIORITY, true)
+                    .expectedValue(WORK_TYPE, DECISION_WORK_TYPE, true)
+                    .expectedValue(ROLE_CATEGORY, ROLE_CATEGORY_LO, true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "5", true)
                     .expectedValue(
-                        "description",
+                        DESCRIPTION,
                         "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
                             + "/create-draft-order/create-draft-ordercreateDraftOrder)",
                         true
@@ -485,13 +541,13 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 "reviewRule27RequestLO",
                 CaseDataBuilder.defaultCase().build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", true)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", true)
-                    .expectedValue("roleCategory", "LEGAL_OPERATIONS", true)
+                    .expectedValue(MINOR_PRIORITY, DEFAULT_MINOR_PRIORITY, true)
+                    .expectedValue(MAJOR_PRIORITY, DEFAULT_MAJOR_PRIORITY, true)
+                    .expectedValue(WORK_TYPE, DECISION_WORK_TYPE, true)
+                    .expectedValue(ROLE_CATEGORY, ROLE_CATEGORY_LO, true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "5", true)
                     .expectedValue(
-                        "description",
+                        DESCRIPTION,
                         "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
                             + "/create-draft-order/create-draft-ordercreateDraftOrder)",
                         true
@@ -502,13 +558,13 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 "reviewListCaseLO",
                 CaseDataBuilder.defaultCase().build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", true)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", true)
-                    .expectedValue("roleCategory", "LEGAL_OPERATIONS", true)
+                    .expectedValue(MINOR_PRIORITY, DEFAULT_MINOR_PRIORITY, true)
+                    .expectedValue(MAJOR_PRIORITY, DEFAULT_MAJOR_PRIORITY, true)
+                    .expectedValue(WORK_TYPE, DECISION_WORK_TYPE, true)
+                    .expectedValue(ROLE_CATEGORY, ROLE_CATEGORY_LO, true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", true)
                     .expectedValue(
-                        "description",
+                        DESCRIPTION,
                         "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
                             + "/create-draft-order/create-draft-ordercreateDraftOrder)",
                         true
@@ -519,13 +575,13 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 "reviewOtherRequestLO",
                 CaseDataBuilder.defaultCase().build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", true)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", true)
-                    .expectedValue("roleCategory", "LEGAL_OPERATIONS", true)
+                    .expectedValue(MINOR_PRIORITY, DEFAULT_MINOR_PRIORITY, true)
+                    .expectedValue(MAJOR_PRIORITY, DEFAULT_MAJOR_PRIORITY, true)
+                    .expectedValue(WORK_TYPE, DECISION_WORK_TYPE, true)
+                    .expectedValue(ROLE_CATEGORY, ROLE_CATEGORY_LO, true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "5", true)
                     .expectedValue(
-                        "description",
+                        DESCRIPTION,
                         "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
                             + "/create-draft-order/create-draft-ordercreateDraftOrder)",
                         true
@@ -534,15 +590,20 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "reviewListCaseWithin5DaysLO",
-                CaseDataBuilder.defaultCase().build(),
+                CaseDataBuilder.customCase(REQUEST).build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", true)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", true)
-                    .expectedValue("roleCategory", "LEGAL_OPERATIONS", true)
+                    .expectedValue(CASE_NAME, "Rio Read", true)
+                    .expectedValue(CASE_MANAGEMENT_CATEGORY, "ST CIC", true)
+                    .expectedValue(REGION, "123", true)
+                    .expectedValue(LOCATION, "123456", true)
+                    .expectedValue(LOCATION_NAME, "GTC", true)
+                    .expectedValue(MINOR_PRIORITY, DEFAULT_MINOR_PRIORITY, true)
+                    .expectedValue(MAJOR_PRIORITY, DEFAULT_MAJOR_PRIORITY, true)
+                    .expectedValue(WORK_TYPE, DECISION_WORK_TYPE, true)
+                    .expectedValue(ROLE_CATEGORY, ROLE_CATEGORY_LO, true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", true)
                     .expectedValue(
-                        "description",
+                        DESCRIPTION,
                         "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
                             + "/create-draft-order/create-draft-ordercreateDraftOrder)",
                         true
@@ -553,13 +614,13 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 "reviewPostponementRequestLO",
                 CaseDataBuilder.defaultCase().build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", true)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", true)
-                    .expectedValue("roleCategory", "LEGAL_OPERATIONS", true)
+                    .expectedValue(MINOR_PRIORITY, DEFAULT_MINOR_PRIORITY, true)
+                    .expectedValue(MAJOR_PRIORITY, DEFAULT_MAJOR_PRIORITY, true)
+                    .expectedValue(WORK_TYPE, DECISION_WORK_TYPE, true)
+                    .expectedValue(ROLE_CATEGORY, ROLE_CATEGORY_LO, true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", true)
                     .expectedValue(
-                        "description",
+                        DESCRIPTION,
                         "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
                             + "/create-draft-order/create-draft-ordercreateDraftOrder)",
                         true
@@ -568,15 +629,17 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "reviewReinstatementRequestLO",
-                CaseDataBuilder.defaultCase().build(),
+                CaseDataBuilder.defaultCase()
+                    .isUrgent()
+                    .build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", true)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", true)
-                    .expectedValue("roleCategory", "LEGAL_OPERATIONS", true)
+                    .expectedValue(MINOR_PRIORITY, DEFAULT_MINOR_PRIORITY, true)
+                    .expectedValue(MAJOR_PRIORITY, URGENT_MAJOR_PRIORITY, true)
+                    .expectedValue(WORK_TYPE, DECISION_WORK_TYPE, true)
+                    .expectedValue(ROLE_CATEGORY, ROLE_CATEGORY_LO, true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "5", true)
                     .expectedValue(
-                        "description",
+                        DESCRIPTION,
                         "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
                             + "/create-draft-order/create-draft-ordercreateDraftOrder)",
                         true
@@ -585,15 +648,20 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "reviewListCaseWithin5DaysJudge",
-                CaseDataBuilder.defaultCase().build(),
+                CaseDataBuilder.customCase(REQUEST).build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", true)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", true)
-                    .expectedValue("roleCategory", "JUDICIAL", true)
+                    .expectedValue(CASE_NAME, "Rio Read", true)
+                    .expectedValue(CASE_MANAGEMENT_CATEGORY, "ST CIC", true)
+                    .expectedValue(REGION, "123", true)
+                    .expectedValue(LOCATION, "123456", true)
+                    .expectedValue(LOCATION_NAME, "GTC", true)
+                    .expectedValue(MINOR_PRIORITY, DEFAULT_MINOR_PRIORITY, true)
+                    .expectedValue(MAJOR_PRIORITY, DEFAULT_MAJOR_PRIORITY, true)
+                    .expectedValue(WORK_TYPE, DECISION_WORK_TYPE, true)
+                    .expectedValue(ROLE_CATEGORY, ROLE_CATEGORY_JUDICIAL, true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", true)
                     .expectedValue(
-                        "description",
+                        DESCRIPTION,
                         "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
                             + "/create-draft-order/create-draft-ordercreateDraftOrder)",
                         true
@@ -604,13 +672,13 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 "reviewPostponementRequestJudge",
                 CaseDataBuilder.defaultCase().build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", true)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", true)
-                    .expectedValue("roleCategory", "JUDICIAL", true)
+                    .expectedValue(MINOR_PRIORITY, DEFAULT_MINOR_PRIORITY, true)
+                    .expectedValue(MAJOR_PRIORITY, DEFAULT_MAJOR_PRIORITY, true)
+                    .expectedValue(WORK_TYPE, DECISION_WORK_TYPE, true)
+                    .expectedValue(ROLE_CATEGORY, ROLE_CATEGORY_JUDICIAL, true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", true)
                     .expectedValue(
-                        "description",
+                        DESCRIPTION,
                         "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
                             + "/create-draft-order/create-draft-ordercreateDraftOrder)",
                         true
@@ -621,13 +689,13 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 "reviewCorrectionsRequest",
                 CaseDataBuilder.defaultCase().build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", true)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", true)
-                    .expectedValue("roleCategory", "JUDICIAL", true)
+                    .expectedValue(MINOR_PRIORITY, DEFAULT_MINOR_PRIORITY, true)
+                    .expectedValue(MAJOR_PRIORITY, DEFAULT_MAJOR_PRIORITY, true)
+                    .expectedValue(WORK_TYPE, DECISION_WORK_TYPE, true)
+                    .expectedValue(ROLE_CATEGORY, ROLE_CATEGORY_JUDICIAL, true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", true)
                     .expectedValue(
-                        "description",
+                        DESCRIPTION,
                         "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
                             + "/create-draft-order/create-draft-ordercreateDraftOrder)",
                         true
@@ -638,13 +706,13 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 "reviewWrittenReasonsRequest",
                 CaseDataBuilder.defaultCase().build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", true)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", true)
-                    .expectedValue("roleCategory", "JUDICIAL", true)
+                    .expectedValue(MINOR_PRIORITY, DEFAULT_MINOR_PRIORITY, true)
+                    .expectedValue(MAJOR_PRIORITY, DEFAULT_MAJOR_PRIORITY, true)
+                    .expectedValue(WORK_TYPE, DECISION_WORK_TYPE, true)
+                    .expectedValue(ROLE_CATEGORY, ROLE_CATEGORY_JUDICIAL, true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "28", true)
                     .expectedValue(
-                        "description",
+                        DESCRIPTION,
                         "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
                             + "/create-draft-order/create-draft-ordercreateDraftOrder)",
                         true
@@ -655,13 +723,13 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 "reviewReinstatementRequestJudge",
                 CaseDataBuilder.defaultCase().build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", true)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", true)
-                    .expectedValue("roleCategory", "JUDICIAL", true)
+                    .expectedValue(MINOR_PRIORITY, DEFAULT_MINOR_PRIORITY, true)
+                    .expectedValue(MAJOR_PRIORITY, DEFAULT_MAJOR_PRIORITY, true)
+                    .expectedValue(WORK_TYPE, DECISION_WORK_TYPE, true)
+                    .expectedValue(ROLE_CATEGORY, ROLE_CATEGORY_JUDICIAL, true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
                     .expectedValue(
-                        "description",
+                        DESCRIPTION,
                         "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
                             + "/create-draft-order/create-draft-ordercreateDraftOrder)",
                         true
@@ -672,13 +740,13 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 "reviewSetAsideRequest",
                 CaseDataBuilder.defaultCase().build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", true)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", true)
-                    .expectedValue("roleCategory", "JUDICIAL", true)
+                    .expectedValue(MINOR_PRIORITY, DEFAULT_MINOR_PRIORITY, true)
+                    .expectedValue(MAJOR_PRIORITY, DEFAULT_MAJOR_PRIORITY, true)
+                    .expectedValue(WORK_TYPE, DECISION_WORK_TYPE, true)
+                    .expectedValue(ROLE_CATEGORY, ROLE_CATEGORY_JUDICIAL, true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
                     .expectedValue(
-                        "description",
+                        DESCRIPTION,
                         "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
                             + "/create-draft-order/create-draft-ordercreateDraftOrder)",
                         true
@@ -689,13 +757,13 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 "reviewStayRequestJudge",
                 CaseDataBuilder.defaultCase().build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", true)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", true)
-                    .expectedValue("roleCategory", "JUDICIAL", true)
+                    .expectedValue(MINOR_PRIORITY, DEFAULT_MINOR_PRIORITY, true)
+                    .expectedValue(MAJOR_PRIORITY, DEFAULT_MAJOR_PRIORITY, true)
+                    .expectedValue(WORK_TYPE, DECISION_WORK_TYPE, true)
+                    .expectedValue(ROLE_CATEGORY, ROLE_CATEGORY_JUDICIAL, true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
                     .expectedValue(
-                        "description",
+                        DESCRIPTION,
                         "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
                             + "/create-draft-order/create-draft-ordercreateDraftOrder)",
                         true
@@ -706,13 +774,13 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 "reviewNewCaseAndProvideDirectionsJudge",
                 CaseDataBuilder.defaultCase().build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", true)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", true)
-                    .expectedValue("roleCategory", "JUDICIAL", true)
+                    .expectedValue(MINOR_PRIORITY, DEFAULT_MINOR_PRIORITY, true)
+                    .expectedValue(MAJOR_PRIORITY, DEFAULT_MAJOR_PRIORITY, true)
+                    .expectedValue(WORK_TYPE, DECISION_WORK_TYPE, true)
+                    .expectedValue(ROLE_CATEGORY, ROLE_CATEGORY_JUDICIAL, true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
                     .expectedValue(
-                        "description",
+                        DESCRIPTION,
                         "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
                             + "/create-draft-order/create-draft-ordercreateDraftOrder)",
                         true
@@ -721,15 +789,20 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "reviewOtherRequestJudge",
-                CaseDataBuilder.defaultCase().build(),
+                CaseDataBuilder.customCase(REQUEST).build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500",true)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work",true)
-                    .expectedValue("roleCategory", "JUDICIAL",true)
+                    .expectedValue(CASE_NAME, "Rio Read", true)
+                    .expectedValue(CASE_MANAGEMENT_CATEGORY, "ST CIC", true)
+                    .expectedValue(REGION, "123", true)
+                    .expectedValue(LOCATION, "123456", true)
+                    .expectedValue(LOCATION_NAME, "GTC", true)
+                    .expectedValue(MINOR_PRIORITY, DEFAULT_MINOR_PRIORITY,true)
+                    .expectedValue(MAJOR_PRIORITY, DEFAULT_MAJOR_PRIORITY, true)
+                    .expectedValue(WORK_TYPE, DECISION_WORK_TYPE,true)
+                    .expectedValue(ROLE_CATEGORY, ROLE_CATEGORY_JUDICIAL,true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "2",true)
                     .expectedValue(
-                        "description",
+                        DESCRIPTION,
                         "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
                             + "/create-draft-order/create-draft-ordercreateDraftOrder)",
                         true
@@ -740,13 +813,13 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 "reviewWithdrawalRequestJudge",
                 CaseDataBuilder.defaultCase().build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", true)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", true)
-                    .expectedValue("roleCategory", "JUDICIAL", true)
+                    .expectedValue(MINOR_PRIORITY, DEFAULT_MINOR_PRIORITY, true)
+                    .expectedValue(MAJOR_PRIORITY, DEFAULT_MAJOR_PRIORITY, true)
+                    .expectedValue(WORK_TYPE, DECISION_WORK_TYPE, true)
+                    .expectedValue(ROLE_CATEGORY, ROLE_CATEGORY_JUDICIAL, true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
                     .expectedValue(
-                        "description",
+                        DESCRIPTION,
                         "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
                             + "/create-draft-order/create-draft-ordercreateDraftOrder)",
                         true
@@ -757,13 +830,13 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 "reviewRule27RequestJudge",
                 CaseDataBuilder.defaultCase().build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", true)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", true)
-                    .expectedValue("roleCategory", "JUDICIAL", true)
+                    .expectedValue(MINOR_PRIORITY, DEFAULT_MINOR_PRIORITY, true)
+                    .expectedValue(MAJOR_PRIORITY, DEFAULT_MAJOR_PRIORITY, true)
+                    .expectedValue(WORK_TYPE, DECISION_WORK_TYPE, true)
+                    .expectedValue(ROLE_CATEGORY, ROLE_CATEGORY_JUDICIAL, true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
                     .expectedValue(
-                        "description",
+                        DESCRIPTION,
                         "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
                             + "/create-draft-order/create-draft-ordercreateDraftOrder)",
                         true
@@ -772,15 +845,20 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "reviewListingDirectionsJudge",
-                CaseDataBuilder.defaultCase().build(),
+                CaseDataBuilder.customCase(REQUEST).build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", true)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", true)
-                    .expectedValue("roleCategory", "JUDICIAL", true)
+                    .expectedValue(CASE_NAME, "Rio Read", true)
+                    .expectedValue(CASE_MANAGEMENT_CATEGORY, "ST CIC", true)
+                    .expectedValue(REGION, "123", true)
+                    .expectedValue(LOCATION, "123456", true)
+                    .expectedValue(LOCATION_NAME, "GTC", true)
+                    .expectedValue(MINOR_PRIORITY, DEFAULT_MINOR_PRIORITY, true)
+                    .expectedValue(MAJOR_PRIORITY, DEFAULT_MAJOR_PRIORITY, true)
+                    .expectedValue(WORK_TYPE, DECISION_WORK_TYPE, true)
+                    .expectedValue(ROLE_CATEGORY, ROLE_CATEGORY_JUDICIAL, true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", true)
                     .expectedValue(
-                        "description",
+                        DESCRIPTION,
                         "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
                             + "/create-draft-order/create-draft-ordercreateDraftOrder)",
                         true
@@ -791,13 +869,13 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 "reviewListCaseJudge",
                 CaseDataBuilder.defaultCase().build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", true)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", true)
-                    .expectedValue("roleCategory", "JUDICIAL", true)
+                    .expectedValue(MINOR_PRIORITY, DEFAULT_MINOR_PRIORITY, true)
+                    .expectedValue(MAJOR_PRIORITY, DEFAULT_MAJOR_PRIORITY, true)
+                    .expectedValue(WORK_TYPE, DECISION_WORK_TYPE, true)
+                    .expectedValue(ROLE_CATEGORY, ROLE_CATEGORY_JUDICIAL, true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", true)
                     .expectedValue(
-                        "description",
+                        DESCRIPTION,
                         "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
                             + "/create-draft-order/create-draft-ordercreateDraftOrder)",
                         true
@@ -808,13 +886,13 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 "reviewStrikeOutRequestJudge",
                 CaseDataBuilder.defaultCase().build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", true)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", true)
-                    .expectedValue("roleCategory", "JUDICIAL", true)
+                    .expectedValue(MINOR_PRIORITY, DEFAULT_MINOR_PRIORITY, true)
+                    .expectedValue(MAJOR_PRIORITY, DEFAULT_MAJOR_PRIORITY, true)
+                    .expectedValue(WORK_TYPE, DECISION_WORK_TYPE, true)
+                    .expectedValue(ROLE_CATEGORY, ROLE_CATEGORY_JUDICIAL, true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
                     .expectedValue(
-                        "description",
+                        DESCRIPTION,
                         "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
                             + "/create-draft-order/create-draft-ordercreateDraftOrder)",
                         true
@@ -825,13 +903,13 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 "reviewTimeExtensionRequestJudge",
                 CaseDataBuilder.defaultCase().build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", true)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "decision_making_work", true)
-                    .expectedValue("roleCategory", "JUDICIAL", true)
+                    .expectedValue(MINOR_PRIORITY, DEFAULT_MINOR_PRIORITY, true)
+                    .expectedValue(MAJOR_PRIORITY, DEFAULT_MAJOR_PRIORITY, true)
+                    .expectedValue(WORK_TYPE, DECISION_WORK_TYPE, true)
+                    .expectedValue(ROLE_CATEGORY, ROLE_CATEGORY_JUDICIAL, true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
                     .expectedValue(
-                        "description",
+                        DESCRIPTION,
                         "[Orders: Create draft](/cases/case-details/${[CASE_REFERENCE]}/trigger"
                             + "/create-draft-order/create-draft-ordercreateDraftOrder)",
                         true
@@ -842,12 +920,13 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 "reviewSpecificAccessRequestJudiciary",
                 CaseDataBuilder.defaultCase().build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", true)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "access_requests", true)
-                    .expectedValue("roleCategory", "JUDICIAL", true)
+                    .expectedValue(MINOR_PRIORITY, DEFAULT_MINOR_PRIORITY, true)
+                    .expectedValue(MAJOR_PRIORITY, DEFAULT_MAJOR_PRIORITY, true)
+                    .expectedValue(WORK_TYPE, ACCESS_WORK_TYPE, true)
+                    .expectedValue(ROLE_CATEGORY, ROLE_CATEGORY_JUDICIAL, true)
+                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
                     .expectedValue(
-                        "description",
+                        DESCRIPTION,
                         "[Review Access Request](/cases/case-details/${[CASE_REFERENCE]}/trigger"
                             + "/reviewSpecificAccessRequestJudiciary)",
                         true
@@ -858,12 +937,13 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 "reviewSpecificAccessRequestLegalOps",
                 CaseDataBuilder.defaultCase().build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", true)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "access_requests", true)
-                    .expectedValue("roleCategory", "LEGAL_OPERATIONS", true)
+                    .expectedValue(MINOR_PRIORITY, DEFAULT_MINOR_PRIORITY, true)
+                    .expectedValue(MAJOR_PRIORITY, DEFAULT_MAJOR_PRIORITY, true)
+                    .expectedValue(WORK_TYPE, ACCESS_WORK_TYPE, true)
+                    .expectedValue(ROLE_CATEGORY, ROLE_CATEGORY_LO, true)
+                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
                     .expectedValue(
-                        "description",
+                        DESCRIPTION,
                         "[Review Access Request](/cases/case-details/${[CASE_REFERENCE]}/trigger"
                             + "/reviewSpecificAccessRequestLegalOps)",
                         true
@@ -874,12 +954,13 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 "reviewSpecificAccessRequestAdmin",
                 CaseDataBuilder.defaultCase().build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", true)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "access_requests", true)
-                    .expectedValue("roleCategory", "ADMIN", true)
+                    .expectedValue(MINOR_PRIORITY, DEFAULT_MINOR_PRIORITY, true)
+                    .expectedValue(MAJOR_PRIORITY, DEFAULT_MAJOR_PRIORITY, true)
+                    .expectedValue(WORK_TYPE, ACCESS_WORK_TYPE, true)
+                    .expectedValue(ROLE_CATEGORY, ROLE_CATEGORY_ADMIN, true)
+                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
                     .expectedValue(
-                        "description",
+                        DESCRIPTION,
                         "[Review Access Request](/cases/case-details/${[CASE_REFERENCE]}/trigger"
                             + "/reviewSpecificAccessRequestAdmin)",
                         true
@@ -890,12 +971,13 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 "reviewSpecificAccessRequestCTSC",
                 CaseDataBuilder.defaultCase().build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", true)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "access_requests", true)
-                    .expectedValue("roleCategory", "CTSC", true)
+                    .expectedValue(MINOR_PRIORITY, DEFAULT_MINOR_PRIORITY, true)
+                    .expectedValue(MAJOR_PRIORITY, DEFAULT_MAJOR_PRIORITY, true)
+                    .expectedValue(WORK_TYPE, ACCESS_WORK_TYPE, true)
+                    .expectedValue(ROLE_CATEGORY, ROLE_CATEGORY_CTSC, true)
+                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
                     .expectedValue(
-                        "description",
+                        DESCRIPTION,
                         "[Review Access Request](/cases/case-details/${[CASE_REFERENCE]}/trigger"
                             + "/reviewSpecificAccessRequestCTSC)",
                         true
@@ -906,15 +988,70 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 "followUpNoncomplianceOfDirections",
                 CaseDataBuilder.defaultCase().build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", true)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue("workType", "routine_work", true)
-                    .expectedValue("roleCategory", "ADMIN", true)
+                    .expectedValue(MINOR_PRIORITY, DEFAULT_MINOR_PRIORITY, true)
+                    .expectedValue(MAJOR_PRIORITY, DEFAULT_MAJOR_PRIORITY, true)
+                    .expectedValue(WORK_TYPE, ROUTINE_WORK_TYPE, true)
+                    .expectedValue(ROLE_CATEGORY, ROLE_CATEGORY_ADMIN, true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", true)
                     .expectedValue(
-                        "description",
+                        DESCRIPTION,
                         "[Application DSS Update (cic)](/cases/case-details/${[CASE_REFERENCE]}/trigger"
                             + "/caseworker-update-dss-application)",
+                        true
+                    )
+                    .build()
+            ),
+            Arguments.of(
+                "registerNewCase",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue(MINOR_PRIORITY, DEFAULT_MINOR_PRIORITY, true)
+                    .expectedValue(MAJOR_PRIORITY, DEFAULT_MAJOR_PRIORITY, true)
+                    .expectedValue(WORK_TYPE, APPLICATION_WORK_TYPE, true)
+                    .expectedValue(ROLE_CATEGORY, ROLE_CATEGORY_ADMIN, true)
+                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "5", true)
+                    .expectedValue(
+                        DESCRIPTION,
+                        "New Case Received",
+                        true
+                    )
+                    .build()
+            ),
+            Arguments.of(
+                "processFurtherEvidence",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue(MINOR_PRIORITY, DEFAULT_MINOR_PRIORITY, true)
+                    .expectedValue(MAJOR_PRIORITY, DEFAULT_MAJOR_PRIORITY, true)
+                    .expectedValue(WORK_TYPE, ROUTINE_WORK_TYPE, true)
+                    .expectedValue(ROLE_CATEGORY, ROLE_CATEGORY_ADMIN, true)
+                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "10", true)
+                    .expectedValue(
+                        DESCRIPTION,
+                        "[Orders: Send order](/cases/case-details/${[CASE_REFERENCE]}/trigger"
+                            + "/caseworker-send-order/"
+                            + "caseworker-send-ordercaseworkerSendOrderSelectOrderIssuingType)",
+                        true
+                    )
+                    .build()
+            ),
+            Arguments.of(
+                "stitchCollateHearingBundle",
+                CaseDataBuilder.customCase(REQUEST).build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue(CASE_NAME, "Rio Read", true)
+                    .expectedValue(CASE_MANAGEMENT_CATEGORY, "ST CIC", true)
+                    .expectedValue(REGION, "123", true)
+                    .expectedValue(LOCATION, "123456", true)
+                    .expectedValue(LOCATION_NAME, "GTC", true)
+                    .expectedValue(MINOR_PRIORITY, DEFAULT_MINOR_PRIORITY, true)
+                    .expectedValue(MAJOR_PRIORITY, DEFAULT_MAJOR_PRIORITY, true)
+                    .expectedValue(WORK_TYPE, HEARING_WORK_TYPE, true)
+                    .expectedValue(ROLE_CATEGORY, ROLE_CATEGORY_ADMIN, true)
+                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", true)
+                    .expectedValue(
+                        DESCRIPTION,
+                        "Prepare Hearing Bundle",
                         true
                     )
                     .build()
@@ -946,33 +1083,45 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
 
-        assertThat(logic.getRules().size(), is(36));
-
+        assertEquals(40, logic.getRules().size());
     }
 
     private void resultsMatch(List<Map<String, Object>> results, List<Map<String, Object>> expectation) {
         assertThat(results.size(), is(expectation.size()));
+
         for (int index = 0; index < expectation.size(); index++) {
-            if ("dueDateOrigin".equals(expectation.get(index).get("name"))) {
+            if (DUE_DATE_ORIGIN.equals(expectation.get(index).get("name"))) {
                 assertEquals(
-                    results.get(index).get("canReconfigure"),
-                    expectation.get(index).get("canReconfigure")
+                    expectation.get(index).get("canReconfigure"),
+                    results.get(index).get("canReconfigure")
                 );
                 assertTrue(validNow(
-                    LocalDateTime.parse(results.get(index).get("value").toString()),
-                    LocalDateTime.parse(expectation.get(index).get("value").toString())
+                    ZonedDateTime.parse(expectation.get(index).get("value").toString()),
+                    ZonedDateTime.parse(results.get(index).get("value").toString())
                 ));
+
+            } else if (PRIORITY_DATE_ORIGIN_REF.equals(expectation.get(index).get("name"))) {
+                assertEquals(
+                    expectation.get(index).get("canReconfigure"),
+                    results.get(index).get("canReconfigure")
+                );
+                assertTrue(LocalDate.parse(expectation.get(index).get("value").toString()).isEqual(
+                    LocalDate.parse(results.get(index).get("value").toString())) ||
+                               LocalDate.parse(expectation.get(index).get("value").toString()).isAfter(
+                    LocalDate.parse(results.get(index).get("value").toString()))
+                );
+
             } else {
                 assertThat(results.get(index), is(expectation.get(index)));
             }
         }
     }
 
-    private boolean validNow(LocalDateTime actual, LocalDateTime expected) {
-        LocalDateTime now = LocalDateTime.now();
-        return actual != null
-            && (expected.isEqual(actual) || expected.isBefore(actual))
-            && (now.isEqual(actual) || now.isAfter(actual));
+    private boolean validNow(ZonedDateTime expected, ZonedDateTime result) {
+        ZonedDateTime now = ZonedDateTime.now();
+        return result != null
+            && (expected.isEqual(result) || expected.isBefore(result))
+            && (now.isEqual(result) || now.isAfter(result));
     }
 }
 
