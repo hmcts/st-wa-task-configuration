@@ -36,97 +36,102 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "processCaseWithdrawalDirections",
                 "someCaseData",
-                defaultAdminPermissions()
+                defaultRegionalAdminPermissions()
             ),
             Arguments.of(
                 "processRule27Decision",
                 "someCaseData",
-                defaultAdminPermissions()
+                defaultRegionalAdminPermissions()
             ),
             Arguments.of(
                 "processListingDirections",
                 "someCaseData",
-                defaultAdminPermissions()
+                defaultRegionalAdminPermissions()
             ),
             Arguments.of(
                 "processDirectionsReListedCase",
                 "someCaseData",
-                defaultAdminPermissions()
+                defaultRegionalAdminPermissions()
             ),
             Arguments.of(
                 "processDirectionsReListedCaseWithin5Days",
                 "someCaseData",
-                defaultAdminPermissions()
+                defaultRegionalAdminPermissions()
             ),
             Arguments.of(
                 "processSetAsideDirections",
                 "someCaseData",
-                defaultAdminPermissions()
+                defaultRegionalAdminPermissions()
             ),
             Arguments.of(
                 "processCorrections",
                 "someCaseData",
-                defaultAdminPermissions()
+                defaultRegionalAdminPermissions()
             ),
             Arguments.of(
                 "processDirectionsReturned",
                 "someCaseData",
-                defaultAdminPermissions()
+                defaultRegionalAdminPermissions()
             ),
             Arguments.of(
                 "processPostponementDirections",
                 "someCaseData",
-                defaultAdminPermissions()
+                defaultAdminWithCompletePermissions()
+            ),
+            Arguments.of(
+                "processFurtherEvidence",
+                "someCaseData",
+                defaultAdminWithCompletePermissions()
             ),
             Arguments.of(
                 "processTimeExtensionDirectionsReturned",
                 "someCaseData",
-                defaultAdminPermissions()
+                defaultRegionalAdminPermissions()
             ),
             Arguments.of(
                 "processReinstatementDecisionNotice",
                 "someCaseData",
-                defaultAdminPermissions()
+                defaultRegionalAdminPermissions()
             ),
             Arguments.of(
                 "processOtherDirectionsReturned",
                 "someCaseData",
-                defaultAdminPermissions()
+                defaultRegionalAdminPermissions()
             ),
             Arguments.of(
                 "processWrittenReasons",
                 "someCaseData",
-                defaultAdminPermissions()
+                defaultRegionalAdminPermissions()
             ),
             Arguments.of(
                 "processStrikeOutDirectionsReturned",
                 "someCaseData",
-                defaultAdminPermissions()
+                defaultRegionalAdminPermissions()
             ),
             Arguments.of(
                 "processStayDirections",
                 "someCaseData",
-                defaultAdminPermissions()
+                defaultRegionalAdminPermissions()
             ),
             Arguments.of(
                 "issueDecisionNotice",
                 "someCaseData",
-                defaultAdminPermissions()
+                defaultRegionalAdminPermissions()
             ),
             Arguments.of(
                 "completeHearingOutcome",
                 "someCaseData",
-                defaultAdminPermissions()
+                defaultRegionalAdminPermissions()
             ),
             Arguments.of(
                 "referCase",
                 "someCaseData",
-                defaultAdminPermissions()
+                defaultRegionalAdminPermissions()
             ),
             Arguments.of(
                 "vetNewCaseDocuments",
                 "someCaseData",
-                defaultAdminPermissions()
+                defaultRegionalAdminPermissions()
             ),
             Arguments.of(
                 "reviewNewCaseAndProvideDirectionsLO",
@@ -196,7 +201,7 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "reviewPostponementRequestJudge",
                 "someCaseData",
-                defaultJudicialWithOutFeePaidJudgePermissions()
+                defaultJudicialPermissions()
             ),
             Arguments.of(
                 "reviewCorrectionsRequest",
@@ -266,215 +271,43 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "reviewSpecificAccessRequestJudiciary",
                 "someCaseData",
-                defaultReviewSpecificAccessRequestJudiciaryPermissions()
+                defaultSpecificAccessRequestJudicialPermissions()
             ),
             Arguments.of(
                 "reviewSpecificAccessRequestLegalOps",
                 "someCaseData",
-                defaultReviewSpecificAccessRequestLegalOpsPermissions()
+                defaultSpecificAccessRequestLegalOpsPermissions()
             ),
             Arguments.of(
                 "reviewSpecificAccessRequestAdmin",
                 "someCaseData",
-                defaultReviewSpecificAccessRequestAdminPermissions()
+                defaultSpecificAccessRequestAdminPermissions()
             ),
             Arguments.of(
                 "reviewSpecificAccessRequestCTSC",
                 "someCaseData",
-                defaultReviewSpecificAccessRequestCTSCPermissions()
+                defaultSpecificAccessRequestCTSCPermissions()
             ),
             Arguments.of(
                 "followUpNoncomplianceOfDirections",
                 "someCaseData",
-                defaultAdminPermissions()
+                defaultRegionalAdminPermissions()
+            ),
+            Arguments.of(
+                "registerNewCase",
+                "someCaseData",
+                defaultRegionalAdminPermissions()
+            ),
+            Arguments.of(
+                "stitchCollateHearingBundle",
+                "someCaseData",
+                defaultRegionalAdminPermissions()
             )
         );
-    }
-
-    private static List<Map<String, Object>> defaultAdminPermissions() {
-        return List.of(
-            Map.of(
-                "name", "task-supervisor",
-                "value", "Read,Own,Claim,Unclaim,Manage,Assign,Unassign,Complete,Cancel",
-                "autoAssignable", false
-            ),
-            Map.of(
-                "name", "regional-centre-admin",
-                "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign",
-                "roleCategory", "ADMIN",
-                "assignmentPriority", 1,
-                "autoAssignable", false
-            ),
-            Map.of(
-                "name", "regional-centre-team-leader",
-                "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel",
-                "roleCategory", "ADMIN",
-                "assignmentPriority", 2,
-                "autoAssignable", false
-            )
-        );
-    }
-
-    private static List<Map<String, Object>> defaultLegalOperationsPermissions() {
-        return List.of(
-            Map.of(
-                "name", "task-supervisor",
-                "value", "Read,Own,Claim,Unclaim,Manage,Assign,Unassign,Complete,Cancel",
-                "autoAssignable", false
-            ),
-            Map.of(
-                "name", "senior-legal-caseworker",
-                "value", "Read,Own,Claim,Manage,Assign,Unassign,Complete,Cancel",
-                "roleCategory", "LEGAL_OPERATIONS",
-                "assignmentPriority", 1,
-                "autoAssignable", false
-            ),
-            Map.of(
-                "name", "tribunal-caseworker",
-                "value", "Read,Own,Claim,Assign,Unassign,Complete,Cancel",
-                "roleCategory", "LEGAL_OPERATIONS",
-                "assignmentPriority", 2,
-                "autoAssignable", false
-            )
-        );
-    }
-
-    private static List<Map<String, Object>> defaultJudicialPermissions() {
-        return List.of(
-            Map.of(
-                "name", "task-supervisor",
-                "value", "Read,Own,Claim,Unclaim,Manage,Assign,Unassign,Complete,Cancel",
-                "autoAssignable", false
-            ),
-            Map.of(
-                "name", "senior-judge",
-                "value", "Read,Execute,Own,Claim,Manage,Assign,Unassign,Complete,Cancel",
-                "roleCategory", "JUDICIAL",
-                "assignmentPriority", 1,
-                "autoAssignable", false
-            ),
-            Map.of(
-                "name", "judge",
-                "value", "Read,Execute,Own,Claim,Assign,Unassign,Complete,Cancel",
-                "roleCategory", "JUDICIAL",
-                "assignmentPriority", 2,
-                "autoAssignable", false
-            ),
-            Map.of(
-                "name", "fee-paid-judge",
-                "value", "Read,Execute,Own,Claim,Manage,Complete",
-                "roleCategory", "JUDICIAL",
-                "assignmentPriority", 3,
-                "autoAssignable", false
-            )
-        );
-    }
-
-    private static List<Map<String, Object>> defaultJudicialWithOutFeePaidJudgePermissions() {
-        return List.of(
-            Map.of(
-                "name", "task-supervisor",
-                "value", "Read,Own,Claim,Unclaim,Manage,Assign,Unassign,Complete,Cancel",
-                "autoAssignable", false
-            ),
-            Map.of(
-                "name", "senior-judge",
-                "value", "Read,Execute,Own,Claim,Manage,Assign,Unassign,Complete,Cancel",
-                "roleCategory", "JUDICIAL",
-                "assignmentPriority", 1,
-                "autoAssignable", false
-            ),
-            Map.of(
-                "name", "judge",
-                "value", "Read,Execute,Own,Claim,Assign,Unassign,Complete,Cancel",
-                "roleCategory", "JUDICIAL",
-                "assignmentPriority", 2,
-                "autoAssignable", false
-            )
-        );
-    }
-
-    private static List<Map<String, Object>> defaultReviewSpecificAccessRequestJudiciaryPermissions() {
-        return List.of(
-            Map.of(
-                "name", "task-supervisor",
-                "value", "Read,Own,Claim,Unclaim,Manage,Assign,Unassign,Complete,Cancel",
-                "autoAssignable", false
-            ),
-            Map.of(
-                "name", "leadership-judge",
-                "value", "Read,Own,Claim,Unclaim,Assign",
-                "roleCategory", "JUDICIAL",
-                "autoAssignable", false
-            )
-        );
-    }
-
-    private static List<Map<String, Object>> defaultReviewSpecificAccessRequestLegalOpsPermissions() {
-        return List.of(
-            Map.of(
-                "name", "task-supervisor",
-                "value", "Read,Own,Claim,Unclaim,Manage,Assign,Unassign,Complete,Cancel",
-                "autoAssignable", false
-            ),
-            Map.of(
-                "name", "senior-legal-caseworker",
-                "value", "Read,Own,Claim,Unclaim,Assign",
-                "roleCategory", "LEGAL_OPERATIONS",
-                "autoAssignable", false
-            )
-        );
-    }
-
-    private static List<Map<String, Object>> defaultReviewSpecificAccessRequestAdminPermissions() {
-        return List.of(
-            Map.of(
-                "name", "task-supervisor",
-                "value", "Read,Own,Claim,Unclaim,Manage,Assign,Unassign,Complete,Cancel",
-                "autoAssignable", false
-            ),
-            Map.of(
-                "name", "hearing-centre-team-leader",
-                "value", "Read,Own,Claim,Unclaim,Assign",
-                "roleCategory", "ADMIN",
-                "autoAssignable", false
-            )
-        );
-    }
-
-    private static List<Map<String, Object>> defaultReviewSpecificAccessRequestCTSCPermissions() {
-        return List.of(
-            Map.of(
-                "name", "task-supervisor",
-                "value", "Read,Own,Claim,Unclaim,Manage,Assign,Unassign,Complete,Cancel",
-                "autoAssignable", false
-            ),
-            Map.of(
-                "name", "ctsc-team-leader",
-                "value", "Read,Own,Claim,Unclaim,Assign",
-                "roleCategory", "CTSC",
-                "autoAssignable", false
-            )
-        );
-    }
-
-    @ParameterizedTest(name = "task type: {0} case data: {1}")
-    @MethodSource("scenarioProvider")
-    void given_null_or_empty_inputs_when_evaluate_dmn_it_returns_expected_rules(String taskType,
-                                                                                String caseData,
-                                                                                List<Map<String, String>> expectation) {
-        VariableMap inputVariables = new VariableMapImpl();
-        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
-        inputVariables.putValue("case", caseData);
-
-        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
-
-        MatcherAssert.assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
     }
 
     @Test
     void if_this_test_fails_needs_updating_with_your_changes() {
-
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
 
@@ -496,7 +329,20 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
         assertThatOutputContainInOrder(outputColumnIds, logic.getOutputs());
         //Rules
         assertThat(logic.getRules().size(), is(12));
+    }
 
+    @ParameterizedTest(name = "task type: {0} case data: {1}")
+    @MethodSource("scenarioProvider")
+    void given_null_or_empty_inputs_when_evaluate_dmn_it_returns_expected_rules(String taskType,
+                                                                                String caseData,
+                                                                                List<Map<String, String>> expectation) {
+        VariableMap inputVariables = new VariableMapImpl();
+        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
+        inputVariables.putValue("case", caseData);
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        MatcherAssert.assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
     }
 
     private void assertThatInputContainInOrder(List<String> inputColumnIds, List<DmnDecisionTableInputImpl> inputs) {
@@ -507,5 +353,184 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
     private void assertThatOutputContainInOrder(List<String> outputColumnIds, List<DmnDecisionTableOutputImpl> output) {
         IntStream.range(0, output.size())
             .forEach(i -> assertThat(output.get(i).getOutputName(), is(outputColumnIds.get(i))));
+    }
+
+    private static List<Map<String, Object>> defaultRegionalAdminPermissions() {
+        return List.of(
+            taskSupervisorPermissions(),
+            regionalCentreAdminPermissions(),
+            regionalCentreAdminLeaderPermissions()
+        );
+    }
+
+    private static List<Map<String, Object>> defaultLegalOperationsPermissions() {
+        return List.of(
+            taskSupervisorPermissions(),
+            seniorTribunalCaseworkerPermissions(),
+            tribunalCaseworkerPermissions()
+        );
+    }
+
+    private static List<Map<String, Object>> defaultJudicialPermissions() {
+        return List.of(
+            taskSupervisorPermissions(),
+            seniorJudgePermissions(),
+            judgePermissions()
+        );
+    }
+
+    private static List<Map<String, Object>> defaultSpecificAccessRequestJudicialPermissions() {
+        return List.of(
+            taskSupervisorPermissions(),
+            leadershipJudgePermissions()
+        );
+    }
+
+    private static List<Map<String, Object>> defaultSpecificAccessRequestLegalOpsPermissions() {
+        return List.of(
+            taskSupervisorPermissions(),
+            seniorTribunalCaseworkerPermissions()
+        );
+    }
+
+    private static List<Map<String, Object>> defaultSpecificAccessRequestAdminPermissions() {
+        return List.of(
+            taskSupervisorPermissions(),
+            hearingCentreTeamLeaderPermissions()
+        );
+    }
+
+    private static List<Map<String, Object>> defaultSpecificAccessRequestCTSCPermissions() {
+        return List.of(
+            taskSupervisorPermissions(),
+            ctscTeamLeaderPermissions()
+        );
+    }
+
+    private static List<Map<String, Object>> defaultAdminWithCompletePermissions() {
+        return List.of(
+            taskSupervisorPermissions(),
+            regionalCentreAdminWithCompletePermissions(),
+            regionalCentreAdminLeaderWithCompletePermissions()
+        );
+    }
+
+    private static Map<String, Object> taskSupervisorPermissions() {
+        return Map.of(
+            "name", "task-supervisor",
+            "value", "Read,Own,Claim,Unclaim,Manage,Assign,Unassign,Complete,Cancel",
+            "autoAssignable", false
+        );
+    }
+
+    private static Map<String, Object> regionalCentreAdminPermissions() {
+        return Map.of(
+            "name", "regional-centre-admin",
+            "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign",
+            "roleCategory", "ADMIN",
+            "assignmentPriority", 1,
+            "autoAssignable", false
+        );
+    }
+
+    private static Map<String, Object> regionalCentreAdminLeaderPermissions() {
+        return Map.of(
+            "name", "regional-centre-team-leader",
+            "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel",
+            "roleCategory", "ADMIN",
+            "assignmentPriority", 2,
+            "autoAssignable", false
+        );
+    }
+
+    private static Map<String, Object> seniorTribunalCaseworkerPermissions() {
+        return Map.of(
+            "name", "senior-tribunal-caseworker",
+            "value", "Read,Own,Claim,Manage,Assign,Unassign,Complete,Cancel",
+            "roleCategory", "LEGAL_OPERATIONS",
+            "assignmentPriority", 1,
+            "autoAssignable", false
+        );
+    }
+
+    private static Map<String, Object> tribunalCaseworkerPermissions() {
+        return Map.of(
+            "name", "tribunal-caseworker",
+            "value", "Read,Own,Claim,Assign,Unassign,Complete,Cancel",
+            "roleCategory", "LEGAL_OPERATIONS",
+            "assignmentPriority", 2,
+            "autoAssignable", false
+        );
+    }
+
+    private static Map<String, Object> seniorJudgePermissions() {
+        return Map.of(
+            "name", "senior-judge",
+            "value", "Read,Execute,Claim,Manage,Assign,Unassign,Complete,Cancel",
+            "roleCategory", "JUDICIAL",
+            "authorisations", "328",
+            "assignmentPriority", 1,
+            "autoAssignable", false
+        );
+    }
+
+    private static Map<String, Object> judgePermissions() {
+        return Map.of(
+            "name", "judge",
+            "value", "Read,Own,Claim,Assign,Unassign,Complete,Cancel",
+            "roleCategory", "JUDICIAL",
+            "authorisations", "328",
+            "assignmentPriority", 2,
+            "autoAssignable", false
+        );
+    }
+
+    private static Map<String, Object> leadershipJudgePermissions() {
+        return Map.of(
+            "name", "leadership-judge",
+            "value", "Read,Own,Claim,Manage,Assign,Unassign,Complete,Cancel",
+            "roleCategory", "JUDICIAL",
+            "authorisations", "328",
+            "assignmentPriority", 1,
+            "autoAssignable", false
+        );
+    }
+
+    private static Map<String, Object> hearingCentreTeamLeaderPermissions() {
+        return Map.of(
+            "name", "hearing-centre-team-leader",
+            "value", "Read,Own,Claim,Manage,Assign,Unassign,Complete,Cancel",
+            "roleCategory", "ADMIN",
+            "autoAssignable", false
+        );
+    }
+
+    private static Map<String, Object> ctscTeamLeaderPermissions() {
+        return Map.of(
+            "name", "ctsc-team-leader",
+            "value", "Read,Own,Claim,Manage,Assign,Unassign,Complete,Cancel",
+            "roleCategory", "CTSC",
+            "autoAssignable", false
+        );
+    }
+
+    private static Map<String, Object> regionalCentreAdminWithCompletePermissions() {
+        return Map.of(
+            "name", "regional-centre-admin",
+            "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Complete",
+            "roleCategory", "ADMIN",
+            "assignmentPriority", 1,
+            "autoAssignable", false
+        );
+    }
+
+    private static Map<String, Object> regionalCentreAdminLeaderWithCompletePermissions() {
+        return Map.of(
+            "name", "regional-centre-team-leader",
+            "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel,Complete",
+            "roleCategory", "ADMIN",
+            "assignmentPriority", 2,
+            "autoAssignable", false
+        );
     }
 }

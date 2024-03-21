@@ -113,7 +113,7 @@
       </rule>
       <rule id="DecisionRule_0i4p218">
         <inputEntry id="UnaryTests_1or4uu6">
-          <text>"reviewNewCaseAndProvideDirectionsLO","reviewTimeExtensionRequestLO","reviewStrikeOutRequestLO","reviewStayRequestLO","reviewListingDirectionsLO","reviewWithdrawalRequestLO","reviewRule27RequestLO","reviewListCaseLO","reviewOtherRequestLO","reviewListCaseWithin5DaysLO","reviewPostponementRequestLO","reviewReinstatementRequestLO"</text>
+          <text>"reviewNewCaseAndProvideDirectionsLO","reviewTimeExtensionRequestLO","reviewStrikeOutRequestLO","reviewStayRequestLO","reviewListingDirectionsLO","reviewWithdrawalRequestLO","reviewRule27RequestLO","reviewListCaseLO","reviewOtherRequestLO","reviewListCaseWithin5DaysLO","reviewPostponementRequestLO","reviewReinstatementRequestLO","reviewSpecificAccessRequestLegalOps"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1fryqbq">
           <text></text>
@@ -254,36 +254,6 @@
           <text>1</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_147t9wu">
-          <text>false</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0vfv7bn">
-        <description>"Access Request for Legal Caseworker"</description>
-        <inputEntry id="UnaryTests_1b5odpn">
-          <text>"reviewSpecificAccessRequestLegalOps"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1g2pcf4">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_15vy4sx">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1xv8ek4">
-          <text>"senior-tribunal-caseworker"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1d1lxr7">
-          <text>"Read,Own,Claim,Manage,Assign,Unassign,Complete,Cancel"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_09k4pfb">
-          <text>"LEGAL_OPERATIONS"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0f9zul1">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1wea3z5">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1x1eqa3">
           <text>false</text>
         </outputEntry>
       </rule>
