@@ -655,23 +655,6 @@ else 5000</text>
           <text>true</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1rgpcp8">
-        <inputEntry id="UnaryTests_0bo5zy7">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1tpvzna">
-          <text>"processFurtherEvidence"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1pwkw67">
-          <text>"description"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1ywi91x">
-          <text>"New Information Received"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_19p99gs">
-          <text>true</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_0xpuwm0">
         <inputEntry id="UnaryTests_082u1k7">
           <text></text>
