@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="wa-cancellation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.20.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="wa-cancellation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.21.0">
   <decision id="wa-task-cancellation-st_cic-criminalinjuriescompensation" name="Task cancellation DMN">
     <decisionTable id="DecisionTable_0z3jx1g" hitPolicy="COLLECT">
       <input id="Input_1" label="From State">
@@ -24,13 +24,13 @@
       <rule id="DecisionRule_1guzypv">
         <description></description>
         <inputEntry id="UnaryTests_1n3g5ie">
-          <text>.*</text>
+          <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1g1cc7g">
           <text>"caseworker-close-the-case"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1ah5t17">
-          <text>.*</text>
+          <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1c4vo81">
           <text>"Cancel"</text>
@@ -48,13 +48,13 @@
       <rule id="DecisionRule_0pnydpd">
         <description></description>
         <inputEntry id="UnaryTests_1a0wbnr">
-          <text>"AwaitingHearing"</text>
+          <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_15o9rn4">
-          <text>caseworker-postpone-hearing|caseworker-cancel-hearing</text>
+          <text>"caseworker-postpone-hearing"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0scltnp">
-          <text>.*</text>
+          <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1ev9vey">
           <text>"Cancel"</text>
@@ -66,6 +66,29 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1c89qfr">
+          <text>"completeHearingOutcome"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1b4eltn">
+        <inputEntry id="UnaryTests_0x0r3hv">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06vz041">
+          <text>"caseworker-cancel-hearing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_00xm8g2">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ypevuu">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0onpzqa">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0y7o9lz">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_04zst8m">
           <text>"completeHearingOutcome"</text>
         </outputEntry>
       </rule>
