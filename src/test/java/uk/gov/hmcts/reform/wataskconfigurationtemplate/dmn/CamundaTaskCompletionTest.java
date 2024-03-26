@@ -19,6 +19,57 @@ import java.util.stream.Stream;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static uk.gov.hmcts.reform.wataskconfigurationtemplate.DmnDecisionTable.WA_TASK_COMPLETION_ST_CIC_CRIMINALINJURIESCOMPENSATION;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.AUTO_COMPLETE_MODE;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.COMPLETE_HEARING_OUTCOME_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.FOLLOW_UP_NONCOMPLIANCE_OF_DIR_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.ISSUE_DECISION_NOTICE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_CASE_WITHDRAWAL_DIR_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_CORRECTIONS_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_DIR_RELISTED_CASE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_DIR_RETURNED_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_FURTHER_EVIDENCE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_LISTING_DIR_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_WRITTEN_REASONS_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_TIME_EXT_DIR_RETURNED_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_STRIKE_OUT_DIR_RETURNED_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_STAY_DIR_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_SET_ASIDE_DIR_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_RULE27_DECISION_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_REINSTATEMENT_DECISION_NOTICE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_POSTPONEMENT_DIR_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_OTHER_DIR_RETURNED_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_DIR_RELISTED_CASE_WITHIN_5DAYS_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REFER_CASE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REGISTER_NEW_CASE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_NEW_CASE_PROVIDE_DIR_JUDGE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_CORRECTIONS_REQ_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_LISTING_DIR_LO_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_LIST_CASE_JUDGE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_LIST_CASE_LO_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_LIST_CASE_WITHIN_5DAYS_JUDGE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_LIST_CASE_WITHIN_5DAYS_LO_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_LISTING_DIR_JUDGE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_NEW_CASE_PROVIDE_DIR_LO_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_OTHER_REQ_JUDGE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_OTHER_REQ_LO_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_POSTPONEMENT_REQ_JUDGE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_POSTPONEMENT_REQ_LO_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_REINSTATEMENT_REQ_JUDGE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_REINSTATEMENT_REQ_LO_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_RULE27_REQ_JUDGE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_RULE27_REQ_LO_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_SET_ASIDE_REQ_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_STAY_REQ_JUDGE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_STAY_REQ_LO_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_STRIKE_OUT_REQ_JUDGE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_STRIKE_OUT_REQ_LO_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_TIME_EXT_REQ_JUDGE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_TIME_EXT_REQ_LO_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_WITHDRAWAL_REQ_JUDGE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_WITHDRAWAL_REQ_LO_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_WRITTEN_REASONS_REQ_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.STITCH_COLLATE_HEARING_BUNDLE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.VET_NEW_CASE_DOCUMENTS_TASK;
 
 class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
     @BeforeAll
@@ -33,263 +84,303 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                 "caseworker-send-order",
                 List.of(
                     Map.of(
-                        "taskType", "processCaseWithdrawalDirections",
-                        "completionMode", "Auto"
+                        "taskType", PROCESS_CASE_WITHDRAWAL_DIR_TASK,
+                        "completionMode", AUTO_COMPLETE_MODE
                     ),
                     Map.of(
-                        "taskType", "processRule27Decision",
-                        "completionMode", "Auto"
+                        "taskType", PROCESS_RULE27_DECISION_TASK,
+                        "completionMode", AUTO_COMPLETE_MODE
                     ),
                     Map.of(
-                        "taskType", "processListingDirections",
-                        "completionMode", "Auto"
+                        "taskType", PROCESS_LISTING_DIR_TASK,
+                        "completionMode", AUTO_COMPLETE_MODE
                     ),
                     Map.of(
-                        "taskType", "processDirectionsReListedCase",
-                        "completionMode", "Auto"
+                        "taskType", PROCESS_DIR_RELISTED_CASE_TASK,
+                        "completionMode", AUTO_COMPLETE_MODE
                     ),
                     Map.of(
-                        "taskType", "processDirectionsReListedCaseWithin5Days",
-                        "completionMode", "Auto"
+                        "taskType", PROCESS_DIR_RELISTED_CASE_WITHIN_5DAYS_TASK,
+                        "completionMode", AUTO_COMPLETE_MODE
                     ),
                     Map.of(
-                        "taskType", "processSetAsideDirections",
-                        "completionMode", "Auto"
+                        "taskType", PROCESS_SET_ASIDE_DIR_TASK,
+                        "completionMode", AUTO_COMPLETE_MODE
                     ),
                     Map.of(
-                        "taskType", "processCorrections",
-                        "completionMode", "Auto"
+                        "taskType", PROCESS_CORRECTIONS_TASK,
+                        "completionMode", AUTO_COMPLETE_MODE
                     ),
                     Map.of(
-                        "taskType", "processDirectionsReturned",
-                        "completionMode", "Auto"
+                        "taskType", PROCESS_DIR_RETURNED_TASK,
+                        "completionMode", AUTO_COMPLETE_MODE
                     ),
                     Map.of(
-                        "taskType", "processPostponementDirections",
-                        "completionMode", "Auto"
+                        "taskType", PROCESS_POSTPONEMENT_DIR_TASK,
+                        "completionMode", AUTO_COMPLETE_MODE
                     ),
                     Map.of(
-                        "taskType", "processTimeExtensionDirectionsReturned",
-                        "completionMode", "Auto"
+                        "taskType", PROCESS_TIME_EXT_DIR_RETURNED_TASK,
+                        "completionMode", AUTO_COMPLETE_MODE
                     ),
                     Map.of(
-                        "taskType", "processReinstatementDecisionNotice",
-                        "completionMode", "Auto"
+                        "taskType", PROCESS_REINSTATEMENT_DECISION_NOTICE_TASK,
+                        "completionMode", AUTO_COMPLETE_MODE
                     ),
                     Map.of(
-                        "taskType", "processOtherDirectionsReturned",
-                        "completionMode", "Auto"
+                        "taskType", PROCESS_OTHER_DIR_RETURNED_TASK,
+                        "completionMode", AUTO_COMPLETE_MODE
                     ),
                     Map.of(
-                        "taskType", "processWrittenReasons",
-                        "completionMode", "Auto"
+                        "taskType", PROCESS_WRITTEN_REASONS_TASK,
+                        "completionMode", AUTO_COMPLETE_MODE
                     ),
                     Map.of(
-                        "taskType", "processStrikeOutDirectionsReturned",
-                        "completionMode", "Auto"
+                        "taskType", PROCESS_STRIKE_OUT_DIR_RETURNED_TASK,
+                        "completionMode", AUTO_COMPLETE_MODE
                     ),
                     Map.of(
-                        "taskType", "processStayDirections",
-                        "completionMode", "Auto"
-                    ),
-                    Map.of()
+                        "taskType", PROCESS_STAY_DIR_TASK,
+                        "completionMode", AUTO_COMPLETE_MODE
+                    )
                 )
             ),
             Arguments.of(
                 "caseworker-issue-final-decision",
                 List.of(
                     Map.of(
-                        "taskType", "issueDecisionNotice",
-                        "completionMode", "Auto"
-                    ),
-                    Map.of()
+                        "taskType", ISSUE_DECISION_NOTICE_TASK,
+                        "completionMode", AUTO_COMPLETE_MODE
+                    )
                 )
             ),
             Arguments.of(
                 "caseworker-issue-decision",
                 List.of(
                     Map.of(
-                        "taskType", "issueDecisionNotice",
-                        "completionMode", "Auto"
-                    ),
-                    Map.of()
+                        "taskType", ISSUE_DECISION_NOTICE_TASK,
+                        "completionMode", AUTO_COMPLETE_MODE
+                    )
                 )
             ),
             Arguments.of(
                 "create-hearing-summary",
                 List.of(
                     Map.of(
-                        "taskType", "completeHearingOutcome",
-                        "completionMode", "Auto"
-                    ),
-                    Map.of()
+                        "taskType", COMPLETE_HEARING_OUTCOME_TASK,
+                        "completionMode", AUTO_COMPLETE_MODE
+                    )
                 )
             ),
             Arguments.of(
                 "refer-to-judge",
                 List.of(
                     Map.of(
-                        "taskType", "referCase",
-                        "completionMode", "Auto"
+                        "taskType", REFER_CASE_TASK,
+                        "completionMode", AUTO_COMPLETE_MODE
                     ),
-                    Map.of()
+                    Map.of(
+                        "taskType", PROCESS_FURTHER_EVIDENCE_TASK,
+                        "completionMode", AUTO_COMPLETE_MODE
+                    )
                 )
             ),
             Arguments.of(
                 "refer-to-legal-officer",
                 List.of(
                     Map.of(
-                        "taskType", "referCase",
-                        "completionMode", "Auto"
+                        "taskType", REFER_CASE_TASK,
+                        "completionMode", AUTO_COMPLETE_MODE
                     ),
-                    Map.of()
+                    Map.of(
+                        "taskType", PROCESS_FURTHER_EVIDENCE_TASK,
+                        "completionMode", AUTO_COMPLETE_MODE
+                    )
                 )
             ),
             Arguments.of(
                 "caseworker-edit-cica-case-details",
                 List.of(
                     Map.of(
-                        "taskType", "vetNewCaseDocuments",
-                        "completionMode", "Auto"
-                    ),
-                    Map.of()
+                        "taskType", VET_NEW_CASE_DOCUMENTS_TASK,
+                        "completionMode", AUTO_COMPLETE_MODE
+                    )
                 )
             ),
             Arguments.of(
                 "caseworker-case-built",
                 List.of(
                     Map.of(
-                        "taskType", "vetNewCaseDocuments",
-                        "completionMode", "Auto"
-                    ),
-                    Map.of()
+                        "taskType", VET_NEW_CASE_DOCUMENTS_TASK,
+                        "completionMode", AUTO_COMPLETE_MODE
+                    )
                 )
             ),
             Arguments.of(
                 "create-draft-order",
                 List.of(
                     Map.of(
-                        "taskType", "reviewNewCaseAndProvideDirectionsLO",
-                        "completionMode", "Auto"
+                        "taskType", REVIEW_NEW_CASE_PROVIDE_DIR_LO_TASK,
+                        "completionMode", AUTO_COMPLETE_MODE
                     ),
                     Map.of(
-                        "taskType", "reviewTimeExtensionRequestLO",
-                        "completionMode", "Auto"
+                        "taskType", REVIEW_TIME_EXT_REQ_LO_TASK,
+                        "completionMode", AUTO_COMPLETE_MODE
                     ),
                     Map.of(
-                        "taskType", "reviewStrikeOutRequestLO",
-                        "completionMode", "Auto"
+                        "taskType", REVIEW_STRIKE_OUT_REQ_LO_TASK,
+                        "completionMode", AUTO_COMPLETE_MODE
                     ),
                     Map.of(
-                        "taskType", "reviewStayRequestLO",
-                        "completionMode", "Auto"
+                        "taskType", REVIEW_STAY_REQ_LO_TASK,
+                        "completionMode", AUTO_COMPLETE_MODE
                     ),
                     Map.of(
-                        "taskType", "reviewListingDirectionsLO",
-                        "completionMode", "Auto"
+                        "taskType", REVIEW_LISTING_DIR_LO_TASK,
+                        "completionMode", AUTO_COMPLETE_MODE
                     ),
                     Map.of(
-                        "taskType", "reviewWithdrawalRequestLO",
-                        "completionMode", "Auto"
+                        "taskType", REVIEW_WITHDRAWAL_REQ_LO_TASK,
+                        "completionMode", AUTO_COMPLETE_MODE
                     ),
                     Map.of(
-                        "taskType", "reviewRule27RequestLO",
-                        "completionMode", "Auto"
+                        "taskType", REVIEW_RULE27_REQ_LO_TASK,
+                        "completionMode", AUTO_COMPLETE_MODE
                     ),
                     Map.of(
-                        "taskType", "reviewListCaseLO",
-                        "completionMode", "Auto"
+                        "taskType", REVIEW_LIST_CASE_LO_TASK,
+                        "completionMode", AUTO_COMPLETE_MODE
                     ),
                     Map.of(
-                        "taskType", "reviewOtherRequestLO",
-                        "completionMode", "Auto"
+                        "taskType", REVIEW_OTHER_REQ_LO_TASK,
+                        "completionMode", AUTO_COMPLETE_MODE
                     ),
                     Map.of(
-                        "taskType", "reviewListCaseWithin5DaysLO",
-                        "completionMode", "Auto"
+                        "taskType", REVIEW_LIST_CASE_WITHIN_5DAYS_LO_TASK,
+                        "completionMode", AUTO_COMPLETE_MODE
                     ),
                     Map.of(
-                        "taskType", "reviewPostponementRequestLO",
-                        "completionMode", "Auto"
+                        "taskType", REVIEW_POSTPONEMENT_REQ_LO_TASK,
+                        "completionMode", AUTO_COMPLETE_MODE
                     ),
                     Map.of(
-                        "taskType", "reviewReinstatementRequestLO",
-                        "completionMode", "Auto"
+                        "taskType", REVIEW_REINSTATEMENT_REQ_LO_TASK,
+                        "completionMode", AUTO_COMPLETE_MODE
                     ),
                     Map.of(
-                        "taskType", "reviewListCaseWithin5DaysJudge",
-                        "completionMode", "Auto"
+                        "taskType", REVIEW_LIST_CASE_WITHIN_5DAYS_JUDGE_TASK,
+                        "completionMode", AUTO_COMPLETE_MODE
                     ),
                     Map.of(
-                        "taskType", "reviewPostponementRequestJudge",
-                        "completionMode", "Auto"
+                        "taskType", REVIEW_POSTPONEMENT_REQ_JUDGE_TASK,
+                        "completionMode", AUTO_COMPLETE_MODE
                     ),
                     Map.of(
-                        "taskType", "reviewCorrectionsRequest",
-                        "completionMode", "Auto"
+                        "taskType", REVIEW_CORRECTIONS_REQ_TASK,
+                        "completionMode", AUTO_COMPLETE_MODE
                     ),
                     Map.of(
-                        "taskType", "reviewWrittenReasonsRequest",
-                        "completionMode", "Auto"
+                        "taskType", REVIEW_WRITTEN_REASONS_REQ_TASK,
+                        "completionMode", AUTO_COMPLETE_MODE
                     ),
                     Map.of(
-                        "taskType", "reviewReinstatementRequestJudge",
-                        "completionMode", "Auto"
+                        "taskType", REVIEW_REINSTATEMENT_REQ_JUDGE_TASK,
+                        "completionMode", AUTO_COMPLETE_MODE
                     ),
                     Map.of(
-                        "taskType", "reviewSetAsideRequest",
-                        "completionMode", "Auto"
+                        "taskType", REVIEW_SET_ASIDE_REQ_TASK,
+                        "completionMode", AUTO_COMPLETE_MODE
                     ),
                     Map.of(
-                        "taskType", "reviewStayRequestJudge",
-                        "completionMode", "Auto"
+                        "taskType", REVIEW_STAY_REQ_JUDGE_TASK,
+                        "completionMode", AUTO_COMPLETE_MODE
                     ),
                     Map.of(
-                        "taskType", "reviewNewCaseAndProvideDirectionsJudge",
-                        "completionMode", "Auto"
+                        "taskType", REVIEW_NEW_CASE_PROVIDE_DIR_JUDGE_TASK,
+                        "completionMode", AUTO_COMPLETE_MODE
                     ),
                     Map.of(
-                        "taskType", "reviewOtherRequestJudge",
-                        "completionMode", "Auto"
+                        "taskType", REVIEW_OTHER_REQ_JUDGE_TASK,
+                        "completionMode", AUTO_COMPLETE_MODE
                     ),
                     Map.of(
-                        "taskType", "reviewWithdrawalRequestJudge",
-                        "completionMode", "Auto"
+                        "taskType", REVIEW_WITHDRAWAL_REQ_JUDGE_TASK,
+                        "completionMode", AUTO_COMPLETE_MODE
                     ),
                     Map.of(
-                        "taskType", "reviewRule27RequestJudge",
-                        "completionMode", "Auto"
+                        "taskType", REVIEW_RULE27_REQ_JUDGE_TASK,
+                        "completionMode", AUTO_COMPLETE_MODE
                     ),
                     Map.of(
-                        "taskType", "reviewListingDirectionsJudge",
-                        "completionMode", "Auto"
+                        "taskType", REVIEW_LISTING_DIR_JUDGE_TASK,
+                        "completionMode", AUTO_COMPLETE_MODE
                     ),
                     Map.of(
-                        "taskType", "reviewListCaseJudge",
-                        "completionMode", "Auto"
+                        "taskType", REVIEW_LIST_CASE_JUDGE_TASK,
+                        "completionMode", AUTO_COMPLETE_MODE
                     ),
                     Map.of(
-                        "taskType", "reviewStrikeOutRequestJudge",
-                        "completionMode", "Auto"
+                        "taskType", REVIEW_STRIKE_OUT_REQ_JUDGE_TASK,
+                        "completionMode", AUTO_COMPLETE_MODE
                     ),
                     Map.of(
-                        "taskType", "reviewTimeExtensionRequestJudge",
-                        "completionMode", "Auto"
-                    ),
-                    Map.of()
+                        "taskType", REVIEW_TIME_EXT_REQ_JUDGE_TASK,
+                        "completionMode", AUTO_COMPLETE_MODE
+                    )
                 )
             ),
             Arguments.of(
                 "caseworker-update-dss-application",
                 List.of(
                     Map.of(
-                        "taskType", "followUpNoncomplianceOfDirections",
-                        "completionMode", "Auto"
+                        "taskType", FOLLOW_UP_NONCOMPLIANCE_OF_DIR_TASK,
+                        "completionMode", AUTO_COMPLETE_MODE
+                    )
+                )
+            ),
+            Arguments.of(
+                "edit-case",
+                List.of(
+                    Map.of(
+                        "taskType", REGISTER_NEW_CASE_TASK,
+                        "completionMode", AUTO_COMPLETE_MODE
+                    ),
+                    Map.of(
+                        "taskType", PROCESS_FURTHER_EVIDENCE_TASK,
+                        "completionMode", AUTO_COMPLETE_MODE
+                    )
+                )
+            ),
+            Arguments.of(
+                "caseworker-amend-document",
+                List.of(
+                    Map.of(
+                        "taskType", PROCESS_FURTHER_EVIDENCE_TASK,
+                        "completionMode", AUTO_COMPLETE_MODE
+                    )
+                )
+            ),
+            Arguments.of(
+                "createBundle",
+                List.of(
+                    Map.of(
+                        "taskType", STITCH_COLLATE_HEARING_BUNDLE_TASK,
+                        "completionMode", AUTO_COMPLETE_MODE
                     )
                 )
             )
         );
     }
+
+    @Test
+    void if_this_test_fails_needs_updating_with_your_changes() {
+        //The purpose of this test is to prevent adding new rows without being tested
+        DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
+        assertThat(logic.getInputs().size(), is(1));
+        assertThat(logic.getOutputs().size(), is(2));
+        assertThat(logic.getRules().size(), is(50));
+    }
+
     @ParameterizedTest(name = "event id: {0}")
     @MethodSource("scenarioProvider")
     void given_event_ids_should_evaluate_dmn(String eventId, List<Map<String, String>> expectation) {
@@ -301,11 +392,4 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
         MatcherAssert.assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
     }
 
-    @Test
-    void if_this_test_fails_needs_updating_with_your_changes() {
-
-        //The purpose of this test is to prevent adding new rows without being tested
-        DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(48));
-    }
 }

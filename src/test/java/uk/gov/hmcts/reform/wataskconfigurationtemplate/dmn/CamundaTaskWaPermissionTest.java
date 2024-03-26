@@ -23,8 +23,68 @@ import static java.util.Arrays.asList;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static uk.gov.hmcts.reform.wataskconfigurationtemplate.DmnDecisionTable.WA_TASK_PERMISSIONS_ST_CIC_CRIMINALINJURIESCOMPENSATION;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.COMPLETE_HEARING_OUTCOME_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.FOLLOW_UP_NONCOMPLIANCE_OF_DIR_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.ISSUE_DECISION_NOTICE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_CASE_WITHDRAWAL_DIR_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_CORRECTIONS_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_DIR_RELISTED_CASE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_DIR_RETURNED_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_FURTHER_EVIDENCE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_LISTING_DIR_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_WRITTEN_REASONS_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_TIME_EXT_DIR_RETURNED_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_STRIKE_OUT_DIR_RETURNED_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_STAY_DIR_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_SET_ASIDE_DIR_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_RULE27_DECISION_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_REINSTATEMENT_DECISION_NOTICE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_POSTPONEMENT_DIR_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_OTHER_DIR_RETURNED_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_DIR_RELISTED_CASE_WITHIN_5DAYS_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REFER_CASE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REGISTER_NEW_CASE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.ROLE_CATEGORY_ADMIN;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.ROLE_CATEGORY_CTSC;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.ROLE_CATEGORY_JUDICIAL;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.ROLE_CATEGORY_LO;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_NEW_CASE_PROVIDE_DIR_JUDGE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_CORRECTIONS_REQ_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_LISTING_DIR_LO_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_LIST_CASE_JUDGE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_LIST_CASE_LO_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_LIST_CASE_WITHIN_5DAYS_JUDGE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_LIST_CASE_WITHIN_5DAYS_LO_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_LISTING_DIR_JUDGE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_NEW_CASE_PROVIDE_DIR_LO_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_OTHER_REQ_JUDGE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_OTHER_REQ_LO_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_POSTPONEMENT_REQ_JUDGE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_POSTPONEMENT_REQ_LO_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_REINSTATEMENT_REQ_JUDGE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_REINSTATEMENT_REQ_LO_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_RULE27_REQ_JUDGE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_RULE27_REQ_LO_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_SET_ASIDE_REQ_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_SPECIFIC_ACCESS_REQ_ADMIN_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_SPECIFIC_ACCESS_REQ_CTSC_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_SPECIFIC_ACCESS_REQ_JUDICIARY_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_SPECIFIC_ACCESS_REQ_LO_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_STAY_REQ_JUDGE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_STAY_REQ_LO_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_STRIKE_OUT_REQ_JUDGE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_STRIKE_OUT_REQ_LO_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_TIME_EXT_REQ_JUDGE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_TIME_EXT_REQ_LO_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_WITHDRAWAL_REQ_JUDGE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_WITHDRAWAL_REQ_LO_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_WRITTEN_REASONS_REQ_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.STITCH_COLLATE_HEARING_BUNDLE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.VET_NEW_CASE_DOCUMENTS_TASK;
 
 class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
+
+    private static final String DUMMY_CASE_DATA = "someCaseData";
 
     @BeforeAll
     public static void initialization() {
@@ -34,273 +94,273 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
     static Stream<Arguments> scenarioProvider() {
         return Stream.of(
             Arguments.of(
-                "processCaseWithdrawalDirections",
-                "someCaseData",
+                PROCESS_CASE_WITHDRAWAL_DIR_TASK,
+                DUMMY_CASE_DATA,
                 defaultRegionalAdminPermissions()
             ),
             Arguments.of(
-                "processRule27Decision",
-                "someCaseData",
+                PROCESS_RULE27_DECISION_TASK,
+                DUMMY_CASE_DATA,
                 defaultRegionalAdminPermissions()
             ),
             Arguments.of(
-                "processListingDirections",
-                "someCaseData",
+                PROCESS_LISTING_DIR_TASK,
+                DUMMY_CASE_DATA,
                 defaultRegionalAdminPermissions()
             ),
             Arguments.of(
-                "processDirectionsReListedCase",
-                "someCaseData",
+                PROCESS_DIR_RELISTED_CASE_TASK,
+                DUMMY_CASE_DATA,
                 defaultRegionalAdminPermissions()
             ),
             Arguments.of(
-                "processDirectionsReListedCaseWithin5Days",
-                "someCaseData",
+                PROCESS_DIR_RELISTED_CASE_WITHIN_5DAYS_TASK,
+                DUMMY_CASE_DATA,
                 defaultRegionalAdminPermissions()
             ),
             Arguments.of(
-                "processSetAsideDirections",
-                "someCaseData",
+                PROCESS_SET_ASIDE_DIR_TASK,
+                DUMMY_CASE_DATA,
                 defaultRegionalAdminPermissions()
             ),
             Arguments.of(
-                "processCorrections",
-                "someCaseData",
+                PROCESS_CORRECTIONS_TASK,
+                DUMMY_CASE_DATA,
                 defaultRegionalAdminPermissions()
             ),
             Arguments.of(
-                "processDirectionsReturned",
-                "someCaseData",
+                PROCESS_DIR_RETURNED_TASK,
+                DUMMY_CASE_DATA,
                 defaultRegionalAdminPermissions()
             ),
             Arguments.of(
-                "processPostponementDirections",
-                "someCaseData",
+                PROCESS_POSTPONEMENT_DIR_TASK,
+                DUMMY_CASE_DATA,
                 defaultAdminWithCompletePermissions()
             ),
             Arguments.of(
-                "processFurtherEvidence",
-                "someCaseData",
+                PROCESS_FURTHER_EVIDENCE_TASK,
+                DUMMY_CASE_DATA,
                 defaultAdminWithCompletePermissions()
             ),
             Arguments.of(
-                "processTimeExtensionDirectionsReturned",
-                "someCaseData",
+                PROCESS_TIME_EXT_DIR_RETURNED_TASK,
+                DUMMY_CASE_DATA,
                 defaultRegionalAdminPermissions()
             ),
             Arguments.of(
-                "processReinstatementDecisionNotice",
-                "someCaseData",
+                PROCESS_REINSTATEMENT_DECISION_NOTICE_TASK,
+                DUMMY_CASE_DATA,
                 defaultRegionalAdminPermissions()
             ),
             Arguments.of(
-                "processOtherDirectionsReturned",
-                "someCaseData",
+                PROCESS_OTHER_DIR_RETURNED_TASK,
+                DUMMY_CASE_DATA,
                 defaultRegionalAdminPermissions()
             ),
             Arguments.of(
-                "processWrittenReasons",
-                "someCaseData",
+                PROCESS_WRITTEN_REASONS_TASK,
+                DUMMY_CASE_DATA,
                 defaultRegionalAdminPermissions()
             ),
             Arguments.of(
-                "processStrikeOutDirectionsReturned",
-                "someCaseData",
+                PROCESS_STRIKE_OUT_DIR_RETURNED_TASK,
+                DUMMY_CASE_DATA,
                 defaultRegionalAdminPermissions()
             ),
             Arguments.of(
-                "processStayDirections",
-                "someCaseData",
+                PROCESS_STAY_DIR_TASK,
+                DUMMY_CASE_DATA,
                 defaultRegionalAdminPermissions()
             ),
             Arguments.of(
-                "issueDecisionNotice",
-                "someCaseData",
+                ISSUE_DECISION_NOTICE_TASK,
+                DUMMY_CASE_DATA,
                 defaultRegionalAdminPermissions()
             ),
             Arguments.of(
-                "completeHearingOutcome",
-                "someCaseData",
+                COMPLETE_HEARING_OUTCOME_TASK,
+                DUMMY_CASE_DATA,
                 defaultRegionalAdminPermissions()
             ),
             Arguments.of(
-                "referCase",
-                "someCaseData",
+                REFER_CASE_TASK,
+                DUMMY_CASE_DATA,
                 defaultRegionalAdminPermissions()
             ),
             Arguments.of(
-                "vetNewCaseDocuments",
-                "someCaseData",
+                VET_NEW_CASE_DOCUMENTS_TASK,
+                DUMMY_CASE_DATA,
                 defaultRegionalAdminPermissions()
             ),
             Arguments.of(
-                "reviewNewCaseAndProvideDirectionsLO",
-                "someCaseData",
+                REVIEW_NEW_CASE_PROVIDE_DIR_LO_TASK,
+                DUMMY_CASE_DATA,
                 defaultLegalOperationsPermissions()
             ),
             Arguments.of(
-                "reviewTimeExtensionRequestLO",
-                "someCaseData",
+                REVIEW_TIME_EXT_REQ_LO_TASK,
+                DUMMY_CASE_DATA,
                 defaultLegalOperationsPermissions()
             ),
             Arguments.of(
-                "reviewStrikeOutRequestLO",
-                "someCaseData",
+                REVIEW_STRIKE_OUT_REQ_LO_TASK,
+                DUMMY_CASE_DATA,
                 defaultLegalOperationsPermissions()
             ),
             Arguments.of(
-                "reviewStayRequestLO",
-                "someCaseData",
+                REVIEW_STAY_REQ_LO_TASK,
+                DUMMY_CASE_DATA,
                 defaultLegalOperationsPermissions()
             ),
             Arguments.of(
-                "reviewListingDirectionsLO",
-                "someCaseData",
+                REVIEW_LISTING_DIR_LO_TASK,
+                DUMMY_CASE_DATA,
                 defaultLegalOperationsPermissions()
             ),
             Arguments.of(
-                "reviewWithdrawalRequestLO",
-                "someCaseData",
+                REVIEW_WITHDRAWAL_REQ_LO_TASK,
+                DUMMY_CASE_DATA,
                 defaultLegalOperationsPermissions()
             ),
             Arguments.of(
-                "reviewRule27RequestLO",
-                "someCaseData",
+                REVIEW_RULE27_REQ_LO_TASK,
+                DUMMY_CASE_DATA,
                 defaultLegalOperationsPermissions()
             ),
             Arguments.of(
-                "reviewListCaseLO",
-                "someCaseData",
+                REVIEW_LIST_CASE_LO_TASK,
+                DUMMY_CASE_DATA,
                 defaultLegalOperationsPermissions()
             ),
             Arguments.of(
-                "reviewOtherRequestLO",
-                "someCaseData",
+                REVIEW_OTHER_REQ_LO_TASK,
+                DUMMY_CASE_DATA,
                 defaultLegalOperationsPermissions()
             ),
             Arguments.of(
-                "reviewListCaseWithin5DaysLO",
-                "someCaseData",
+                REVIEW_LIST_CASE_WITHIN_5DAYS_LO_TASK,
+                DUMMY_CASE_DATA,
                 defaultLegalOperationsPermissions()
             ),
             Arguments.of(
-                "reviewPostponementRequestLO",
-                "someCaseData",
+                REVIEW_POSTPONEMENT_REQ_LO_TASK,
+                DUMMY_CASE_DATA,
                 defaultLegalOperationsPermissions()
             ),
             Arguments.of(
-                "reviewReinstatementRequestLO",
-                "someCaseData",
+                REVIEW_REINSTATEMENT_REQ_LO_TASK,
+                DUMMY_CASE_DATA,
                 defaultLegalOperationsPermissions()
             ),
             Arguments.of(
-                "reviewListCaseWithin5DaysJudge",
-                "someCaseData",
+                REVIEW_LIST_CASE_WITHIN_5DAYS_JUDGE_TASK,
+                DUMMY_CASE_DATA,
                 defaultJudicialPermissions()
             ),
             Arguments.of(
-                "reviewPostponementRequestJudge",
-                "someCaseData",
+                REVIEW_POSTPONEMENT_REQ_JUDGE_TASK,
+                DUMMY_CASE_DATA,
                 defaultJudicialPermissions()
             ),
             Arguments.of(
-                "reviewCorrectionsRequest",
-                "someCaseData",
+                REVIEW_CORRECTIONS_REQ_TASK,
+                DUMMY_CASE_DATA,
                 defaultJudicialPermissions()
             ),
             Arguments.of(
-                "reviewWrittenReasonsRequest",
-                "someCaseData",
+                REVIEW_WRITTEN_REASONS_REQ_TASK,
+                DUMMY_CASE_DATA,
                 defaultJudicialPermissions()
             ),
             Arguments.of(
-                "reviewReinstatementRequestJudge",
-                "someCaseData",
+                REVIEW_REINSTATEMENT_REQ_JUDGE_TASK,
+                DUMMY_CASE_DATA,
                 defaultJudicialPermissions()
             ),
             Arguments.of(
-                "reviewSetAsideRequest",
-                "someCaseData",
+                REVIEW_SET_ASIDE_REQ_TASK,
+                DUMMY_CASE_DATA,
                 defaultJudicialPermissions()
             ),
             Arguments.of(
-                "reviewStayRequestJudge",
-                "someCaseData",
+                REVIEW_STAY_REQ_JUDGE_TASK,
+                DUMMY_CASE_DATA,
                 defaultJudicialPermissions()
             ),
             Arguments.of(
-                "reviewNewCaseAndProvideDirectionsJudge",
-                "someCaseData",
+                REVIEW_NEW_CASE_PROVIDE_DIR_JUDGE_TASK,
+                DUMMY_CASE_DATA,
                 defaultJudicialPermissions()
             ),
             Arguments.of(
-                "reviewOtherRequestJudge",
-                "someCaseData",
+                REVIEW_OTHER_REQ_JUDGE_TASK,
+                DUMMY_CASE_DATA,
                 defaultJudicialPermissions()
             ),
             Arguments.of(
-                "reviewWithdrawalRequestJudge",
-                "someCaseData",
+                REVIEW_WITHDRAWAL_REQ_JUDGE_TASK,
+                DUMMY_CASE_DATA,
                 defaultJudicialPermissions()
             ),
             Arguments.of(
-                "reviewRule27RequestJudge",
-                "someCaseData",
+                REVIEW_RULE27_REQ_JUDGE_TASK,
+                DUMMY_CASE_DATA,
                 defaultJudicialPermissions()
             ),
             Arguments.of(
-                "reviewListingDirectionsJudge",
-                "someCaseData",
+                REVIEW_LISTING_DIR_JUDGE_TASK,
+                DUMMY_CASE_DATA,
                 defaultJudicialPermissions()
             ),
             Arguments.of(
-                "reviewListCaseJudge",
-                "someCaseData",
+                REVIEW_LIST_CASE_JUDGE_TASK,
+                DUMMY_CASE_DATA,
                 defaultJudicialPermissions()
             ),
             Arguments.of(
-                "reviewStrikeOutRequestJudge",
-                "someCaseData",
+                REVIEW_STRIKE_OUT_REQ_JUDGE_TASK,
+                DUMMY_CASE_DATA,
                 defaultJudicialPermissions()
             ),
             Arguments.of(
-                "reviewTimeExtensionRequestJudge",
-                "someCaseData",
+                REVIEW_TIME_EXT_REQ_JUDGE_TASK,
+                DUMMY_CASE_DATA,
                 defaultJudicialPermissions()
             ),
             Arguments.of(
-                "reviewSpecificAccessRequestJudiciary",
-                "someCaseData",
+                REVIEW_SPECIFIC_ACCESS_REQ_JUDICIARY_TASK,
+                DUMMY_CASE_DATA,
                 defaultSpecificAccessRequestJudicialPermissions()
             ),
             Arguments.of(
-                "reviewSpecificAccessRequestLegalOps",
-                "someCaseData",
+                REVIEW_SPECIFIC_ACCESS_REQ_LO_TASK,
+                DUMMY_CASE_DATA,
                 defaultSpecificAccessRequestLegalOpsPermissions()
             ),
             Arguments.of(
-                "reviewSpecificAccessRequestAdmin",
-                "someCaseData",
+                REVIEW_SPECIFIC_ACCESS_REQ_ADMIN_TASK,
+                DUMMY_CASE_DATA,
                 defaultSpecificAccessRequestAdminPermissions()
             ),
             Arguments.of(
-                "reviewSpecificAccessRequestCTSC",
-                "someCaseData",
+                REVIEW_SPECIFIC_ACCESS_REQ_CTSC_TASK,
+                DUMMY_CASE_DATA,
                 defaultSpecificAccessRequestCTSCPermissions()
             ),
             Arguments.of(
-                "followUpNoncomplianceOfDirections",
-                "someCaseData",
+                FOLLOW_UP_NONCOMPLIANCE_OF_DIR_TASK,
+                DUMMY_CASE_DATA,
                 defaultRegionalAdminPermissions()
             ),
             Arguments.of(
-                "registerNewCase",
-                "someCaseData",
+                REGISTER_NEW_CASE_TASK,
+                DUMMY_CASE_DATA,
                 defaultRegionalAdminPermissions()
             ),
             Arguments.of(
-                "stitchCollateHearingBundle",
-                "someCaseData",
+                STITCH_COLLATE_HEARING_BUNDLE_TASK,
+                DUMMY_CASE_DATA,
                 defaultRegionalAdminPermissions()
             )
         );
@@ -427,7 +487,7 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
         return Map.of(
             "name", "regional-centre-admin",
             "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign",
-            "roleCategory", "ADMIN",
+            "roleCategory", ROLE_CATEGORY_ADMIN,
             "assignmentPriority", 1,
             "autoAssignable", false
         );
@@ -437,7 +497,7 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
         return Map.of(
             "name", "regional-centre-team-leader",
             "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel",
-            "roleCategory", "ADMIN",
+            "roleCategory", ROLE_CATEGORY_ADMIN,
             "assignmentPriority", 2,
             "autoAssignable", false
         );
@@ -447,7 +507,7 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
         return Map.of(
             "name", "senior-tribunal-caseworker",
             "value", "Read,Own,Claim,Manage,Assign,Unassign,Complete,Cancel",
-            "roleCategory", "LEGAL_OPERATIONS",
+            "roleCategory", ROLE_CATEGORY_LO,
             "assignmentPriority", 1,
             "autoAssignable", false
         );
@@ -457,7 +517,7 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
         return Map.of(
             "name", "tribunal-caseworker",
             "value", "Read,Own,Claim,Assign,Unassign,Complete,Cancel",
-            "roleCategory", "LEGAL_OPERATIONS",
+            "roleCategory", ROLE_CATEGORY_LO,
             "assignmentPriority", 2,
             "autoAssignable", false
         );
@@ -467,7 +527,7 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
         return Map.of(
             "name", "senior-judge",
             "value", "Read,Execute,Claim,Manage,Assign,Unassign,Complete,Cancel",
-            "roleCategory", "JUDICIAL",
+            "roleCategory", ROLE_CATEGORY_JUDICIAL,
             "authorisations", "328",
             "assignmentPriority", 1,
             "autoAssignable", false
@@ -478,7 +538,7 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
         return Map.of(
             "name", "judge",
             "value", "Read,Own,Claim,Assign,Unassign,Complete,Cancel",
-            "roleCategory", "JUDICIAL",
+            "roleCategory", ROLE_CATEGORY_JUDICIAL,
             "authorisations", "328",
             "assignmentPriority", 2,
             "autoAssignable", false
@@ -489,7 +549,7 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
         return Map.of(
             "name", "leadership-judge",
             "value", "Read,Own,Claim,Manage,Assign,Unassign,Complete,Cancel",
-            "roleCategory", "JUDICIAL",
+            "roleCategory", ROLE_CATEGORY_JUDICIAL,
             "authorisations", "328",
             "assignmentPriority", 1,
             "autoAssignable", false
@@ -500,7 +560,7 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
         return Map.of(
             "name", "hearing-centre-team-leader",
             "value", "Read,Own,Claim,Manage,Assign,Unassign,Complete,Cancel",
-            "roleCategory", "ADMIN",
+            "roleCategory", ROLE_CATEGORY_ADMIN,
             "autoAssignable", false
         );
     }
@@ -509,7 +569,7 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
         return Map.of(
             "name", "ctsc-team-leader",
             "value", "Read,Own,Claim,Manage,Assign,Unassign,Complete,Cancel",
-            "roleCategory", "CTSC",
+            "roleCategory", ROLE_CATEGORY_CTSC,
             "autoAssignable", false
         );
     }
@@ -518,7 +578,7 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
         return Map.of(
             "name", "regional-centre-admin",
             "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Complete",
-            "roleCategory", "ADMIN",
+            "roleCategory", ROLE_CATEGORY_ADMIN,
             "assignmentPriority", 1,
             "autoAssignable", false
         );
@@ -528,7 +588,7 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
         return Map.of(
             "name", "regional-centre-team-leader",
             "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel,Complete",
-            "roleCategory", "ADMIN",
+            "roleCategory", ROLE_CATEGORY_ADMIN,
             "assignmentPriority", 2,
             "autoAssignable", false
         );
