@@ -113,7 +113,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Process Set Aside directions",
                         "workingDaysAllowed", 1,
                         "processCategories", "processSetAsideDirections",
-                        "workType", "decision_making_work",
+                        "workType", "routine_work",
                         "roleCategory", "ADMIN"
                     )
                 )
@@ -125,10 +125,10 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                 List.of(
                     Map.of(
                         "taskId", "processCorrections",
-                        "name", "Process postponement directions",
+                        "name", "Process corrections",
                         "workingDaysAllowed", 3,
                         "processCategories", "processCorrections",
-                        "workType", "decision_making_work",
+                        "workType", "hearing_work",
                         "roleCategory", "ADMIN"
                     )
                 )
@@ -143,7 +143,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Process directions returned",
                         "workingDaysAllowed", 10,
                         "processCategories", "processDirectionsReturned",
-                        "workType", "decision_making_work",
+                        "workType", "routine_work",
                         "roleCategory", "ADMIN"
                     )
                 )
@@ -158,7 +158,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Process postponement directions",
                         "workingDaysAllowed", 1,
                         "processCategories", "processPostponementDirections",
-                        "workType", "decision_making_work",
+                        "workType", "routine_work",
                         "roleCategory", "ADMIN"
                     )
                 )
@@ -173,7 +173,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Process time extension directions returned",
                         "workingDaysAllowed", 1,
                         "processCategories", "processTimeExtensionDirectionsReturned",
-                        "workType", "decision_making_work",
+                        "workType", "routine_work",
                         "roleCategory", "ADMIN"
                     )
                 )
@@ -188,7 +188,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Process Reinstatement decision notice",
                         "workingDaysAllowed", 5,
                         "processCategories", "processReinstatementDecisionNotice",
-                        "workType", "decision_making_work",
+                        "workType", "routine_work",
                         "roleCategory", "ADMIN"
                     )
                 )
@@ -218,7 +218,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Process Written Reasons",
                         "workingDaysAllowed", 3,
                         "processCategories", "processWrittenReasons",
-                        "workType", "decision_making_work",
+                        "workType", "routine_work",
                         "roleCategory", "ADMIN"
                     )
                 )
@@ -466,7 +466,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "refer-to-legal-officer",
                 "AwaitingHearing",
-                Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Reinstatement")),
+                Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Reinstatement request")),
                 List.of(
                     Map.of(
                         "name", "Review Reinstatement request - Legal Officer",
@@ -556,7 +556,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "refer-to-judge",
                 "CaseClosed",
-                Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Reinstatement")),
+                Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Reinstatement request")),
                 List.of(
                     Map.of(
                         "taskId", "reviewReinstatementRequestJudge",
