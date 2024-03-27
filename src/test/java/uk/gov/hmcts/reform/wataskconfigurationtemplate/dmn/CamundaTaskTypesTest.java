@@ -28,7 +28,6 @@ import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskC
 import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_DIR_RETURNED_TASK;
 import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_FURTHER_EVIDENCE_TASK;
 import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_LISTING_DIR_TASK;
-import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_WRITTEN_REASONS_TASK;
 import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_TIME_EXT_DIR_RETURNED_TASK;
 import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_STRIKE_OUT_DIR_RETURNED_TASK;
 import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_STAY_DIR_TASK;
@@ -38,9 +37,9 @@ import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskC
 import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_POSTPONEMENT_DIR_TASK;
 import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_OTHER_DIR_RETURNED_TASK;
 import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_DIR_RELISTED_CASE_WITHIN_5DAYS_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_WRITTEN_REASONS_TASK;
 import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REFER_CASE_TASK;
 import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REGISTER_NEW_CASE_TASK;
-import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_NEW_CASE_PROVIDE_DIR_JUDGE_TASK;
 import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_CORRECTIONS_REQ_TASK;
 import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_LISTING_DIR_LO_TASK;
 import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_LIST_CASE_JUDGE_TASK;
@@ -48,6 +47,7 @@ import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskC
 import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_LIST_CASE_WITHIN_5DAYS_JUDGE_TASK;
 import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_LIST_CASE_WITHIN_5DAYS_LO_TASK;
 import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_LISTING_DIR_JUDGE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_NEW_CASE_PROVIDE_DIR_JUDGE_TASK;
 import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_NEW_CASE_PROVIDE_DIR_LO_TASK;
 import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_OTHER_REQ_JUDGE_TASK;
 import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_OTHER_REQ_LO_TASK;
