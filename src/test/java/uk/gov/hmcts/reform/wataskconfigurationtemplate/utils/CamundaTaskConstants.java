@@ -2,6 +2,9 @@ package uk.gov.hmcts.reform.wataskconfigurationtemplate.utils;
 
 public class CamundaTaskConstants {
 
+    private CamundaTaskConstants() {
+    }
+
     public static final String CASE_NAME = "caseName";
     public static final String CASE_MANAGEMENT_CATEGORY = "caseManagementCategory";
     public static final String REGION = "region";
