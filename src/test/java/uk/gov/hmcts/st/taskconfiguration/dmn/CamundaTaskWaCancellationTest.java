@@ -11,7 +11,6 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import uk.gov.hmcts.st.taskconfiguration.DmnDecisionTable;
 import uk.gov.hmcts.st.taskconfiguration.DmnDecisionTableBaseUnitTest;
-import uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants;
 import uk.gov.hmcts.st.taskconfiguration.utils.CancellationScenarioBuilder;
 
 import java.util.List;
@@ -20,6 +19,7 @@ import java.util.stream.Stream;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.COMPLETE_HEARING_OUTCOME_TASK;
 
 class CamundaTaskWaCancellationTest extends DmnDecisionTableBaseUnitTest {
 
@@ -34,10 +34,10 @@ class CamundaTaskWaCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancelAll()
                 .build(),
             CancellationScenarioBuilder.event("caseworker-postpone-hearing")
-                .cancel(CamundaTaskConstants.COMPLETE_HEARING_OUTCOME_TASK)
+                .cancel(COMPLETE_HEARING_OUTCOME_TASK)
                 .build(),
             CancellationScenarioBuilder.event("caseworker-cancel-hearing")
-                .cancel(CamundaTaskConstants.COMPLETE_HEARING_OUTCOME_TASK)
+                .cancel(COMPLETE_HEARING_OUTCOME_TASK)
                 .build()
         );
     }
