@@ -1598,7 +1598,7 @@
       </rule>
       <rule id="DecisionRule_0z8qogg">
         <inputEntry id="UnaryTests_1xd3rrh">
-          <text>"createBundle"</text>
+          <text>"caseworker-record-listing"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_09lrk6c">
           <text>"AwaitingHearing"</text>
