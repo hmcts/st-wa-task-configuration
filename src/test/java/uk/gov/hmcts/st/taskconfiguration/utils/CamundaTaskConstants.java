@@ -1,4 +1,4 @@
-package uk.gov.hmcts.reform.wataskconfigurationtemplate.utils;
+package uk.gov.hmcts.st.taskconfiguration.utils;
 
 public class CamundaTaskConstants {
 

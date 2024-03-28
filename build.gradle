@@ -131,10 +131,10 @@ jacocoTestReport {
 
 pitest {
   junit5PluginVersion = '0.12'
-  targetClasses = ['uk.gov.hmcts.reform.wataskconfigurationtemplate.*']
+  targetClasses = ['uk.gov.hmcts.st.wataskconfiguration.*']
   excludedClasses = [
-    'uk.gov.hmcts.reform.wataskconfigurationtemplate.config.*',
-    'uk.gov.hmcts.reform.wataskconfigurationtemplate.Application'
+    'uk.gov.hmcts.st.wataskconfiguration.config.*',
+    'uk.gov.hmcts.st.wataskconfiguration.Application'
   ]
   threads = 10
   outputFormats = ['XML', 'HTML']
@@ -295,7 +295,7 @@ dependencies {
 
 }
 
-mainClassName = 'uk.gov.hmcts.reform.wataskconfigurationtemplate.Application'
+mainClassName = 'uk.gov.hmcts.st.taskconfiguration.Application'
 
 bootJar {
   getArchiveFileName().set(provider {

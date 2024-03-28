@@ -1,4 +1,4 @@
-package uk.gov.hmcts.reform.wataskconfigurationtemplate;
+package uk.gov.hmcts.st.taskconfiguration;
 
 import com.fasterxml.jackson.annotation.JsonValue;
 

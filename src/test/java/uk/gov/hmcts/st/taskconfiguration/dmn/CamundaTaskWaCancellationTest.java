@@ -1,4 +1,4 @@
-package uk.gov.hmcts.reform.wataskconfigurationtemplate.dmn;
+package uk.gov.hmcts.st.taskconfiguration.dmn;
 
 import org.camunda.bpm.dmn.engine.DmnDecisionTableResult;
 import org.camunda.bpm.dmn.engine.impl.DmnDecisionTableImpl;
@@ -9,7 +9,10 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
-import uk.gov.hmcts.reform.wataskconfigurationtemplate.DmnDecisionTableBaseUnitTest;
+import uk.gov.hmcts.st.taskconfiguration.DmnDecisionTableBaseUnitTest;
+import uk.gov.hmcts.st.taskconfiguration.DmnDecisionTable;
+import uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants;
+import uk.gov.hmcts.st.taskconfiguration.utils.CancellationScenarioBuilder;
 
 import java.util.List;
 import java.util.Map;
@@ -17,27 +20,24 @@ import java.util.stream.Stream;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static uk.gov.hmcts.reform.wataskconfigurationtemplate.DmnDecisionTable.WA_TASK_CANCELLATION_ST_CIC_CRIMINALINJURIESCOMPENSATION;
-import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.COMPLETE_HEARING_OUTCOME_TASK;
-import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CancellationScenarioBuilder.event;
 
 class CamundaTaskWaCancellationTest extends DmnDecisionTableBaseUnitTest {
 
     @BeforeAll
     public static void initialization() {
-        CURRENT_DMN_DECISION_TABLE = WA_TASK_CANCELLATION_ST_CIC_CRIMINALINJURIESCOMPENSATION;
+        CURRENT_DMN_DECISION_TABLE = DmnDecisionTable.WA_TASK_CANCELLATION_ST_CIC_CRIMINALINJURIESCOMPENSATION;
     }
 
     public static Stream<Arguments> scenarioProvider() {
         return Stream.of(
-            event("caseworker-close-the-case")
+            CancellationScenarioBuilder.event("caseworker-close-the-case")
                 .cancelAll()
                 .build(),
-            event("caseworker-postpone-hearing")
-                .cancel(COMPLETE_HEARING_OUTCOME_TASK)
+            CancellationScenarioBuilder.event("caseworker-postpone-hearing")
+                .cancel(CamundaTaskConstants.COMPLETE_HEARING_OUTCOME_TASK)
                 .build(),
-            event("caseworker-cancel-hearing")
-                .cancel(COMPLETE_HEARING_OUTCOME_TASK)
+            CancellationScenarioBuilder.event("caseworker-cancel-hearing")
+                .cancel(CamundaTaskConstants.COMPLETE_HEARING_OUTCOME_TASK)
                 .build()
         );
     }
