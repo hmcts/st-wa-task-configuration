@@ -837,10 +837,18 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "createBundle",
+                "caseworker-record-listing",
                 "AwaitingHearing",
                 Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Hearing Bundle")),
                 List.of(
+                    Map.of(
+                        "taskId", COMPLETE_HEARING_OUTCOME_TASK,
+                        "name", "Complete Hearing Outcome",
+                        "workingDaysAllowed", 5,
+                        "processCategories", COMPLETE_HEARING_OUTCOME_TASK,
+                        "workType", HEARING_WORK_TYPE,
+                        "roleCategory", ROLE_CATEGORY_ADMIN
+                    ),
                     Map.of(
                         "taskId", STITCH_COLLATE_HEARING_BUNDLE_TASK,
                         "name", "Stitch/collate hearing bundle",
