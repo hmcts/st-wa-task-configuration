@@ -361,6 +361,15 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "contact-parties",
+                List.of(
+                    Map.of(
+                        "taskType", PROCESS_FURTHER_EVIDENCE_TASK,
+                        "completionMode", AUTO_COMPLETE_MODE
+                    )
+                )
+            ),
+            Arguments.of(
                 "createBundle",
                 List.of(
                     Map.of(
