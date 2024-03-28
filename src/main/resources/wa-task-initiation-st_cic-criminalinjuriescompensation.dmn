@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.20.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.21.0">
   <decision id="wa-task-initiation-st_cic-criminalinjuriescompensation" name="Task initiation DMN">
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT">
       <input id="Input_1" label="Event Id" camunda:inputVariable="eventId">
@@ -12,7 +12,7 @@
           <text></text>
         </inputExpression>
       </input>
-      <input id="InputClause_0oaaasz" label="Referal Type" biodi:width="305" camunda:inputVariable="referalType">
+      <input id="InputClause_0oaaasz" label="Referral Type" biodi:width="305" camunda:inputVariable="referralType">
         <inputExpression id="LiteralExpression_0asduwj" typeRef="string">
           <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.cicCaseReferralTypeForWA
             != null) then
@@ -609,7 +609,7 @@
           <text>"citizen-cic-submit-dss-application"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0m6q89k">
-          <text></text>
+          <text>"Submitted"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1cjbq6p">
           <text></text>
@@ -1540,7 +1540,7 @@
           <text>"Draft"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0ddb6if">
-          <text>"New case"</text>
+          <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_195ab9o">
           <text>"registerNewCase"</text>
