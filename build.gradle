@@ -149,8 +149,8 @@ project.tasks['sonarqube'].dependsOn test, integration, jacocoTestReport
 
 sonarqube {
   properties {
-    property "sonar.projectName", "st-task-configuration"
-    property "sonar.projectKey", "st-task-configuration"
+    property "sonar.projectName", "st-wa-task-configuration"
+    property "sonar.projectKey", "st-wa-task-configuration"
     property "sonar.coverage.jacoco.xmlReportPaths", "${jacocoTestReport.reports.xml.destination.path}"
     property "sonar.pitest.mode", "reuseReport"
     property "sonar.pitest.reportsDirectory", "build/reports/pitest"
