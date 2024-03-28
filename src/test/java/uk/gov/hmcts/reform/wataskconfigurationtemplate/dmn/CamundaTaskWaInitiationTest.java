@@ -18,8 +18,67 @@ import java.util.stream.Stream;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static uk.gov.hmcts.reform.wataskconfigurationtemplate.DmnDecisionTable.WA_TASK_INITIATION_ST_CIC_CRIMINALINJURIESCOMPENSATION;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.APPLICATION_WORK_TYPE;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.COMPLETE_HEARING_OUTCOME_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.DECISION_WORK_TYPE;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.FOLLOW_UP_NONCOMPLIANCE_OF_DIR_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.HEARING_WORK_TYPE;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.ISSUE_DECISION_NOTICE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_CASE_WITHDRAWAL_DIR_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_CORRECTIONS_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_DIR_RELISTED_CASE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_DIR_RETURNED_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_FURTHER_EVIDENCE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_LISTING_DIR_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_WRITTEN_REASONS_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_TIME_EXT_DIR_RETURNED_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_STRIKE_OUT_DIR_RETURNED_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_STAY_DIR_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_SET_ASIDE_DIR_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_RULE27_DECISION_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_REINSTATEMENT_DECISION_NOTICE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_POSTPONEMENT_DIR_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_OTHER_DIR_RETURNED_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_DIR_RELISTED_CASE_WITHIN_5DAYS_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PRIORITY_WORK_TYPE;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REFER_CASE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REGISTER_NEW_CASE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.ROLE_CATEGORY_ADMIN;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.ROLE_CATEGORY_JUDICIAL;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.ROLE_CATEGORY_LO;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.ROUTINE_WORK_TYPE;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_NEW_CASE_PROVIDE_DIR_JUDGE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_CORRECTIONS_REQ_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_LISTING_DIR_LO_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_LIST_CASE_JUDGE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_LIST_CASE_LO_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_LIST_CASE_WITHIN_5DAYS_JUDGE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_LIST_CASE_WITHIN_5DAYS_LO_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_LISTING_DIR_JUDGE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_NEW_CASE_PROVIDE_DIR_LO_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_OTHER_REQ_JUDGE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_OTHER_REQ_LO_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_POSTPONEMENT_REQ_JUDGE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_POSTPONEMENT_REQ_LO_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_REINSTATEMENT_REQ_JUDGE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_REINSTATEMENT_REQ_LO_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_RULE27_REQ_JUDGE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_RULE27_REQ_LO_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_SET_ASIDE_REQ_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_STAY_REQ_JUDGE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_STAY_REQ_LO_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_STRIKE_OUT_REQ_JUDGE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_STRIKE_OUT_REQ_LO_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_TIME_EXT_REQ_JUDGE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_TIME_EXT_REQ_LO_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_WITHDRAWAL_REQ_JUDGE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_WITHDRAWAL_REQ_LO_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_WRITTEN_REASONS_REQ_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.STITCH_COLLATE_HEARING_BUNDLE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.VET_NEW_CASE_DOCUMENTS_TASK;
 
 class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
+
     @BeforeAll
     public static void initialization() {
         CURRENT_DMN_DECISION_TABLE = WA_TASK_INITIATION_ST_CIC_CRIMINALINJURIESCOMPENSATION;
@@ -33,12 +92,12 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                 Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Withdrawal request")),
                 List.of(
                     Map.of(
-                        "taskId", "processCaseWithdrawalDirections",
+                        "taskId", PROCESS_CASE_WITHDRAWAL_DIR_TASK,
                         "name", "Process Case Withdrawal Directions",
                         "workingDaysAllowed", 10,
-                        "processCategories", "processCaseWithdrawalDirections",
-                        "workType", "routine_work",
-                        "roleCategory", "ADMIN"
+                        "processCategories", PROCESS_CASE_WITHDRAWAL_DIR_TASK,
+                        "workType", ROUTINE_WORK_TYPE,
+                        "roleCategory", ROLE_CATEGORY_ADMIN
                     )
                 )
             ),
@@ -48,12 +107,12 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                 Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Rule 27 request")),
                 List.of(
                     Map.of(
-                        "taskId", "processRule27Decision",
+                        "taskId", PROCESS_RULE27_DECISION_TASK,
                         "name", "Process Rule 27 decision",
                         "workingDaysAllowed", 5,
-                        "processCategories", "processRule27Decision",
-                        "workType", "routine_work",
-                        "roleCategory", "ADMIN"
+                        "processCategories", PROCESS_RULE27_DECISION_TASK,
+                        "workType", ROUTINE_WORK_TYPE,
+                        "roleCategory", ROLE_CATEGORY_ADMIN
                     )
                 )
             ),
@@ -63,12 +122,12 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                 Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Listing directions")),
                 List.of(
                     Map.of(
-                        "taskId", "processListingDirections",
+                        "taskId", PROCESS_LISTING_DIR_TASK,
                         "name", "Process listing directions",
                         "workingDaysAllowed", 1,
-                        "processCategories", "processListingDirections",
-                        "workType", "routine_work",
-                        "roleCategory", "ADMIN"
+                        "processCategories", PROCESS_LISTING_DIR_TASK,
+                        "workType", ROUTINE_WORK_TYPE,
+                        "roleCategory", ROLE_CATEGORY_ADMIN
                     )
                 )
             ),
@@ -78,12 +137,12 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                 Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Listed case")),
                 List.of(
                     Map.of(
-                        "taskId", "processDirectionsReListedCase",
+                        "taskId", PROCESS_DIR_RELISTED_CASE_TASK,
                         "name", "Process directions re. listed case",
                         "workingDaysAllowed", 1,
-                        "processCategories", "processDirectionsReListedCase",
-                        "workType", "routine_work",
-                        "roleCategory", "ADMIN"
+                        "processCategories", PROCESS_DIR_RELISTED_CASE_TASK,
+                        "workType", ROUTINE_WORK_TYPE,
+                        "roleCategory", ROLE_CATEGORY_ADMIN
                     )
                 )
             ),
@@ -93,13 +152,12 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                 Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Listed case (within 5 days)")),
                 List.of(
                     Map.of(
-                        "taskId", "processDirectionsReListedCaseWithin5Days",
+                        "taskId", PROCESS_DIR_RELISTED_CASE_WITHIN_5DAYS_TASK,
                         "name", "Process directions re. listed case (within 5 days)",
                         "workingDaysAllowed", 1,
-                        "processCategories", "processDirectionsReListedCaseWithin5Days",
-                        "workType", "priority",
-
-                        "roleCategory", "ADMIN"
+                        "processCategories", PROCESS_DIR_RELISTED_CASE_WITHIN_5DAYS_TASK,
+                        "workType", PRIORITY_WORK_TYPE,
+                        "roleCategory", ROLE_CATEGORY_ADMIN
                     )
                 )
             ),
@@ -109,12 +167,12 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                 Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Set aside request")),
                 List.of(
                     Map.of(
-                        "taskId", "processSetAsideDirections",
+                        "taskId", PROCESS_SET_ASIDE_DIR_TASK,
                         "name", "Process Set Aside directions",
                         "workingDaysAllowed", 1,
-                        "processCategories", "processSetAsideDirections",
-                        "workType", "decision_making_work",
-                        "roleCategory", "ADMIN"
+                        "processCategories", PROCESS_SET_ASIDE_DIR_TASK,
+                        "workType", ROUTINE_WORK_TYPE,
+                        "roleCategory", ROLE_CATEGORY_ADMIN
                     )
                 )
             ),
@@ -124,12 +182,12 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                 Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Corrections")),
                 List.of(
                     Map.of(
-                        "taskId", "processCorrections",
-                        "name", "Process postponement directions",
+                        "taskId", PROCESS_CORRECTIONS_TASK,
+                        "name", "Process corrections",
                         "workingDaysAllowed", 3,
-                        "processCategories", "processCorrections",
-                        "workType", "decision_making_work",
-                        "roleCategory", "ADMIN"
+                        "processCategories", PROCESS_CORRECTIONS_TASK,
+                        "workType", HEARING_WORK_TYPE,
+                        "roleCategory", ROLE_CATEGORY_ADMIN
                     )
                 )
             ),
@@ -139,12 +197,12 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                 Map.of("Data", Map.of("cicCaseReferralTypeForWA", "New case")),
                 List.of(
                     Map.of(
-                        "taskId", "processDirectionsReturned",
+                        "taskId", PROCESS_DIR_RETURNED_TASK,
                         "name", "Process directions returned",
                         "workingDaysAllowed", 10,
-                        "processCategories", "processDirectionsReturned",
-                        "workType", "decision_making_work",
-                        "roleCategory", "ADMIN"
+                        "processCategories", PROCESS_DIR_RETURNED_TASK,
+                        "workType", ROUTINE_WORK_TYPE,
+                        "roleCategory", ROLE_CATEGORY_ADMIN
                     )
                 )
             ),
@@ -154,12 +212,12 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                 Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Postponement request")),
                 List.of(
                     Map.of(
-                        "taskId", "processPostponementDirections",
+                        "taskId", PROCESS_POSTPONEMENT_DIR_TASK,
                         "name", "Process postponement directions",
                         "workingDaysAllowed", 1,
-                        "processCategories", "processPostponementDirections",
-                        "workType", "decision_making_work",
-                        "roleCategory", "ADMIN"
+                        "processCategories", PROCESS_POSTPONEMENT_DIR_TASK,
+                        "workType", ROUTINE_WORK_TYPE,
+                        "roleCategory", ROLE_CATEGORY_ADMIN
                     )
                 )
             ),
@@ -169,12 +227,12 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                 Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Time extension request")),
                 List.of(
                     Map.of(
-                        "taskId", "processTimeExtensionDirectionsReturned",
+                        "taskId", PROCESS_TIME_EXT_DIR_RETURNED_TASK,
                         "name", "Process time extension directions returned",
                         "workingDaysAllowed", 1,
-                        "processCategories", "processTimeExtensionDirectionsReturned",
-                        "workType", "decision_making_work",
-                        "roleCategory", "ADMIN"
+                        "processCategories", PROCESS_TIME_EXT_DIR_RETURNED_TASK,
+                        "workType", ROUTINE_WORK_TYPE,
+                        "roleCategory", ROLE_CATEGORY_ADMIN
                     )
                 )
             ),
@@ -184,12 +242,12 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                 Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Reinstatement request")),
                 List.of(
                     Map.of(
-                        "taskId", "processReinstatementDecisionNotice",
+                        "taskId", PROCESS_REINSTATEMENT_DECISION_NOTICE_TASK,
                         "name", "Process Reinstatement decision notice",
                         "workingDaysAllowed", 5,
-                        "processCategories", "processReinstatementDecisionNotice",
-                        "workType", "decision_making_work",
-                        "roleCategory", "ADMIN"
+                        "processCategories", PROCESS_REINSTATEMENT_DECISION_NOTICE_TASK,
+                        "workType", ROUTINE_WORK_TYPE,
+                        "roleCategory", ROLE_CATEGORY_ADMIN
                     )
                 )
             ),
@@ -199,12 +257,12 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                 Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Other")),
                 List.of(
                     Map.of(
-                        "taskId", "processOtherDirectionsReturned",
+                        "taskId", PROCESS_OTHER_DIR_RETURNED_TASK,
                         "name", "Process other directions returned",
                         "workingDaysAllowed", 10,
-                        "processCategories", "processOtherDirectionsReturned",
-                        "workType", "decision_making_work",
-                        "roleCategory", "ADMIN"
+                        "processCategories", PROCESS_OTHER_DIR_RETURNED_TASK,
+                        "workType", DECISION_WORK_TYPE,
+                        "roleCategory", ROLE_CATEGORY_ADMIN
                     )
                 )
             ),
@@ -214,12 +272,12 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                 Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Written reasons request")),
                 List.of(
                     Map.of(
-                        "taskId", "processWrittenReasons",
+                        "taskId", PROCESS_WRITTEN_REASONS_TASK,
                         "name", "Process Written Reasons",
                         "workingDaysAllowed", 3,
-                        "processCategories", "processWrittenReasons",
-                        "workType", "decision_making_work",
-                        "roleCategory", "ADMIN"
+                        "processCategories", PROCESS_WRITTEN_REASONS_TASK,
+                        "workType", ROUTINE_WORK_TYPE,
+                        "roleCategory", ROLE_CATEGORY_ADMIN
                     )
                 )
             ),
@@ -229,12 +287,12 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                 Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Strike out request")),
                 List.of(
                     Map.of(
-                        "taskId", "processStrikeOutDirectionsReturned",
+                        "taskId", PROCESS_STRIKE_OUT_DIR_RETURNED_TASK,
                         "name", "Process strike out directions returned",
                         "workingDaysAllowed", 10,
-                        "processCategories", "processStrikeOutDirectionsReturned",
-                        "workType", "routine_work",
-                        "roleCategory", "ADMIN"
+                        "processCategories", PROCESS_STRIKE_OUT_DIR_RETURNED_TASK,
+                        "workType", ROUTINE_WORK_TYPE,
+                        "roleCategory", ROLE_CATEGORY_ADMIN
                     )
                 )
             ),
@@ -244,12 +302,12 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                 Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Stay request")),
                 List.of(
                     Map.of(
-                        "taskId", "processStayDirections",
+                        "taskId", PROCESS_STAY_DIR_TASK,
                         "name", "Process stay directions",
                         "workingDaysAllowed", 10,
-                        "processCategories", "processStayDirections",
-                        "workType", "routine_work",
-                        "roleCategory", "ADMIN"
+                        "processCategories", PROCESS_STAY_DIR_TASK,
+                        "workType", ROUTINE_WORK_TYPE,
+                        "roleCategory", ROLE_CATEGORY_ADMIN
                     )
                 )
             ),
@@ -259,12 +317,12 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                 null,
                 List.of(
                     Map.of(
-                        "taskId", "issueDecisionNotice",
+                        "taskId", ISSUE_DECISION_NOTICE_TASK,
                         "name", "Issue Decision Notice",
                         "workingDaysAllowed", 1,
-                        "processCategories", "issueDecisionNotice",
-                        "workType", "hearing_work",
-                        "roleCategory", "ADMIN"
+                        "processCategories", ISSUE_DECISION_NOTICE_TASK,
+                        "workType", HEARING_WORK_TYPE,
+                        "roleCategory", ROLE_CATEGORY_ADMIN
                     )
                 )
             ),
@@ -274,12 +332,12 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                 null,
                 List.of(
                     Map.of(
-                        "taskId", "completeHearingOutcome",
+                        "taskId", COMPLETE_HEARING_OUTCOME_TASK,
                         "name", "Complete Hearing Outcome",
                         "workingDaysAllowed", 5,
-                        "processCategories", "completeHearingOutcome",
-                        "workType", "hearing_work",
-                        "roleCategory", "ADMIN"
+                        "processCategories", COMPLETE_HEARING_OUTCOME_TASK,
+                        "workType", HEARING_WORK_TYPE,
+                        "roleCategory", ROLE_CATEGORY_ADMIN
                     )
                 )
             ),
@@ -289,27 +347,42 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                 null,
                 List.of(
                     Map.of(
-                        "taskId", "referCase",
+                        "taskId", REFER_CASE_TASK,
                         "name", "Refer Case",
                         "workingDaysAllowed", 2,
-                        "processCategories", "referCase",
-                        "workType", "routine_work",
-                        "roleCategory", "ADMIN"
+                        "processCategories", REFER_CASE_TASK,
+                        "workType", ROUTINE_WORK_TYPE,
+                        "roleCategory", ROLE_CATEGORY_ADMIN
                     )
                 )
             ),
             Arguments.of(
                 "citizen-cic-submit-dss-application",
-                "DssSubmitted",
+                "Submitted",
                 null,
                 List.of(
                     Map.of(
-                        "taskId", "vetNewCaseDocuments",
+                        "taskId", VET_NEW_CASE_DOCUMENTS_TASK,
                         "name", "Vet New Case Documents",
                         "workingDaysAllowed", 5,
-                        "processCategories", "vetNewCaseDocuments",
-                        "workType", "applications",
-                        "roleCategory", "ADMIN"
+                        "processCategories", VET_NEW_CASE_DOCUMENTS_TASK,
+                        "workType", APPLICATION_WORK_TYPE,
+                        "roleCategory", ROLE_CATEGORY_ADMIN
+                    )
+                )
+            ),
+            Arguments.of(
+                "citizen-cic-submit-dss-application",
+                "Draft",
+                null,
+                List.of(
+                    Map.of(
+                        "taskId", REGISTER_NEW_CASE_TASK,
+                        "name", "Register New Case",
+                        "workingDaysAllowed", 5,
+                        "processCategories", REGISTER_NEW_CASE_TASK,
+                        "workType", APPLICATION_WORK_TYPE,
+                        "roleCategory", ROLE_CATEGORY_ADMIN
                     )
                 )
             ),
@@ -319,12 +392,12 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                 Map.of("Data", Map.of("cicCaseReferralTypeForWA", "New case")),
                 List.of(
                     Map.of(
-                        "taskId", "reviewNewCaseAndProvideDirectionsLO",
+                        "taskId", REVIEW_NEW_CASE_PROVIDE_DIR_LO_TASK,
                         "name", "Review new case and provide directions - Legal Officer",
                         "workingDaysAllowed", 5,
-                        "processCategories", "reviewNewCaseAndProvideDirectionsLO",
-                        "workType", "decision_making_work",
-                        "roleCategory", "LEGAL_OPERATIONS"
+                        "processCategories", REVIEW_NEW_CASE_PROVIDE_DIR_LO_TASK,
+                        "workType", DECISION_WORK_TYPE,
+                        "roleCategory", ROLE_CATEGORY_LO
                     )
                 )
             ),
@@ -334,12 +407,12 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                 Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Time extension request")),
                 List.of(
                     Map.of(
-                        "taskId", "reviewTimeExtensionRequestLO",
+                        "taskId", REVIEW_TIME_EXT_REQ_LO_TASK,
                         "name", "Review Time extension request - Legal Officer",
                         "workingDaysAllowed", 1,
-                        "processCategories", "reviewTimeExtensionRequestLO",
-                        "workType", "decision_making_work",
-                        "roleCategory", "LEGAL_OPERATIONS"
+                        "processCategories", REVIEW_TIME_EXT_REQ_LO_TASK,
+                        "workType", DECISION_WORK_TYPE,
+                        "roleCategory", ROLE_CATEGORY_LO
                     )
                 )
             ),
@@ -349,12 +422,12 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                 Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Strike out request")),
                 List.of(
                     Map.of(
-                        "taskId", "reviewStrikeOutRequestLO",
+                        "taskId", REVIEW_STRIKE_OUT_REQ_LO_TASK,
                         "name", "Review Strike out request - Legal Officer",
                         "workingDaysAllowed", 5,
-                        "processCategories", "reviewStrikeOutRequestLO",
-                        "workType", "decision_making_work",
-                        "roleCategory", "LEGAL_OPERATIONS"
+                        "processCategories", REVIEW_STRIKE_OUT_REQ_LO_TASK,
+                        "workType", DECISION_WORK_TYPE,
+                        "roleCategory", ROLE_CATEGORY_LO
                     )
                 )
             ),
@@ -364,12 +437,12 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                 Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Stay request")),
                 List.of(
                     Map.of(
-                        "taskId", "reviewStayRequestLO",
+                        "taskId", REVIEW_STAY_REQ_LO_TASK,
                         "name", "Review stay request - Legal Officer",
                         "workingDaysAllowed", 5,
-                        "processCategories", "reviewStayRequestLO",
-                        "workType", "decision_making_work",
-                        "roleCategory", "LEGAL_OPERATIONS"
+                        "processCategories", REVIEW_STAY_REQ_LO_TASK,
+                        "workType", DECISION_WORK_TYPE,
+                        "roleCategory", ROLE_CATEGORY_LO
                     )
                 )
             ),
@@ -379,12 +452,12 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                 Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Listing directions")),
                 List.of(
                     Map.of(
-                        "taskId", "reviewListingDirectionsLO",
+                        "taskId", REVIEW_LISTING_DIR_LO_TASK,
                         "name", "Review listing directions - Legal Officer",
                         "workingDaysAllowed", 1,
-                        "processCategories", "reviewListingDirectionsLO",
-                        "workType", "decision_making_work",
-                        "roleCategory", "LEGAL_OPERATIONS"
+                        "processCategories", REVIEW_LISTING_DIR_LO_TASK,
+                        "workType", DECISION_WORK_TYPE,
+                        "roleCategory", ROLE_CATEGORY_LO
                     )
                 )
             ),
@@ -394,12 +467,12 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                 Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Withdrawal request")),
                 List.of(
                     Map.of(
-                        "taskId", "reviewWithdrawalRequestLO",
+                        "taskId", REVIEW_WITHDRAWAL_REQ_LO_TASK,
                         "name", "Review withdrawal request - Legal Officer",
                         "workingDaysAllowed", 5,
-                        "processCategories", "reviewWithdrawalRequestLO",
-                        "workType", "decision_making_work",
-                        "roleCategory", "LEGAL_OPERATIONS"
+                        "processCategories", REVIEW_WITHDRAWAL_REQ_LO_TASK,
+                        "workType", DECISION_WORK_TYPE,
+                        "roleCategory", ROLE_CATEGORY_LO
                     )
                 )
             ),
@@ -409,12 +482,12 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                 Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Rule 27 request")),
                 List.of(
                     Map.of(
-                        "taskId", "reviewRule27RequestLO",
+                        "taskId", REVIEW_RULE27_REQ_LO_TASK,
                         "name", "Review Rule 27 request - Legal Officer",
                         "workingDaysAllowed", 5,
-                        "processCategories", "reviewRule27RequestLO",
-                        "workType", "decision_making_work",
-                        "roleCategory", "LEGAL_OPERATIONS"
+                        "processCategories", REVIEW_RULE27_REQ_LO_TASK,
+                        "workType", DECISION_WORK_TYPE,
+                        "roleCategory", ROLE_CATEGORY_LO
                     )
                 )
             ),
@@ -424,12 +497,12 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                 Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Listed case")),
                 List.of(
                     Map.of(
-                        "taskId", "reviewListCaseLO",
+                        "taskId", REVIEW_LIST_CASE_LO_TASK,
                         "name", "Review List Case - Legal Officer",
                         "workingDaysAllowed", 1,
-                        "processCategories", "reviewListCaseLO",
-                        "workType", "decision_making_work",
-                        "roleCategory", "LEGAL_OPERATIONS"
+                        "processCategories", REVIEW_LIST_CASE_LO_TASK,
+                        "workType", DECISION_WORK_TYPE,
+                        "roleCategory", ROLE_CATEGORY_LO
                     )
                 )
             ),
@@ -439,12 +512,12 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                 Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Listed case (within 5 days)")),
                 List.of(
                     Map.of(
-                        "taskId", "reviewListCaseWithin5DaysLO",
+                        "taskId", REVIEW_LIST_CASE_WITHIN_5DAYS_LO_TASK,
                         "name", "Review list case (within 5 days) - Legal Officer",
                         "workingDaysAllowed", 1,
-                        "processCategories", "reviewListCaseWithin5DaysLO",
-                        "workType", "decision_making_work",
-                        "roleCategory", "LEGAL_OPERATIONS"
+                        "processCategories", REVIEW_LIST_CASE_WITHIN_5DAYS_LO_TASK,
+                        "workType", DECISION_WORK_TYPE,
+                        "roleCategory", ROLE_CATEGORY_LO
                     )
                 )
             ),
@@ -454,42 +527,42 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                 Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Postponement request")),
                 List.of(
                     Map.of(
-                        "taskId", "reviewPostponementRequestLO",
+                        "taskId", REVIEW_POSTPONEMENT_REQ_LO_TASK,
                         "name", "Review Postponement request - Legal Officer",
                         "workingDaysAllowed", 1,
-                        "processCategories", "reviewPostponementRequestLO",
-                        "workType", "decision_making_work",
-                        "roleCategory", "LEGAL_OPERATIONS"
+                        "processCategories", REVIEW_POSTPONEMENT_REQ_LO_TASK,
+                        "workType", DECISION_WORK_TYPE,
+                        "roleCategory", ROLE_CATEGORY_LO
                     )
                 )
             ),
             Arguments.of(
                 "refer-to-legal-officer",
                 "AwaitingHearing",
-                Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Reinstatement")),
+                Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Reinstatement request")),
                 List.of(
                     Map.of(
                         "name", "Review Reinstatement request - Legal Officer",
-                        "workType", "decision_making_work",
-                        "taskId", "reviewReinstatementRequestLO",
+                        "workType", DECISION_WORK_TYPE,
+                        "taskId", REVIEW_REINSTATEMENT_REQ_LO_TASK,
                         "workingDaysAllowed", 5,
-                        "processCategories", "reviewReinstatementRequestLO",
-                        "roleCategory", "LEGAL_OPERATIONS"
+                        "processCategories", REVIEW_REINSTATEMENT_REQ_LO_TASK,
+                        "roleCategory", ROLE_CATEGORY_LO
                     )
                 )
             ),
             Arguments.of(
                 "refer-to-legal-officer",
-                "AwaitingHearing",
+                "*",
                 Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Other")),
                 List.of(
                     Map.of(
-                        "taskId", "reviewOtherRequestLO",
+                        "taskId", REVIEW_OTHER_REQ_LO_TASK,
                         "name", "Review Reinstatement request - Legal Officer",
                         "workingDaysAllowed", 5,
-                        "processCategories", "reviewOtherRequestLO",
-                        "workType", "decision_making_work",
-                        "roleCategory", "LEGAL_OPERATIONS"
+                        "processCategories", REVIEW_OTHER_REQ_LO_TASK,
+                        "workType", DECISION_WORK_TYPE,
+                        "roleCategory", ROLE_CATEGORY_LO
                     )
                 )
             ),
@@ -499,12 +572,12 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                 Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Listed case (within 5 days)")),
                 List.of(
                     Map.of(
-                        "taskId", "reviewListCaseWithin5DaysJudge",
+                        "taskId", REVIEW_LIST_CASE_WITHIN_5DAYS_JUDGE_TASK,
                         "name", "Review list case (within 5 days) - Judge",
                         "workingDaysAllowed", 1,
-                        "processCategories", "reviewListCaseWithin5DaysJudge",
-                        "workType", "decision_making_work",
-                        "roleCategory", "JUDICIAL"
+                        "processCategories", REVIEW_LIST_CASE_WITHIN_5DAYS_JUDGE_TASK,
+                        "workType", DECISION_WORK_TYPE,
+                        "roleCategory", ROLE_CATEGORY_JUDICIAL
                     )
                 )
             ),
@@ -514,12 +587,12 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                 Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Postponement request")),
                 List.of(
                     Map.of(
-                        "taskId", "reviewPostponementRequestJudge",
+                        "taskId", REVIEW_POSTPONEMENT_REQ_JUDGE_TASK,
                         "name", "Review Postponement request - Judge",
                         "workingDaysAllowed", 1,
-                        "processCategories", "reviewPostponementRequestJudge",
-                        "workType", "decision_making_work",
-                        "roleCategory", "JUDICIAL"
+                        "processCategories", REVIEW_POSTPONEMENT_REQ_JUDGE_TASK,
+                        "workType", DECISION_WORK_TYPE,
+                        "roleCategory", ROLE_CATEGORY_JUDICIAL
                     )
                 )
             ),
@@ -529,12 +602,12 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                 Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Corrections")),
                 List.of(
                     Map.of(
-                        "taskId", "reviewCorrectionsRequest",
+                        "taskId", REVIEW_CORRECTIONS_REQ_TASK,
                         "name", "Review Corrections request",
                         "workingDaysAllowed", 1,
-                        "processCategories", "reviewCorrectionsRequest",
-                        "workType", "decision_making_work",
-                        "roleCategory", "JUDICIAL"
+                        "processCategories", REVIEW_CORRECTIONS_REQ_TASK,
+                        "workType", DECISION_WORK_TYPE,
+                        "roleCategory", ROLE_CATEGORY_JUDICIAL
                     )
                 )
             ),
@@ -544,27 +617,27 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                 Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Written reasons request")),
                 List.of(
                     Map.of(
-                        "taskId", "reviewWrittenReasonsRequest",
+                        "taskId", REVIEW_WRITTEN_REASONS_REQ_TASK,
                         "name", "Review Written Reasons request",
                         "workingDaysAllowed", 28,
-                        "processCategories", "reviewWrittenReasonsRequest",
-                        "workType", "decision_making_work",
-                        "roleCategory", "JUDICIAL"
+                        "processCategories", REVIEW_WRITTEN_REASONS_REQ_TASK,
+                        "workType", DECISION_WORK_TYPE,
+                        "roleCategory", ROLE_CATEGORY_JUDICIAL
                     )
                 )
             ),
             Arguments.of(
                 "refer-to-judge",
                 "CaseClosed",
-                Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Reinstatement")),
+                Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Reinstatement request")),
                 List.of(
                     Map.of(
-                        "taskId", "reviewReinstatementRequestJudge",
+                        "taskId", REVIEW_REINSTATEMENT_REQ_JUDGE_TASK,
                         "name", "Review Reinstatement request - Judge",
                         "workingDaysAllowed", 2,
-                        "processCategories", "reviewReinstatementRequestJudge",
-                        "workType", "decision_making_work",
-                        "roleCategory", "JUDICIAL"
+                        "processCategories", REVIEW_REINSTATEMENT_REQ_JUDGE_TASK,
+                        "workType", DECISION_WORK_TYPE,
+                        "roleCategory", ROLE_CATEGORY_JUDICIAL
                     )
                 )
             ),
@@ -574,12 +647,12 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                 Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Set aside request")),
                 List.of(
                     Map.of(
-                        "taskId", "reviewSetAsideRequest",
+                        "taskId", REVIEW_SET_ASIDE_REQ_TASK,
                         "name", "Review Set Aside request",
                         "workingDaysAllowed", 2,
-                        "processCategories", "reviewSetAsideRequest",
-                        "workType", "decision_making_work",
-                        "roleCategory", "JUDICIAL"
+                        "processCategories", REVIEW_SET_ASIDE_REQ_TASK,
+                        "workType", DECISION_WORK_TYPE,
+                        "roleCategory", ROLE_CATEGORY_JUDICIAL
                     )
                 )
             ),
@@ -589,12 +662,12 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                 Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Stay request")),
                 List.of(
                     Map.of(
-                        "taskId", "reviewStayRequestJudge",
+                        "taskId", REVIEW_STAY_REQ_JUDGE_TASK,
                         "name", "Review stay request - Judge",
                         "workingDaysAllowed", 2,
-                        "processCategories", "reviewStayRequestJudge",
-                        "workType", "decision_making_work",
-                        "roleCategory", "JUDICIAL"
+                        "processCategories", REVIEW_STAY_REQ_JUDGE_TASK,
+                        "workType", DECISION_WORK_TYPE,
+                        "roleCategory", ROLE_CATEGORY_JUDICIAL
                     )
                 )
             ),
@@ -604,27 +677,27 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                 Map.of("Data", Map.of("cicCaseReferralTypeForWA", "New case")),
                 List.of(
                     Map.of(
-                        "taskId", "reviewNewCaseAndProvideDirectionsJudge",
+                        "taskId", REVIEW_NEW_CASE_PROVIDE_DIR_JUDGE_TASK,
                         "name", "Review new case and provide directions - Judge",
                         "workingDaysAllowed", 2,
-                        "processCategories", "reviewNewCaseAndProvideDirectionsJudge",
-                        "workType", "decision_making_work",
-                        "roleCategory", "JUDICIAL"
+                        "processCategories", REVIEW_NEW_CASE_PROVIDE_DIR_JUDGE_TASK,
+                        "workType", DECISION_WORK_TYPE,
+                        "roleCategory", ROLE_CATEGORY_JUDICIAL
                     )
                 )
             ),
             Arguments.of(
                 "refer-to-judge",
-                null,
+                "*",
                 Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Other")),
                 List.of(
                     Map.of(
-                        "taskId", "reviewOtherRequestJudge",
+                        "taskId", REVIEW_OTHER_REQ_JUDGE_TASK,
                         "name", "Review other request - Judge",
                         "workingDaysAllowed", 2,
-                        "processCategories", "reviewOtherRequestJudge",
-                        "workType", "decision_making_work",
-                        "roleCategory", "JUDICIAL"
+                        "processCategories", REVIEW_OTHER_REQ_JUDGE_TASK,
+                        "workType", DECISION_WORK_TYPE,
+                        "roleCategory", ROLE_CATEGORY_JUDICIAL
                     )
                 )
             ),
@@ -634,12 +707,12 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                 Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Withdrawal request")),
                 List.of(
                     Map.of(
-                        "taskId", "reviewWithdrawalRequestJudge",
+                        "taskId", REVIEW_WITHDRAWAL_REQ_JUDGE_TASK,
                         "name", "Review withdrawal request - Judge",
                         "workingDaysAllowed", 2,
-                        "processCategories", "reviewWithdrawalRequestJudge",
-                        "workType", "decision_making_work",
-                        "roleCategory", "JUDICIAL"
+                        "processCategories", REVIEW_WITHDRAWAL_REQ_JUDGE_TASK,
+                        "workType", DECISION_WORK_TYPE,
+                        "roleCategory", ROLE_CATEGORY_JUDICIAL
                     )
                 )
             ),
@@ -649,12 +722,12 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                 Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Rule 27 request")),
                 List.of(
                     Map.of(
-                        "taskId", "reviewRule27RequestJudge",
+                        "taskId", REVIEW_RULE27_REQ_JUDGE_TASK,
                         "name", "Review Rule 27 request - Judge",
                         "workingDaysAllowed", 2,
-                        "processCategories", "reviewRule27RequestJudge",
-                        "workType", "decision_making_work",
-                        "roleCategory", "JUDICIAL"
+                        "processCategories", REVIEW_RULE27_REQ_JUDGE_TASK,
+                        "workType", DECISION_WORK_TYPE,
+                        "roleCategory", ROLE_CATEGORY_JUDICIAL
                     )
                 )
             ),
@@ -664,12 +737,12 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                 Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Listing directions")),
                 List.of(
                     Map.of(
-                        "taskId", "reviewListingDirectionsJudge",
+                        "taskId", REVIEW_LISTING_DIR_JUDGE_TASK,
                         "name", "Review listing directions - Judge",
                         "workingDaysAllowed", 1,
-                        "processCategories", "reviewListingDirectionsJudge",
-                        "workType", "decision_making_work",
-                        "roleCategory", "JUDICIAL"
+                        "processCategories", REVIEW_LISTING_DIR_JUDGE_TASK,
+                        "workType", DECISION_WORK_TYPE,
+                        "roleCategory", ROLE_CATEGORY_JUDICIAL
                     )
                 )
             ),
@@ -679,12 +752,12 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                 Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Listed case")),
                 List.of(
                     Map.of(
-                        "taskId", "reviewListCaseJudge",
+                        "taskId", REVIEW_LIST_CASE_JUDGE_TASK,
                         "name", "Review List Case - Judge",
                         "workingDaysAllowed", 1,
-                        "processCategories", "reviewListCaseJudge",
-                        "workType", "decision_making_work",
-                        "roleCategory", "JUDICIAL"
+                        "processCategories", REVIEW_LIST_CASE_JUDGE_TASK,
+                        "workType", DECISION_WORK_TYPE,
+                        "roleCategory", ROLE_CATEGORY_JUDICIAL
                     )
                 )
             ),
@@ -694,12 +767,12 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                 Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Strike out request")),
                 List.of(
                     Map.of(
-                        "taskId", "reviewStrikeOutRequestJudge",
+                        "taskId", REVIEW_STRIKE_OUT_REQ_JUDGE_TASK,
                         "name", "Review Strike out request - Judge",
                         "workingDaysAllowed", 2,
-                        "processCategories", "reviewStrikeOutRequestJudge",
-                        "workType", "decision_making_work",
-                        "roleCategory", "JUDICIAL"
+                        "processCategories", REVIEW_STRIKE_OUT_REQ_JUDGE_TASK,
+                        "workType", DECISION_WORK_TYPE,
+                        "roleCategory", ROLE_CATEGORY_JUDICIAL
                     )
                 )
             ),
@@ -709,12 +782,12 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                 Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Time Extension request")),
                 List.of(
                     Map.of(
-                        "taskId", "reviewTimeExtensionRequestJudge",
+                        "taskId", REVIEW_TIME_EXT_REQ_JUDGE_TASK,
                         "name", "Review Time extention request - Judge",
                         "workingDaysAllowed", 2,
-                        "processCategories", "reviewTimeExtensionRequestJudge",
-                        "workType", "decision_making_work",
-                        "roleCategory", "JUDICIAL"
+                        "processCategories", REVIEW_TIME_EXT_REQ_JUDGE_TASK,
+                        "workType", DECISION_WORK_TYPE,
+                        "roleCategory", ROLE_CATEGORY_JUDICIAL
                     )
                 )
             ),
@@ -724,16 +797,70 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                 null,
                 List.of(
                     Map.of(
-                        "taskId", "followUpNoncomplianceOfDirections",
+                        "taskId", FOLLOW_UP_NONCOMPLIANCE_OF_DIR_TASK,
                         "name", "Follow up noncompliance of directions",
                         "workingDaysAllowed", 1,
-                        "processCategories", "followUpNoncomplianceOfDirections",
-                        "workType", "routine_work",
-                        "roleCategory", "ADMIN"
+                        "processCategories", FOLLOW_UP_NONCOMPLIANCE_OF_DIR_TASK,
+                        "workType", ROUTINE_WORK_TYPE,
+                        "roleCategory", ROLE_CATEGORY_ADMIN
+                    )
+                )
+            ),
+            Arguments.of(
+                "citizen-cic-update-dss-application",
+                "CaseManagement",
+                Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Evidence request")),
+                List.of(
+                    Map.of(
+                        "taskId", PROCESS_FURTHER_EVIDENCE_TASK,
+                        "name", "Process further evidence",
+                        "workingDaysAllowed", 10,
+                        "processCategories", PROCESS_FURTHER_EVIDENCE_TASK,
+                        "workType", ROUTINE_WORK_TYPE,
+                        "roleCategory", ROLE_CATEGORY_ADMIN
+                    )
+                )
+            ),
+            Arguments.of(
+                "caseworker-document-management",
+                "CaseManagement",
+                Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Evidence request")),
+                List.of(
+                    Map.of(
+                        "taskId", PROCESS_FURTHER_EVIDENCE_TASK,
+                        "name", "Process further evidence",
+                        "workingDaysAllowed", 10,
+                        "processCategories", PROCESS_FURTHER_EVIDENCE_TASK,
+                        "workType", ROUTINE_WORK_TYPE,
+                        "roleCategory", ROLE_CATEGORY_ADMIN
+                    )
+                )
+            ),
+            Arguments.of(
+                "createBundle",
+                "AwaitingHearing",
+                Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Hearing Bundle")),
+                List.of(
+                    Map.of(
+                        "taskId", STITCH_COLLATE_HEARING_BUNDLE_TASK,
+                        "name", "Stitch/collate hearing bundle",
+                        "workingDaysAllowed", 1,
+                        "processCategories", STITCH_COLLATE_HEARING_BUNDLE_TASK,
+                        "workType", HEARING_WORK_TYPE,
+                        "roleCategory", ROLE_CATEGORY_ADMIN
                     )
                 )
             )
         );
+    }
+
+    @Test
+    void if_this_test_fails_needs_updating_with_your_changes() {
+        //The purpose of this test is to prevent adding new rows without being tested
+        DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
+        assertThat(logic.getInputs().size(), is(3));
+        assertThat(logic.getOutputs().size(), is(7));
+        assertThat(logic.getRules().size(), is(50));
     }
 
     @ParameterizedTest(name = "event id: {0} post event state: {1} appeal type: {2}")
@@ -750,11 +877,4 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
         assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
     }
 
-    @Test
-    void if_this_test_fails_needs_updating_with_your_changes() {
-        //The purpose of this test is to prevent adding new rows without being tested
-        DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(47));
-
-    }
 }
