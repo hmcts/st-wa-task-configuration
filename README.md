@@ -1,4 +1,4 @@
-# wa-task-configuration-template
+# st-wa-task-configuration
 
 [![Build Status](https://travis-ci.org/hmcts/wa-task-configuration-template.svg?branch=master)](https://travis-ci.org/hmcts/wa-task-configuration-template)
 

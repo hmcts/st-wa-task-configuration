@@ -299,7 +299,7 @@ mainClassName = 'uk.gov.hmcts.reform.wataskconfigurationtemplate.Application'
 
 bootJar {
   getArchiveFileName().set(provider {
-    'wa-task-configuration-template.jar'
+    'st-wa-task-configuration.jar'
   })
 
   manifest {
