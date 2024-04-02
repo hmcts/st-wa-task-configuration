@@ -38,6 +38,7 @@ import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskC
 import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.DUE_DATE_ORIGIN;
 import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.FOLLOW_UP_NONCOMPLIANCE_OF_DIR_TASK;
 import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.HEARING_WORK_TYPE;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.ISSUE_CASE_TO_RESPONDENT_TASK;
 import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.ISSUE_DECISION_NOTICE_TASK;
 import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.LOCATION;
 import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.LOCATION_NAME;
@@ -61,7 +62,6 @@ import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskC
 import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_DIR_RELISTED_CASE_WITHIN_5DAYS_TASK;
 import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PRIORITY_DATE_ORIGIN_REF;
 import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PRIORITY_WORK_TYPE;
-import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REFER_CASE_TASK;
 import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REGION;
 import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REGISTER_NEW_CASE_TASK;
 import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.ROLE_CATEGORY;
@@ -450,7 +450,7 @@ class CamundaTaskWaConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .build()
             ),
             Arguments.of(
-                REFER_CASE_TASK,
+                ISSUE_CASE_TO_RESPONDENT_TASK,
                 CaseDataBuilder.defaultCase().build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
                     .expectedValue(MINOR_PRIORITY, DEFAULT_MINOR_PRIORITY, true)

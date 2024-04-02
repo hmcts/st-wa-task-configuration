@@ -21,6 +21,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static uk.gov.hmcts.reform.wataskconfigurationtemplate.DmnDecisionTable.WA_TASK_TYPES_ST_CIC_CRIMINALINJURIESCOMPENSATION;
 import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.COMPLETE_HEARING_OUTCOME_TASK;
 import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.FOLLOW_UP_NONCOMPLIANCE_OF_DIR_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.ISSUE_CASE_TO_RESPONDENT_TASK;
 import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.ISSUE_DECISION_NOTICE_TASK;
 import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_CASE_WITHDRAWAL_DIR_TASK;
 import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_CORRECTIONS_TASK;
@@ -38,7 +39,6 @@ import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskC
 import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_POSTPONEMENT_DIR_TASK;
 import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_OTHER_DIR_RETURNED_TASK;
 import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_DIR_RELISTED_CASE_WITHIN_5DAYS_TASK;
-import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REFER_CASE_TASK;
 import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REGISTER_NEW_CASE_TASK;
 import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_NEW_CASE_PROVIDE_DIR_JUDGE_TASK;
 import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_CORRECTIONS_REQ_TASK;
@@ -148,8 +148,8 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
                 "taskTypeName", "Complete Hearing Outcome"
             ),
             Map.of(
-                "taskTypeId", REFER_CASE_TASK,
-                "taskTypeName", "Refer Case"
+                "taskTypeId", ISSUE_CASE_TO_RESPONDENT_TASK,
+                "taskTypeName", "Issue Case To Respondent"
             ),
             Map.of(
                 "taskTypeId", VET_NEW_CASE_DOCUMENTS_TASK,
