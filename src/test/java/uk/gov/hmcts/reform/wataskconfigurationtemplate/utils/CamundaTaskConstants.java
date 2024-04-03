@@ -43,7 +43,7 @@ public class CamundaTaskConstants {
 
     public static final String REGISTER_NEW_CASE_TASK = "registerNewCase";
     public static final String VET_NEW_CASE_DOCUMENTS_TASK = "vetNewCaseDocuments";
-    public static final String REFER_CASE_TASK = "referCase";
+    public static final String ISSUE_CASE_TO_RESPONDENT_TASK = "issueCaseToRespondent";
     public static final String REVIEW_NEW_CASE_PROVIDE_DIR_JUDGE_TASK = "reviewNewCaseAndProvideDirectionsJudge";
     public static final String REVIEW_NEW_CASE_PROVIDE_DIR_LO_TASK = "reviewNewCaseAndProvideDirectionsLO";
     public static final String PROCESS_DIR_RETURNED_TASK = "processDirectionsReturned";

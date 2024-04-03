@@ -69,6 +69,29 @@
           <text>"completeHearingOutcome"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1odfrdp">
+        <inputEntry id="UnaryTests_1yv0lj6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1iy8xdd">
+          <text>"refer-to-judge","refer-to-legal-officer"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0bv4k05">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_08a36m9">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0dkpwml">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1wcfw43">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_05fdkyt">
+          <text>"issueCaseToRespondent"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

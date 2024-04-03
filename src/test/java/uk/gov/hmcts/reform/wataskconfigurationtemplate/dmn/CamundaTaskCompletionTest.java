@@ -22,6 +22,7 @@ import static uk.gov.hmcts.reform.wataskconfigurationtemplate.DmnDecisionTable.W
 import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.AUTO_COMPLETE_MODE;
 import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.COMPLETE_HEARING_OUTCOME_TASK;
 import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.FOLLOW_UP_NONCOMPLIANCE_OF_DIR_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.ISSUE_CASE_TO_RESPONDENT_TASK;
 import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.ISSUE_DECISION_NOTICE_TASK;
 import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_CASE_WITHDRAWAL_DIR_TASK;
 import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_CORRECTIONS_TASK;
@@ -39,7 +40,6 @@ import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskC
 import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_POSTPONEMENT_DIR_TASK;
 import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_OTHER_DIR_RETURNED_TASK;
 import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_DIR_RELISTED_CASE_WITHIN_5DAYS_TASK;
-import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REFER_CASE_TASK;
 import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REGISTER_NEW_CASE_TASK;
 import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_NEW_CASE_PROVIDE_DIR_JUDGE_TASK;
 import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_CORRECTIONS_REQ_TASK;
@@ -176,10 +176,6 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                 "refer-to-judge",
                 List.of(
                     Map.of(
-                        "taskType", REFER_CASE_TASK,
-                        "completionMode", AUTO_COMPLETE_MODE
-                    ),
-                    Map.of(
                         "taskType", PROCESS_FURTHER_EVIDENCE_TASK,
                         "completionMode", AUTO_COMPLETE_MODE
                     )
@@ -189,11 +185,16 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                 "refer-to-legal-officer",
                 List.of(
                     Map.of(
-                        "taskType", REFER_CASE_TASK,
-                        "completionMode", AUTO_COMPLETE_MODE
-                    ),
-                    Map.of(
                         "taskType", PROCESS_FURTHER_EVIDENCE_TASK,
+                        "completionMode", AUTO_COMPLETE_MODE
+                    )
+                )
+            ),
+            Arguments.of(
+                "caseworker-issue-case",
+                List.of(
+                    Map.of(
+                        "taskType", ISSUE_CASE_TO_RESPONDENT_TASK,
                         "completionMode", AUTO_COMPLETE_MODE
                     )
                 )
