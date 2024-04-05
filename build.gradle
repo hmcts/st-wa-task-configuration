@@ -262,6 +262,7 @@ dependencies {
   implementation group: 'org.apache.tomcat.embed', name: 'tomcat-embed-websocket', version: versions.tomcat
 
   implementation 'org.camunda.bpm:camunda-external-task-client:7.18.0'
+  implementation group: 'net.logstash.logback', name: 'logstash-logback-encoder', version: '7.0.1'
 
   annotationProcessor 'org.projectlombok:lombok:1.18.24'
   compileOnly 'org.projectlombok:lombok:1.18.24'
