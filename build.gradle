@@ -4,7 +4,7 @@ plugins {
   id 'pmd'
   id 'jacoco'
   id 'io.spring.dependency-management' version '1.1.0'
-  id 'org.springframework.boot' version '2.7.11'
+  id 'org.springframework.boot' version '2.7.18'
   id 'org.owasp.dependencycheck' version '8.2.1'
   id 'com.github.ben-manes.versions' version '0.38.0'
   id 'org.sonarqube' version '4.0.0.2929'
@@ -131,10 +131,10 @@ jacocoTestReport {
 
 pitest {
   junit5PluginVersion = '0.12'
-  targetClasses = ['uk.gov.hmcts.st.wataskconfiguration.*']
+  targetClasses = ['uk.gov.hmcts.st.taskconfiguration.*']
   excludedClasses = [
-    'uk.gov.hmcts.st.wataskconfiguration.config.*',
-    'uk.gov.hmcts.st.wataskconfiguration.Application'
+    'uk.gov.hmcts.st.taskconfiguration.config.*',
+    'uk.gov.hmcts.st.taskconfiguration.Application'
   ]
   threads = 10
   outputFormats = ['XML', 'HTML']
@@ -154,8 +154,8 @@ sonarqube {
     property "sonar.coverage.jacoco.xmlReportPaths", "${jacocoTestReport.reports.xml.destination.path}"
     property "sonar.pitest.mode", "reuseReport"
     property "sonar.pitest.reportsDirectory", "build/reports/pitest"
-    property "sonar.exclusions", "src/main/java/uk/gov/hmcts/reform/wataskconfigurationtemplate/config/**," +
-      "src/main/java/uk/gov/hmcts/reform/wataskconfigurationtemplate/Application.java"
+    property "sonar.exclusions", "src/main/java/uk/gov/hmcts/st/taskconfigurationtemplate/config/**," +
+      "src/main/java/uk/gov/hmcts/st/taskconfigurationtemplate/Application.java"
     property "sonar.dependencyCheck.reportPath", "${project.buildDir}/reports/dependency-check-report.xml"
   }
 }
