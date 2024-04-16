@@ -3,8 +3,8 @@
 @Library('Infrastructure')
 
 def type = "java"
-def product = "wa"
-def component = "st-wa-task-configuration"
+def product = "sptribs"
+def component = "task-configuration"
 def s2sServiceName = "wa_camunda_pipeline_upload"
 def tenantId = "st"
 def branchesToSync = ['demo', 'perftest']
