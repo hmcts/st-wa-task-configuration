@@ -198,10 +198,10 @@
       </rule>
       <rule id="DecisionRule_0i5j8rb">
         <inputEntry id="UnaryTests_1saus9j">
-          <text>"refer-to-judge","refer-to-legal-officer"</text>
+          <text>"caseworker-issue-case"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_11o6u3j">
-          <text>"referCase"</text>
+          <text>"issueCaseToRespondent"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1qsg79g">
           <text>"Auto"</text>
@@ -539,7 +539,7 @@
       </rule>
       <rule id="DecisionRule_16k6y3u">
         <inputEntry id="UnaryTests_11urccq">
-          <text>"caseworker-amend-document","edit-case","refer-to-judge","refer-to-legal-officer"</text>
+          <text>"caseworker-amend-document","edit-case","refer-to-judge","refer-to-legal-officer","contact-parties"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1q0rehf">
           <text>"processFurtherEvidence"</text>

@@ -583,10 +583,10 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0xoseyk">
-          <text>"referCase"</text>
+          <text>"issueCaseToRespondent"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_07ebo1n">
-          <text>"Refer Case"</text>
+          <text>"Issue Case To Respondent"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1eeiveh">
           <text></text>
@@ -595,7 +595,7 @@
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0lxn6vt">
-          <text>"referCase"</text>
+          <text>"issueCaseToRespondent"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0gb982o">
           <text>"routine_work"</text>
@@ -1598,7 +1598,7 @@
       </rule>
       <rule id="DecisionRule_0z8qogg">
         <inputEntry id="UnaryTests_1xd3rrh">
-          <text>"createBundle"</text>
+          <text>"caseworker-record-listing"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_09lrk6c">
           <text>"AwaitingHearing"</text>

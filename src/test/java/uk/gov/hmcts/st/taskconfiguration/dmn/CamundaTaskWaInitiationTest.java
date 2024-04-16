@@ -1,4 +1,4 @@
-package uk.gov.hmcts.st.taskconfiguration.dmn;
+package uk.gov.hmcts.reform.wataskconfigurationtemplate.dmn;
 
 import org.camunda.bpm.dmn.engine.DmnDecisionTableResult;
 import org.camunda.bpm.dmn.engine.impl.DmnDecisionTableImpl;
@@ -9,8 +9,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
-import uk.gov.hmcts.st.taskconfiguration.DmnDecisionTable;
-import uk.gov.hmcts.st.taskconfiguration.DmnDecisionTableBaseUnitTest;
+import uk.gov.hmcts.reform.wataskconfigurationtemplate.DmnDecisionTableBaseUnitTest;
 
 import java.util.List;
 import java.util.Map;
@@ -18,70 +17,71 @@ import java.util.stream.Stream;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.APPLICATION_WORK_TYPE;
-import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.COMPLETE_HEARING_OUTCOME_TASK;
-import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.DECISION_WORK_TYPE;
-import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.FOLLOW_UP_NONCOMPLIANCE_OF_DIR_TASK;
-import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.HEARING_WORK_TYPE;
-import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.ISSUE_DECISION_NOTICE_TASK;
-import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.PRIORITY_WORK_TYPE;
-import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.PROCESS_CASE_WITHDRAWAL_DIR_TASK;
-import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.PROCESS_CORRECTIONS_TASK;
-import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.PROCESS_DIR_RELISTED_CASE_TASK;
-import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.PROCESS_DIR_RELISTED_CASE_WITHIN_5DAYS_TASK;
-import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.PROCESS_DIR_RETURNED_TASK;
-import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.PROCESS_FURTHER_EVIDENCE_TASK;
-import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.PROCESS_LISTING_DIR_TASK;
-import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.PROCESS_OTHER_DIR_RETURNED_TASK;
-import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.PROCESS_POSTPONEMENT_DIR_TASK;
-import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.PROCESS_REINSTATEMENT_DECISION_NOTICE_TASK;
-import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.PROCESS_RULE27_DECISION_TASK;
-import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.PROCESS_SET_ASIDE_DIR_TASK;
-import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.PROCESS_STAY_DIR_TASK;
-import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.PROCESS_STRIKE_OUT_DIR_RETURNED_TASK;
-import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.PROCESS_TIME_EXT_DIR_RETURNED_TASK;
-import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.PROCESS_WRITTEN_REASONS_TASK;
-import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.REFER_CASE_TASK;
-import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.REGISTER_NEW_CASE_TASK;
-import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.REVIEW_CORRECTIONS_REQ_TASK;
-import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.REVIEW_LISTING_DIR_JUDGE_TASK;
-import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.REVIEW_LISTING_DIR_LO_TASK;
-import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.REVIEW_LIST_CASE_JUDGE_TASK;
-import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.REVIEW_LIST_CASE_LO_TASK;
-import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.REVIEW_LIST_CASE_WITHIN_5DAYS_JUDGE_TASK;
-import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.REVIEW_LIST_CASE_WITHIN_5DAYS_LO_TASK;
-import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.REVIEW_NEW_CASE_PROVIDE_DIR_JUDGE_TASK;
-import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.REVIEW_NEW_CASE_PROVIDE_DIR_LO_TASK;
-import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.REVIEW_OTHER_REQ_JUDGE_TASK;
-import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.REVIEW_OTHER_REQ_LO_TASK;
-import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.REVIEW_POSTPONEMENT_REQ_JUDGE_TASK;
-import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.REVIEW_POSTPONEMENT_REQ_LO_TASK;
-import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.REVIEW_REINSTATEMENT_REQ_JUDGE_TASK;
-import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.REVIEW_REINSTATEMENT_REQ_LO_TASK;
-import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.REVIEW_RULE27_REQ_JUDGE_TASK;
-import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.REVIEW_RULE27_REQ_LO_TASK;
-import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.REVIEW_SET_ASIDE_REQ_TASK;
-import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.REVIEW_STAY_REQ_JUDGE_TASK;
-import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.REVIEW_STAY_REQ_LO_TASK;
-import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.REVIEW_STRIKE_OUT_REQ_JUDGE_TASK;
-import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.REVIEW_STRIKE_OUT_REQ_LO_TASK;
-import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.REVIEW_TIME_EXT_REQ_JUDGE_TASK;
-import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.REVIEW_TIME_EXT_REQ_LO_TASK;
-import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.REVIEW_WITHDRAWAL_REQ_JUDGE_TASK;
-import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.REVIEW_WITHDRAWAL_REQ_LO_TASK;
-import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.REVIEW_WRITTEN_REASONS_REQ_TASK;
-import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.ROLE_CATEGORY_ADMIN;
-import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.ROLE_CATEGORY_JUDICIAL;
-import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.ROLE_CATEGORY_LO;
-import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.ROUTINE_WORK_TYPE;
-import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.STITCH_COLLATE_HEARING_BUNDLE_TASK;
-import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.VET_NEW_CASE_DOCUMENTS_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.DmnDecisionTable.WA_TASK_INITIATION_ST_CIC_CRIMINALINJURIESCOMPENSATION;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.APPLICATION_WORK_TYPE;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.COMPLETE_HEARING_OUTCOME_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.DECISION_WORK_TYPE;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.FOLLOW_UP_NONCOMPLIANCE_OF_DIR_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.HEARING_WORK_TYPE;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.ISSUE_CASE_TO_RESPONDENT_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.ISSUE_DECISION_NOTICE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_CASE_WITHDRAWAL_DIR_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_CORRECTIONS_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_DIR_RELISTED_CASE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_DIR_RETURNED_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_FURTHER_EVIDENCE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_LISTING_DIR_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_WRITTEN_REASONS_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_TIME_EXT_DIR_RETURNED_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_STRIKE_OUT_DIR_RETURNED_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_STAY_DIR_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_SET_ASIDE_DIR_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_RULE27_DECISION_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_REINSTATEMENT_DECISION_NOTICE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_POSTPONEMENT_DIR_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_OTHER_DIR_RETURNED_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PROCESS_DIR_RELISTED_CASE_WITHIN_5DAYS_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.PRIORITY_WORK_TYPE;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REGISTER_NEW_CASE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.ROLE_CATEGORY_ADMIN;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.ROLE_CATEGORY_JUDICIAL;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.ROLE_CATEGORY_LO;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.ROUTINE_WORK_TYPE;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_NEW_CASE_PROVIDE_DIR_JUDGE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_CORRECTIONS_REQ_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_LISTING_DIR_LO_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_LIST_CASE_JUDGE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_LIST_CASE_LO_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_LIST_CASE_WITHIN_5DAYS_JUDGE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_LIST_CASE_WITHIN_5DAYS_LO_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_LISTING_DIR_JUDGE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_NEW_CASE_PROVIDE_DIR_LO_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_OTHER_REQ_JUDGE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_OTHER_REQ_LO_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_POSTPONEMENT_REQ_JUDGE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_POSTPONEMENT_REQ_LO_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_REINSTATEMENT_REQ_JUDGE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_REINSTATEMENT_REQ_LO_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_RULE27_REQ_JUDGE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_RULE27_REQ_LO_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_SET_ASIDE_REQ_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_STAY_REQ_JUDGE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_STAY_REQ_LO_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_STRIKE_OUT_REQ_JUDGE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_STRIKE_OUT_REQ_LO_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_TIME_EXT_REQ_JUDGE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_TIME_EXT_REQ_LO_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_WITHDRAWAL_REQ_JUDGE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_WITHDRAWAL_REQ_LO_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.REVIEW_WRITTEN_REASONS_REQ_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.STITCH_COLLATE_HEARING_BUNDLE_TASK;
+import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.VET_NEW_CASE_DOCUMENTS_TASK;
 
 class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
 
     @BeforeAll
     public static void initialization() {
-        CURRENT_DMN_DECISION_TABLE = DmnDecisionTable.WA_TASK_INITIATION_ST_CIC_CRIMINALINJURIESCOMPENSATION;
+        CURRENT_DMN_DECISION_TABLE = WA_TASK_INITIATION_ST_CIC_CRIMINALINJURIESCOMPENSATION;
     }
 
     static Stream<Arguments> scenarioProvider() {
@@ -347,10 +347,10 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                 null,
                 List.of(
                     Map.of(
-                        "taskId", REFER_CASE_TASK,
-                        "name", "Refer Case",
+                        "taskId", ISSUE_CASE_TO_RESPONDENT_TASK,
+                        "name", "Issue Case To Respondent",
                         "workingDaysAllowed", 2,
-                        "processCategories", REFER_CASE_TASK,
+                        "processCategories", ISSUE_CASE_TO_RESPONDENT_TASK,
                         "workType", ROUTINE_WORK_TYPE,
                         "roleCategory", ROLE_CATEGORY_ADMIN
                     )
@@ -837,10 +837,18 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "createBundle",
+                "caseworker-record-listing",
                 "AwaitingHearing",
                 Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Hearing Bundle")),
                 List.of(
+                    Map.of(
+                        "taskId", COMPLETE_HEARING_OUTCOME_TASK,
+                        "name", "Complete Hearing Outcome",
+                        "workingDaysAllowed", 5,
+                        "processCategories", COMPLETE_HEARING_OUTCOME_TASK,
+                        "workType", HEARING_WORK_TYPE,
+                        "roleCategory", ROLE_CATEGORY_ADMIN
+                    ),
                     Map.of(
                         "taskId", STITCH_COLLATE_HEARING_BUNDLE_TASK,
                         "name", "Stitch/collate hearing bundle",
