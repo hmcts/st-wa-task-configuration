@@ -1,4 +1,4 @@
-package uk.gov.hmcts.reform.wataskconfigurationtemplate.dmn;
+package uk.gov.hmcts.st.taskconfiguration.dmn;
 
 import org.camunda.bpm.dmn.engine.DmnDecisionTableResult;
 import org.camunda.bpm.dmn.engine.impl.DmnDecisionTableImpl;
@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
-import uk.gov.hmcts.reform.wataskconfigurationtemplate.DmnDecisionTableBaseUnitTest;
+import uk.gov.hmcts.st.taskconfiguration.DmnDecisionTableBaseUnitTest;
 
 import java.util.List;
 import java.util.Map;
@@ -17,10 +17,10 @@ import java.util.stream.Stream;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static uk.gov.hmcts.reform.wataskconfigurationtemplate.DmnDecisionTable.WA_TASK_CANCELLATION_ST_CIC_CRIMINALINJURIESCOMPENSATION;
-import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.ISSUE_CASE_TO_RESPONDENT_TASK;
-import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CamundaTaskConstants.COMPLETE_HEARING_OUTCOME_TASK;
-import static uk.gov.hmcts.reform.wataskconfigurationtemplate.utils.CancellationScenarioBuilder.event;
+import static uk.gov.hmcts.st.taskconfiguration.DmnDecisionTable.WA_TASK_CANCELLATION_ST_CIC_CRIMINALINJURIESCOMPENSATION;
+import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.ISSUE_CASE_TO_RESPONDENT_TASK;
+import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.COMPLETE_HEARING_OUTCOME_TASK;
+import static uk.gov.hmcts.st.taskconfiguration.utils.CancellationScenarioBuilder.event;
 
 class CamundaTaskWaCancellationTest extends DmnDecisionTableBaseUnitTest {
 
