@@ -104,9 +104,6 @@
     <cve>CVE-2023-42794</cve>
   </suppress>
   <suppress>
-    <cve>CVE-2023-42795</cve>
-  </suppress>
-  <suppress>
     <cve>CVE-2023-6378</cve>
   </suppress>
   <suppress>
