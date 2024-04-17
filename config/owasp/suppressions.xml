@@ -19,12 +19,6 @@
   </suppress>
   <suppress>
     <notes>
-      com.google.guava:guava:31.1-jre used as transient dependency. 31.1-jre has a vulnerability on one method: com.google.common.io.Files.createTempDir()
-    </notes>
-    <cve>CVE-2020-8908</cve>
-  </suppress>
-  <suppress>
-    <notes>
       jackson-core-2.13.4 is directly used by spring-boot-starter-json 2.7.7, spring boot 3 needed
     </notes>
     <cve>CVE-2022-45688</cve>
