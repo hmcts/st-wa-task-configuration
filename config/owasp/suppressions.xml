@@ -83,9 +83,6 @@
     <cve>CVE-2023-20863</cve>
   </suppress>
   <suppress>
-    <cve>CVE-2023-41080</cve>
-  </suppress>
-  <suppress>
     <cve>CVE-2023-5072</cve>
   </suppress>
   <suppress>
