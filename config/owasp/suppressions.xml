@@ -24,10 +24,6 @@
     <packageUrl regex="true">^pkg:maven/org\.yaml/snakeyaml@.*$</packageUrl>
     <cve>CVE-2022-38752</cve>
   </suppress>
-  <suppress>
-    <notes>This is tomcat we don't deploy tomcat</notes>
-    <cve>CVE-2022-42252</cve>
-  </suppress>
   <suppress until ="2023-12-31">
     <notes>Wait for updates on dependencies</notes>
     <cve>CVE-2021-37533</cve>
