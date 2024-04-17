@@ -24,10 +24,6 @@
     <packageUrl regex="true">^pkg:maven/org\.yaml/snakeyaml@.*$</packageUrl>
     <cve>CVE-2022-38752</cve>
   </suppress>
-  <suppress until ="2023-12-31">
-    <notes>Wait for updates on dependencies</notes>
-    <cve>CVE-2021-37533</cve>
-  </suppress>
   <suppress>
     <notes>
       org.latencyutils:LatencyUtils:2.0.3 directly used by org.springframework.boot:spring-boot-starter-web 2.7.5 and there are no higher version than LatencyUtils 2.0.3
