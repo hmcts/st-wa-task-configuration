@@ -116,6 +116,7 @@
     <cve>CVE-2023-45648</cve>
   </suppress>
   <suppress>
+    <notes>This is a false alarm (https://github.com/FasterXML/jackson-databind/issues/3972#issuecomment-1813589383)</notes>
     <cve>CVE-2023-35116</cve>
   </suppress>
 </suppressions>
