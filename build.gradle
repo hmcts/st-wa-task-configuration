@@ -203,10 +203,8 @@ dependencyManagement {
     //CVE-2023-35116
     dependency group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.15.0'
 
-    //CVE-2021-28170
     dependency group: 'org.glassfish', name: 'jakarta.el', version: '4.0.1'
 
-    //CVE-2021-42550
     dependencySet(group: 'ch.qos.logback', version: '1.2.13') {
       entry 'logback-classic'
       entry 'logback-core'
