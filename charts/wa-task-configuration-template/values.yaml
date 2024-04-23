@@ -1,5 +1,0 @@
-java:
-  applicationPort: 4551
-  image: 'hmctspublic.azurecr.io/wa/spring-boot-template:latest'
-  ingressHost: wa-task-configuration-template-{{ .Values.global.environment }}.service.core-compute-{{ .Values.global.environment }}.internal
-  environment:

@@ -1,11 +1,11 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: "wa-task-configuration-template"
+  name: "st-wa-task-configuration"
   annotations:
     # This must match folder-name/job-name in Jenkins.
-    jenkins.io/job-full-name: cft:HMCTS_j_to_z/wa-task-configuration-template
-    github.com/project-slug: hmcts/wa-task-configuration-template
+    jenkins.io/job-full-name: cft:HMCTS_j_to_z/st-wa-task-configuration
+    github.com/project-slug: hmcts/st-wa-task-configuration
   tags:
     - java
   links:
@@ -15,4 +15,4 @@ metadata:
 spec:
   type: service
   lifecycle: production
-  owner: dcd_group_wa_v2
+  owner: dts_special_tribunals

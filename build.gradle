@@ -3,12 +3,12 @@ plugins {
   id 'checkstyle'
   id 'pmd'
   id 'jacoco'
-  id 'io.spring.dependency-management' version '1.0.11.RELEASE'
-  id 'org.springframework.boot' version '2.7.11'
-  id 'org.owasp.dependencycheck' version '8.0.2'
-  id 'com.github.ben-manes.versions' version '0.38.0'
-  id 'org.sonarqube' version '3.2.0'
-  id 'info.solidsoft.pitest' version '1.7.0'
+  id 'io.spring.dependency-management' version '1.1.4'
+  id 'org.springframework.boot' version '2.7.18'
+  id 'org.owasp.dependencycheck' version '8.2.1'
+  id 'com.github.ben-manes.versions' version '0.51.0'
+  id 'org.sonarqube' version '4.0.0.2929'
+  id 'info.solidsoft.pitest' version '1.15.0'
   id 'io.freefair.lombok' version '6.5.1'
 }
 
@@ -131,10 +131,10 @@ jacocoTestReport {
 
 pitest {
   junit5PluginVersion = '0.12'
-  targetClasses = ['uk.gov.hmcts.reform.wataskconfigurationtemplate.*']
+  targetClasses = ['uk.gov.hmcts.st.taskconfiguration.*']
   excludedClasses = [
-    'uk.gov.hmcts.reform.wataskconfigurationtemplate.config.*',
-    'uk.gov.hmcts.reform.wataskconfigurationtemplate.Application'
+    'uk.gov.hmcts.st.taskconfiguration.config.*',
+    'uk.gov.hmcts.st.taskconfiguration.Application'
   ]
   threads = 10
   outputFormats = ['XML', 'HTML']
@@ -149,13 +149,14 @@ project.tasks['sonarqube'].dependsOn test, integration, jacocoTestReport
 
 sonarqube {
   properties {
-    property "sonar.projectName", "Reform :: wa-task-configuration-template"
-    property "sonar.projectKey", "uk.gov.hmcts.reform:wa-task-configuration-template"
-    property "sonar.coverage.jacoco.xmlReportPaths", "${jacocoTestReport.reports.xml.destination.path}"
+    property "sonar.projectName", "sptribs :: st-wa-task-configuration"
+    property "sonar.projectKey", "uk.gov.hmcts.reform:st-wa-task-configuration"
+    property "sonar.coverage.jacoco.xmlReportPaths", "${projectDir}/build/reports/jacoco/test/jacocoTestReport.xml"
     property "sonar.pitest.mode", "reuseReport"
     property "sonar.pitest.reportsDirectory", "build/reports/pitest"
-    property "sonar.exclusions", "src/main/java/uk/gov/hmcts/reform/wataskconfigurationtemplate/config/**," +
-      "src/main/java/uk/gov/hmcts/reform/wataskconfigurationtemplate/Application.java"
+    property "sonar.exclusions", "src/main/java/uk/gov/hmcts/st/taskconfigurationtemplate/config/**," +
+      "src/main/java/uk/gov/hmcts/st/taskconfigurationtemplate/Application.java"
+    property "sonar.dependencyCheck.reportPath", "${project.buildDir}/reports/dependency-check-report.xml"
   }
 }
 
@@ -186,26 +187,25 @@ dependencyCheck {
 
 dependencyManagement {
   dependencies {
-    dependency group: 'org.bouncycastle', name: 'bcpkix-jdk15on', version: '1.68'
+    dependency group: 'org.bouncycastle', name: 'bcpkix-jdk15on', version: '1.70'
     // CVE-2018-10237 - Unbounded memory allocation
-    dependencySet(group: 'com.google.guava', version: '30.1-jre') {
+    dependencySet(group: 'com.google.guava', version: '33.0.0-jre') {
       entry 'guava'
     }
 
-    dependency group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.13'
+    dependency group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.14'
 
-    dependency group: 'commons-io', name: 'commons-io', version: '2.8.0'
-    dependency group: 'org.mybatis', name: 'mybatis', version: '3.5.9'
-    dependency group: 'org.camunda.connect', name: 'camunda-connect-connectors-all', version: '1.5.2'
+    dependency group: 'commons-io', name: 'commons-io', version: '2.15.1'
+    dependency group: 'org.mybatis', name: 'mybatis', version: '3.5.15'
+    dependency group: 'org.camunda.connect', name: 'camunda-connect-connectors-all', version: '1.6.0'
     dependency group: 'org.apiguardian', name: 'apiguardian-api', version: '1.1.2'
 
-    dependency group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.14.0-rc1'
+    //CVE-2023-35116
+    dependency group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.15.0'
 
-    //CVE-2021-28170
-    dependency group: 'org.glassfish', name: 'jakarta.el', version: '4.0.1'
+    dependency group: 'org.glassfish', name: 'jakarta.el', version: '4.0.2'
 
-    //CVE-2021-42550
-    dependencySet(group: 'ch.qos.logback', version: '1.2.10') {
+    dependencySet(group: 'ch.qos.logback', version: '1.2.13') {
       entry 'logback-classic'
       entry 'logback-core'
     }
@@ -226,7 +226,7 @@ def versions = [
   camunda         : '7.18.0',
   pitest          : '1.7.4',
   sonarPitest     : '0.5',
-  tomcat          : '9.0.72'
+  tomcat          : '9.0.83'
 
 ]
 
@@ -240,9 +240,7 @@ ext.libraries = [
   ]
 ]
 
-// https://nvd.nist.gov/vuln/detail/CVE-2022-25857
-// https://nvd.nist.gov/vuln/detail/CVE-2022-38751
-ext['snakeyaml.version'] = '1.33'
+ext['snakeyaml.version'] = '2.0'
 
 dependencies {
 
@@ -263,6 +261,7 @@ dependencies {
   implementation group: 'org.apache.tomcat.embed', name: 'tomcat-embed-websocket', version: versions.tomcat
 
   implementation 'org.camunda.bpm:camunda-external-task-client:7.18.0'
+  implementation group: 'net.logstash.logback', name: 'logstash-logback-encoder', version: '7.0.1'
 
   annotationProcessor 'org.projectlombok:lombok:1.18.24'
   compileOnly 'org.projectlombok:lombok:1.18.24'
@@ -282,7 +281,7 @@ dependencies {
   testImplementation group: 'org.camunda.bpm', name: 'camunda-engine-plugin-spin', version: "${versions.camunda}"
   testImplementation group: 'org.camunda.bpm.assert', name: 'camunda-bpm-assert', version: '8.0.0'
   testImplementation group: 'org.camunda.bpm', name: 'camunda-engine', version: '7.14.0'
-  testImplementation group: 'com.h2database', name: 'h2', version: '2.1.210'
+  testImplementation group: 'com.h2database', name: 'h2', version: '2.1.214'
   testImplementation group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310', version: '2.14.2'
 
   integrationTestImplementation sourceSets.main.runtimeClasspath
@@ -295,11 +294,11 @@ dependencies {
 
 }
 
-mainClassName = 'uk.gov.hmcts.reform.wataskconfigurationtemplate.Application'
+mainClassName = 'uk.gov.hmcts.st.taskconfiguration.Application'
 
 bootJar {
   getArchiveFileName().set(provider {
-    'wa-task-configuration-template.jar'
+    'st-wa-task-configuration.jar'
   })
 
   manifest {
