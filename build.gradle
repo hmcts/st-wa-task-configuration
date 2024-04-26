@@ -267,7 +267,7 @@ dependencies {
   compileOnly 'org.projectlombok:lombok:1.18.32'
 
   testImplementation group: 'org.pitest', name: 'pitest', version: versions.pitest
-  testImplementation 'info.solidsoft.gradle.pitest:gradle-pitest-plugin:1.7.0'
+  testImplementation 'info.solidsoft.gradle.pitest:gradle-pitest-plugin:1.15.0'
 
   testImplementation group: 'org.codehaus.sonar-plugins', name: 'sonar-pitest-plugin', version: versions.sonarPitest
 
