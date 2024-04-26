@@ -195,7 +195,7 @@ dependencyManagement {
 
     dependency group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.14'
 
-    dependency group: 'commons-io', name: 'commons-io', version: '2.15.1'
+    dependency group: 'commons-io', name: 'commons-io', version: '2.16.1'
     dependency group: 'org.mybatis', name: 'mybatis', version: '3.5.16'
     dependency group: 'org.camunda.connect', name: 'camunda-connect-connectors-all', version: '1.6.0'
     dependency group: 'org.apiguardian', name: 'apiguardian-api', version: '1.1.2'
