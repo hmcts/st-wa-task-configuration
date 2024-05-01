@@ -338,6 +338,14 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "processCategories", COMPLETE_HEARING_OUTCOME_TASK,
                         "workType", HEARING_WORK_TYPE,
                         "roleCategory", ROLE_CATEGORY_ADMIN
+                    ),
+                    Map.of(
+                        "taskId", STITCH_COLLATE_HEARING_BUNDLE_TASK,
+                        "name", "Stitch/collate hearing bundle",
+                        "workingDaysAllowed", 1,
+                        "processCategories", STITCH_COLLATE_HEARING_BUNDLE_TASK,
+                        "workType", HEARING_WORK_TYPE,
+                        "roleCategory", ROLE_CATEGORY_ADMIN
                     )
                 )
             ),
@@ -538,7 +546,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "refer-to-legal-officer",
-                "AwaitingHearing",
+                "CaseClosed",
                 Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Reinstatement request")),
                 List.of(
                     Map.of(
@@ -809,7 +817,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "citizen-cic-update-dss-application",
                 "CaseManagement",
-                Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Evidence request")),
+                null,
                 List.of(
                     Map.of(
                         "taskId", PROCESS_FURTHER_EVIDENCE_TASK,
@@ -824,7 +832,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "caseworker-document-management",
                 "CaseManagement",
-                Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Evidence request")),
+                null,
                 List.of(
                     Map.of(
                         "taskId", PROCESS_FURTHER_EVIDENCE_TASK,
@@ -832,29 +840,6 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "workingDaysAllowed", 10,
                         "processCategories", PROCESS_FURTHER_EVIDENCE_TASK,
                         "workType", ROUTINE_WORK_TYPE,
-                        "roleCategory", ROLE_CATEGORY_ADMIN
-                    )
-                )
-            ),
-            Arguments.of(
-                "caseworker-record-listing",
-                "AwaitingHearing",
-                Map.of("Data", Map.of("cicCaseReferralTypeForWA", "Hearing Bundle")),
-                List.of(
-                    Map.of(
-                        "taskId", COMPLETE_HEARING_OUTCOME_TASK,
-                        "name", "Complete Hearing Outcome",
-                        "workingDaysAllowed", 5,
-                        "processCategories", COMPLETE_HEARING_OUTCOME_TASK,
-                        "workType", HEARING_WORK_TYPE,
-                        "roleCategory", ROLE_CATEGORY_ADMIN
-                    ),
-                    Map.of(
-                        "taskId", STITCH_COLLATE_HEARING_BUNDLE_TASK,
-                        "name", "Stitch/collate hearing bundle",
-                        "workingDaysAllowed", 1,
-                        "processCategories", STITCH_COLLATE_HEARING_BUNDLE_TASK,
-                        "workType", HEARING_WORK_TYPE,
                         "roleCategory", ROLE_CATEGORY_ADMIN
                     )
                 )

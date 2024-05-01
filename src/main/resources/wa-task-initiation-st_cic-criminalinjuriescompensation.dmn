@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.21.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.22.0">
   <decision id="wa-task-initiation-st_cic-criminalinjuriescompensation" name="Task initiation DMN">
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT">
       <input id="Input_1" label="Event Id" camunda:inputVariable="eventId">
@@ -961,7 +961,7 @@
           <text>"refer-to-legal-officer"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0wkggvk">
-          <text>"AwaitingHearing"</text>
+          <text>"CaseClosed"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0shy2pc">
           <text>"Reinstatement request"</text>
@@ -1572,7 +1572,7 @@
           <text>"CaseManagement"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1j500nm">
-          <text>"Evidence request"</text>
+          <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0kml5hr">
           <text>"processFurtherEvidence"</text>
@@ -1604,7 +1604,7 @@
           <text>"AwaitingHearing"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1t79p99">
-          <text>"Hearing Bundle"</text>
+          <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_11kgjga">
           <text>"stitchCollateHearingBundle"</text>
