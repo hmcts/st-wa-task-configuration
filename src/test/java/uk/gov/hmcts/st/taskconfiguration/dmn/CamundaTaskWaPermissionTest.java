@@ -136,12 +136,12 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 PROCESS_POSTPONEMENT_DIR_TASK,
                 DUMMY_CASE_DATA,
-                defaultAdminWithCompletePermissions()
+                defaultRegionalAdminPermissions()
             ),
             Arguments.of(
                 PROCESS_FURTHER_EVIDENCE_TASK,
                 DUMMY_CASE_DATA,
-                defaultAdminWithCompletePermissions()
+                defaultRegionalAdminPermissions()
             ),
             Arguments.of(
                 PROCESS_TIME_EXT_DIR_RETURNED_TASK,
@@ -388,7 +388,7 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
         assertThat(logic.getOutputs().size(), is(7));
         assertThatOutputContainInOrder(outputColumnIds, logic.getOutputs());
         //Rules
-        assertThat(logic.getRules().size(), is(12));
+        assertThat(logic.getRules().size(), is(10));
     }
 
     @ParameterizedTest(name = "task type: {0} case data: {1}")
@@ -467,14 +467,6 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
         );
     }
 
-    private static List<Map<String, Object>> defaultAdminWithCompletePermissions() {
-        return List.of(
-            taskSupervisorPermissions(),
-            regionalCentreAdminWithCompletePermissions(),
-            regionalCentreAdminLeaderWithCompletePermissions()
-        );
-    }
-
     private static Map<String, Object> taskSupervisorPermissions() {
         return Map.of(
             "name", "task-supervisor",
@@ -486,7 +478,7 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
     private static Map<String, Object> regionalCentreAdminPermissions() {
         return Map.of(
             "name", "regional-centre-admin",
-            "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign",
+            "value", "Read,Own,Claim,Unclaim,Manage,Complete",
             "roleCategory", ROLE_CATEGORY_ADMIN,
             "assignmentPriority", 1,
             "autoAssignable", false
@@ -496,7 +488,7 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
     private static Map<String, Object> regionalCentreAdminLeaderPermissions() {
         return Map.of(
             "name", "regional-centre-team-leader",
-            "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel",
+            "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel,Complete",
             "roleCategory", ROLE_CATEGORY_ADMIN,
             "assignmentPriority", 2,
             "autoAssignable", false
@@ -574,23 +566,4 @@ class CamundaTaskWaPermissionTest extends DmnDecisionTableBaseUnitTest {
         );
     }
 
-    private static Map<String, Object> regionalCentreAdminWithCompletePermissions() {
-        return Map.of(
-            "name", "regional-centre-admin",
-            "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Complete",
-            "roleCategory", ROLE_CATEGORY_ADMIN,
-            "assignmentPriority", 1,
-            "autoAssignable", false
-        );
-    }
-
-    private static Map<String, Object> regionalCentreAdminLeaderWithCompletePermissions() {
-        return Map.of(
-            "name", "regional-centre-team-leader",
-            "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel,Complete",
-            "roleCategory", ROLE_CATEGORY_ADMIN,
-            "assignmentPriority", 2,
-            "autoAssignable", false
-        );
-    }
 }
