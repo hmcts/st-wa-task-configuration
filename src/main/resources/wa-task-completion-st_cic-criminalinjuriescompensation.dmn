@@ -517,13 +517,13 @@
       </rule>
       <rule id="DecisionRule_151s4ne">
         <inputEntry id="UnaryTests_1ausbgj">
-          <text>"caseworker-update-dss-application"</text>
+          <text>"caseworker-document-management","caseworker-amend-due-date","refer-to-judge","refer-to-legal-officer","contact-parties"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0b104v6">
           <text>"followUpNoncomplianceOfDirections"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_16wg8ds">
-          <text>"auto"</text>
+          <text>"defaultNone"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_00tt6xd">
