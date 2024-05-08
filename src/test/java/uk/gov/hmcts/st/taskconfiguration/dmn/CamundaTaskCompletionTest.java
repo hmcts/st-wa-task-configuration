@@ -177,6 +177,10 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                 "refer-to-judge",
                 List.of(
                     Map.of(
+                        "taskType", FOLLOW_UP_NONCOMPLIANCE_OF_DIR_TASK,
+                        "completionMode", DEFAULT_NONE_COMPLETE_MODE
+                    ),
+                    Map.of(
                         "taskType", PROCESS_FURTHER_EVIDENCE_TASK,
                         "completionMode", DEFAULT_NONE_COMPLETE_MODE
                     )
@@ -185,6 +189,10 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "refer-to-legal-officer",
                 List.of(
+                    Map.of(
+                        "taskType", FOLLOW_UP_NONCOMPLIANCE_OF_DIR_TASK,
+                        "completionMode", DEFAULT_NONE_COMPLETE_MODE
+                    ),
                     Map.of(
                         "taskType", PROCESS_FURTHER_EVIDENCE_TASK,
                         "completionMode", DEFAULT_NONE_COMPLETE_MODE
@@ -332,15 +340,6 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "caseworker-update-dss-application",
-                List.of(
-                    Map.of(
-                        "taskType", FOLLOW_UP_NONCOMPLIANCE_OF_DIR_TASK,
-                        "completionMode", AUTO_COMPLETE_MODE
-                    )
-                )
-            ),
-            Arguments.of(
                 "edit-case",
                 List.of(
                     Map.of(
@@ -366,6 +365,10 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                 "contact-parties",
                 List.of(
                     Map.of(
+                        "taskType", FOLLOW_UP_NONCOMPLIANCE_OF_DIR_TASK,
+                        "completionMode", DEFAULT_NONE_COMPLETE_MODE
+                    ),
+                    Map.of(
                         "taskType", PROCESS_FURTHER_EVIDENCE_TASK,
                         "completionMode", DEFAULT_NONE_COMPLETE_MODE
                     )
@@ -377,6 +380,24 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskType", STITCH_COLLATE_HEARING_BUNDLE_TASK,
                         "completionMode", AUTO_COMPLETE_MODE
+                    )
+                )
+            ),
+            Arguments.of(
+                "caseworker-document-management",
+                List.of(
+                    Map.of(
+                        "taskType", FOLLOW_UP_NONCOMPLIANCE_OF_DIR_TASK,
+                        "completionMode", DEFAULT_NONE_COMPLETE_MODE
+                    )
+                )
+            ),
+            Arguments.of(
+                "caseworker-amend-due-date",
+                List.of(
+                    Map.of(
+                        "taskType", FOLLOW_UP_NONCOMPLIANCE_OF_DIR_TASK,
+                        "completionMode", DEFAULT_NONE_COMPLETE_MODE
                     )
                 )
             )
