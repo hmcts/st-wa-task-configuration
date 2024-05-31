@@ -20,6 +20,8 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static uk.gov.hmcts.st.taskconfiguration.DmnDecisionTable.WA_TASK_CANCELLATION_ST_CIC_CRIMINALINJURIESCOMPENSATION;
 import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.COMPLETE_HEARING_OUTCOME_TASK;
 import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.ISSUE_CASE_TO_RESPONDENT_TASK;
+import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.PROCESS_CATEGORY_HEARING;
+import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.PROCESS_CATEGORY_PROCESSING;
 import static uk.gov.hmcts.st.taskconfiguration.utils.CancellationScenarioBuilder.event;
 
 class CamundaTaskWaCancellationTest extends DmnDecisionTableBaseUnitTest {
@@ -35,16 +37,16 @@ class CamundaTaskWaCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancelAll()
                 .build(),
             event("caseworker-postpone-hearing")
-                .cancel(COMPLETE_HEARING_OUTCOME_TASK)
+                .cancel(PROCESS_CATEGORY_HEARING)
                 .build(),
             event("caseworker-cancel-hearing")
-                .cancel(COMPLETE_HEARING_OUTCOME_TASK)
+                .cancel(PROCESS_CATEGORY_HEARING)
                 .build(),
             event("refer-to-judge")
-                .cancel(ISSUE_CASE_TO_RESPONDENT_TASK)
+                .cancel(PROCESS_CATEGORY_PROCESSING)
                 .build(),
             event("refer-to-legal-officer")
-                .cancel(ISSUE_CASE_TO_RESPONDENT_TASK)
+                .cancel(PROCESS_CATEGORY_PROCESSING)
                 .build()
         );
     }
