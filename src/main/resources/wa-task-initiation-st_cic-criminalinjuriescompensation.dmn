@@ -563,7 +563,7 @@
           <text>5</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1mhabqr">
-          <text>"completeHearingOutcome"</text>
+          <text>"HearingCompletion"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1n7bbuz">
           <text>"hearing_work"</text>
@@ -595,7 +595,7 @@
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0lxn6vt">
-          <text>"issueCaseToRespondent"</text>
+          <text>"IssueCase"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0gb982o">
           <text>"routine_work"</text>
@@ -1619,7 +1619,7 @@
           <text>1</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_00y9fjv">
-          <text>"stitchCollateHearingBundle"</text>
+          <text>"HearingBundle"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0ivquec">
           <text>"hearing_work"</text>

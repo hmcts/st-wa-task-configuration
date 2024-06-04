@@ -107,4 +107,7 @@ public class CamundaTaskConstants {
     public static final String PROCESS_CATEGORY_DECISION = "Decision";
     public static final String PROCESS_CATEGORY_AMENDMENT = "Amendment";
     public static final String PROCESS_CATEGORY_APPLICATION = "Application";
+    public static final String PROCESS_CATEGORY_HEARING_BUNDLE = "HearingBundle";
+    public static final String PROCESS_CATEGORY_ISSUE_CASE = "IssueCase";
+    public static final String PROCESS_CATEGORY_HEARING_COMPLETION = "HearingCompletion";
 }
