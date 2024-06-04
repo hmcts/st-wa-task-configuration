@@ -31,6 +31,9 @@ import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.PROCE
 import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.PROCESS_CATEGORY_APPLICATION;
 import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.PROCESS_CATEGORY_DECISION;
 import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.PROCESS_CATEGORY_HEARING;
+import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.PROCESS_CATEGORY_HEARING_BUNDLE;
+import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.PROCESS_CATEGORY_HEARING_COMPLETION;
+import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.PROCESS_CATEGORY_ISSUE_CASE;
 import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.PROCESS_CATEGORY_PROCESSING;
 import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.PROCESS_CORRECTIONS_TASK;
 import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.PROCESS_DIR_RELISTED_CASE_TASK;
@@ -339,7 +342,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", COMPLETE_HEARING_OUTCOME_TASK,
                         "name", "Complete Hearing Outcome",
                         "workingDaysAllowed", 5,
-                        "processCategories", COMPLETE_HEARING_OUTCOME_TASK,
+                        "processCategories", PROCESS_CATEGORY_HEARING_COMPLETION,
                         "workType", HEARING_WORK_TYPE,
                         "roleCategory", ROLE_CATEGORY_ADMIN
                     ),
@@ -347,7 +350,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", STITCH_COLLATE_HEARING_BUNDLE_TASK,
                         "name", "Stitch/collate hearing bundle",
                         "workingDaysAllowed", 1,
-                        "processCategories", STITCH_COLLATE_HEARING_BUNDLE_TASK,
+                        "processCategories", PROCESS_CATEGORY_HEARING_BUNDLE,
                         "workType", HEARING_WORK_TYPE,
                         "roleCategory", ROLE_CATEGORY_ADMIN
                     )
@@ -362,7 +365,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", ISSUE_CASE_TO_RESPONDENT_TASK,
                         "name", "Issue Case To Respondent",
                         "workingDaysAllowed", 2,
-                        "processCategories", ISSUE_CASE_TO_RESPONDENT_TASK,
+                        "processCategories", PROCESS_CATEGORY_ISSUE_CASE,
                         "workType", ROUTINE_WORK_TYPE,
                         "roleCategory", ROLE_CATEGORY_ADMIN
                     )
