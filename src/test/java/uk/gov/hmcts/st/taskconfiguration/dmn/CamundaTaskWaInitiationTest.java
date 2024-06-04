@@ -339,7 +339,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", COMPLETE_HEARING_OUTCOME_TASK,
                         "name", "Complete Hearing Outcome",
                         "workingDaysAllowed", 5,
-                        "processCategories", PROCESS_CATEGORY_HEARING,
+                        "processCategories", COMPLETE_HEARING_OUTCOME_TASK,
                         "workType", HEARING_WORK_TYPE,
                         "roleCategory", ROLE_CATEGORY_ADMIN
                     ),
@@ -347,7 +347,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", STITCH_COLLATE_HEARING_BUNDLE_TASK,
                         "name", "Stitch/collate hearing bundle",
                         "workingDaysAllowed", 1,
-                        "processCategories", PROCESS_CATEGORY_HEARING,
+                        "processCategories", STITCH_COLLATE_HEARING_BUNDLE_TASK,
                         "workType", HEARING_WORK_TYPE,
                         "roleCategory", ROLE_CATEGORY_ADMIN
                     )
@@ -362,7 +362,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", ISSUE_CASE_TO_RESPONDENT_TASK,
                         "name", "Issue Case To Respondent",
                         "workingDaysAllowed", 2,
-                        "processCategories", PROCESS_CATEGORY_PROCESSING,
+                        "processCategories", ISSUE_CASE_TO_RESPONDENT_TASK,
                         "workType", ROUTINE_WORK_TYPE,
                         "roleCategory", ROLE_CATEGORY_ADMIN
                     )
