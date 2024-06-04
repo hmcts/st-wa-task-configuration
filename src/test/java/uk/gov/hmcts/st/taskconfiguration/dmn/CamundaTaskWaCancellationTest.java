@@ -20,6 +20,9 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static uk.gov.hmcts.st.taskconfiguration.DmnDecisionTable.WA_TASK_CANCELLATION_ST_CIC_CRIMINALINJURIESCOMPENSATION;
 import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.COMPLETE_HEARING_OUTCOME_TASK;
 import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.ISSUE_CASE_TO_RESPONDENT_TASK;
+import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.PROCESS_CATEGORY_HEARING_BUNDLE;
+import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.PROCESS_CATEGORY_HEARING_COMPLETION;
+import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.PROCESS_CATEGORY_ISSUE_CASE;
 import static uk.gov.hmcts.st.taskconfiguration.utils.CamundaTaskConstants.STITCH_COLLATE_HEARING_BUNDLE_TASK;
 import static uk.gov.hmcts.st.taskconfiguration.utils.CancellationScenarioBuilder.event;
 
@@ -36,18 +39,18 @@ class CamundaTaskWaCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancelAll()
                 .build(),
             event("caseworker-postpone-hearing")
-                .cancel(COMPLETE_HEARING_OUTCOME_TASK)
-                .cancel(STITCH_COLLATE_HEARING_BUNDLE_TASK)
+                .cancel(PROCESS_CATEGORY_HEARING_COMPLETION)
+                .cancel(PROCESS_CATEGORY_HEARING_BUNDLE)
                 .build(),
             event("caseworker-cancel-hearing")
-                .cancel(COMPLETE_HEARING_OUTCOME_TASK)
-                .cancel(STITCH_COLLATE_HEARING_BUNDLE_TASK)
+                .cancel(PROCESS_CATEGORY_HEARING_COMPLETION)
+                .cancel(PROCESS_CATEGORY_HEARING_BUNDLE)
                 .build(),
             event("refer-to-judge")
-                .cancel(ISSUE_CASE_TO_RESPONDENT_TASK)
+                .cancel(PROCESS_CATEGORY_ISSUE_CASE)
                 .build(),
             event("refer-to-legal-officer")
-                .cancel(ISSUE_CASE_TO_RESPONDENT_TASK)
+                .cancel(PROCESS_CATEGORY_ISSUE_CASE)
                 .build()
         );
     }

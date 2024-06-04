@@ -65,7 +65,7 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_05fdkyt">
-          <text>"issueCaseToRespondent"</text>
+          <text>"IssueCase"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0pnydpd">
@@ -89,7 +89,7 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1c89qfr">
-          <text>"completeHearingOutcome"</text>
+          <text>"HearingCompletion"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0ysz4va">
@@ -112,7 +112,7 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_166yhqi">
-          <text>"stitchCollateHearingBundle"</text>
+          <text>"HearingBundle"</text>
         </outputEntry>
       </rule>
     </decisionTable>
