@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="wa-cancellation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.21.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="wa-cancellation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.23.0">
   <decision id="wa-task-cancellation-st_cic-criminalinjuriescompensation" name="Task cancellation DMN">
     <decisionTable id="DecisionTable_0z3jx1g" hitPolicy="COLLECT">
       <input id="Input_1" label="From State">
@@ -45,6 +45,29 @@
           <text></text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1odfrdp">
+        <inputEntry id="UnaryTests_1yv0lj6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1iy8xdd">
+          <text>"refer-to-judge","refer-to-legal-officer"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0bv4k05">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_08a36m9">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0dkpwml">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1wcfw43">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_05fdkyt">
+          <text>"IssueCase"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0pnydpd">
         <description></description>
         <inputEntry id="UnaryTests_1a0wbnr">
@@ -66,30 +89,30 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1c89qfr">
-          <text>"completeHearingOutcome"</text>
+          <text>"HearingCompletion"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1odfrdp">
-        <inputEntry id="UnaryTests_1yv0lj6">
+      <rule id="DecisionRule_0ysz4va">
+        <inputEntry id="UnaryTests_1pyo8h9">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_1iy8xdd">
-          <text>"refer-to-judge","refer-to-legal-officer"</text>
+        <inputEntry id="UnaryTests_0am4g1s">
+          <text>"caseworker-postpone-hearing","caseworker-cancel-hearing"</text>
         </inputEntry>
-        <inputEntry id="UnaryTests_0bv4k05">
+        <inputEntry id="UnaryTests_1r2wn5h">
           <text></text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_08a36m9">
+        <outputEntry id="LiteralExpression_0woda5r">
           <text>"Cancel"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_0dkpwml">
+        <outputEntry id="LiteralExpression_1mcb5mn">
           <text></text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_1wcfw43">
+        <outputEntry id="LiteralExpression_1l6emw6">
           <text></text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_05fdkyt">
-          <text>"issueCaseToRespondent"</text>
+        <outputEntry id="LiteralExpression_166yhqi">
+          <text>"HearingBundle"</text>
         </outputEntry>
       </rule>
     </decisionTable>
