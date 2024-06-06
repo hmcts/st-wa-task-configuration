@@ -349,7 +349,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "caseworker-record-listing",
+                "system-trigger-complete-hearing-outcome",
                 "AwaitingHearing",
                 null,
                 List.of(
