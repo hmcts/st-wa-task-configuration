@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.22.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.23.0">
   <decision id="wa-task-initiation-st_cic-criminalinjuriescompensation" name="Task initiation DMN">
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT">
       <input id="Input_1" label="Event Id" camunda:inputVariable="eventId">
@@ -51,7 +51,7 @@
           <text>10</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1p20qkn">
-          <text>"processCaseWithdrawalDirections"</text>
+          <text>"Processing"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0te3ddw">
           <text>"routine_work"</text>
@@ -83,7 +83,7 @@
           <text>5</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0w2f8mx">
-          <text>"processRule27Decision"</text>
+          <text>"Processing"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0r4i2j8">
           <text>"routine_work"</text>
@@ -115,7 +115,7 @@
           <text>1</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0zl19zr">
-          <text>"processListingDirections"</text>
+          <text>"Processing"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_03dld2l">
           <text>"routine_work"</text>
@@ -147,7 +147,7 @@
           <text>1</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0oxny7o">
-          <text>"processDirectionsReListedCase"</text>
+          <text>"Hearing"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_01s3zl8">
           <text>"routine_work"</text>
@@ -179,7 +179,7 @@
           <text>1</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0ayn3l0">
-          <text>"processDirectionsReListedCaseWithin5Days"</text>
+          <text>"Hearing"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1de7vau">
           <text>"priority"</text>
@@ -211,7 +211,7 @@
           <text>1</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0n25r31">
-          <text>"processSetAsideDirections"</text>
+          <text>"Decision"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1waj6mz">
           <text>"routine_work"</text>
@@ -243,7 +243,7 @@
           <text>3</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_01iuler">
-          <text>"processCorrections"</text>
+          <text>"Amendment"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0ea3zwf">
           <text>"hearing_work"</text>
@@ -275,7 +275,7 @@
           <text>10</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1u5mu0w">
-          <text>"processDirectionsReturned"</text>
+          <text>"Processing"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1mipzq8">
           <text>"routine_work"</text>
@@ -307,7 +307,7 @@
           <text>1</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1yyj581">
-          <text>"processPostponementDirections"</text>
+          <text>"Hearing"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1i1at5s">
           <text>"routine_work"</text>
@@ -339,7 +339,7 @@
           <text>1</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_189lec7">
-          <text>"processTimeExtensionDirectionsReturned"</text>
+          <text>"Processing"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0bfpdrc">
           <text>"routine_work"</text>
@@ -371,7 +371,7 @@
           <text>5</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_180prw7">
-          <text>"processReinstatementDecisionNotice"</text>
+          <text>"Application"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0f5k0qp">
           <text>"routine_work"</text>
@@ -403,7 +403,7 @@
           <text>10</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0gnw1h1">
-          <text>"processOtherDirectionsReturned"</text>
+          <text>"Processing"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_040tjnz">
           <text>"decision_making_work"</text>
@@ -435,7 +435,7 @@
           <text>3</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0xo1mko">
-          <text>"processWrittenReasons"</text>
+          <text>"Decision"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0lb62pd">
           <text>"routine_work"</text>
@@ -467,7 +467,7 @@
           <text>10</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_04jodc9">
-          <text>"processStrikeOutDirectionsReturned"</text>
+          <text>"Processing"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0vjmeyw">
           <text>"routine_work"</text>
@@ -499,7 +499,7 @@
           <text>10</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_070kxxn">
-          <text>"processStayDirections"</text>
+          <text>"Processing"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0wb4bsf">
           <text>"routine_work"</text>
@@ -531,7 +531,7 @@
           <text>1</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_04q866u">
-          <text>"issueDecisionNotice"</text>
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1a9hp96">
           <text>"hearing_work"</text>
@@ -563,7 +563,7 @@
           <text>5</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1mhabqr">
-          <text>"completeHearingOutcome"</text>
+          <text>"HearingCompletion"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1n7bbuz">
           <text>"hearing_work"</text>
@@ -595,7 +595,7 @@
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0lxn6vt">
-          <text>"issueCaseToRespondent"</text>
+          <text>"IssueCase"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0gb982o">
           <text>"routine_work"</text>
@@ -627,7 +627,7 @@
           <text>5</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1iihfwm">
-          <text>"vetNewCaseDocuments"</text>
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_07dognu">
           <text>"applications"</text>
@@ -659,7 +659,7 @@
           <text>5</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1onhgd1">
-          <text>"reviewNewCaseAndProvideDirectionsLO"</text>
+          <text>"Processing"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1qstmwu">
           <text>"decision_making_work"</text>
@@ -691,7 +691,7 @@
           <text>1</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0hjqsvw">
-          <text>"reviewTimeExtensionRequestLO"</text>
+          <text>"Processing"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1owec2z">
           <text>"decision_making_work"</text>
@@ -723,7 +723,7 @@
           <text>5</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1owxhjl">
-          <text>"reviewStrikeOutRequestLO"</text>
+          <text>"Processing"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_14927ph">
           <text>"decision_making_work"</text>
@@ -755,7 +755,7 @@
           <text>5</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1lyiyte">
-          <text>"reviewStayRequestLO"</text>
+          <text>"Processing"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1qkm5lq">
           <text>"decision_making_work"</text>
@@ -787,7 +787,7 @@
           <text>1</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1k5qrwe">
-          <text>"reviewListingDirectionsLO"</text>
+          <text>"Processing"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_13gvmq9">
           <text>"decision_making_work"</text>
@@ -819,7 +819,7 @@
           <text>5</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_17xzu31">
-          <text>"reviewWithdrawalRequestLO"</text>
+          <text>"Processing"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0wy9j0q">
           <text>"decision_making_work"</text>
@@ -851,7 +851,7 @@
           <text>5</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_00tnfqn">
-          <text>"reviewRule27RequestLO"</text>
+          <text>"Processing"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0zs4u1c">
           <text>"decision_making_work"</text>
@@ -883,7 +883,7 @@
           <text>1</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1e76e4v">
-          <text>"reviewListCaseLO"</text>
+          <text>"Hearing"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_13k2qw6">
           <text>"decision_making_work"</text>
@@ -915,7 +915,7 @@
           <text>1</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_111d4ny">
-          <text>"reviewListCaseWithin5DaysLO"</text>
+          <text>"Hearing"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0nyy0tn">
           <text>"decision_making_work"</text>
@@ -947,7 +947,7 @@
           <text>1</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_11hyw3d">
-          <text>"reviewPostponementRequestLO"</text>
+          <text>"Hearing"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_07z9ffl">
           <text>"decision_making_work"</text>
@@ -979,7 +979,7 @@
           <text>5</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1125er1">
-          <text>"reviewReinstatementRequestLO"</text>
+          <text>"Application"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1e03pau">
           <text>"decision_making_work"</text>
@@ -1011,7 +1011,7 @@
           <text>5</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1k91mc1">
-          <text>"reviewOtherRequestLO"</text>
+          <text>"Processing"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0f8wyyl">
           <text>"decision_making_work"</text>
@@ -1043,7 +1043,7 @@
           <text>1</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1ern9ea">
-          <text>"reviewListCaseWithin5DaysJudge"</text>
+          <text>"Hearing"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1v6bjck">
           <text>"decision_making_work"</text>
@@ -1075,7 +1075,7 @@
           <text>1</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0viwc5t">
-          <text>"reviewPostponementRequestJudge"</text>
+          <text>"Hearing"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0x9w6wp">
           <text>"decision_making_work"</text>
@@ -1107,7 +1107,7 @@
           <text>1</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0mbsr14">
-          <text>"reviewCorrectionsRequest"</text>
+          <text>"Amendment"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0r1i2jd">
           <text>"decision_making_work"</text>
@@ -1139,7 +1139,7 @@
           <text>28</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0yzrenw">
-          <text>"reviewWrittenReasonsRequest"</text>
+          <text>"Decision"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1xqt1h7">
           <text>"decision_making_work"</text>
@@ -1171,7 +1171,7 @@
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_184qh7h">
-          <text>"reviewReinstatementRequestJudge"</text>
+          <text>"Application"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0usjztc">
           <text>"decision_making_work"</text>
@@ -1203,7 +1203,7 @@
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1yvzyq4">
-          <text>"reviewSetAsideRequest"</text>
+          <text>"Decision"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0frod7s">
           <text>"decision_making_work"</text>
@@ -1235,7 +1235,7 @@
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_039m2er">
-          <text>"reviewStayRequestJudge"</text>
+          <text>"Processing"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0fnz3iu">
           <text>"decision_making_work"</text>
@@ -1267,7 +1267,7 @@
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1g330db">
-          <text>"reviewNewCaseAndProvideDirectionsJudge"</text>
+          <text>"Processing"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1ez3d67">
           <text>"decision_making_work"</text>
@@ -1299,7 +1299,7 @@
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_14fuc5v">
-          <text>"reviewOtherRequestJudge"</text>
+          <text>"Processing"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1vqjd98">
           <text>"decision_making_work"</text>
@@ -1331,7 +1331,7 @@
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_10ckjbd">
-          <text>"reviewWithdrawalRequestJudge"</text>
+          <text>"Processing"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1vtfbg1">
           <text>"decision_making_work"</text>
@@ -1363,7 +1363,7 @@
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0wp4jxf">
-          <text>"reviewRule27RequestJudge"</text>
+          <text>"Processing"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1f6lsc3">
           <text>"decision_making_work"</text>
@@ -1395,7 +1395,7 @@
           <text>1</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_03mqcba">
-          <text>"reviewListingDirectionsJudge"</text>
+          <text>"Processing"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1j616nh">
           <text>"decision_making_work"</text>
@@ -1427,7 +1427,7 @@
           <text>1</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_00ryhzl">
-          <text>"reviewListCaseJudge"</text>
+          <text>"Hearing"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_14dehny">
           <text>"decision_making_work"</text>
@@ -1459,7 +1459,7 @@
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0tt70xk">
-          <text>"reviewStrikeOutRequestJudge"</text>
+          <text>"Processing"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1jip9po">
           <text>"decision_making_work"</text>
@@ -1491,7 +1491,7 @@
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1odq5mw">
-          <text>"reviewTimeExtensionRequestJudge"</text>
+          <text>"Processing"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1t6a7bv">
           <text>"decision_making_work"</text>
@@ -1523,7 +1523,7 @@
           <text>1</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_17y2rot">
-          <text>"followUpNoncomplianceOfDirections"</text>
+          <text>"Processing"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_087hs36">
           <text>"routine_work"</text>
@@ -1555,7 +1555,7 @@
           <text>5</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_11wt8ma">
-          <text>"registerNewCase"</text>
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1enbfdl">
           <text>"applications"</text>
@@ -1587,7 +1587,7 @@
           <text>10</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1gocjkn">
-          <text>"processFurtherEvidence"</text>
+          <text>"Processing"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_193mds0">
           <text>"routine_work"</text>
@@ -1619,7 +1619,7 @@
           <text>1</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_00y9fjv">
-          <text>"stitchCollateHearingBundle"</text>
+          <text>"HearingBundle"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0ivquec">
           <text>"hearing_work"</text>

@@ -102,4 +102,12 @@ public class CamundaTaskConstants {
     public static final String AUTO_COMPLETE_MODE = "auto";
     public static final String DEFAULT_NONE_COMPLETE_MODE = "defaultNone";
 
+    public static final String PROCESS_CATEGORY_PROCESSING = "Processing";
+    public static final String PROCESS_CATEGORY_HEARING = "Hearing";
+    public static final String PROCESS_CATEGORY_DECISION = "Decision";
+    public static final String PROCESS_CATEGORY_AMENDMENT = "Amendment";
+    public static final String PROCESS_CATEGORY_APPLICATION = "Application";
+    public static final String PROCESS_CATEGORY_HEARING_BUNDLE = "HearingBundle";
+    public static final String PROCESS_CATEGORY_ISSUE_CASE = "IssueCase";
+    public static final String PROCESS_CATEGORY_HEARING_COMPLETION = "HearingCompletion";
 }
