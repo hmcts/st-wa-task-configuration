@@ -334,6 +334,21 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "system-trigger-stitch-collate-hearing-bundle",
+                "AwaitingHearing",
+                null,
+                List.of(
+                    Map.of(
+                        "taskId", STITCH_COLLATE_HEARING_BUNDLE_TASK,
+                        "name", "Stitch/collate hearing bundle",
+                        "workingDaysAllowed", 1,
+                        "processCategories", PROCESS_CATEGORY_HEARING_BUNDLE,
+                        "workType", HEARING_WORK_TYPE,
+                        "roleCategory", ROLE_CATEGORY_ADMIN
+                    )
+                )
+            ),
+            Arguments.of(
                 "caseworker-record-listing",
                 "AwaitingHearing",
                 null,
@@ -343,14 +358,6 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Complete Hearing Outcome",
                         "workingDaysAllowed", 5,
                         "processCategories", PROCESS_CATEGORY_HEARING_COMPLETION,
-                        "workType", HEARING_WORK_TYPE,
-                        "roleCategory", ROLE_CATEGORY_ADMIN
-                    ),
-                    Map.of(
-                        "taskId", STITCH_COLLATE_HEARING_BUNDLE_TASK,
-                        "name", "Stitch/collate hearing bundle",
-                        "workingDaysAllowed", 1,
-                        "processCategories", PROCESS_CATEGORY_HEARING_BUNDLE,
                         "workType", HEARING_WORK_TYPE,
                         "roleCategory", ROLE_CATEGORY_ADMIN
                     )
