@@ -542,7 +542,7 @@
       </rule>
       <rule id="DecisionRule_056amwa">
         <inputEntry id="UnaryTests_0cj02rw">
-          <text>"caseworker-record-listing"</text>
+          <text>"system-trigger-complete-hearing-outcome"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1nz6lye">
           <text>"AwaitingHearing"</text>
@@ -1598,7 +1598,7 @@
       </rule>
       <rule id="DecisionRule_0z8qogg">
         <inputEntry id="UnaryTests_1xd3rrh">
-          <text>"caseworker-record-listing"</text>
+          <text>"system-trigger-stitch-collate-hearing-bundle"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_09lrk6c">
           <text>"AwaitingHearing"</text>
