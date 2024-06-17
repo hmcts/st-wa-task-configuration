@@ -117,8 +117,6 @@ withPipeline(type, product, component) {
     env.CCD_DATA_STORE_URL = "https://ccd-data-store-api-st-task-configuration-pr-${CHANGE_ID}.preview.platform.hmcts.net"
     env.DM_STORE_URL = "http://dm-store-aat.service.core-compute-aat.internal"
     env.ST_SERVICE_URL="https://st-task-configuration-pr-${CHANGE_ID}.preview.platform.hmcts.net"
-    yarnBuilder.yarn('yarn-update')
-    yarnBuilder.yarn('install-dependencies')
   }
 
   afterAlways('smoketest:preview') {
