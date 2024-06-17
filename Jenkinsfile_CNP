@@ -112,7 +112,6 @@ withPipeline(type, product, component) {
 
   before('smoketest:preview') {
     dir("${WORKSPACE}/bin"){
-      sh "./add-roles.sh"
       sh "./import-ccd-definition.sh \"-e *-prod.json,*HNL-nonprod.json,AuthorisationCaseType-shuttered.json\""
     }
 
