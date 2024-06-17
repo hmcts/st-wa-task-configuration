@@ -5,11 +5,7 @@
 def type = "java"
 def product = "sptribs"
 def component = "task-configuration"
-def s2sServiceName = "wa_camunda_pipeline_upload"
-def tenantId = "st"
 def branchesToSync = ['demo', 'perftest', 'ithc']
-def ccdBranch = "master"
-def camundaBranch = "master"
 
 def yarnBuilder = new uk.gov.hmcts.contino.YarnBuilder(this)
 
