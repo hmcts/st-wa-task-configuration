@@ -162,8 +162,12 @@ jacocoTestCoverageVerification {
   }
 }
 
+test {
+  failFast = true
+}
+
 jacocoTestReport {
-  executionData(test, integration)
+  executionData(test)
   reports {
     xml.required = true
     csv.required = false
