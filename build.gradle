@@ -333,9 +333,9 @@ dependencies {
 //  integrationTestImplementation sourceSets.main.runtimeClasspath
 //  integrationTestImplementation sourceSets.test.runtimeClasspath
 
-  functionalTestImplementation sourceSets.main.runtimeClasspath
-
-  smokeTestImplementation sourceSets.main.runtimeClasspath
+//  functionalTestImplementation sourceSets.main.runtimeClasspath
+//
+//  smokeTestImplementation sourceSets.main.runtimeClasspath
 
 
 }
