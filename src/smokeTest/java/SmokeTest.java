@@ -3,7 +3,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
+@SpringBootTest()
 public class SmokeTest {
     @Value("${test.url:http://localhost:4551}")
     private String testUrl;
