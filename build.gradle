@@ -21,34 +21,34 @@ java {
   }
 }
 
-//sourceSets {
-//  functionalTest {
-//    java {
-//      compileClasspath += main.output
-//      runtimeClasspath += main.output
-//      srcDir file('src/functionalTest/java')
-//    }
-//    resources.srcDir file('src/functionalTest/resources')
-//  }
-//
-//  integrationTest {
-//    java {
-//      compileClasspath += main.output
-//      runtimeClasspath += main.output
-//      srcDir file('src/integrationTest/java')
-//    }
-//    resources.srcDir file('src/integrationTest/resources')
-//  }
-//
-//  smokeTest {
-//    java {
-//      compileClasspath += main.output
-//      runtimeClasspath += main.output
-//      srcDir file('src/smokeTest/java')
-//    }
-//    resources.srcDir file('src/smokeTest/resources')
-//  }
-//}
+sourceSets {
+  functionalTest {
+    java {
+      compileClasspath += main.output
+      runtimeClasspath += main.output
+      srcDir file('src/functionalTest/java')
+    }
+    resources.srcDir file('src/functionalTest/resources')
+  }
+
+  integrationTest {
+    java {
+      compileClasspath += main.output
+      runtimeClasspath += main.output
+      srcDir file('src/integrationTest/java')
+    }
+    resources.srcDir file('src/integrationTest/resources')
+  }
+
+  smokeTest {
+    java {
+      compileClasspath += main.output
+      runtimeClasspath += main.output
+      srcDir file('src/smokeTest/java')
+    }
+    resources.srcDir file('src/smokeTest/resources')
+  }
+}
 
 tasks.withType(Copy) {
   duplicatesStrategy = DuplicatesStrategy.EXCLUDE
@@ -70,73 +70,31 @@ test {
   failFast = true
 }
 
-task installDependencies(type: Exec, description: 'Installs Yarn dependencies.') {
-  commandLine '/usr/bin/yarn', '--mutex', 'network', '--frozen-lockfile', '--silent', 'install'
+task functional(type: Test) {
+  description = "Runs functional tests"
+  group = "Verification"
+  testClassesDirs = sourceSets.functionalTest.output.classesDirs
+  classpath = sourceSets.functionalTest.runtimeClasspath
 }
 
-task checkDependenciesIntegrity(type: Exec, description: 'Checks integrity of Yarn dependencies.') {
-  commandLine '/usr/bin/yarn', '--mutex', 'network', '--frozen-lockfile', '--silent', 'check', '--integrity'
+task integration(type: Test) {
+  description = "Runs integration tests"
+  group = "Verification"
+  testClassesDirs = sourceSets.integrationTest.output.classesDirs
+  classpath = sourceSets.integrationTest.runtimeClasspath
+  failFast = true
 }
 
-task lintUserInterfaceTests(type: Exec, description: 'Runs linting of E2E tests.') {
-  commandLine '/usr/bin/yarn', '--silent', 'lint'
+task smoke(type: Test) {
+  description = "Runs Smoke Tests"
+  testClassesDirs = sourceSets.smokeTest.output.classesDirs
+  classpath = sourceSets.smokeTest.runtimeClasspath
 }
 
-task runSmokeTests(type: Exec, description: 'Runs smoke tests.') {
-  commandLine '/usr/bin/yarn', '--silent', 'test:smoke'
-}
-
-task runApiTests(type: Exec, description: 'Runs Api WA functional tests.') {
-  commandLine '/usr/bin/yarn', '--silent', 'test:api-1v1'
-}
-
-task runWATests(type: Exec, description: 'Runs Api WA functional tests.') {
-  onlyIf {
-    return System.env.ENVIRONMENT == 'preview'
-  }
-  commandLine '/usr/bin/yarn', '--silent', 'test:api-dj'
-}
-
-//task functional(type: Test) {
-//  description = "Runs functional tests"
-//  group = "Verification"
-//  testClassesDirs = sourceSets.functionalTest.output.classesDirs
-//  classpath = sourceSets.functionalTest.runtimeClasspath
-//}
-//
-//task integration(type: Test) {
-//  description = "Runs integration tests"
-//  group = "Verification"
-//  testClassesDirs = sourceSets.integrationTest.output.classesDirs
-//  classpath = sourceSets.integrationTest.runtimeClasspath
-//  failFast = true
-//}
-//
-//task smoke(type: Test) {
-//  description = "Runs Smoke Tests"
-//  testClassesDirs = sourceSets.smokeTest.output.classesDirs
-//  classpath = sourceSets.smokeTest.runtimeClasspath
-//}
-//
-//task tests {
-//  description = "Runs junit , integration and functional tests"
-//  group = "Verification"
-//  dependsOn test, integration, smoke, functional
-//}
-
-def inStrictOrder(Task... tasks) {
-  for (int i = 0; i < tasks.size() - 1; i++) {
-    tasks[i + 1].mustRunAfter(tasks[i])
-  }
-  return tasks
-}
-
-task smoke(description: 'Runs the smoke tests.') {
-  dependsOn(inStrictOrder(installDependencies, checkDependenciesIntegrity, runSmokeTests))
-}
-
-task functional(description: 'Runs the functional tests.') {
-  dependsOn(inStrictOrder(installDependencies, checkDependenciesIntegrity, runApiTests, runWATests))
+task tests {
+  description = "Runs junit , integration and functional tests"
+  group = "Verification"
+  dependsOn test, integration, smoke, functional
 }
 
 checkstyle {
@@ -162,12 +120,8 @@ jacocoTestCoverageVerification {
   }
 }
 
-test {
-  failFast = true
-}
-
 jacocoTestReport {
-  executionData(test)
+  executionData(test, integration)
   reports {
     xml.required = true
     csv.required = false
@@ -191,7 +145,7 @@ pitest {
 project.tasks['pitest'].group = "Verification"
 
 
-project.tasks['sonarqube'].dependsOn test, jacocoTestReport
+project.tasks['sonarqube'].dependsOn test, integration, jacocoTestReport
 
 sonarqube {
   properties {
@@ -329,15 +283,25 @@ dependencies {
   testImplementation group: 'org.camunda.bpm', name: 'camunda-engine', version: '7.21.0'
   testImplementation group: 'com.h2database', name: 'h2', version: '2.2.224'
   testImplementation group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310', version: '2.17.1'
+  testImplementation group: 'io.rest-assured', name: 'rest-assured'
 
-//  integrationTestImplementation sourceSets.main.runtimeClasspath
-//  integrationTestImplementation sourceSets.test.runtimeClasspath
+  integrationTestImplementation sourceSets.main.runtimeClasspath
+  integrationTestImplementation sourceSets.test.runtimeClasspath
 
-//  functionalTestImplementation sourceSets.main.runtimeClasspath
-//
-//  smokeTestImplementation sourceSets.main.runtimeClasspath
+  functionalTestImplementation sourceSets.main.runtimeClasspath
+
+  smokeTestImplementation sourceSets.main.runtimeClasspath
 
 
+}
+
+configurations {
+  functionalTestImplementation.extendsFrom testImplementation
+  functionalTestRuntime.extendsFrom testRuntime
+  integrationTestImplementation.extendsFrom testImplementation
+  integrationTestRuntime.extendsFrom testRuntime
+  smokeTestImplementation.extendsFrom testImplementation
+  smokeTestRuntime.extendsFrom testRuntime
 }
 
 mainClassName = 'uk.gov.hmcts.st.taskconfiguration.Application'
