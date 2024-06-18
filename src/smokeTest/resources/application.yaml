@@ -1,8 +1,0 @@
-spring:
-  application:
-    name: sptribs Case API Functional Tests
-
-  main:
-    allow-bean-definition-overriding: true
-
-test-url: ${TEST_URL:http://localhost:4551}
