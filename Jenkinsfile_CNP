@@ -60,7 +60,7 @@ def secrets = [
 
 def uploadDmnDiagrams(String env, String changeID) {
   dir("${WORKSPACE}/bin") {
-    tenantId = "st"
+    tenantId = "sptribs"
     product = "sptribs"
     sh """
       eval \$(./variables/load-${env}-environment-variables.sh ${changeID})
