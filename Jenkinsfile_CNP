@@ -33,6 +33,7 @@ def secrets = [
     secret('idam-data-store-system-user-password','IDAM_DATA_STORE_SYSTEM_USER_PASSWORD')
   ],
   'sptribs-${env}'    :[
+    secret('s2s-case-api-secret', 'S2S_SECRET'),
     secret('app-insights-instrumentation-key', 'APPINSIGHTS_INSTRUMENTATIONKEY'),
     secret('idam-secret', 'OAUTH2_CLIENT_SECRET'),
     secret('idam-solicitor-username', 'IDAM_SOLICITOR_USERNAME'),
