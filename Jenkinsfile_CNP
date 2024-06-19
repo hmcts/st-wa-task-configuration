@@ -137,9 +137,6 @@ withPipeline(type, product, component) {
   }
 
   before('smoketest:aat') {
-    sh """
-      eval \$(./bin/variables/load-aat-environment-variables.sh)
-    """
     env.URL="https://manage-case.aat.platform.hmcts.net"
     env.IDAM_API_URL = "https://idam-api.aat.platform.hmcts.net"
     env.SERVICE_AUTH_PROVIDER_API_BASE_URL = "http://rpe-service-auth-provider-aat.service.core-compute-aat.internal"
