@@ -116,6 +116,7 @@ withPipeline(type, product, component) {
     env.DM_STORE_URL = "http://dm-store-aat.service.core-compute-aat.internal"
     env.ST_SERVICE_URL = "https://st-task-configuration-pr-${CHANGE_ID}.preview.platform.hmcts.net"
     env.DEFINITION_STORE_URL_BASE = "https://ccd-definition-store-sptribs-case-api-pr-${CHANGE_ID}.preview.platform.hmcts.net"
+    env.CCD_DEF_NAME = "preview"
   }
 
   afterAlways('smoketest:preview') {
