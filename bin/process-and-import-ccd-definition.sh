@@ -18,3 +18,4 @@ do
      ${scriptPath}/ccd-import-definition.sh $definitionOutputFile
   fi
 done
+

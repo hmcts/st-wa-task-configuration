@@ -41,3 +41,4 @@ echo "$(basename ${file}) upload failed with http code ${upload_http_code} and r
 continue;
 
 done
+

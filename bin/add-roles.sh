@@ -7,3 +7,4 @@ scriptPath=$(dirname $(realpath $0))
 #${scriptPath}/add-ccd-role.sh "caseworker-st_cic"
 #${scriptPath}/add-ccd-role.sh "caseworker-sptribs-cic-districtjudge"
 #${scriptPath}/add-ccd-role.sh "caseworker-sptribs-cic-respondent"
+

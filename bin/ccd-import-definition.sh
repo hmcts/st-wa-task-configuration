@@ -51,3 +51,4 @@ fi
 
 echo "${filename} (${uploadFilename}) upload failed (${upload_response_content})"
 exit 1;
+
