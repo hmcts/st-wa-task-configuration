@@ -8,7 +8,7 @@ product=${4}
 
 s2sSecret=${S2S_SECRET:-AABBCCDDEEFFGGHH}
 
-echo "secret: ${s2sSecret}"
+echo "secret: ${S2S_SECRET}"
 
 serviceToken=$($(realpath $workspace)/bin/utils/idam-lease-service-token.sh sptribs \
   $(docker run --rm toolbelt/oathtool --totp -b ${s2sSecret}))
