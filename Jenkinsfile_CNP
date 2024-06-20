@@ -50,8 +50,6 @@ def secrets = [
     secret('ccd-data-store-db-password-preview', 'CCD_DATA_STORE_DB_PASSWORD_PREVIEW'),
     secret('ccd-user-profile-db-username-preview', 'CCD_USER_PROFILE_DB_USERNAME_PREVIEW'),
     secret('ccd-user-profile-db-password-preview', 'CCD_USER_PROFILE_DB_PASSWORD_PREVIEW'),
-    secret('em-spring-datasource-username-preview', 'EM_SPRING_DATASOURCE_USERNAME_PREVIEW'),
-    secret('em-spring-datasource-password-preview', 'EM_SPRING_DATASOURCE_PASSWORD_PREVIEW')
   ],
   'civil-${env}': [
     secret('ccd-importer-username', 'DEFINITION_IMPORTER_USERNAME'),
