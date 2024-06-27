@@ -5,19 +5,147 @@
 def type = "java"
 def product = "sptribs"
 def component = "task-configuration"
-def s2sServiceName = "wa_camunda_pipeline_upload"
-def tenantId = "st"
-def branchesToSync = ['demo', 'perftest']
+def branchesToSync = ['demo', 'perftest', 'ithc']
 
-withCamundaOnlyPipeline(type, product, component, s2sServiceName, tenantId) {
+static Map<String, Object> secret(String secretName, String envVariable) {
+  [$class     : 'AzureKeyVaultSecret',
+   secretType : 'Secret',
+   name       : secretName,
+   envVariable: envVariable
+  ]
+}
 
-  afterSuccess('test') {
-    steps.archiveArtifacts allowEmptyArchive: true, artifacts: '**/reports/tests/**/*'
-    steps.archiveArtifacts allowEmptyArchive: true, artifacts: '**/reports/tests/integration/**/*'
+def secrets = [
+  's2s-${env}': [
+    secret('microservicekey-ccd-data', 'DATA_STORE_S2S_KEY'),
+    secret('microservicekey-ccd-definition', 'DEFINITION_STORE_S2S_KEY'),
+    secret('microservicekey-ccd-gw', 'CCD_API_GATEWAY_S2S_KEY'),
+    secret('microservicekey-ccd-admin', 'ADMIN_S2S_KEY'),
+    secret('microservicekey-ccd-data', 'CCD_DATA_STORE_S2S_SECRET'),
+    secret('microservicekey-ccd-definition', 'CCD_DEFINITION_STORE_S2S_SECRET')
+  ],
+  'ccd-${env}': [
+    secret('ccd-api-gateway-oauth2-client-secret', 'CCD_API_GATEWAY_IDAM_CLIENT_SECRET'),
+    secret('postcode-info-address-lookup-token', 'ADDRESS_LOOKUP_TOKEN'),
+    secret('ccd-admin-web-oauth2-client-secret', 'ADMIN_WEB_IDAM_SECRET'),
+    secret('idam-data-store-client-secret','IDAM_OAUTH2_DATA_STORE_CLIENT_SECRET'),
+    secret('idam-data-store-system-user-username','IDAM_DATA_STORE_SYSTEM_USER_USERNAME'),
+    secret('idam-data-store-system-user-password','IDAM_DATA_STORE_SYSTEM_USER_PASSWORD')
+  ],
+  'sptribs-${env}'    :[
+    secret('s2s-case-api-secret', 'S2S_SECRET'),
+    secret('app-insights-instrumentation-key', 'APPINSIGHTS_INSTRUMENTATIONKEY'),
+    secret('idam-secret', 'OAUTH2_CLIENT_SECRET'),
+    secret('idam-systemupdate-username', 'IDAM_SYSTEM_UPDATE_USERNAME'),
+    secret('idam-systemupdate-password', 'IDAM_SYSTEM_UPDATE_PASSWORD'),
+    secret('sptribs-postgres-username-preview', 'SPTRIBS_POSTGRES_USERNAME_PREVIEW'),
+    secret('sptribs-postgres-password-preview', 'SPTRIBS_POSTGRES_PASSWORD_PREVIEW'),
+    secret('ccd-global-postgres-username-preview', 'CCD_GLOBAL_POSTGRES_USERNAME_PREVIEW'),
+    secret('ccd-global-postgres-password-preview', 'CCD_GLOBAL_POSTGRES_PASSWORD_PREVIEW'),
+    secret('ccd-user-profile-db-username-preview', 'CCD_USER_PROFILE_DB_USERNAME_PREVIEW'),
+    secret('ccd-user-profile-db-password-preview', 'CCD_USER_PROFILE_DB_PASSWORD_PREVIEW'),
+  ],
+  'civil-${env}': [
+    secret('ccd-importer-username', 'DEFINITION_IMPORTER_USERNAME'),
+    secret('ccd-importer-password', 'DEFINITION_IMPORTER_PASSWORD')
+  ]
+]
+
+def uploadDmnDiagrams(String env, String changeID) {
+  dir("${WORKSPACE}/bin") {
+    tenantId = "sptribs"
+    product = "sptribs"
+    sh """
+      eval \$(./variables/load-${env}-environment-variables.sh ${changeID})
+      ./import-dmn-diagram.sh ${WORKSPACE} ${env} ${tenantId} ${product}
+    """
+  }
+}
+
+withPipeline(type, product, component) {
+  pipelineConf = config
+
+  onPR {
+    env.ENVIRONMENT = "preview"
+    loadVaultSecrets(secrets)
+  }
+  onMaster {
+    loadVaultSecrets(secrets)
+  }
+  onDemo {
+    env.ENVIRONMENT = 'demo'
+    loadVaultSecrets(secrets)
+  }
+
+  onPerftest {
+    env.ENVIRONMENT = 'perftest'
+    loadVaultSecrets(secrets)
+  }
+
+  onIthc {
+    env.ENVIRONMENT = 'ithc'
+    loadVaultSecrets(secrets)
   }
 
 
-  // Sync environment specific branches with master branch
   syncBranchesWithMaster(branchesToSync)
+  afterSuccess('checkout') {
+    def subscription = 'nonprod'
+    if ( env.ENVIRONMENT == 'ithc' || env.ENVIRONMENT == 'demo' || env.ENVIRONMENT == 'perftest') {
+      withSubscription(subscription) {
+        withTeamSecrets(pipelineConf, env.ENVIRONMENT) {
+          uploadDmnDiagrams(env.ENVIRONMENT,'')
+        }
+      }
+    }
+  }
 
+  before('smoketest:preview') {
+    env.URL="https://xui-st-task-configuration-pr-${CHANGE_ID}.preview.platform.hmcts.net"
+    env.IDAM_API_URL = "https://idam-api.aat.platform.hmcts.net"
+    env.CCD_DATA_STORE_URL = "https://ccd-data-store-api-st-task-configuration-pr-${CHANGE_ID}.preview.platform.hmcts.net"
+    env.DM_STORE_URL = "http://dm-store-aat.service.core-compute-aat.internal"
+    env.DEFINITION_STORE_URL_BASE = "https://ccd-definition-store-sptribs-case-api-pr-${CHANGE_ID}.preview.platform.hmcts.net"
+    env.CCD_DEF_NAME = "preview"
+  }
+
+  afterAlways('smoketest:preview') {
+    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test-results/smokeTest/**/*'
+  }
+
+  before('functionalTest:preview') {
+    dir("${WORKSPACE}/bin"){
+      sh "./process-and-import-ccd-definition.sh"
+    }
+
+    uploadDmnDiagrams('preview',"${CHANGE_ID}")
+  }
+
+  afterAlways('functionalTest:preview') {
+    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test-results/functional/**/*'
+  }
+
+  before('smoketest:aat') {
+    env.URL="https://manage-case.aat.platform.hmcts.net"
+    env.IDAM_API_URL = "https://idam-api.aat.platform.hmcts.net"
+    env.CCD_DATA_STORE_URL = "http://ccd-data-store-api-aat.service.core-compute-aat.internal"
+    env.DM_STORE_URL = "http://dm-store-aat.service.core-compute-aat.internal"
+  }
+
+  afterAlways('smoketest:aat') {
+    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test-results/smokeTest/**/*'
+  }
+
+  before('functionalTest:aat') {
+    uploadDmnDiagrams('aat','')
+  }
+
+  afterSuccess('functionalTest:aat') {
+    //Release dmns on to prod
+    uploadDmnDiagrams('prod', '')
+  }
+
+  afterAlways('functionalTest:aat') {
+    steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test-results/functional/**/*'
+  }
 }
