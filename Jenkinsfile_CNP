@@ -114,10 +114,6 @@ withPipeline(type, product, component) {
   }
 
   before('functionalTest:preview') {
-    dir("${WORKSPACE}/bin"){
-      sh "./process-and-import-ccd-definition.sh"
-    }
-
     uploadDmnDiagrams('preview',"${CHANGE_ID}")
   }
 
