@@ -578,7 +578,7 @@ class CamundaTaskWaInitiationTest extends DmnDecisionTableBaseUnitTest {
                 List.of(
                     Map.of(
                         "taskId", REVIEW_OTHER_REQ_LO_TASK,
-                        "name", "Review Reinstatement request - Legal Officer",
+                        "name", "Review other request - Legal Officer",
                         "workingDaysAllowed", 5,
                         "processCategories", PROCESS_CATEGORY_PROCESSING,
                         "workType", DECISION_WORK_TYPE,
