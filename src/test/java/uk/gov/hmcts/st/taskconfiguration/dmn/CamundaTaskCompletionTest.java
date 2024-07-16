@@ -209,15 +209,6 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "caseworker-edit-cica-case-details",
-                List.of(
-                    Map.of(
-                        "taskType", VET_NEW_CASE_DOCUMENTS_TASK,
-                        "completionMode", AUTO_COMPLETE_MODE
-                    )
-                )
-            ),
-            Arguments.of(
                 "caseworker-case-built",
                 List.of(
                     Map.of(
