@@ -1,0 +1,19 @@
+properties([
+        // H allow predefined but random minute see https://en.wikipedia.org/wiki/Cron#Non-standard_characters
+        pipelineTriggers([cron('H 8 * * 1-5')])
+])
+
+@Library("Infrastructure")
+
+import uk.gov.hmcts.contino.GradleBuilder
+
+def type = "java"
+def product = "sptribs"
+def component = "task-configuration"
+
+GradleBuilder builder = new GradleBuilder(this, product)
+
+withNightlyPipeline(type, product, component) {
+    enableSlackNotifications('#special-tribunals-builds')
+}
+
