@@ -136,10 +136,10 @@ withPipeline(type, product, component) {
     uploadDmnDiagrams('aat','')
   }
 
-  afterSuccess('functionalTest:aat') {
-    //Release dmns on to prod
-    uploadDmnDiagrams('prod', '')
-  }
+//  afterSuccess('functionalTest:aat') {
+//    //Release dmns on to prod
+//    uploadDmnDiagrams('prod', '')
+//  }
 
   afterAlways('functionalTest:aat') {
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'test-results/functional/**/*'
